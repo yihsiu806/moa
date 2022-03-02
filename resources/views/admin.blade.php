@@ -12,6 +12,7 @@
                     Admin You're logged in!
                 </div>
             </div>
+            <livewire:files /> 
         </div>
     </div>
 </x-app-layout>

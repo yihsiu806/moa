@@ -1226,6 +1226,10 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   --tw-bg-opacity: 1;
   background-color: rgb(217 148 15 / var(--tw-bg-opacity));
 }
+.active\:bg-green:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 104 57 / var(--tw-bg-opacity));
+}
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
 }
