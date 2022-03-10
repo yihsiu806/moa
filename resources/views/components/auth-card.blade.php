@@ -4,7 +4,7 @@
     </div>
 
     {{-- <div style="border: 5px solid #056839;" class="relative w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"> --}}
-    <div style="border: 5px solid #056839;" class="pb-16 relative w-full sm:max-w-md mt-6 px-12 py-4 bg-white shadow-md overflow-hidden">
+    <div style="border: 3px solid #056839;" class="pb-16 w-full sm:max-w-md mt-6 bg-white shadow-md overflow-hidden">
         {{ $slot }}
     </div>
 </div>
