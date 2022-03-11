@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Files extends Component
+class Main extends Component
 {
     public $slug;
 
@@ -15,6 +15,6 @@ class Files extends Component
 
     public function render()
     {
-        return view('livewire.files');
+        return view('livewire.main');
     }
 }

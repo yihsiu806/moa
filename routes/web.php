@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Files;
+use App\Http\Livewire\Myupload;
+use App\Http\Livewire\Welcome;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,13 @@ use App\Http\Livewire\Files;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('dashboard');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('home');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 Route::get('/division', 'App\Http\Controllers\DivisionController@index')->name('division');
 Route::get('/viewer', 'App\Http\Controllers\ViewerController@index')->name('viewer');
 Route::get('/divisions/{slug}', Files::class);
+Route::get('/myupload', Myupload::class)->name('myupload');
+Route::post('/file', 'App\Http\Controllers\FilesController@store');
 
 require __DIR__ . '/auth.php';

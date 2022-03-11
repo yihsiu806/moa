@@ -5,13 +5,13 @@
             <div class="flex flex-none mr-5">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a class="bg-white border-solid border-4 border-yellow rounded-full" href="{{ route('dashboard') }}" >
+                    <a class="bg-white border-solid border-4 border-yellow rounded-full" href="{{ route('home') }}" >
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600"/>
                     </a>
                 </div>
 
                 <div class="ml-5 flex items-center">
-                    <a class="font-bold leading-tight text-3xl text-white" href="{{ route('dashboard') }}">Data Sharing</a>
+                    <a class="font-bold leading-tight text-3xl text-white" href="{{ route('home') }}">Data Sharing</a>
                 </div>
             </div>
 
@@ -35,9 +35,11 @@
 
             <!-- Settings Dropdown -->
             <div class="flex-none hidden sm:flex sm:items-center sm:ml-6">
-                <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                    {{ Auth::user()->username }}
-                </button>
+                <a href="{{ route('myupload') }}">
+                    <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                        {{ Auth::user()->username }}
+                    </button>
+                </a>
             </div>
 
             <!-- Hamburger -->

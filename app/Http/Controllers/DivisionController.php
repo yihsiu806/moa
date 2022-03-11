@@ -27,4 +27,8 @@ class DivisionController extends Controller
     public function getFiles($slug)
     {
     }
+
+    public function myupload()
+    {
+    }
 }

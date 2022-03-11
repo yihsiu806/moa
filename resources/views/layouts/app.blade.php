@@ -8,14 +8,16 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        @livewireStyles
+        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen max-h-screen bg-gray-100">
@@ -23,18 +25,11 @@
 
             <div class="flex flex-wrap md:flex-nowrap">
 
-                <aside class="pt-10 shrink-0 w-[240px]">
+                <aside class="pt-8 shrink-0 w-[240px]">
                     @include('layouts.sidebar')
                 </aside>
     
-                <section>
-                    <!-- Page Heading -->
-                    {{-- <header class="bg-white shadow">
-                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                            {{ $header }}
-                        </div>
-                    </header> --}}
-        
+                <section class="grow pr-10">
                     <!-- Page Content -->
                     <main>
                         {{ $slot }}
@@ -43,6 +38,5 @@
 
             </div>
         </div>
-        @livewireScripts
     </body>
 </html>
