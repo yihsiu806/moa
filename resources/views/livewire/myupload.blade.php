@@ -1,4 +1,4 @@
-<div class="pt-8">
+<div class="">
     <h1 class="text-grey-dark text-3xl font-bold">My Uploads</h1>
     <h1 class="text-grey-dark text-3xl font-bold">Officers</h1>
     <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>

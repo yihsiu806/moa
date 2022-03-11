@@ -17,7 +17,6 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen max-h-screen bg-gray-100">
@@ -25,11 +24,11 @@
 
             <div class="flex flex-wrap md:flex-nowrap">
 
-                <aside class="pt-8 shrink-0 w-[240px]">
+                <aside class="pt-8 shrink-0 hidden md:block md:w-[240px]">
                     @include('layouts.sidebar')
                 </aside>
     
-                <section class="grow pr-10">
+                <section class="grow p-10">
                     <!-- Page Content -->
                     <main>
                         {{ $slot }}

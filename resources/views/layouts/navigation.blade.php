@@ -16,7 +16,7 @@
             </div>
 
             <!-- Search Box -->
-            <div class="hidden mr-3 grow sm:flex sm:justify-center sm:items-center">
+            <div class="hidden mr-3 grow md:flex md:justify-center md:items-center">
                 <div class="grow max-w-xl relative text-gray-600">
                     <input class="block w-full bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:ring-yellow focus:ring-opacity-40'"
                         type="search" name="search" placeholder="Search">
@@ -34,7 +34,7 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="flex-none hidden sm:flex sm:items-center sm:ml-6">
+            <div class="flex-none hidden md:flex md:items-center md:ml-6">
                 <a href="{{ route('myupload') }}">
                     <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
                         {{ Auth::user()->username }}
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
+            <div class="-mr-2 flex items-center md:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden md:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <!-- Search Box -->
             <div class="px-4 text-yellow-light">
@@ -71,9 +71,15 @@
                 </div>
         </div>
 
-        <!-- Responsive Settings Options -->
-        <div class="border-t border-gray-200">
-            <div class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light">My Upload</div>
+        <div class="border-t border-b border-gray-200">
+            <a href="{{ route('myupload') }}" class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('myupload') ? 'bg-yellow' : '' }}">
+                <span class="block md:hidden text-yellow {{ request()->is('myupload') ? 'text-green-light' : 'text-yellow' }}">My Upload</span>
+                {{ Auth::user()->username }}
+            </a>
+        </div>
+
+        <div>
+            @include('layouts.sidebar')
         </div>
     </div>
 </nav>
