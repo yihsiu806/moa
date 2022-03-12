@@ -24,5 +24,6 @@ Route::get('/viewer', 'App\Http\Controllers\ViewerController@index')->name('view
 Route::get('/divisions/{slug}', Files::class);
 Route::get('/myupload', Myupload::class)->name('myupload');
 Route::post('/file', 'App\Http\Controllers\FilesController@store');
+Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFiles@licenceFileShow');
 
 require __DIR__ . '/auth.php';

@@ -54,7 +54,8 @@ class FilesController extends Controller
 
         $user = Auth::user();
 
-        write_log(($user->id));
+        $this->write_log(($user->id));
+        $this->write_log('aaa bbb ccc');
 
         $file_64 = $request->input('file'); //your base64 encoded data
         $extension = explode('/', explode(':', substr($file_64, 0, strpos($file_64, ';')))[1])[1];   // .jpg .png .pdf
@@ -63,7 +64,10 @@ class FilesController extends Controller
         $image = str_replace($replace, '', $file_64);
         $image = str_replace(' ', '+', $image);
         $imageName = Str::random(10) . '.' . $extension;
-        Storage::disk('public')->put($imageName, base64_decode($image));
+        // Storage::disk('public')->put($imageName, base64_decode($image));
+        $this->write_log('ccc ddd');
+        Storage::disk('myDisk')->put($imageName, base64_decode($image));
+        $this->write_log('ddd');
 
         if (!$request->input('description')) {
             $description = '';
@@ -128,14 +132,14 @@ class FilesController extends Controller
     {
         //
     }
-}
 
-function write_log($log_msg)
-{
-    $log_filename = "/home/yihsiu/logs";
-    if (!file_exists($log_filename)) {
-        mkdir($log_filename, 0777, true);
+    public function write_log($log_msg)
+    {
+        $log_filename = "/home/yihsiu/logs";
+        if (!file_exists($log_filename)) {
+            mkdir($log_filename, 0777, true);
+        }
+        $log_file_data = $log_filename . '/debug.log';
+        file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
     }
-    $log_file_data = $log_filename . '/debug.log';
-    file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
 }

@@ -1,4 +1,4 @@
-<div class="px-8">
+<div class="">
     <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>
     <div>
         <div class="flex flex-col">
