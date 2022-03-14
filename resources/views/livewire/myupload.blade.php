@@ -1,4 +1,16 @@
-<div class="">
+<div class="relative">
+    <div class="fixed right-10">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-2xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-amber-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-amber-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:ring-red-100 dark:focus:ring-red-400" onclick="
+            this.closest('form').submit();">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                Log Out
+            </span>
+            </button>
+        </form>
+    </div>
+
     <h1 class="text-grey-dark text-3xl font-bold">My Uploads</h1>
     <h1 class="text-grey-dark text-3xl font-bold">Officers</h1>
     <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>
@@ -11,8 +23,6 @@
             <span>New</span>
         </button>
     </div>
-
-    
 
     <!-- Responsive data table -->
     <div>
