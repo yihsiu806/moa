@@ -1709,6 +1709,10 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     position: fixed;
   }
 
+  .md\:absolute {
+    position: absolute;
+  }
+
   .md\:right-10 {
     right: 2.5rem;
   }

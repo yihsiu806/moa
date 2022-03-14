@@ -1,5 +1,5 @@
 <div class="relative">
-    <div class="md:fixed md:right-10">
+    <div class="md:absolute md:right-10">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-2xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-amber-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-amber-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:ring-red-100 dark:focus:ring-red-400" onclick="
