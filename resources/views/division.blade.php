@@ -1,15 +1,11 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
     <div class="py-8">
         @if (request()->is('division'))
             <livewire:welcome />
         @elseif (request()->is('myupload'))
             <livewire:myupload />
+        @elseif (request()->is('modify/division'))
+            <livewire:division-modification />
         @else
             <livewire:files />
         @endif

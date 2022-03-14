@@ -11,18 +11,27 @@
         </form>
     </div>
 
-    <h1 class="text-grey-dark text-3xl font-bold">My Uploads</h1>
-    <h1 class="text-grey-dark text-3xl font-bold">Officers</h1>
-    <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>
-
-    <div>
-        <button id="addNewFile" type="button" class="flex justify-center items-center text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-xl px-5 py-3 text-center mr-2 mb-2 fill-gray-900">
-            <span class="mr-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z"/></svg>
-            </span>
-            <span>New</span>
-        </button>
+    <div class="flex items-center">
+        <h1 class="mr-5 text-grey-dark text-3xl font-bold">Hello!</h1>
+        <div class="my-5">
+            <a href="{{ route('modifyDivision') }}" type="button" class="text-gray-800 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-lg px-4 py-2 text-center">
+                Edit Division</a>
+        </div>
     </div>
+    <h2 class="text-grey-dark text-2xl font-bold">Officers</h2>
+
+    <div class="mt-6 mb-4 flex items-center">
+        <h1 class="mr-5 text-grey-dark text-3xl font-bold">My Uploads</h1>
+        <div>
+            <button id="addNewFile" type="button" class="flex justify-center items-center text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-xl px-5 py-3 text-center fill-gray-900">
+                <span class="mr-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z"/></svg>
+                </span>
+                <span>New</span>
+            </button>
+        </div>
+    </div>
+    <h1 class="mb-3 text-grey-dark text-2xl font-bold mb-3">Files</h1>
 
     <!-- Responsive data table -->
     <div>

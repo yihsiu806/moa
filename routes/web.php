@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\AdminDashboard;
+use App\Http\Livewire\DivisionModification;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Files;
 use App\Http\Livewire\Myupload;
@@ -21,8 +23,12 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->middleware(['auth'
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 Route::get('/division', 'App\Http\Controllers\DivisionController@index')->name('division');
 Route::get('/viewer', 'App\Http\Controllers\ViewerController@index')->name('viewer');
-Route::get('/divisions/{slug}', Files::class);
-Route::get('/myupload', Myupload::class)->name('myupload');
+Route::get('/divisions/{slug}', Files::class)->middleware(['auth']);
+Route::get('/admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin'])->name('adminDashboard');
+Route::get('/myupload', Myupload::class)->name('myupload')->middleware(['auth', 'role:division']);
+Route::get('/modify/division', DivisionModification::class)->middleware(['auth', 'role:division'])->name('modifyDivision');
+Route::patch('/modify/division', DivisionModification::class)->middleware(['auth', 'role:division'])->name('patchDivision');
+
 Route::post('/file', 'App\Http\Controllers\FilesController@store');
 Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFiles@licenceFileShow');
 

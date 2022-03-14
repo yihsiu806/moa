@@ -35,11 +35,26 @@
 
             <!-- Settings Dropdown -->
             <div class="flex-none hidden md:flex md:items-center md:ml-6">
-                <a href="{{ route('myupload') }}">
-                    <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                        {{ Auth::user()->username }}
-                    </button>
-                </a>
+                @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('adminDashboard') }}">
+                        <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                            {{ Auth::user()->username }}
+                        </button>
+                    </a>
+                @elseif (Auth::user()->role === 'division')
+                    <a href="{{ route('myupload') }}">
+                        <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                            {{ Auth::user()->username }}
+                        </button>
+                    </a>
+                @else
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                            Log Out
+                        </button>
+                    </form>
+                @endif
             </div>
 
             <!-- Hamburger -->
