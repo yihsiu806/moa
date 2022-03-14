@@ -1705,6 +1705,14 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 @media (min-width: 768px) {
 
+  .md\:fixed {
+    position: fixed;
+  }
+
+  .md\:right-10 {
+    right: 2.5rem;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
