@@ -1,4 +1,10 @@
 import $ from 'jquery';
+import 'datatables.net/js/jquery.dataTables.min.js';
+import 'datatables.net-dt/css/jquery.dataTables.css';
+import 'datatables.net-dt/js/dataTables.dataTables.min.js';
+import 'datatables.net-responsive/js/dataTables.responsive.min.js';
+import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
+import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
 console.log(files);
 console.log(users);
@@ -14,20 +20,23 @@ console.log(users);
     })
     let updated = new Date(file.updated_at).toLocaleDateString();
     $target.append(`
-    <tr class="border-b">
-    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+    <tr>
+    <td>
       ${file.title}
     </td>
-    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+    <td>
       ${owner[0].username}
     </td>
-    <td class="">
+    <td>
       ${updated}
     </td>
-    <td class="">
+    <td>
       <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="storage/${file.path}" download="${file.title}">Download</a>
     </td>
     </tr>
     `)
-  })
+  });
+  $('#filesTable').DataTable({
+    responsive: true,
+  });
 })();

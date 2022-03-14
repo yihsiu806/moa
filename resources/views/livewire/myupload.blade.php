@@ -2,6 +2,7 @@
     <h1 class="text-grey-dark text-3xl font-bold">My Uploads</h1>
     <h1 class="text-grey-dark text-3xl font-bold">Officers</h1>
     <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>
+
     <div>
         <button id="addNewFile" type="button" class="flex justify-center items-center text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-xl px-5 py-3 text-center mr-2 mb-2 fill-gray-900">
             <span class="mr-5">
@@ -10,36 +11,24 @@
             <span>New</span>
         </button>
     </div>
+
+    
+
+    <!-- Responsive data table -->
     <div>
-        <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="overflow-hidden">
-                        <table id="filesTable" class="min-w-full">
-                            <thead class="border-b">
-                            <tr>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                Name
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                Last modified
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                Modify
-                                </th>
-                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                Download
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table id="filesTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>File</th>
+                    <th>Last modified</th>
+                    <th>Edit</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+        </table>
     </div>
+    
 </div>
 
 <div id="uploadFileModal" class="hidden flex justify-center items-center fixed top-0 right-0 bottom-0 left-0 bg-[rgba(0,0,0,.4)]">

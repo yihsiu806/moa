@@ -1106,19 +1106,12 @@ select {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pr-10 {
-  padding-right: 2.5rem;
 }
 .pt-1 {
   padding-top: 0.25rem;
@@ -1375,10 +1368,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
-}
-#FileUpload.active {
-  box-shadow: 0 0 0 3px rgba(164, 202, 254, 0.45);
-  border-color: #a4cafe;
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
@@ -1737,10 +1726,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     padding: 1.25rem;
   }
 
-  .md\:p-0 {
-    padding: 0px;
-  }
-
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -1749,10 +1734,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-  }
-
-  .md\:pr-10 {
-    padding-right: 2.5rem;
   }
 
   .md\:text-right {
@@ -1769,12 +1750,12 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: rgb(95 99 104 / var(--tw-text-opacity));
   }
 
-  .md\:hover\:bg-transparent:hover {
-    background-color: transparent;
-  }
-
   .md\:hover\:bg-\[rgba\(5\2c 131\2c 68\2c \.14\)\]:hover {
     background-color: rgba(5,131,68,.14);
+  }
+
+  .md\:hover\:bg-transparent:hover {
+    background-color: transparent;
   }
 }
 @media (min-width: 1024px) {
@@ -1789,3 +1770,4 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     padding-right: 2rem;
   }
 }
+

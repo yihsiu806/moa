@@ -2,7 +2,12 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-console.log(files)
+import 'datatables.net/js/jquery.dataTables.min.js';
+import 'datatables.net-dt/css/jquery.dataTables.css';
+import 'datatables.net-dt/js/dataTables.dataTables.min.js';
+import 'datatables.net-responsive/js/dataTables.responsive.min.js';
+import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
+import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
 $('#addNewFile').on('click', function() {
   $('#uploadFileModal').css("display", "flex")
@@ -71,21 +76,20 @@ $('#uploadFile').on('submit', function(event) {
   files.forEach(file => {
     let updated = new Date(file.updated_at).toLocaleDateString();
     $target.append(`
-    <tr class="border-b">
-    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-      ${file.title}
-    </td>
-    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-      ${updated}
-    </td>
-    <td class="">
-      <button type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800">Modify</button>
-    </td>
-    <td class="">
-      <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>
-      
-    </td>
+    <tr>
+      <td>${file.title}</td>
+      <td>${updated}</td>
+      <td>
+        <button type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800">Modify</button>
+      </td>
+      <td>
+        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>
+      </td>
     </tr>
     `)
   })
+  $('#filesTable').DataTable({
+    responsive: true,
+  });
 })();
+

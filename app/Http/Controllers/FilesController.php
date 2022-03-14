@@ -54,9 +54,6 @@ class FilesController extends Controller
 
         $user = Auth::user();
 
-        $this->write_log(($user->id));
-        $this->write_log('aaa bbb ccc');
-
         $file_64 = $request->input('file'); //your base64 encoded data
         $extension = explode('/', explode(':', substr($file_64, 0, strpos($file_64, ';')))[1])[1];   // .jpg .png .pdf
         $replace = substr($file_64, 0, strpos($file_64, ',') + 1);
@@ -65,9 +62,7 @@ class FilesController extends Controller
         $image = str_replace(' ', '+', $image);
         $imageName = Str::random(10) . '.' . $extension;
         // Storage::disk('public')->put($imageName, base64_decode($image));
-        $this->write_log('ccc ddd');
         Storage::disk('myDisk')->put($imageName, base64_decode($image));
-        $this->write_log('ddd');
 
         if (!$request->input('description')) {
             $description = '';
