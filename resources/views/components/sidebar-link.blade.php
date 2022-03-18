@@ -10,8 +10,10 @@ $svgicon = ($active ?? false)
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
-    <span class="mr-5 flex items-center {{ $svgicon }}">
-        {{ $icon }}
+    <span class="mr-5 flex items-center">
+        <span class="inline-flex justify-center items-center w-[24px] h-[24px] {{ $svgicon }}">
+            {{ $icon }}
+        </span>
     </span>
 
     <span class="font-bold">

@@ -6,6 +6,8 @@
             <livewire:myupload />
         @elseif (request()->is('modify/division'))
             <livewire:division-modification />
+        @elseif (request()->is('upload/file'))
+            <livewire:upload-file />
         @else
             <livewire:files />
         @endif

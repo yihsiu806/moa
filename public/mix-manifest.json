@@ -2,5 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/js/myupload.js": "/js/myupload.js",
     "/js/welcome.js": "/js/welcome.js",
+    "/js/division-modification.js": "/js/division-modification.js",
+    "/js/upload-file.js": "/js/upload-file.js",
+    "/js/admin-dashboard.js": "/js/admin-dashboard.js",
     "/css/app.css": "/css/app.css"
 }

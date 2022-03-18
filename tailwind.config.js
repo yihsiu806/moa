@@ -28,5 +28,8 @@ module.exports = {
         fill: ['hover', 'focus'], // this line does the trick
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('tw-elements/dist/plugin'),
+    ],
 };

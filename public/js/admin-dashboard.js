@@ -34369,9 +34369,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!**********************************!*\
-  !*** ./resources/js/myupload.js ***!
-  \**********************************/
+/*!*****************************************!*\
+  !*** ./resources/js/admin-dashboard.js ***!
+  \*****************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -34398,29 +34398,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#helloDivision').text(division.name);
-
-if (division.picture != 'default') {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
-}
-
-if (officer.picture != 'default') {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
-}
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
+var $usersTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#usersTable').DataTable({
+  responsive: true
+});
 
 (function () {
-  var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').find('tbody');
-  files.forEach(function (file) {
-    var updated = new Date(file.updated_at).toLocaleDateString();
-    $target.append("\n    <tr>\n      <td>".concat(file.title, "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <button type=\"button\" class=\"py-2 px-3 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800\">Modify</button>\n      </td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/").concat(file.path, "\" download=\"").concat(file.title, "\">Download</a>\n      </td>\n    </tr>\n    "));
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
-    responsive: true
+  users.forEach(function (user) {
+    var updated = new Date(users.updated_at).toLocaleDateString();
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(user.role, "</td>\n      <td>").concat(user.username, "</td>\n      <td>").concat(user.division, "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"#\">Edit</a>\n      </td>\n      </tr>\n    "));
+    $usersTable.row.add($node).draw();
   });
 })();
 })();

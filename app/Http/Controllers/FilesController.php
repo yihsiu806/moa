@@ -74,6 +74,8 @@ class FilesController extends Controller
             'title' => $request->input('title'),
             'description' => $description,
             'path' => $imageName,
+            'from' => $request->input('from'),
+            'to' => $request->input('to'),
             'owner' => $user->id,
         ];
 

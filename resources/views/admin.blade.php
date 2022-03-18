@@ -4,6 +4,8 @@
             <livewire:welcome />
         @elseif (request()->is('admin/dashboard'))
             <livewire:admin-dashboard />
+        @elseif (request()->is('user/add'))
+            <livewire:add-user />
         @else
             <livewire:files />
         @endif

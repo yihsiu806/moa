@@ -9,67 +9,17 @@ import 'datatables.net-responsive/js/dataTables.responsive.min.js';
 import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
-$('#addNewFile').on('click', function() {
-  $('#uploadFileModal').css("display", "flex")
-  .hide()
-  .fadeIn();
-})
-
-$('#cancelFileModal').on('click', function() {
-  $('#uploadFileModal').fadeOut();
-})
-
-$('#FileUpload').on('change', function(event) {
-  if (event.target.files.length <= 0) {
-    return;
-  }
-  
-  let target = event.target.files[0];
-  let filesize = (target.size / 1024 / 1024).toFixed(2); //MiB
-
-  if (filesize > 1024) {
-    Swal.fire({
-      title: 'File size limit',
-      text: `File is too big (${filesize}MiB). Max filesize: 1GiB.`,
-      icon: 'warning',
-      confirmButtonColor: '#00a0e9',
-    });
-    $(this).val('');
-    $('#fileTitle').val('');
-    return;
-  }
-
-  $('#fileTitle').val(target.name);
-
-  let _this = this;
-  var fr = new FileReader();
-  fr.addEventListener('load', function (e) {
-    let result = e.target.result;
-    _this.result = result;
-  });
-  fr.readAsDataURL(target);
-})
-
-$('#uploadFile').on('submit', function(event) {
-  event.preventDefault();
-  let file = {
-    title: $('#fileTitle').val(),
-    description: $('#fileDescription').val(),
-    file: $('#FileUpload').get(0).result
-  }
-  let req = axios.post('/file', file)
-  req
-  .then(function() {
-
-  })
-  .catch(function() {
-
-  })
-  .then(function() {
-    $('#uploadFileModal').fadeOut();
-    location.reload();
-  })
-});
+$('#helloDivision').text(division.name);
+if (division.picture != 'default') {
+  $('#divisionPicture').attr('src', '/storage/' + division.picture);
+}
+if (officer.picture != 'default') {
+  $('#divisionPicture').attr('src', '/storage/' + division.picture);
+}
+$('#officerName').text(officer.name);
+$('#officerPosition').text(officer.position);
+$('#officerTelephone').text(officer.telephone);
+$('#officerEmail').text(officer.email);
 
 (() => {
   let $target = $('#filesTable').find('tbody');
