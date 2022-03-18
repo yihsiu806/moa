@@ -5,11 +5,13 @@
             <thead>
             <tr>
                 <th>
-                Name
+                File
                 </th>
                 <th>
-                Owner
+                Description
                 </th>
+                <th>Duration</th>
+                <th>Division</th>
                 <th>
                 Last modified
                 </th>
@@ -26,6 +28,5 @@
 
 <script>
     let files = @js($files);
-    let users = @js($users);
 </script>
 <script src="{{ asset('js/welcome.js') }}" defer></script>

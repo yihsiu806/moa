@@ -33,6 +33,7 @@ Route::post('/upload/file', 'App\Http\Controllers\FilesController@store')->name(
 Route::get('/modify/division', DivisionModification::class)->middleware(['auth', 'role:division'])->name('modifyDivision');
 Route::patch('/modify/division', 'App\Http\Controllers\DivisionController@saveEditDivision')->middleware(['auth', 'role:division'])->name('patchDivision');
 Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFiles@licenceFileShow');
-Route::get('/user/add', DivisionModification::class)->middleware(['auth', 'role:admin'])->name('addUser');
+Route::get('/user/add', AddUser::class)->middleware(['auth', 'role:admin'])->name('addUser');
+Route::post('/user/add', AddUser::class)->middleware(['auth', 'role:admin'])->name('addNewUser');
 
 require __DIR__ . '/auth.php';

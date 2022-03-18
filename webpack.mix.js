@@ -19,6 +19,7 @@ mix
 .js('resources/js/division-modification.js', 'public/js')
 .js('resources/js/upload-file.js', 'public/js')
 .js('resources/js/admin-dashboard.js', 'public/js')
+.js('resources/js/files.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),

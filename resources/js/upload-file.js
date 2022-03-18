@@ -126,7 +126,7 @@ $('#uploadFileForm').on('submit', function(event) {
     Swal.fire({
       title: 'Success',
       icon: 'success',
-      title: 'Update division successfully',
+      title: 'Upload file successfully',
       confirmButtonColor: '#056839',
     })
     .then(function() {
@@ -140,9 +140,6 @@ $('#uploadFileForm').on('submit', function(event) {
       icon: 'error',
       title: 'Something went wrong. Sorry.',
       confirmButtonColor: '#056839',
-    })
-    .then(function() {
-      $('#goBack').get(0).click();
     })
   })
 });

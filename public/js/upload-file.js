@@ -35971,7 +35971,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire((_Swal$fire = {
       title: 'Success',
       icon: 'success'
-    }, _defineProperty(_Swal$fire, "title", 'Update division successfully'), _defineProperty(_Swal$fire, "confirmButtonColor", '#056839'), _Swal$fire)).then(function () {
+    }, _defineProperty(_Swal$fire, "title", 'Upload file successfully'), _defineProperty(_Swal$fire, "confirmButtonColor", '#056839'), _Swal$fire)).then(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#goBack').get(0).click();
     });
   })["catch"](function (error) {
@@ -35981,9 +35981,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire((_Swal$fire2 = {
       title: 'Error',
       icon: 'error'
-    }, _defineProperty(_Swal$fire2, "title", 'Something went wrong. Sorry.'), _defineProperty(_Swal$fire2, "confirmButtonColor", '#056839'), _Swal$fire2)).then(function () {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#goBack').get(0).click();
-    });
+    }, _defineProperty(_Swal$fire2, "title", 'Something went wrong. Sorry.'), _defineProperty(_Swal$fire2, "confirmButtonColor", '#056839'), _Swal$fire2));
   });
 });
 

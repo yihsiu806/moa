@@ -17,5 +17,6 @@ class Files extends Model
         'download',
         'path',
         'owner',
+        'division',
     ];
 }

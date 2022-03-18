@@ -11,6 +11,29 @@ import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
 console.log(files);
 
+if (division && division.name) {
+  $('#divisionName').text(division.name);
+}
+
+if (division && division.picture) {
+  $('#divisionPicture').attr('src', '/storage/' + division.picture);
+}
+
+if (officer) {
+  if (officer.name) {
+    $('#officerName').text(officer.name);
+  }
+  if (officer.position) {
+    $('#officerPosition').text(officer.position);
+  }
+  if (officer.telephone) {
+    $('#officerTelephone').text(officer.telephone);
+  }
+  if (officer.email) {
+    $('#officerEmail').text(officer.email);
+  }
+}
+
 let $filesTable = $('#filesTable').DataTable({
   responsive: true,
 });
@@ -22,7 +45,6 @@ let $filesTable = $('#filesTable').DataTable({
       <td>${file.title}</td>
       <td>${file.description}</td>
       <td>${moment(file.from).format('ll')} ~ ${moment(file.to).format('ll')}</td>
-      <td>${file.division}</td>
       <td>${moment(file.updated_at).calendar()}</td>
       <td>
         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}">Download</a>

@@ -10,6 +10,7 @@ use App\Models\Division;
 class AdminDashboard extends Component
 {
     public $users;
+    public $divisions;
 
     public function render()
     {
@@ -20,6 +21,15 @@ class AdminDashboard extends Component
             'divisions.name as division'
         )
             ->leftJoin('divisions', 'divisions.id', '=', 'users.division')
+            ->get();
+
+        $this->divisions = Division::select(
+            'divisions.name',
+            'divisions.icon',
+            'divisions.updated_at',
+            'officers.name as officer'
+        )
+            ->leftJoin('officers', 'officers.division', '=', 'divisions.id')
             ->get();
 
         return view('livewire.admin-dashboard');

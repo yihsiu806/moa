@@ -11,35 +11,33 @@
         </form>
     </div>
 
-    <h1 class="mr-5 text-grey-dark text-3xl font-bold">
-        Hello,
-        <span id="helloDivision" class="text-green-light text-3xl font-bold "></span>
-    </h1>
+    <div class="mb-10">
+        <a href="{{ route('modifyDivision') }}" class="inline-block px-6 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Edit Division</a>
+    </div>
     <div class="flex items-center my-5">
         <img id="divisionPicture" class="mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[50%] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]" src="/images/division-default-picture.png" alt="division picture">
-        <div class="my-5">
-            <a href="{{ route('modifyDivision') }}" class="inline-block px-6 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Edit Division</a>
-        </div>
+        <span id="helloDivision" class="text-green text-3xl font-bold "></span>
     </div>
+    
 
-    <h2 class="text-grey-dark text-2xl font-bold">Officer</h2>
+    <h2 class="mt-10 text-grey-dark text-2xl font-bold">Officer</h2>
     <div class="mt-6 flex flex-wrap">
         <div class="mr-5">
             <img id="officerPicture" class="mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[35px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]" src="/images/officer-default-picture.png" alt="officer picture">
         </div>
-        <div class="grid grid-cols-2 gap-4 text-semibold">
+        <div class="grid grid-cols-2 gap-y-1 gap-x-2 font-medium">
             <span class="text-gray-500">Name</span>
-            <span id="officerName" class="text-gray-700 text-bold"></span>
+            <span id="officerName" class="text-gray-700 font-semibold"></span>
             <span class="text-gray-500">Position</span>
-            <span id="officerPosition" class="text-gray-700 text-bold"></span>
+            <span id="officerPosition" class="text-gray-700 font-semibold"></span>
             <span class="text-gray-500">Telephone</span>
-            <span id="officerTelephone" class="text-gray-700 text-bold"></span>
+            <span id="officerTelephone" class="text-gray-700 font-semibold"></span>
             <span class="text-gray-500">Email</span>
-            <span id="officerEmail" class="text-gray-700 text-bold"></span>
+            <span id="officerEmail" class="text-gray-700 font-semibold"></span>
         </div>
     </div>
 
-    <div class="mt-10 mb-4 flex items-center">
+    <div class="mt-16 mb-4 flex items-center">
         <h1 class="mr-5 text-grey-dark text-3xl font-bold">My Uploads</h1>
         <div>
             <a href="{{ route('uploadFile') }}" class="inline-block px-6 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out inline-flex justify-center items-center fill-green hover:fill-yellow">

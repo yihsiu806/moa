@@ -6,7 +6,7 @@
     </div>
     <h1 class="mb-5 text-grey-dark text-3xl font-bold">New File</h1>
     <form id="uploadFileForm" method="POST" action="{{ route('newFile') }}">
-        @method('patch')
+        
         <div class="grid grid-cols-1 md:inline-grid md:grid-cols-[1fr_minmax(350px,_2fr)] md:gap-4">
                 <div class="md:col-span-2 mb-2">
                     <div id="selectFileAreaWrapper" class="relative py-8 bg-white rounded-[7px] border-4 border-[#eee] text-center hover:border-yellow">

@@ -24,7 +24,7 @@
 
             <div class="flex flex-wrap md:flex-nowrap">
 
-                <aside class="pt-8 shrink-0 hidden md:block md:w-[240px]">
+                <aside class="pt-8 shrink-0 hidden md:block md:w-[240px] md:bg-[#eee]">
                     @include('layouts.sidebar')
                 </aside>
     

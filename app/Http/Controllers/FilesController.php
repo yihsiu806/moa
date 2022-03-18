@@ -70,6 +70,7 @@ class FilesController extends Controller
             $description = $request->input('description');
         }
 
+        $this->write_log('aaa');
         $file = [
             'title' => $request->input('title'),
             'description' => $description,
@@ -77,7 +78,9 @@ class FilesController extends Controller
             'from' => $request->input('from'),
             'to' => $request->input('to'),
             'owner' => $user->id,
+            'division' => $user->division,
         ];
+        $this->write_log('bbb');
 
         $result = Files::create($file);
 
