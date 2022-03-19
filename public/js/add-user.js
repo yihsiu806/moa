@@ -16646,9 +16646,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!***********************************************!*\
-  !*** ./resources/js/division-modification.js ***!
-  \***********************************************/
+/*!**********************************!*\
+  !*** ./resources/js/add-user.js ***!
+  \**********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -16661,161 +16661,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val(division.name);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val(division.slug);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val(officer.name);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val(officer.position);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val(officer.telephone);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val(officer.email);
-
-  if (officer.picture && officer.picture != 'default') {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/storage/' + officer.picture);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = officer.picture;
-  } else {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = 'default';
+  if (divisions) {
+    divisions.forEach(function (division) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').append("\n        <option value=\"".concat(division.id, "\">").concat(division.name, "</option>\n      "));
+    });
   }
-
-  if (division.picture && division.picture != 'default') {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = division.picture;
-  } else {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = 'default';
-  }
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', 'data:image/svg+xml;base64,' + btoa(division.icon));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = division.icon;
 })();
 
 (function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionPicture').on('change', function (event) {
-    if (event.target.files.length <= 0) {
-      return;
-    }
-
-    var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
-
-    if (filesize > 5) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 5MiB."),
-        icon: 'warning',
-        confirmButtonColor: '#00a0e9'
-      });
-      this.value = '';
-      return;
-    }
-
-    var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', src);
-    var fr = new FileReader();
-    fr.addEventListener('load', function (e) {
-      var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = result;
-    });
-    fr.readAsDataURL(targetPhoto);
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editOfficerPicture').on('change', function (event) {
-    if (event.target.files.length <= 0) {
-      return;
-    }
-
-    var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
-
-    if (filesize > 5) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 5MiB."),
-        icon: 'warning',
-        confirmButtonColor: '#00a0e9'
-      });
-      this.value = '';
-      return;
-    }
-
-    var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', src);
-    var fr = new FileReader();
-    fr.addEventListener('load', function (e) {
-      var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = result;
-    });
-    fr.readAsDataURL(targetPhoto);
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionIcon').on('change', function (event) {
-    if (event.target.files.length <= 0) {
-      return;
-    }
-
-    var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
-
-    if (filesize > 1) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 1MiB."),
-        icon: 'warning',
-        confirmButtonColor: '#00a0e9'
-      });
-      this.value = '';
-      return;
-    }
-
-    var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', src);
-    var fr = new FileReader();
-    fr.addEventListener('load', function (e) {
-      var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = result;
-    });
-    fr.readAsText(targetPhoto);
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionPicture').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionPicture').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/images/division-default-picture.png');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = 'default';
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionIcon').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionIcon').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', '/images/division-default-icon.svg');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = defaultIcon;
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetOfficerPicture').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editOfficerPicture').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/images/officer-default-picture.png');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = 'default';
-  });
-})();
-
-(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').on('input', function () {
-    var limit = 255;
-
-    if (this.value.length > limit) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'Text length limit',
-        text: "".concat(limit, " characters max."),
-        icon: 'warning',
-        confirmButtonColor: '#058344'
-      });
-      this.value = this.value.slice(0, limit);
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').on('input', function () {
-    var limit = 10;
-
-    if (this.value.length > limit) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'Text length limit',
-        text: "".concat(limit, " characters max."),
-        icon: 'warning',
-        confirmButtonColor: '#058344'
-      });
-      this.value = this.value.slice(0, limit);
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName, #officerPosition, #officerTelephone, #officerEmail').on('input', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username, #password').on('input', function () {
     var limit = 100;
 
     if (this.value.length > limit) {
@@ -16831,95 +16685,73 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 (function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input[type="text"]').on('input', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').hide();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').removeClass('is-invalid border-red-700');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#roleSelect').on('change', function () {
+    if (this.value == 'division') {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.division-select').show();
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.division-select').hide();
+    }
   });
 })();
 
-var validateEmail = function validateEmail(email) {
-  return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-};
+(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input[type="text"], input[type="password"]').on('input', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').hide();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').removeClass('is-invalid border-red-500');
+  });
+})();
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', function (event) {
   event.preventDefault();
   var validate = true;
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val()) {
+  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val()) {
     validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').addClass('is-invalid');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').addClass('is-invalid');
   }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val()) {
+  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').val()) {
     validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').addClass('is-invalid');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').addClass('is-invalid');
+  } else if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').val().length < 6) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').addClass('is-invalid');
   }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').addClass('is-invalid');
-  }
-
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').addClass('is-invalid');
-  }
-
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').addClass('is-invalid');
-  }
-
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email can not be empty.');
-  }
-
-  if (!validateEmail(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val())) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email address is invalid.');
-  }
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').addClass('border-red-700');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').addClass('border-red-500');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').show();
 
   if (!validate) {
     event.stopImmediatePropagation();
   }
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', function (event) {
   event.preventDefault();
   var data = {
-    picture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result,
-    icon: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result,
-    divisionName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val(),
-    divisionSlug: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val(),
-    officerName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val(),
-    officerPosition: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val(),
-    officerTelephone: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val(),
-    officerEmail: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val(),
-    officerPicture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result
+    username: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val(),
+    password: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').val(),
+    role: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#roleSelect').val(),
+    division: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').val()
   };
-  axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/modify/division', data).then(function () {
+  console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').val());
+  axios__WEBPACK_IMPORTED_MODULE_2___default().post('/user/add', data).then(function () {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Success',
       icon: 'success',
-      text: 'Update division successfully',
+      text: 'Create a new user successfully',
       confirmButtonColor: '#056839'
     });
   })["catch"](function (error) {
     console.log(error);
+    var message = error.response.data.message || 'Something went wrong. Sorry.';
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Error',
       icon: 'error',
-      text: 'Something went wrong. Sorry.',
+      text: message,
       confirmButtonColor: '#056839'
     });
   });
 });
-var defaultIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"100\" zoomAndPan=\"magnify\" viewBox=\"0 0 375 374.999991\" height=\"100\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.0\"><path fill=\"rgb(37.249756%, 38.819885%, 40.779114%)\" d=\"M 10.71875 346.996094 C 3.695312 349.148438 -0.238281 356.597656 1.914062 363.617188 C 4.070312 370.636719 11.527344 374.546875 18.539062 372.421875 C 70.71875 356.371094 114.960938 346.410156 174.203125 346.410156 C 235.414062 346.410156 303.539062 356.128906 356.460938 372.421875 C 363.511719 374.601562 370.945312 370.597656 373.085938 363.617188 C 375.253906 356.59375 371.304688 349.164062 364.28125 346.996094 C 312.765625 331.144531 247.660156 321.355469 187.5 320.066406 L 187.5 186.730469 C 239.46875 186.238281 291.847656 181.394531 329.136719 149.429688 C 370.265625 114.175781 373.671875 65.226562 373.671875 13.960938 C 373.671875 6.621094 367.710938 0.664062 360.371094 0.664062 C 317.9375 0.664062 258.191406 8.511719 214.585938 45.890625 C 186.25 70.1875 172.792969 101.835938 166.449219 128.179688 C 160.105469 116.769531 151.863281 105.679688 141.171875 95.863281 C 103.269531 61.144531 51.4375 53.855469 14.628906 53.855469 C 7.289062 53.855469 1.328125 59.8125 1.328125 67.152344 C 1.328125 114.28125 4.28125 159.296875 39.839844 191.886719 C 71.886719 221.261719 116.503906 226.050781 160.902344 226.609375 L 160.902344 320.09375 C 104.972656 321.476562 61.277344 331.4375 10.71875 346.996094 Z M 231.886719 66.089844 C 265.09375 37.621094 310.613281 29.109375 346.96875 27.554688 C 346.261719 68.429688 341.210938 104.054688 311.820312 129.242188 C 281.289062 155.425781 234.800781 159.707031 188.070312 160.1875 C 190.066406 136.582031 198.511719 94.707031 231.886719 66.089844 Z M 57.804688 172.273438 C 33.164062 149.695312 28.710938 117.632812 28.03125 80.8125 C 58.402344 82.472656 95.796875 90.371094 123.179688 115.480469 C 151.039062 141.011719 158.445312 178.3125 160.304688 200.054688 C 121.4375 199.507812 83.003906 195.386719 57.804688 172.273438 Z M 57.804688 172.273438 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/></svg>";
 })();
 
 /******/ })()

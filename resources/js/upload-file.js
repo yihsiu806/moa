@@ -126,7 +126,7 @@ $('#uploadFileForm').on('submit', function(event) {
     Swal.fire({
       title: 'Success',
       icon: 'success',
-      title: 'Upload file successfully',
+      text: 'Upload file successfully',
       confirmButtonColor: '#056839',
     })
     .then(function() {
@@ -138,7 +138,7 @@ $('#uploadFileForm').on('submit', function(event) {
     Swal.fire({
       title: 'Error',
       icon: 'error',
-      title: 'Something went wrong. Sorry.',
+      text: 'Something went wrong. Sorry.',
       confirmButtonColor: '#056839',
     })
   })

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Symfony\Component\HttpFoundation\Response;
 
 class RegisteredUserController extends Controller
 {
@@ -33,30 +34,39 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        if (!$request->expectsJson()) {
+            return response(null, Response::HTTP_BAD_REQUEST);
+        }
+
+        $query = User::where('username', '=', $request->input('username'))->first();
+        if ($query) {
+            return response(['message' => 'Username already taken.'], Response::HTTP_BAD_REQUEST);
+        }
+
         $request->validate([
             'username' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::min(6)],
         ]);
 
+        $this->write_log($request->input('division'));
+
         $user = User::create([
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
+            'username' => $request->input('username'),
+            'password' => Hash::make($request->input('password')),
+            'role' => $request->input('role'),
+            'division' => $request->input('division'),
         ]);
 
         event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
     }
-}
 
-function write_log($log_msg)
-{
-    $log_filename = "/home/yihsiu/logs";
-    if (!file_exists($log_filename)) {
-        mkdir($log_filename, 0777, true);
+    function write_log($log_msg)
+    {
+        $log_filename = "/home/yihsiu/logs";
+        if (!file_exists($log_filename)) {
+            mkdir($log_filename, 0777, true);
+        }
+        $log_file_data = $log_filename . '/debug.log';
+        file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
     }
-    $log_file_data = $log_filename . '/debug.log';
-    file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
 }

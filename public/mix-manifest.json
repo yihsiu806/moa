@@ -6,5 +6,6 @@
     "/js/upload-file.js": "/js/upload-file.js",
     "/js/admin-dashboard.js": "/js/admin-dashboard.js",
     "/js/files.js": "/js/files.js",
+    "/js/add-user.js": "/js/add-user.js",
     "/css/app.css": "/css/app.css"
 }

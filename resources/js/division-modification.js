@@ -263,7 +263,7 @@ $('#modifyDivisionForm').on('submit', function(event) {
     Swal.fire({
       title: 'Success',
       icon: 'success',
-      title: 'Update division successfully',
+      text: 'Update division successfully',
       confirmButtonColor: '#056839',
     })
   })
@@ -272,7 +272,7 @@ $('#modifyDivisionForm').on('submit', function(event) {
     Swal.fire({
       title: 'Error',
       icon: 'error',
-      title: 'Something went wrong. Sorry.',
+      text: 'Something went wrong. Sorry.',
       confirmButtonColor: '#056839',
     })
   })
