@@ -25,11 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layouts.sidebar', function ($view) {
-            $divisions = Division::select('name', 'icon', 'slug')
-                ->orderBy('id')
-                ->get();
-            $view->with('divisions', $divisions);
-        });
+        // View::composer('layouts.sidebar', function ($view) {
+        //     $divisions = Division::select('name', 'icon', 'slug')
+        //         ->orderBy('id')
+        //         ->get();
+        //     $view->with('divisions', $divisions);
+        // });
     }
 }
