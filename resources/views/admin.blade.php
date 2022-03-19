@@ -6,6 +6,8 @@
             <livewire:admin-dashboard />
         @elseif (request()->is('user/add'))
             <livewire:add-user />
+        @elseif (request()->is('user/edit'))
+            <livewire:edit-user />
         @else
             <livewire:files />
         @endif

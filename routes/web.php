@@ -8,6 +8,7 @@ use App\Http\Livewire\Myupload;
 use App\Http\Livewire\Welcome;
 use App\Http\Livewire\UploadFile;
 use App\Http\Livewire\AddUser;
+use App\Http\Livewire\EditUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,8 @@ Route::patch('/modify/division', 'App\Http\Controllers\DivisionController@saveEd
 Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFiles@licenceFileShow');
 Route::get('/user/add', AddUser::class)->middleware(['auth', 'role:admin'])->name('addUser');
 Route::post('/user/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('addNewUser');
+
+Route::get('/user/edit/{id}', EditUser::class)->middleware(['auth', 'role:admin'])->name('editUser');
+Route::patch('/user/edit', [App\Http\Controllers\Auth\RegisteredUserController::class, 'update']);
 
 require __DIR__ . '/auth.php';

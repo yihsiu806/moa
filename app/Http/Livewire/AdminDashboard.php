@@ -15,6 +15,7 @@ class AdminDashboard extends Component
     public function render()
     {
         $this->users = User::select(
+            'users.id',
             'users.username',
             'users.role',
             'users.updated_at',

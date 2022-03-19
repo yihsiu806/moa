@@ -60,6 +60,10 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
     }
 
+    public function update(Request $request)
+    {
+    }
+
     function write_log($log_msg)
     {
         $log_filename = "/home/yihsiu/logs";

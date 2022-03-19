@@ -21,6 +21,7 @@ mix
 .js('resources/js/admin-dashboard.js', 'public/js')
 .js('resources/js/files.js', 'public/js')
 .js('resources/js/add-user.js', 'public/js')
+.js('resources/js/edit-user.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),

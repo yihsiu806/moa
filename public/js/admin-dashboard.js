@@ -34408,7 +34408,7 @@ var $divisionsTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsT
 (function () {
   users.forEach(function (user) {
     var updated = new Date(user.updated_at).toLocaleDateString();
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(user.role, "</td>\n      <td>").concat(user.username, "</td>\n      <td>").concat(user.division, "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"#\">Edit</a>\n      </td>\n      </tr>\n    "));
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(user.role, "</td>\n      <td>").concat(user.username, "</td>\n      <td>").concat(user.division, "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/user/edit/").concat(user.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
     $usersTable.row.add($node).draw();
   });
 })();
