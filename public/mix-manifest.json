@@ -2,10 +2,10 @@
     "/js/app.js": "/js/app.js",
     "/js/myupload.js": "/js/myupload.js",
     "/js/welcome.js": "/js/welcome.js",
-    "/js/division-modification.js": "/js/division-modification.js",
-    "/js/upload-file.js": "/js/upload-file.js",
+    "/js/edit-division.js": "/js/edit-division.js",
+    "/js/file-upload.js": "/js/file-upload.js",
     "/js/admin-dashboard.js": "/js/admin-dashboard.js",
-    "/js/files.js": "/js/files.js",
+    "/js/file-viewer.js": "/js/file-viewer.js",
     "/js/add-user.js": "/js/add-user.js",
     "/js/edit-user.js": "/js/edit-user.js",
     "/css/app.css": "/css/app.css"

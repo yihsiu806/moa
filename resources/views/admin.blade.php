@@ -9,7 +9,7 @@
         @elseif (request()->is('user/edit'))
             <livewire:edit-user />
         @else
-            <livewire:files />
+            <livewire:file-viewer />
         @endif
     </div>
 </x-app-layout>

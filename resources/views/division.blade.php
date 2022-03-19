@@ -5,11 +5,11 @@
         @elseif (request()->is('myupload'))
             <livewire:myupload />
         @elseif (request()->is('modify/division'))
-            <livewire:division-modification />
+            <livewire:edit-division />
         @elseif (request()->is('upload/file'))
             <livewire:upload-file />
         @else
-            <livewire:files />
+            <livewire:file-viewer />
         @endif
     </div>
 </x-app-layout>

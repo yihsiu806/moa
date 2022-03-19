@@ -4,10 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class UploadFile extends Component
+class FileUpload extends Component
 {
     public function render()
     {
-        return view('livewire.upload-file');
+        return view('livewire.file-upload');
     }
 }

@@ -43,4 +43,4 @@
     let officer = @js($officer);
     let files = @js($files);
 </script>
-<script src="{{ asset('js/files.js') }}" defer></script>
+<script src="{{ asset('js/file-viewer.js') }}" defer></script>

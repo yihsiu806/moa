@@ -8,7 +8,7 @@ use App\Models\Division;
 use App\Models\Officer;
 use Illuminate\Support\Facades\DB;
 
-class Files extends Component
+class FileViewer extends Component
 {
     public $slug;
     public $division;
@@ -55,6 +55,6 @@ class Files extends Component
             ->where('files.division', '=', $currentDivision->id)
             ->get();
 
-        return view('livewire.files');
+        return view('livewire.file-viewer');
     }
 }

@@ -16,10 +16,10 @@ mix
 .js('resources/js/app.js', 'public/js')
 .js('resources/js/myupload.js', 'public/js')
 .js('resources/js/welcome.js', 'public/js')
-.js('resources/js/division-modification.js', 'public/js')
-.js('resources/js/upload-file.js', 'public/js')
+.js('resources/js/edit-division.js', 'public/js')
+.js('resources/js/file-upload.js', 'public/js')
 .js('resources/js/admin-dashboard.js', 'public/js')
-.js('resources/js/files.js', 'public/js')
+.js('resources/js/file-viewer.js', 'public/js')
 .js('resources/js/add-user.js', 'public/js')
 .js('resources/js/edit-user.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
