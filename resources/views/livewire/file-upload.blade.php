@@ -1,5 +1,6 @@
-<div>
-    <div class="mb-6">
+<div class="container mx-auto">
+
+    <div class="mb-10">
         <a id="goBack" href="{{ route('myupload') }}"
             class="inline-block px-4 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out inline-flex justify-center items-center fill-green hover:fill-yellow">
             <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -7,7 +8,9 @@
             </svg>
             Back</a>
     </div>
+
     <h1 class="mb-5 text-grey-dark text-3xl font-bold">New File</h1>
+
     <form id="uploadFileForm" method="POST" action="{{ route('newFile') }}">
 
         <div class="grid grid-cols-1 md:inline-grid md:grid-cols-[1fr_minmax(350px,_2fr)] md:gap-4">
@@ -40,6 +43,8 @@
                     </div>
                 </div>
             </div>
+
+            {{-- title --}}
             <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-2" for="fileTitle">
                 Title
             </label>
@@ -49,6 +54,8 @@
                     id="fileTitle" type="text">
                 <div class="mb-3 hidden text-sm text-red-500">Title can not be empty.</div>
             </div>
+
+            {{-- description --}}
             <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-2">
                 Description
             </label>
@@ -57,6 +64,8 @@
                     id="fileDescription" rows="5"></textarea>
                 <div class="mb-3 hidden text-sm text-red-500">Description can not be empty.</div>
             </div>
+
+            {{-- duration --}}
             <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-2" for="inline-full-name">
                 Duration
             </label>
@@ -75,11 +84,14 @@
                     <div class="mb-3 hidden text-sm text-red-500">Please select duration end date.</div>
                 </div>
             </div>
+
         </div>
+
+        <div>
+            <button type="submit"
+                class="mt-10 inline-block px-7 py-3 bg-green text-white font-medium text-base leading-snug uppercase rounded shadow-md hover:bg-green-light hover:shadow-lg focus:bg-green-light focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-light active:shadow-lg transition duration-150 ease-in-out">Save</button>
+        </div>
+    </form>
 </div>
 
-<button type="submit"
-    class="mt-10 inline-block px-7 py-3 bg-green text-white font-medium text-base leading-snug uppercase rounded shadow-md hover:bg-green-light hover:shadow-lg focus:bg-green-light focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-light active:shadow-lg transition duration-150 ease-in-out">Save</button>
-</form>
-</div>
 <script src="{{ asset('js/file-upload.js') }}" defer></script>
