@@ -38,7 +38,7 @@
         <img id="divisionPicture"
             class="mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[50%] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
             src="/images/division-default-picture.png" alt="division picture">
-        <span id="helloDivision" class="text-green text-3xl font-bold "></span>
+        <span id="helloDivision" class="text-gray-600 text-2xl font-semibold "></span>
     </div>
 
     <h2 class="mt-8 mb-5 text-grey-dark text-2xl font-bold">Officer</h2>
