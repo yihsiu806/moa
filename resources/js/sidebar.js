@@ -1,11 +1,8 @@
-import $ from 'jquery';
+let previousPosition = parseInt(sessionStorage.getItem('sidebarScrollOffset'));
+if (isFinite(previousPosition)) {
+  document.getElementById('sidebar').scroll(0, previousPosition);
+}
 
-// let activeSlug = location.pathname.split('/')
-// if (activeSlug.length > 0) {
-//   activeSlug = activeSlug[activeSlug.length - 1];
-//   console.log(activeSlug);
-//   console.log($(`a[data-slug="${activeSlug}"]`))
-//   // $('#sidebar').scrollIntoView(`a[data-slug="${activeSlug}"]`);
-//   // $(`a[data-slug="${activeSlug}"]`).scrollIntoView();
-//   $(`a[data-slug="${activeSlug}"]`).get(0).scrollIntoView();
-// }
+document.getElementById('sidebar').addEventListener('scroll', function() {
+  sessionStorage.setItem('sidebarScrollOffset', this.scrollTop.toFixed());
+})
