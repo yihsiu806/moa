@@ -62,7 +62,7 @@
 
     <div class="mt-16 mb-5 flex items-center">
         <h1 class="mr-5 text-grey-dark text-3xl font-bold"
-            style="background-image: linear-gradient( 180deg ,transparent 60%,rgba(245,167,158,.35) 0);background-image: linear-gradient( 180deg ,transparent 60%,rgba(253, 180, 21, 0.35) 0);">
+            style="background-image: linear-gradient( 180deg ,transparent 60%,rgba(253, 180, 21, 0.35) 0);">
             My Uploads</h1>
         <div>
             <a href="{{ route('fileUpload') }}"

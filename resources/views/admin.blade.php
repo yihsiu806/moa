@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="py-8">
+    <div>
         @if (request()->is('admin'))
             <livewire:welcome />
         @elseif (request()->is('admin/dashboard'))

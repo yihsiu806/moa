@@ -52,6 +52,8 @@ class FilesController extends Controller
             return response(null, Response::HTTP_BAD_REQUEST);
         }
 
+        $this->write_log('store aaa');
+
         $user = Auth::user();
 
         $file_64 = $request->input('file'); //your base64 encoded data

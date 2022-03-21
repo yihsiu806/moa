@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
 
             <!-- Logo -->
-            <a class="flex flex-none items-center mr-5" href="{{ route('home') }}">
+            <a class="flex flex-none items-center" href="{{ route('home') }}">
                 <span class="mr-5 bg-white border-solid border-4 border-yellow rounded-full">
                     <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                 </span>
@@ -12,7 +12,7 @@
             </a>
 
             <!-- Search Box -->
-            <div class="hidden mr-3 grow md:flex md:justify-center md:items-center">
+            <div class="hidden grow md:flex md:justify-center md:items-center">
                 <div class="grow max-w-xl relative text-gray-600">
                     <input
                         class="block w-full bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:ring-yellow focus:ring-opacity-40'"
@@ -82,7 +82,7 @@
             </div>
             <div class="px-3">
                 <input
-                    class="block w-full bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:ring-yellow focus:ring-opacity-40'"
+                    class="block w-full bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:ring-yellow focus:ring-opacity-40 py-2"
                     type="search" name="search" placeholder="Search">
 
                 <button type="submit"
@@ -93,13 +93,23 @@
         </div>
 
         <div class="border-t border-b border-gray-200">
-            <a href="{{ route('myupload') }}"
-                class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('myupload') ? 'bg-yellow' : '' }}">
-                <span
-                    class="block md:hidden text-yellow {{ request()->is('myupload') ? 'text-green-light' : 'text-yellow' }}">My
-                    Upload</span>
-                {{ Auth::user()->username }}
-            </a>
+
+            @if (Auth::user()->role === 'admin')
+                <a href="{{ route('adminDashboard') }}"
+                    class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('admin/dashboard') ? 'bg-yellow' : '' }}">
+                    <span
+                        class="block md:hidden {{ request()->is('admin/dashboard') ? 'text-green' : 'text-yellow' }}">Dashboard</span>
+                    {{ Auth::user()->username }}
+                </a>
+            @else
+                <a href="{{ route('myupload') }}"
+                    class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('myupload') ? 'bg-yellow' : '' }}">
+                    <span class="block md:hidden {{ request()->is('myupload') ? 'text-green' : 'text-yellow' }}">My
+                        Upload</span>
+                    {{ Auth::user()->username }}
+                </a>
+            @endif
+
         </div>
 
         <div>

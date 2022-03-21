@@ -19,6 +19,7 @@ $('#selectFileArea').on('change', function(event) {
     });
     $(this).val('');
     $('#fileTitle').val('');
+    this.result = '';
     return;
   }
 
@@ -80,6 +81,7 @@ $('#uploadFileForm').on('submit', function(event) {
         icon: 'warning',
         confirmButtonColor: '#058344',
       });
+      validate = false;
     }
   }
 
@@ -121,7 +123,7 @@ $('#uploadFileForm').on('submit', function(event) {
     to: $('#durationTo').val(),
   }
 
-  axios.post('/upload/file', newFile)
+  axios.post('/file-upload', newFile)
   .then(function() {
     Swal.fire({
       title: 'Success',

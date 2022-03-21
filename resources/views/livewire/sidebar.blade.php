@@ -26,6 +26,12 @@
                 </x-sidebar-link>
             @endforeach
 
+            <div class="grid grid-cols-2 gap-y-2 mt-10 pt-10 pl-8 border-t border-gray-300">
+                <span class="font-bold text-grey-dark">Files</span>
+                <span id="filesCount" class="text-grey-dark">{{ $filesCount }}</span>
+                <span class="font-bold text-grey-dark">Storage</span>
+                <span id="storageCount" class="text-grey-dark">{{ $sizeCount }}</span>
+            </div>
         </div>
 
     </aside>

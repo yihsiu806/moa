@@ -35864,6 +35864,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
     });
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val('');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileTitle').val('');
+    this.result = '';
     return;
   }
 
@@ -35924,6 +35925,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
         icon: 'warning',
         confirmButtonColor: '#058344'
       });
+      validate = false;
     }
   }
 
@@ -35963,7 +35965,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
     from: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#durationFrom').val(),
     to: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#durationTo').val()
   };
-  axios.post('/upload/file', newFile).then(function () {
+  axios.post('/file-upload', newFile).then(function () {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Success',
       icon: 'success',

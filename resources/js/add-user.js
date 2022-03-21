@@ -90,6 +90,9 @@ $('#addNewUserForm').on('submit', function(event) {
       text: 'Create a new user successfully',
       confirmButtonColor: '#056839',
     })
+    .then(function() {
+      $('#backBtn').get(0).click();
+    })
   })
   .catch(function(error) {
     console.log(error);

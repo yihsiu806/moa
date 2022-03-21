@@ -24,7 +24,7 @@ let $divisionsTable = $('#divisionsTable').DataTable({
       <tr>
       <td>${user.role}</td>
       <td>${user.username}</td>
-      <td>${user.division}</td>
+      <td>${user.division ? user.division : ''}</td>
       <td>${updated}</td>
       <td>
         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/user/edit/${user.id}">Edit</a>

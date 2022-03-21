@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
-class DownloadFiles extends Controller
+class DownloadFilesController extends Controller
 {
     public function __construct()
     {

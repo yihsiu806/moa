@@ -30,7 +30,7 @@
             <livewire:sidebar />
 
             <section class="grow md:relative">
-                <div class="md:absolute md:top-0 md:bottom-[64px] md:right-0 md:left-0 md:overflow-y-auto md:py-8">
+                <div class="md:absolute md:top-0 md:bottom-[64px] md:right-0 md:left-0 md:overflow-y-auto">
                     <main class="container mx-auto py-8">
                         {{ $slot }}
                     </main>

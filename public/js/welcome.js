@@ -55847,14 +55847,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log(files);
+var $noDataTemplate = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n<div class=\"text-center\">\n<img src=\"/images/no-data.svg\" class=\"h-[100px] inline-block\" alt=\"no data\">\n<div class=\"mt-5 text-3xl text-semibold text-gray-400\">No data available</div>\n</div>\n");
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
   responsive: true
 });
 
 (function () {
   files.forEach(function (file) {
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(file.title, "</td>\n      <td>").concat(file.description, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.from).format('ll'), " ~ ").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.to).format('ll'), "</td>\n      <td>").concat(file.division, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.updated_at).calendar(), "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/").concat(file.path, "\">Download</a>\n      </td>\n      </tr>\n    "));
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(file.title, "</td>\n      <td>").concat(file.description, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.from).format('ll'), " ~ ").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.to).format('ll'), "</td>\n      <td>").concat(file.division, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.updated_at).calendar(), "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/").concat(file.path, "\" download=\"").concat(file.title, "\">Download</a>\n      </td>\n      </tr>\n    "));
     $filesTable.row.add($node).draw();
   });
 })();

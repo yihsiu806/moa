@@ -16740,6 +16740,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', fu
       icon: 'success',
       text: 'Create a new user successfully',
       confirmButtonColor: '#056839'
+    }).then(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#backBtn').get(0).click();
     });
   })["catch"](function (error) {
     console.log(error);
