@@ -1,4 +1,4 @@
-<div class="">
+<div class="px-5 md:px-10">
     <h1 class="text-grey-dark text-3xl font-bold mb-3">Files</h1>
     <div>
         <table id="filesTable" class="display" style="width:100%">
