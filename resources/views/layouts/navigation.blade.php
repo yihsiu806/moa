@@ -2,18 +2,14 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between h-16">
-            <div class="flex flex-none mr-5">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a class="bg-white border-solid border-4 border-yellow rounded-full" href="{{ route('home') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-                    </a>
-                </div>
 
-                <div class="ml-5 flex items-center">
-                    <a class="font-bold leading-tight text-3xl text-white" href="{{ route('home') }}">Data Sharing</a>
-                </div>
-            </div>
+            <!-- Logo -->
+            <a class="flex flex-none items-center mr-5" href="{{ route('home') }}">
+                <span class="mr-5 bg-white border-solid border-4 border-yellow rounded-full">
+                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                </span>
+                <span class="font-bold leading-tight text-3xl text-white">Data Sharing</span>
+            </a>
 
             <!-- Search Box -->
             <div class="hidden mr-3 grow md:flex md:justify-center md:items-center">
