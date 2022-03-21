@@ -16,9 +16,97 @@ let $noDataTemplate = $(`
 </div>
 `);
 
+fetchNewest();
+fetchMostDownloaded();
+
 let $filesTable = $('#filesTable').DataTable({
   responsive: true,
+  // processing: true,
+  // serverSide: true,
+  // ajax: '/files',
 });
+
+function fetchNewest() {
+  axios.get('/newest')
+  .then(function(res) {
+    if (res.data.length == 0) {
+      throw 'No file found';
+    } else {
+      $('#newestWrapper').empty();
+      res.data.forEach(file => {
+        let title = file.title.slice(0, 17);
+        if (file.title.length > 17) {
+          title += '...'
+        }
+        $('#newestWrapper').append(`
+          <div class="w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card">
+            <div class="hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center" style="background-color: rgba(0,0,0,.5);">
+              <a class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5" href="/uploads/${file.path}" download"${file.title}" target="_blank">Download</a>
+            </div>
+            <div class="h-2/3 text-center py-2 border-b bg-gray-500">
+              <img src="/images/file-icon.svg" class="h-full inline-block">
+            </div>
+            <div class="h-1/3 p-2 pt-0 text-grey-dark">
+                <span class="inline-block w-full h-4 font-medium">${title}</span>
+                <span class="inline-block w-full h-4 text-sm">${moment(file.updated_at).fromNow()}</span>
+            </div>
+          </div>
+        `);
+        $('.file-card').on('mouseover', function() {
+          $(this).children().first().css('display', 'flex');
+        })
+        $('.file-card').on('mouseout', function() {
+          $(this).children().first().hide();
+        })
+      })
+    }
+  })
+  .catch(function(error) {
+    console.log(error);
+    $('#newestWrapper').empty().append($noDataTemplate.clone());
+  });
+}
+
+function fetchMostDownloaded() {
+  axios.get('/most-downloaded')
+  .then(function(res) {
+    if (res.data.length == 0) {
+      throw 'No file found';
+    }  else {
+      $('#mostDownloadedWrapper').empty();
+      res.data.forEach(file => {
+        let title = file.title.slice(0, 17);
+        if (file.title.length > 17) {
+          title += '...'
+        }
+        $('#mostDownloadedWrapper').append(`
+          <div class="w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card">
+            <div class="hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center" style="background-color: rgba(0,0,0,.5);">
+              <a class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5" href="/uploads/${file.path}" download"${file.title}" target="_blank">Download</a>
+            </div>
+            <div class="h-2/3 text-center py-2 border-b bg-gray-500">
+              <img src="/images/file-icon.svg" class="h-full inline-block">
+            </div>
+            <div class="h-1/3 p-2 pt-0 text-grey-dark">
+                <span class="inline-block w-full h-4 font-medium">${title}</span>
+                <span class="inline-block w-full h-4 text-sm">${file.download}</span>
+            </div>
+          </div>
+        `);
+        $('.file-card').on('mouseover', function() {
+          $(this).children().first().css('display', 'flex');
+        })
+        $('.file-card').on('mouseout', function() {
+          $(this).children().first().hide();
+        })
+      })
+    }
+  })
+  .catch(function(error) {
+    console.log(error);
+    $('#mostDownloadedWrapper').empty().append($noDataTemplate.clone());
+  });
+}
 
 (() => {
   files.forEach(file => {

@@ -55848,9 +55848,70 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var $noDataTemplate = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n<div class=\"text-center\">\n<img src=\"/images/no-data.svg\" class=\"h-[100px] inline-block\" alt=\"no data\">\n<div class=\"mt-5 text-3xl text-semibold text-gray-400\">No data available</div>\n</div>\n");
+fetchNewest();
+fetchMostDownloaded();
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
-  responsive: true
+  responsive: true // processing: true,
+  // serverSide: true,
+  // ajax: '/files',
+
 });
+
+function fetchNewest() {
+  axios__WEBPACK_IMPORTED_MODULE_2___default().get('/newest').then(function (res) {
+    if (res.data.length == 0) {
+      throw 'No file found';
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newestWrapper').empty();
+      res.data.forEach(function (file) {
+        var title = file.title.slice(0, 17);
+
+        if (file.title.length > 17) {
+          title += '...';
+        }
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newestWrapper').append("\n          <div class=\"w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card\">\n            <div class=\"hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center\" style=\"background-color: rgba(0,0,0,.5);\">\n              <a class=\"text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5\" href=\"/uploads/".concat(file.path, "\" download\"").concat(file.title, "\" target=\"_blank\">Download</a>\n            </div>\n            <div class=\"h-2/3 text-center py-2 border-b bg-gray-500\">\n              <img src=\"/images/file-icon.svg\" class=\"h-full inline-block\">\n            </div>\n            <div class=\"h-1/3 p-2 pt-0 text-grey-dark\">\n                <span class=\"inline-block w-full h-4 font-medium\">").concat(title, "</span>\n                <span class=\"inline-block w-full h-4 text-sm\">").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.updated_at).fromNow(), "</span>\n            </div>\n          </div>\n        "));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.file-card').on('mouseover', function () {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children().first().css('display', 'flex');
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.file-card').on('mouseout', function () {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children().first().hide();
+        });
+      });
+    }
+  })["catch"](function (error) {
+    console.log(error);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newestWrapper').empty().append($noDataTemplate.clone());
+  });
+}
+
+function fetchMostDownloaded() {
+  axios__WEBPACK_IMPORTED_MODULE_2___default().get('/most-downloaded').then(function (res) {
+    if (res.data.length == 0) {
+      throw 'No file found';
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').empty();
+      res.data.forEach(function (file) {
+        var title = file.title.slice(0, 17);
+
+        if (file.title.length > 17) {
+          title += '...';
+        }
+
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').append("\n          <div class=\"w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card\">\n            <div class=\"hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center\" style=\"background-color: rgba(0,0,0,.5);\">\n              <a class=\"text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5\" href=\"/uploads/".concat(file.path, "\" download\"").concat(file.title, "\" target=\"_blank\">Download</a>\n            </div>\n            <div class=\"h-2/3 text-center py-2 border-b bg-gray-500\">\n              <img src=\"/images/file-icon.svg\" class=\"h-full inline-block\">\n            </div>\n            <div class=\"h-1/3 p-2 pt-0 text-grey-dark\">\n                <span class=\"inline-block w-full h-4 font-medium\">").concat(title, "</span>\n                <span class=\"inline-block w-full h-4 text-sm\">").concat(file.download, "</span>\n            </div>\n          </div>\n        "));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.file-card').on('mouseover', function () {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children().first().css('display', 'flex');
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.file-card').on('mouseout', function () {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children().first().hide();
+        });
+      });
+    }
+  })["catch"](function (error) {
+    console.log(error);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').empty().append($noDataTemplate.clone());
+  });
+}
 
 (function () {
   files.forEach(function (file) {

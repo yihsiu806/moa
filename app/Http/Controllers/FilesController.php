@@ -17,7 +17,6 @@ class FilesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role:division');
     }
 
     /**
@@ -52,8 +51,6 @@ class FilesController extends Controller
             return response(null, Response::HTTP_BAD_REQUEST);
         }
 
-        $this->write_log('store aaa');
-
         $user = Auth::user();
 
         $file_64 = $request->input('file'); //your base64 encoded data
@@ -72,7 +69,6 @@ class FilesController extends Controller
             $description = $request->input('description');
         }
 
-        $this->write_log('aaa');
         $file = [
             'title' => $request->input('title'),
             'description' => $description,
@@ -82,7 +78,6 @@ class FilesController extends Controller
             'owner' => $user->id,
             'division' => $user->division,
         ];
-        $this->write_log('bbb');
 
         $result = Files::create($file);
 
@@ -96,9 +91,23 @@ class FilesController extends Controller
      * @param  \App\Models\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function show(Files $files)
+    public function show(Request $request)
     {
-        //
+        $this->write_log('show test');
+        $this->write_log($request->input('start'));
+    }
+
+    public function newest(Request $request)
+    {
+        $result = Files::latest()->take(5)->get();
+        return response($result, Response::HTTP_OK);
+    }
+
+    public function mostDownloaded(Request $request)
+    {
+        $result = Files::orderBy('download', 'desc')
+            ->take(5)->get();
+        return response($result, Response::HTTP_OK);
     }
 
     /**

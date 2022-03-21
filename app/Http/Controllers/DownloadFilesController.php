@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use App\Models\Files;
 
 class DownloadFilesController extends Controller
 {
@@ -90,15 +91,29 @@ class DownloadFilesController extends Controller
         //
     }
 
+    public function increaseDownloadCounter($file)
+    {
+        try {
+            $target = Files::where('path', '=', $file)->first();
+            $this->write_log($target->download);
+            $target->download = $target->download + 1;
+            $this->write_log($target->download);
+            $target->save();
+        } catch (Exception $e) {
+        }
+    }
+
     public function returnFile($file)
     {
         //This method will look for the file and get it from drive
         $path = storage_path('app/uploads/' . $file);
+
         try {
-            $file = File::get($path);
+            $result = File::get($path);
             $type = File::mimeType($path);
-            $response = Response::make($file, 200);
+            $response = Response::make($result, 200);
             $response->header("Content-Type", $type);
+            $this->increaseDownloadCounter($file);
             return $response;
         } catch (FileNotFoundException $exception) {
             abort(404);
@@ -113,5 +128,15 @@ class DownloadFilesController extends Controller
             //Invalid file name given
             return abort(404);
         }
+    }
+
+    public function write_log($log_msg)
+    {
+        $log_filename = "/home/yihsiu/logs";
+        if (!file_exists($log_filename)) {
+            mkdir($log_filename, 0777, true);
+        }
+        $log_file_data = $log_filename . '/debug.log';
+        file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
     }
 }

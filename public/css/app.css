@@ -1971,26 +1971,17 @@ select {
 .h-2\/3 {
   height: 66.666667%;
 }
-.h-10 {
-  height: 2.5rem;
+.h-1\/3 {
+  height: 33.333333%;
 }
 .h-4 {
   height: 1rem;
 }
+.h-10 {
+  height: 2.5rem;
+}
 .h-6 {
   height: 1.5rem;
-}
-.h-1\/3 {
-  height: 33.333333%;
-}
-.h-3 {
-  height: 0.75rem;
-}
-.h-\[250px\] {
-  height: 250px;
-}
-.h-\[150px\] {
-  height: 150px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -2121,6 +2112,9 @@ select {
 .justify-between {
   justify-content: space-between;
 }
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
 .gap-y-1 {
   row-gap: 0.25rem;
 }
@@ -2134,9 +2128,6 @@ select {
 }
 .gap-y-0 {
   row-gap: 0px;
-}
-.gap-y-2 {
-  row-gap: 0.5rem;
 }
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -2249,26 +2240,6 @@ select {
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
-}
-.border-gray-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(17 24 39 / var(--tw-border-opacity));
-}
-.border-gray-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-.border-grey-dark {
-  --tw-border-opacity: 1;
-  border-color: rgb(95 99 104 / var(--tw-border-opacity));
-}
-.border-gray-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity));
-}
-.border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -2424,6 +2395,12 @@ select {
 .pt-1 {
   padding-top: 0.25rem;
 }
+.pt-10 {
+  padding-top: 2.5rem;
+}
+.pl-8 {
+  padding-left: 2rem;
+}
 .pr-2 {
   padding-right: 0.5rem;
 }
@@ -2450,15 +2427,6 @@ select {
 }
 .pb-3 {
   padding-bottom: 0.75rem;
-}
-.pt-5 {
-  padding-top: 1.25rem;
-}
-.pl-8 {
-  padding-left: 2rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
 }
 .text-center {
   text-align: center;
@@ -2489,10 +2457,6 @@ select {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 .font-medium {
   font-weight: 500;

@@ -50,4 +50,9 @@ Route::post('/user/add', [App\Http\Controllers\Auth\RegisteredUserController::cl
 Route::get('/user/edit/{id}', EditUser::class)->middleware(['auth', 'role:admin'])->name('editUser');
 Route::patch('/user/edit', [App\Http\Controllers\Auth\RegisteredUserController::class, 'update']);
 
+// files
+Route::get('/files', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);
+Route::get('/newest', 'App\Http\Controllers\FilesController@newest')->middleware(['auth']);
+Route::get('/most-downloaded', 'App\Http\Controllers\FilesController@mostDownloaded')->middleware(['auth']);
+
 require __DIR__ . '/auth.php';
