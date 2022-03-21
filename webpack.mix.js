@@ -22,11 +22,13 @@ mix
 .js('resources/js/file-viewer.js', 'public/js')
 .js('resources/js/add-user.js', 'public/js')
 .js('resources/js/edit-user.js', 'public/js')
+.js('resources/js/sidebar.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
 ])
+.postCss('resources/css/login.css', 'public/css')
 .svelte();
 
 mix.webpackConfig({

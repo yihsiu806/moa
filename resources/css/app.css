@@ -6,15 +6,22 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: white;
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: white;
+::-webkit-scrollbar-thumb {
+  background-color: silver;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
 }

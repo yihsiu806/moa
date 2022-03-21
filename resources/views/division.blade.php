@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="py-8">
+    <div>
         @if (request()->is('division'))
             <livewire:welcome />
         @elseif (request()->is('myupload'))

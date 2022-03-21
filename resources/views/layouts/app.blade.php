@@ -20,19 +20,21 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="font-sans antialiased md:h-screen md:overflow-y-hidden">
+    <div class="min-h-screen bg-gray-100 md:h-full">
+
         @include('layouts.navigation')
 
-        <div class="flex flex-wrap md:flex-nowrap">
+        <div class="flex flex-wrap md:flex-nowrap md:h-full">
 
             <livewire:sidebar />
 
-            <section class="grow p-10">
-                <!-- Page Content -->
-                <main>
-                    {{ $slot }}
-                </main>
+            <section class="grow md:relative">
+                <div class="md:absolute md:top-0 md:bottom-[64px] md:right-0 md:left-0 md:overflow-y-auto md:py-8">
+                    <main class="container mx-auto py-8">
+                        {{ $slot }}
+                    </main>
+                </div>
             </section>
 
         </div>

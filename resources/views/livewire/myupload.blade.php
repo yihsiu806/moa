@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div>
     <div class="mb-10 flex justify-between">
         <div>
             <a href="{{ url()->previous() }}"

@@ -3,22 +3,22 @@
     <div>
         <table id="filesTable" class="display" style="width:100%">
             <thead>
-            <tr>
-                <th>
-                File
-                </th>
-                <th>
-                Description
-                </th>
-                <th>Duration</th>
-                <th>Division</th>
-                <th>
-                Last modified
-                </th>
-                <th>
-                Download
-                </th>
-            </tr>
+                <tr>
+                    <th>
+                        File
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>Duration</th>
+                    <th>Division</th>
+                    <th>
+                        Last modified
+                    </th>
+                    <th>
+                        Download
+                    </th>
+                </tr>
             </thead>
             <tbody>
             </tbody>

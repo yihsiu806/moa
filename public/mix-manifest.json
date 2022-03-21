@@ -8,5 +8,7 @@
     "/js/file-viewer.js": "/js/file-viewer.js",
     "/js/add-user.js": "/js/add-user.js",
     "/js/edit-user.js": "/js/edit-user.js",
+    "/js/sidebar.js": "/js/sidebar.js",
+    "/css/login.css": "/css/login.css",
     "/css/app.css": "/css/app.css"
 }
