@@ -3,15 +3,15 @@
         <div class="w-full md:w-1/2 flex flex-wrap items-center">
             <div>
                 <img id="divisionPicture"
-                    class="mb-5 mr-5 inline-block overflow-hidden w-[120px] h-[120px] rounded-[50%] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-                    src="/images/division-default-picture.png" alt="division picture">
+                    class="mb-5 mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[50%] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
+                    src="/images/division-default-picture.png" alt="Division Picture">
             </div>
-            <div id="divisionName" class="break-all text-green text-xl font-semibold"></div>
+            <div id="divisionName" class="mr-5 break-all text-green text-xl font-semibold"></div>
         </div>
         <div class="w-full md:w-1/2 flex flex-wrap">
             <div>
                 <img id="officerPicture"
-                    class="mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[35px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
+                    class="mr-5 inline-block overflow-hidden w-[90px] h-[90px] rounded-[35px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
                     src="/images/officer-default-picture.png" alt="officer picture">
             </div>
             <div class="grid grid-cols-2 gap-x-1 gap-y-0 font-semibold">

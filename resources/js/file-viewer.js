@@ -17,6 +17,8 @@ if (division && division.name) {
 
 if (division && division.picture) {
   $('#divisionPicture').attr('src', '/storage/' + division.picture);
+} else {
+  $('#divisionPicture').attr('src', '/images/division-default-picture.png');
 }
 
 if (officer) {
