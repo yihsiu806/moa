@@ -55855,6 +55855,8 @@ if (division && division.name) {
 
 if (division && division.picture) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
+} else {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/images/division-default-picture.png');
 }
 
 if (officer) {

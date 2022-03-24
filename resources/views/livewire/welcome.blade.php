@@ -54,16 +54,17 @@
 
     <h1 class="mt-10 mb-5 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
-    <div>
-        <table id="filesTable" class="display nowrap" style="width:100%">
+    <div class="files-table bg-white rounded">
+        <table id="filesTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
-                    <th> File </th>
+                    <th> Name </th>
+                    <th> Division </th>
+                    <th> Updated </th>
+                    <th> Download </th>
                     <th> Description </th>
                     <th> Duration </th>
-                    <th> Division </th>
-                    <th> Last modified </th>
-                    <th> Download </th>
+                    <th> Count </th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -71,7 +72,4 @@
     </div>
 </div>
 
-<script>
-    let files = @js($files);
-</script>
 <script src="{{ asset('js/welcome.js') }}" defer></script>

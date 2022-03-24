@@ -2054,6 +2054,30 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes dtb-spinner{100%{transform:rotate(360deg)}}@-webkit-keyframes dtb-spinner{100%{transform:rotate(360deg)}}div.dataTables_wrapper{position:relative}div.dt-buttons{position:initial}div.dt-button-info{position:fixed;top:50%;left:50%;width:400px;margin-top:-100px;margin-left:-200px;background-color:white;border:2px solid #111;box-shadow:3px 4px 10px 1px rgba(0, 0, 0, 0.3);border-radius:3px;text-align:center;z-index:21}div.dt-button-info h2{padding:.5em;margin:0;font-weight:normal;border-bottom:1px solid #ddd;background-color:#f3f3f3}div.dt-button-info>div{padding:1em}div.dtb-popover-close{position:absolute;top:10px;right:10px;width:22px;height:22px;border:1px solid #eaeaea;background-color:#f9f9f9;text-align:center;border-radius:3px;cursor:pointer;z-index:12}button.dtb-hide-drop{display:none !important}div.dt-button-collection-title{text-align:center;padding:.3em 0 .5em;margin-left:.5em;margin-right:.5em;font-size:.9em}div.dt-button-collection-title:empty{display:none}span.dt-button-spacer{display:inline-block;margin:.5em;white-space:nowrap}span.dt-button-spacer.bar{border-left:1px solid rgba(0, 0, 0, 0.3);vertical-align:middle;padding-left:.5em}span.dt-button-spacer.bar:empty{height:1em;width:1px;padding-left:0}div.dt-button-collection span.dt-button-spacer{width:100%;font-size:.9em;text-align:center;margin:.5em 0}div.dt-button-collection span.dt-button-spacer:empty{height:0;width:100%}div.dt-button-collection span.dt-button-spacer.bar{border-left:none;border-bottom:1px solid rgba(0, 0, 0, 0.3);padding-left:0}button.dt-button,div.dt-button,a.dt-button,input.dt-button{position:relative;display:inline-block;box-sizing:border-box;margin-left:.167em;margin-right:.167em;margin-bottom:.333em;padding:.5em 1em;border:1px solid rgba(0, 0, 0, 0.3);border-radius:2px;cursor:pointer;font-size:.88em;line-height:1.6em;color:black;white-space:nowrap;overflow:hidden;background-color:rgba(0, 0, 0, 0.1);background:linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"rgba(230, 230, 230, 0.1)\", EndColorStr=\"rgba(0, 0, 0, 0.1)\");-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;outline:none;text-overflow:ellipsis}button.dt-button:first-child,div.dt-button:first-child,a.dt-button:first-child,input.dt-button:first-child{margin-left:0}button.dt-button.disabled,div.dt-button.disabled,a.dt-button.disabled,input.dt-button.disabled{cursor:default;opacity:.4}button.dt-button:active:not(.disabled),button.dt-button.active:not(.disabled),div.dt-button:active:not(.disabled),div.dt-button.active:not(.disabled),a.dt-button:active:not(.disabled),a.dt-button.active:not(.disabled),input.dt-button:active:not(.disabled),input.dt-button.active:not(.disabled){background-color:rgba(0, 0, 0, 0.1);background:linear-gradient(to bottom, rgba(179, 179, 179, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"rgba(179, 179, 179, 0.1)\", EndColorStr=\"rgba(0, 0, 0, 0.1)\");box-shadow:inset 1px 1px 3px #999}button.dt-button:active:not(.disabled):hover:not(.disabled),button.dt-button.active:not(.disabled):hover:not(.disabled),div.dt-button:active:not(.disabled):hover:not(.disabled),div.dt-button.active:not(.disabled):hover:not(.disabled),a.dt-button:active:not(.disabled):hover:not(.disabled),a.dt-button.active:not(.disabled):hover:not(.disabled),input.dt-button:active:not(.disabled):hover:not(.disabled),input.dt-button.active:not(.disabled):hover:not(.disabled){box-shadow:inset 1px 1px 3px #999;background-color:rgba(0, 0, 0, 0.1);background:linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"rgba(128, 128, 128, 0.1)\", EndColorStr=\"rgba(0, 0, 0, 0.1)\")}button.dt-button:hover,div.dt-button:hover,a.dt-button:hover,input.dt-button:hover{text-decoration:none}button.dt-button:hover:not(.disabled),div.dt-button:hover:not(.disabled),a.dt-button:hover:not(.disabled),input.dt-button:hover:not(.disabled){border:1px solid #666;background-color:rgba(0, 0, 0, 0.1);background:linear-gradient(to bottom, rgba(153, 153, 153, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"rgba(153, 153, 153, 0.1)\", EndColorStr=\"rgba(0, 0, 0, 0.1)\")}button.dt-button:focus:not(.disabled),div.dt-button:focus:not(.disabled),a.dt-button:focus:not(.disabled),input.dt-button:focus:not(.disabled){border:1px solid #426c9e;text-shadow:0 1px 0 #c4def1;outline:none;background-color:#79ace9;background:linear-gradient(to bottom, #d1e2f7 0%, #79ace9 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"#d1e2f7\", EndColorStr=\"#79ace9\")}button.dt-button span.dt-down-arrow,div.dt-button span.dt-down-arrow,a.dt-button span.dt-down-arrow,input.dt-button span.dt-down-arrow{position:relative;top:-2px;color:rgba(70, 70, 70, 0.75);font-size:8px;padding-left:10px;line-height:1em}.dt-button embed{outline:none}div.dt-buttons{float:left}div.dt-buttons.buttons-right{float:right}div.dataTables_layout_cell div.dt-buttons{float:none}div.dataTables_layout_cell div.dt-buttons.buttons-right{float:none}div.dt-btn-split-wrapper{display:inline-block}div.dt-button-collection{position:absolute;top:0;left:0;width:200px;margin-top:3px;margin-bottom:3px;padding:4px 4px 2px 4px;border:1px solid #ccc;border:1px solid rgba(0, 0, 0, 0.4);background-color:white;overflow:hidden;z-index:2002;border-radius:5px;box-shadow:3px 4px 10px 1px rgba(0, 0, 0, 0.3);box-sizing:border-box}div.dt-button-collection button.dt-button,div.dt-button-collection div.dt-button,div.dt-button-collection a.dt-button{position:relative;left:0;right:0;width:100%;display:block;float:none;margin:4px 0 2px 0}div.dt-button-collection button.dt-button:active:not(.disabled),div.dt-button-collection button.dt-button.active:not(.disabled),div.dt-button-collection div.dt-button:active:not(.disabled),div.dt-button-collection div.dt-button.active:not(.disabled),div.dt-button-collection a.dt-button:active:not(.disabled),div.dt-button-collection a.dt-button.active:not(.disabled){background-color:#dadada;background:linear-gradient(to bottom, #f0f0f0 0%, #dadada 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"#f0f0f0\", EndColorStr=\"#dadada\");box-shadow:inset 1px 1px 3px #666}div.dt-button-collection button.dt-button:first-child,div.dt-button-collection div.dt-button:first-child,div.dt-button-collection a.dt-button:first-child{margin-top:0;border-top-left-radius:3px;border-top-right-radius:3px}div.dt-button-collection button.dt-button:last-child,div.dt-button-collection div.dt-button:last-child,div.dt-button-collection a.dt-button:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px}div.dt-button-collection div.dt-btn-split-wrapper{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:stretch;margin:4px 0 2px 0}div.dt-button-collection div.dt-btn-split-wrapper button.dt-button{margin:0;display:inline-block;width:0;flex-grow:1;flex-shrink:0;flex-basis:50px;border-radius:0}div.dt-button-collection div.dt-btn-split-wrapper button.dt-btn-split-drop{min-width:20px;flex-grow:0;flex-shrink:0;flex-basis:0}div.dt-button-collection div.dt-btn-split-wrapper:first-child{margin-top:0}div.dt-button-collection div.dt-btn-split-wrapper:first-child button.dt-button{border-top-left-radius:3px}div.dt-button-collection div.dt-btn-split-wrapper:first-child button.dt-btn-split-drop{border-top-right-radius:3px}div.dt-button-collection div.dt-btn-split-wrapper:last-child button.dt-button{border-bottom-left-radius:3px}div.dt-button-collection div.dt-btn-split-wrapper:last-child button.dt-btn-split-drop{border-bottom-right-radius:3px}div.dt-button-collection div.dt-btn-split-wrapper:active:not(.disabled) button.dt-button,div.dt-button-collection div.dt-btn-split-wrapper.active:not(.disabled) button.dt-button{background-color:#dadada;background:linear-gradient(to bottom, #f0f0f0 0%, #dadada 100%);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=\"#f0f0f0\", EndColorStr=\"#dadada\");box-shadow:inset 0px 0px 4px #666}div.dt-button-collection div.dt-btn-split-wrapper:active:not(.disabled) button.dt-btn-split-drop,div.dt-button-collection div.dt-btn-split-wrapper.active:not(.disabled) button.dt-btn-split-drop{box-shadow:none}div.dt-button-collection.fixed .dt-button:first-child{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}div.dt-button-collection.fixed .dt-button:last-child{border-bottom-left-radius:0;border-bottom-right-radius:0}div.dt-button-collection.fixed{position:fixed;display:block;top:50%;left:50%;margin-left:-75px;border-radius:5px;background-color:white}div.dt-button-collection.fixed.two-column{margin-left:-200px}div.dt-button-collection.fixed.three-column{margin-left:-225px}div.dt-button-collection.fixed.four-column{margin-left:-300px}div.dt-button-collection.fixed.columns{margin-left:-409px}@media screen and (max-width: 1024px){div.dt-button-collection.fixed.columns{margin-left:-308px}}@media screen and (max-width: 640px){div.dt-button-collection.fixed.columns{margin-left:-203px}}@media screen and (max-width: 460px){div.dt-button-collection.fixed.columns{margin-left:-100px}}div.dt-button-collection.fixed>:last-child{max-height:100vh;overflow:auto}div.dt-button-collection.two-column>:last-child,div.dt-button-collection.three-column>:last-child,div.dt-button-collection.four-column>:last-child{display:block !important;-moz-column-gap:8px;-ms-column-gap:8px;-o-column-gap:8px;column-gap:8px}div.dt-button-collection.two-column>:last-child>*,div.dt-button-collection.three-column>:last-child>*,div.dt-button-collection.four-column>:last-child>*{-moz-column-break-inside:avoid;break-inside:avoid}div.dt-button-collection.two-column{width:400px}div.dt-button-collection.two-column>:last-child{padding-bottom:1px;-moz-column-count:2;column-count:2}div.dt-button-collection.three-column{width:450px}div.dt-button-collection.three-column>:last-child{padding-bottom:1px;-moz-column-count:3;column-count:3}div.dt-button-collection.four-column{width:600px}div.dt-button-collection.four-column>:last-child{padding-bottom:1px;-moz-column-count:4;column-count:4}div.dt-button-collection .dt-button{border-radius:0}div.dt-button-collection.columns{width:auto}div.dt-button-collection.columns>:last-child{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:6px;width:818px;padding-bottom:1px}div.dt-button-collection.columns>:last-child .dt-button{min-width:200px;flex:0 1;margin:0}div.dt-button-collection.columns.dtb-b3>:last-child,div.dt-button-collection.columns.dtb-b2>:last-child,div.dt-button-collection.columns.dtb-b1>:last-child{justify-content:space-between}div.dt-button-collection.columns.dtb-b3 .dt-button{flex:1 1 32%}div.dt-button-collection.columns.dtb-b2 .dt-button{flex:1 1 48%}div.dt-button-collection.columns.dtb-b1 .dt-button{flex:1 1 100%}@media screen and (max-width: 1024px){div.dt-button-collection.columns>:last-child{width:612px}}@media screen and (max-width: 640px){div.dt-button-collection.columns>:last-child{width:406px}div.dt-button-collection.columns.dtb-b3 .dt-button{flex:0 1 32%}}@media screen and (max-width: 460px){div.dt-button-collection.columns>:last-child{width:200px}}div.dt-button-background{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);background:radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);z-index:2001}@media screen and (max-width: 640px){div.dt-buttons{float:none !important;text-align:center}}button.dt-button.processing,div.dt-button.processing,a.dt-button.processing{color:rgba(0, 0, 0, 0.2)}button.dt-button.processing:after,div.dt-button.processing:after,a.dt-button.processing:after{position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;box-sizing:border-box;display:block;content:\" \";border:2px solid #282828;border-radius:50%;border-left-color:transparent;border-right-color:transparent;animation:dtb-spinner 1500ms infinite linear;-o-animation:dtb-spinner 1500ms infinite linear;-ms-animation:dtb-spinner 1500ms infinite linear;-webkit-animation:dtb-spinner 1500ms infinite linear;-moz-animation:dtb-spinner 1500ms infinite linear}button.dt-btn-split-drop{margin-left:calc(-1px - 0.333em);padding-bottom:calc(0.5em - 1px);border-radius:0px 1px 1px 0px;color:rgba(70, 70, 70, 0.9);border-left:none}button.dt-btn-split-drop span.dt-btn-split-drop-arrow{position:relative;top:-1px;left:-2px;font-size:8px}button.dt-btn-split-drop:hover{z-index:2}button.buttons-split{border-right:1px solid rgba(70, 70, 70, 0);border-radius:1px 0px 0px 1px}button.dt-btn-split-drop-button{background-color:white}button.dt-btn-split-drop-button:hover{background-color:white}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/datatables.net-dt/css/jquery.dataTables.css":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/datatables.net-dt/css/jquery.dataTables.css ***!
@@ -2237,6 +2261,2580 @@ module.exports = function (url, options) {
 
   return url;
 };
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-buttons-dt/js/buttons.dataTables.min.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/datatables.net-buttons-dt/js/buttons.dataTables.min.js ***!
+  \*****************************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ DataTables styling wrapper for Buttons
+ ©2018 SpryMedia Ltd - datatables.net/license
+*/
+(function(c){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net-dt */ "./node_modules/datatables.net-dt/js/dataTables.dataTables.js"),__webpack_require__(/*! datatables.net-buttons */ "./node_modules/datatables.net-buttons/js/dataTables.buttons.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(a){return c(a,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(c,a,b,d){return c.fn.dataTable});
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-buttons/js/buttons.colVis.min.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/datatables.net-buttons/js/buttons.colVis.min.js ***!
+  \**********************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ Column visibility buttons for Buttons and DataTables.
+ 2016 SpryMedia Ltd - datatables.net/license
+*/
+(function(h){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js"),__webpack_require__(/*! datatables.net-buttons */ "./node_modules/datatables.net-buttons/js/dataTables.buttons.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(e){return h(e,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(h,e,g,l){e=h.fn.dataTable;h.extend(e.ext.buttons,{colvis:function(b,a){var c=null,d={extend:"collection",
+init:function(f,k){c=k},text:function(f){return f.i18n("buttons.colvis","Column visibility")},className:"buttons-colvis",closeButton:!1,buttons:[{extend:"columnsToggle",columns:a.columns,columnText:a.columnText}]};b.on("column-reorder.dt"+a.namespace,function(f,k,m){b.button(null,b.button(null,c).node()).collectionRebuild([{extend:"columnsToggle",columns:a.columns,columnText:a.columnText}])});return d},columnsToggle:function(b,a){return b.columns(a.columns).indexes().map(function(c){return{extend:"columnToggle",
+columns:c,columnText:a.columnText}}).toArray()},columnToggle:function(b,a){return{extend:"columnVisibility",columns:a.columns,columnText:a.columnText}},columnsVisibility:function(b,a){return b.columns(a.columns).indexes().map(function(c){return{extend:"columnVisibility",columns:c,visibility:a.visibility,columnText:a.columnText}}).toArray()},columnVisibility:{columns:l,text:function(b,a,c){return c._columnText(b,c)},className:"buttons-columnVisibility",action:function(b,a,c,d){b=a.columns(d.columns);
+a=b.visible();b.visible(d.visibility!==l?d.visibility:!(a.length&&a[0]))},init:function(b,a,c){var d=this;a.attr("data-cv-idx",c.columns);b.on("column-visibility.dt"+c.namespace,function(f,k){k.bDestroying||k.nTable!=b.settings()[0].nTable||d.active(b.column(c.columns).visible())}).on("column-reorder.dt"+c.namespace,function(f,k,m){c.destroying||1!==b.columns(c.columns).count()||(d.text(c._columnText(b,c)),d.active(b.column(c.columns).visible()))});this.active(b.column(c.columns).visible())},destroy:function(b,
+a,c){b.off("column-visibility.dt"+c.namespace).off("column-reorder.dt"+c.namespace)},_columnText:function(b,a){var c=b.column(a.columns).index(),d=b.settings()[0].aoColumns[c].sTitle;d||(d=b.column(c).header().innerHTML);d=d.replace(/\n/g," ").replace(/<br\s*\/?>/gi," ").replace(/<select(.*?)<\/select>/g,"").replace(/<!\-\-.*?\-\->/g,"").replace(/<.*?>/g,"").replace(/^\s+|\s+$/g,"");return a.columnText?a.columnText(b,c,d):d}},colvisRestore:{className:"buttons-colvisRestore",text:function(b){return b.i18n("buttons.colvisRestore",
+"Restore visibility")},init:function(b,a,c){c._visOriginal=b.columns().indexes().map(function(d){return b.column(d).visible()}).toArray()},action:function(b,a,c,d){a.columns().every(function(f){f=a.colReorder&&a.colReorder.transpose?a.colReorder.transpose(f,"toOriginal"):f;this.visible(d._visOriginal[f])})}},colvisGroup:{className:"buttons-colvisGroup",action:function(b,a,c,d){a.columns(d.show).visible(!0,!1);a.columns(d.hide).visible(!1,!1);a.columns.adjust()},show:[],hide:[]}});return e.Buttons});
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-buttons/js/dataTables.buttons.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/datatables.net-buttons/js/dataTables.buttons.js ***!
+  \**********************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Buttons for DataTables 2.2.2
+ * ©2016-2022 SpryMedia Ltd - datatables.net/license
+ */
+
+(function( factory ){
+	if ( true ) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+			return factory( $, window, document );
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	}
+	else {}
+}(function( $, window, document, undefined ) {
+'use strict';
+var DataTable = $.fn.dataTable;
+
+
+// Used for namespacing events added to the document by each instance, so they
+// can be removed on destroy
+var _instCounter = 0;
+
+// Button namespacing counter for namespacing events on individual buttons
+var _buttonCounter = 0;
+
+var _dtButtons = DataTable.ext.buttons;
+
+// Allow for jQuery slim
+function _fadeIn(el, duration, fn) {
+	if ($.fn.animate) {
+		el
+			.stop()
+			.fadeIn( duration, fn );
+
+	}
+	else {
+		el.css('display', 'block');
+
+		if (fn) {
+			fn.call(el);
+		}
+	}
+}
+
+function _fadeOut(el, duration, fn) {
+	if ($.fn.animate) {
+		el
+			.stop()
+			.fadeOut( duration, fn );
+	}
+	else {
+		el.css('display', 'none');
+		
+		if (fn) {
+			fn.call(el);
+		}
+	}
+}
+
+/**
+ * [Buttons description]
+ * @param {[type]}
+ * @param {[type]}
+ */
+var Buttons = function( dt, config )
+{
+	// If not created with a `new` keyword then we return a wrapper function that
+	// will take the settings object for a DT. This allows easy use of new instances
+	// with the `layout` option - e.g. `topLeft: $.fn.dataTable.Buttons( ... )`.
+	if ( !(this instanceof Buttons) ) {
+		return function (settings) {
+			return new Buttons( settings, dt ).container();
+		};
+	}
+
+	// If there is no config set it to an empty object
+	if ( typeof( config ) === 'undefined' ) {
+		config = {};	
+	}
+	
+	// Allow a boolean true for defaults
+	if ( config === true ) {
+		config = {};
+	}
+
+	// For easy configuration of buttons an array can be given
+	if ( Array.isArray( config ) ) {
+		config = { buttons: config };
+	}
+
+	this.c = $.extend( true, {}, Buttons.defaults, config );
+
+	// Don't want a deep copy for the buttons
+	if ( config.buttons ) {
+		this.c.buttons = config.buttons;
+	}
+
+	this.s = {
+		dt: new DataTable.Api( dt ),
+		buttons: [],
+		listenKeys: '',
+		namespace: 'dtb'+(_instCounter++)
+	};
+
+	this.dom = {
+		container: $('<'+this.c.dom.container.tag+'/>')
+			.addClass( this.c.dom.container.className )
+	};
+
+	this._constructor();
+};
+
+
+$.extend( Buttons.prototype, {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Public methods
+	 */
+
+	/**
+	 * Get the action of a button
+	 * @param  {int|string} Button index
+	 * @return {function}
+	 *//**
+	 * Set the action of a button
+	 * @param  {node} node Button element
+	 * @param  {function} action Function to set
+	 * @return {Buttons} Self for chaining
+	 */
+	action: function ( node, action )
+	{
+		var button = this._nodeToButton( node );
+
+		if ( action === undefined ) {
+			return button.conf.action;
+		}
+
+		button.conf.action = action;
+
+		return this;
+	},
+
+	/**
+	 * Add an active class to the button to make to look active or get current
+	 * active state.
+	 * @param  {node} node Button element
+	 * @param  {boolean} [flag] Enable / disable flag
+	 * @return {Buttons} Self for chaining or boolean for getter
+	 */
+	active: function ( node, flag ) {
+		var button = this._nodeToButton( node );
+		var klass = this.c.dom.button.active;
+		var jqNode = $(button.node);
+
+		if ( flag === undefined ) {
+			return jqNode.hasClass( klass );
+		}
+
+		jqNode.toggleClass( klass, flag === undefined ? true : flag );
+
+		return this;
+	},
+
+	/**
+	 * Add a new button
+	 * @param {object} config Button configuration object, base string name or function
+	 * @param {int|string} [idx] Button index for where to insert the button
+	 * @param {boolean} [draw=true] Trigger a draw. Set a false when adding
+	 *   lots of buttons, until the last button.
+	 * @return {Buttons} Self for chaining
+	 */
+	add: function ( config, idx, draw )
+	{
+		var buttons = this.s.buttons;
+
+		if ( typeof idx === 'string' ) {
+			var split = idx.split('-');
+			var base = this.s;
+
+			for ( var i=0, ien=split.length-1 ; i<ien ; i++ ) {
+				base = base.buttons[ split[i]*1 ];
+			}
+
+			buttons = base.buttons;
+			idx = split[ split.length-1 ]*1;
+		}
+
+		this._expandButton(
+			buttons,
+			config,
+			config !== undefined ? config.split : undefined,
+			(config === undefined || config.split === undefined || config.split.length === 0) && base !== undefined,
+			false,
+			idx
+		);
+
+		if (draw === undefined || draw === true) {
+			this._draw();
+		}
+	
+		return this;
+	},
+
+	/**
+	 * Clear buttons from a collection and then insert new buttons
+	 */
+	collectionRebuild: function ( node, newButtons )
+	{
+		var button = this._nodeToButton( node );
+		
+		if(newButtons !== undefined) {
+			var i;
+			// Need to reverse the array
+			for (i=button.buttons.length-1; i>=0; i--) {
+				this.remove(button.buttons[i].node);
+			}
+	
+			for (i=0; i<newButtons.length; i++) {
+				var newBtn = newButtons[i];
+
+				this._expandButton(
+					button.buttons,
+					newBtn,
+					newBtn !== undefined && newBtn.config !== undefined && newBtn.config.split !== undefined,
+					true,
+					newBtn.parentConf !== undefined && newBtn.parentConf.split !== undefined,
+					i,
+					newBtn.parentConf
+				);
+			}
+		}
+
+		this._draw(button.collection, button.buttons);
+	},
+
+	/**
+	 * Get the container node for the buttons
+	 * @return {jQuery} Buttons node
+	 */
+	container: function ()
+	{
+		return this.dom.container;
+	},
+
+	/**
+	 * Disable a button
+	 * @param  {node} node Button node
+	 * @return {Buttons} Self for chaining
+	 */
+	disable: function ( node ) {
+		var button = this._nodeToButton( node );
+
+		$(button.node)
+			.addClass( this.c.dom.button.disabled )
+			.attr('disabled', true);
+
+		return this;
+	},
+
+	/**
+	 * Destroy the instance, cleaning up event handlers and removing DOM
+	 * elements
+	 * @return {Buttons} Self for chaining
+	 */
+	destroy: function ()
+	{
+		// Key event listener
+		$('body').off( 'keyup.'+this.s.namespace );
+
+		// Individual button destroy (so they can remove their own events if
+		// needed). Take a copy as the array is modified by `remove`
+		var buttons = this.s.buttons.slice();
+		var i, ien;
+		
+		for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
+			this.remove( buttons[i].node );
+		}
+
+		// Container
+		this.dom.container.remove();
+
+		// Remove from the settings object collection
+		var buttonInsts = this.s.dt.settings()[0];
+
+		for ( i=0, ien=buttonInsts.length ; i<ien ; i++ ) {
+			if ( buttonInsts.inst === this ) {
+				buttonInsts.splice( i, 1 );
+				break;
+			}
+		}
+
+		return this;
+	},
+
+	/**
+	 * Enable / disable a button
+	 * @param  {node} node Button node
+	 * @param  {boolean} [flag=true] Enable / disable flag
+	 * @return {Buttons} Self for chaining
+	 */
+	enable: function ( node, flag )
+	{
+		if ( flag === false ) {
+			return this.disable( node );
+		}
+
+		var button = this._nodeToButton( node );
+		$(button.node)
+			.removeClass( this.c.dom.button.disabled )
+			.removeAttr('disabled');
+
+		return this;
+	},
+
+	/**
+	 * Get a button's index
+	 * 
+	 * This is internally recursive
+	 * @param {element} node Button to get the index of
+	 * @return {string} Button index
+	 */
+	index: function ( node, nested, buttons )
+	{
+		if ( ! nested ) {
+			nested = '';
+			buttons = this.s.buttons;
+		}
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			var inner = buttons[i].buttons;
+
+			if (buttons[i].node === node) {
+				return nested + i;
+			}
+
+			if ( inner && inner.length ) {
+				var match = this.index(node, i + '-', inner);
+
+				if (match !== null) {
+					return match;
+				}
+			}
+		}
+
+		return null;
+	},
+
+
+	/**
+	 * Get the instance name for the button set selector
+	 * @return {string} Instance name
+	 */
+	name: function ()
+	{
+		return this.c.name;
+	},
+
+	/**
+	 * Get a button's node of the buttons container if no button is given
+	 * @param  {node} [node] Button node
+	 * @return {jQuery} Button element, or container
+	 */
+	node: function ( node )
+	{
+		if ( ! node ) {
+			return this.dom.container;
+		}
+
+		var button = this._nodeToButton( node );
+		return $(button.node);
+	},
+
+	/**
+	 * Set / get a processing class on the selected button
+	 * @param {element} node Triggering button node
+	 * @param  {boolean} flag true to add, false to remove, undefined to get
+	 * @return {boolean|Buttons} Getter value or this if a setter.
+	 */
+	processing: function ( node, flag )
+	{
+		var dt = this.s.dt;
+		var button = this._nodeToButton( node );
+
+		if ( flag === undefined ) {
+			return $(button.node).hasClass( 'processing' );
+		}
+
+		$(button.node).toggleClass( 'processing', flag );
+
+		$(dt.table().node()).triggerHandler( 'buttons-processing.dt', [
+			flag, dt.button( node ), dt, $(node), button.conf
+		] );
+
+		return this;
+	},
+
+	/**
+	 * Remove a button.
+	 * @param  {node} node Button node
+	 * @return {Buttons} Self for chaining
+	 */
+	remove: function ( node )
+	{
+		var button = this._nodeToButton( node );
+		var host = this._nodeToHost( node );
+		var dt = this.s.dt;
+
+		// Remove any child buttons first
+		if ( button.buttons.length ) {
+			for ( var i=button.buttons.length-1 ; i>=0 ; i-- ) {
+				this.remove( button.buttons[i].node );
+			}
+		}
+
+		button.conf.destroying = true;
+
+		// Allow the button to remove event handlers, etc
+		if ( button.conf.destroy ) {
+			button.conf.destroy.call( dt.button(node), dt, $(node), button.conf );
+		}
+
+		this._removeKey( button.conf );
+
+		$(button.node).remove();
+
+		var idx = $.inArray( button, host );
+		host.splice( idx, 1 );
+
+		return this;
+	},
+
+	/**
+	 * Get the text for a button
+	 * @param  {int|string} node Button index
+	 * @return {string} Button text
+	 *//**
+	 * Set the text for a button
+	 * @param  {int|string|function} node Button index
+	 * @param  {string} label Text
+	 * @return {Buttons} Self for chaining
+	 */
+	text: function ( node, label )
+	{
+		var button = this._nodeToButton( node );
+		var buttonLiner = this.c.dom.collection.buttonLiner;
+		var linerTag = button.inCollection && buttonLiner && buttonLiner.tag ?
+			buttonLiner.tag :
+			this.c.dom.buttonLiner.tag;
+		var dt = this.s.dt;
+		var jqNode = $(button.node);
+		var text = function ( opt ) {
+			return typeof opt === 'function' ?
+				opt( dt, jqNode, button.conf ) :
+				opt;
+		};
+
+		if ( label === undefined ) {
+			return text( button.conf.text );
+		}
+
+		button.conf.text = label;
+
+		if ( linerTag ) {
+			jqNode
+				.children( linerTag )
+				.eq(0)
+				.filter(':not(.dt-down-arrow)')
+				.html( text(label) );
+		}
+		else {
+			jqNode.html( text(label) );
+		}
+
+		return this;
+	},
+
+
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Constructor
+	 */
+
+	/**
+	 * Buttons constructor
+	 * @private
+	 */
+	_constructor: function ()
+	{
+		var that = this;
+		var dt = this.s.dt;
+		var dtSettings = dt.settings()[0];
+		var buttons =  this.c.buttons;
+
+		if ( ! dtSettings._buttons ) {
+			dtSettings._buttons = [];
+		}
+
+		dtSettings._buttons.push( {
+			inst: this,
+			name: this.c.name
+		} );
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			this.add( buttons[i] );
+		}
+
+		dt.on( 'destroy', function ( e, settings ) {
+			if ( settings === dtSettings ) {
+				that.destroy();
+			}
+		} );
+
+		// Global key event binding to listen for button keys
+		$('body').on( 'keyup.'+this.s.namespace, function ( e ) {
+			if ( ! document.activeElement || document.activeElement === document.body ) {
+				// SUse a string of characters for fast lookup of if we need to
+				// handle this
+				var character = String.fromCharCode(e.keyCode).toLowerCase();
+
+				if ( that.s.listenKeys.toLowerCase().indexOf( character ) !== -1 ) {
+					that._keypress( character, e );
+				}
+			}
+		} );
+	},
+
+
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Private methods
+	 */
+
+	/**
+	 * Add a new button to the key press listener
+	 * @param {object} conf Resolved button configuration object
+	 * @private
+	 */
+	_addKey: function ( conf )
+	{
+		if ( conf.key ) {
+			this.s.listenKeys += $.isPlainObject( conf.key ) ?
+				conf.key.key :
+				conf.key;
+		}
+	},
+
+	/**
+	 * Insert the buttons into the container. Call without parameters!
+	 * @param  {node} [container] Recursive only - Insert point
+	 * @param  {array} [buttons] Recursive only - Buttons array
+	 * @private
+	 */
+	_draw: function ( container, buttons )
+	{
+		if ( ! container ) {
+			container = this.dom.container;
+			buttons = this.s.buttons;
+		}
+
+		container.children().detach();
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			container.append( buttons[i].inserter );
+			container.append( ' ' );
+
+			if ( buttons[i].buttons && buttons[i].buttons.length ) {
+				this._draw( buttons[i].collection, buttons[i].buttons );
+			}
+		}
+	},
+
+	/**
+	 * Create buttons from an array of buttons
+	 * @param  {array} attachTo Buttons array to attach to
+	 * @param  {object} button Button definition
+	 * @param  {boolean} inCollection true if the button is in a collection
+	 * @private
+	 */
+	_expandButton: function ( attachTo, button, split, inCollection, inSplit, attachPoint, parentConf )
+	{
+		var dt = this.s.dt;
+		var buttonCounter = 0;
+		var isSplit = false;
+		var buttons = ! Array.isArray( button ) ?
+			[ button ] :
+			button;
+		
+		if(button === undefined ) {
+			buttons = !Array.isArray(split) ?
+				[ split ] :
+				split;
+		}
+
+		if (button !== undefined && button.split !== undefined) {
+			isSplit = true;
+		}
+			
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			var conf = this._resolveExtends( buttons[i] );
+
+			if ( ! conf ) {
+				continue;
+			}
+
+			if( conf.config !== undefined && conf.config.split) {
+				isSplit = true;
+			}
+			else {
+				isSplit = false;
+			}
+			
+			// If the configuration is an array, then expand the buttons at this
+			// point
+			if ( Array.isArray( conf ) ) {
+				this._expandButton( attachTo, conf, built !== undefined && built.conf !== undefined ? built.conf.split : undefined, inCollection, parentConf !== undefined && parentConf.split !== undefined, attachPoint, parentConf );
+				continue;
+			}
+
+			var built = this._buildButton( conf, inCollection, conf.split !== undefined || (conf.config !== undefined && conf.config.split !== undefined), inSplit );
+			if ( ! built ) {
+				continue;
+			}
+
+			if ( attachPoint !== undefined && attachPoint !== null ) {
+				attachTo.splice( attachPoint, 0, built );
+				attachPoint++;
+			}
+			else {
+				attachTo.push( built );
+			}
+
+			
+			if ( built.conf.buttons || built.conf.split ) {
+				built.collection = $('<'+(isSplit ? this.c.dom.splitCollection.tag : this.c.dom.collection.tag)+'/>');
+
+				built.conf._collection = built.collection;
+
+				if(built.conf.split) {
+					for(var j = 0; j < built.conf.split.length; j++) {
+						if(typeof built.conf.split[j] === "object") {
+							built.conf.split[j].parent = parentConf;
+							if(built.conf.split[j].collectionLayout === undefined) {
+								built.conf.split[j].collectionLayout = built.conf.collectionLayout;
+							}
+							if(built.conf.split[j].dropup === undefined) {
+								built.conf.split[j].dropup = built.conf.dropup;
+							}
+							if(built.conf.split[j].fade === undefined) {
+								built.conf.split[j].fade = built.conf.fade;
+							}
+						}
+					}
+				}
+				else {
+					$(built.node).append($('<span class="dt-down-arrow">'+this.c.dom.splitDropdown.text+'</span>'))
+				}
+
+				this._expandButton( built.buttons, built.conf.buttons, built.conf.split, !isSplit, isSplit, attachPoint, built.conf );
+			}
+			built.conf.parent = parentConf;
+
+			// init call is made here, rather than buildButton as it needs to
+			// be selectable, and for that it needs to be in the buttons array
+			if ( conf.init ) {
+				conf.init.call( dt.button( built.node ), dt, $(built.node), conf );
+			}
+
+			buttonCounter++;
+		}
+	},
+
+	/**
+	 * Create an individual button
+	 * @param  {object} config            Resolved button configuration
+	 * @param  {boolean} inCollection `true` if a collection button
+	 * @return {jQuery} Created button node (jQuery)
+	 * @private
+	 */
+	_buildButton: function ( config, inCollection, isSplit, inSplit )
+	{
+		var buttonDom = this.c.dom.button;
+		var linerDom = this.c.dom.buttonLiner;
+		var collectionDom = this.c.dom.collection;
+		var splitDom = this.c.dom.split;
+		var splitCollectionDom = this.c.dom.splitCollection;
+		var splitDropdownButton = this.c.dom.splitDropdownButton;
+		var dt = this.s.dt;
+		var text = function ( opt ) {
+			return typeof opt === 'function' ?
+				opt( dt, button, config ) :
+				opt;
+		};
+
+		// Spacers don't do much other than insert an element into the DOM
+		if (config.spacer) {
+			var spacer = $('<span></span>')
+				.addClass('dt-button-spacer ' + config.style + ' ' + buttonDom.spacerClass)
+				.html(text(config.text));
+
+			return {
+				conf:         config,
+				node:         spacer,
+				inserter:     spacer,
+				buttons:      [],
+				inCollection: inCollection,
+				isSplit:	  isSplit,
+				inSplit:	  inSplit,
+				collection:   null
+			};
+		}
+
+		if ( !isSplit && inSplit && splitCollectionDom ) {
+			buttonDom = splitDropdownButton;
+		}
+		else if ( !isSplit && inCollection && collectionDom.button ) {
+			buttonDom = collectionDom.button;
+		} 
+
+		if ( !isSplit && inSplit && splitCollectionDom.buttonLiner ) {
+			linerDom = splitCollectionDom.buttonLiner
+		}
+		else if ( !isSplit && inCollection && collectionDom.buttonLiner ) {
+			linerDom = collectionDom.buttonLiner;
+		}
+
+		// Make sure that the button is available based on whatever requirements
+		// it has. For example, PDF button require pdfmake
+		if ( config.available && ! config.available( dt, config ) && !config.hasOwnProperty('html') ) {
+			return false;
+		}
+
+		var button;
+		if(!config.hasOwnProperty('html')) {
+			var action = function ( e, dt, button, config ) {
+				config.action.call( dt.button( button ), e, dt, button, config );
+	
+				$(dt.table().node()).triggerHandler( 'buttons-action.dt', [
+					dt.button( button ), dt, button, config 
+				] );
+			};
+
+			var tag = config.tag || buttonDom.tag;
+			var clickBlurs = config.clickBlurs === undefined
+				? true :
+				config.clickBlurs;
+
+			button = $('<'+tag+'/>')
+				.addClass( buttonDom.className )
+				.addClass( inSplit ? this.c.dom.splitDropdownButton.className : '')
+				.attr( 'tabindex', this.s.dt.settings()[0].iTabIndex )
+				.attr( 'aria-controls', this.s.dt.table().node().id )
+				.on( 'click.dtb', function (e) {
+					e.preventDefault();
+	
+					if ( ! button.hasClass( buttonDom.disabled ) && config.action ) {
+						action( e, dt, button, config );
+					}
+					if( clickBlurs ) {
+						button.trigger('blur');
+					}
+				} )
+				.on( 'keypress.dtb', function (e) {
+					if ( e.keyCode === 13 ) {
+						e.preventDefault();
+
+						if ( ! button.hasClass( buttonDom.disabled ) && config.action ) {
+							action( e, dt, button, config );
+						}
+					}
+				} );
+	
+			// Make `a` tags act like a link
+			if ( tag.toLowerCase() === 'a' ) {
+				button.attr( 'href', '#' );
+			}
+	
+			// Button tags should have `type=button` so they don't have any default behaviour
+			if ( tag.toLowerCase() === 'button' ) {
+				button.attr( 'type', 'button' );
+			}
+	
+			if ( linerDom.tag ) {
+				var liner = $('<'+linerDom.tag+'/>')
+					.html( text( config.text ) )
+					.addClass( linerDom.className );
+	
+				if ( linerDom.tag.toLowerCase() === 'a' ) {
+					liner.attr( 'href', '#' );
+				}
+	
+				button.append( liner );
+			}
+			else {
+				button.html( text( config.text ) );
+			}
+	
+			if ( config.enabled === false ) {
+				button.addClass( buttonDom.disabled );
+			}
+	
+			if ( config.className ) {
+				button.addClass( config.className );
+			}
+	
+			if ( config.titleAttr ) {
+				button.attr( 'title', text( config.titleAttr ) );
+			}
+	
+			if ( config.attr ) {
+				button.attr( config.attr );
+			}
+	
+			if ( ! config.namespace ) {
+				config.namespace = '.dt-button-'+(_buttonCounter++);
+			}
+
+			if  ( config.config !== undefined && config.config.split ) {
+				config.split = config.config.split;
+			}
+		}
+		else {
+			button = $(config.html)
+		}
+	
+		var buttonContainer = this.c.dom.buttonContainer;
+		var inserter;
+		if ( buttonContainer && buttonContainer.tag ) {
+			inserter = $('<'+buttonContainer.tag+'/>')
+				.addClass( buttonContainer.className )
+				.append( button );
+		}
+		else {
+			inserter = button;
+		}
+
+		this._addKey( config );
+
+		// Style integration callback for DOM manipulation
+		// Note that this is _not_ documented. It is currently
+		// for style integration only
+		if( this.c.buttonCreated ) {
+			inserter = this.c.buttonCreated( config, inserter );
+		}
+
+		var splitDiv;
+		if(isSplit) {
+			splitDiv = $('<div/>').addClass(this.c.dom.splitWrapper.className)
+			splitDiv.append(button);
+			var dropButtonConfig = $.extend(config, {
+				text: this.c.dom.splitDropdown.text,
+				className: this.c.dom.splitDropdown.className,
+				closeButton: false,
+				attr: {
+					'aria-haspopup': true,
+					'aria-expanded': false
+				},
+				align: this.c.dom.splitDropdown.align,
+				splitAlignClass: this.c.dom.splitDropdown.splitAlignClass
+				
+			})
+
+			this._addKey(dropButtonConfig);
+
+			var splitAction = function ( e, dt, button, config ) {
+				_dtButtons.split.action.call( dt.button($('div.dt-btn-split-wrapper')[0] ), e, dt, button, config );
+	
+				$(dt.table().node()).triggerHandler( 'buttons-action.dt', [
+					dt.button( button ), dt, button, config 
+				] );
+				button.attr('aria-expanded', true)
+			};
+			
+			var dropButton = $('<button class="' + this.c.dom.splitDropdown.className + ' dt-button"><span class="dt-btn-split-drop-arrow">'+this.c.dom.splitDropdown.text+'</span></button>')
+				.on( 'click.dtb', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					if ( ! dropButton.hasClass( buttonDom.disabled )) {
+						splitAction( e, dt, dropButton, dropButtonConfig );
+					}
+					if ( clickBlurs ) {
+						dropButton.trigger('blur');
+					}
+				} )
+				.on( 'keypress.dtb', function (e) {
+					if ( e.keyCode === 13 ) {
+						e.preventDefault();
+
+						if ( ! dropButton.hasClass( buttonDom.disabled ) ) {
+							splitAction( e, dt, dropButton, dropButtonConfig );
+						}
+					}
+				} );
+
+			if(config.split.length === 0) {
+				dropButton.addClass('dtb-hide-drop');
+			}
+
+			splitDiv.append(dropButton).attr(dropButtonConfig.attr);
+		}
+
+		return {
+			conf:         config,
+			node:         isSplit ? splitDiv.get(0) : button.get(0),
+			inserter:     isSplit ? splitDiv : inserter,
+			buttons:      [],
+			inCollection: inCollection,
+			isSplit:	  isSplit,
+			inSplit:	  inSplit,
+			collection:   null
+		};
+	},
+
+	/**
+	 * Get the button object from a node (recursive)
+	 * @param  {node} node Button node
+	 * @param  {array} [buttons] Button array, uses base if not defined
+	 * @return {object} Button object
+	 * @private
+	 */
+	_nodeToButton: function ( node, buttons )
+	{
+		if ( ! buttons ) {
+			buttons = this.s.buttons;
+		}
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			if ( buttons[i].node === node ) {
+				return buttons[i];
+			}
+
+			if ( buttons[i].buttons.length ) {
+				var ret = this._nodeToButton( node, buttons[i].buttons );
+
+				if ( ret ) {
+					return ret;
+				}
+			}
+		}
+	},
+
+	/**
+	 * Get container array for a button from a button node (recursive)
+	 * @param  {node} node Button node
+	 * @param  {array} [buttons] Button array, uses base if not defined
+	 * @return {array} Button's host array
+	 * @private
+	 */
+	_nodeToHost: function ( node, buttons )
+	{
+		if ( ! buttons ) {
+			buttons = this.s.buttons;
+		}
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			if ( buttons[i].node === node ) {
+				return buttons;
+			}
+
+			if ( buttons[i].buttons.length ) {
+				var ret = this._nodeToHost( node, buttons[i].buttons );
+
+				if ( ret ) {
+					return ret;
+				}
+			}
+		}
+	},
+
+	/**
+	 * Handle a key press - determine if any button's key configured matches
+	 * what was typed and trigger the action if so.
+	 * @param  {string} character The character pressed
+	 * @param  {object} e Key event that triggered this call
+	 * @private
+	 */
+	_keypress: function ( character, e )
+	{
+		// Check if this button press already activated on another instance of Buttons
+		if ( e._buttonsHandled ) {
+			return;
+		}
+
+		var run = function ( conf, node ) {
+			if ( ! conf.key ) {
+				return;
+			}
+
+			if ( conf.key === character ) {
+				e._buttonsHandled = true;
+				$(node).click();
+			}
+			else if ( $.isPlainObject( conf.key ) ) {
+				if ( conf.key.key !== character ) {
+					return;
+				}
+
+				if ( conf.key.shiftKey && ! e.shiftKey ) {
+					return;
+				}
+
+				if ( conf.key.altKey && ! e.altKey ) {
+					return;
+				}
+
+				if ( conf.key.ctrlKey && ! e.ctrlKey ) {
+					return;
+				}
+
+				if ( conf.key.metaKey && ! e.metaKey ) {
+					return;
+				}
+
+				// Made it this far - it is good
+				e._buttonsHandled = true;
+				$(node).click();
+			}
+		};
+
+		var recurse = function ( a ) {
+			for ( var i=0, ien=a.length ; i<ien ; i++ ) {
+				run( a[i].conf, a[i].node );
+
+				if ( a[i].buttons.length ) {
+					recurse( a[i].buttons );
+				}
+			}
+		};
+
+		recurse( this.s.buttons );
+	},
+
+	/**
+	 * Remove a key from the key listener for this instance (to be used when a
+	 * button is removed)
+	 * @param  {object} conf Button configuration
+	 * @private
+	 */
+	_removeKey: function ( conf )
+	{
+		if ( conf.key ) {
+			var character = $.isPlainObject( conf.key ) ?
+				conf.key.key :
+				conf.key;
+
+			// Remove only one character, as multiple buttons could have the
+			// same listening key
+			var a = this.s.listenKeys.split('');
+			var idx = $.inArray( character, a );
+			a.splice( idx, 1 );
+			this.s.listenKeys = a.join('');
+		}
+	},
+
+	/**
+	 * Resolve a button configuration
+	 * @param  {string|function|object} conf Button config to resolve
+	 * @return {object} Button configuration
+	 * @private
+	 */
+	_resolveExtends: function ( conf )
+	{
+		var that = this;
+		var dt = this.s.dt;
+		var i, ien;
+		var toConfObject = function ( base ) {
+			var loop = 0;
+
+			// Loop until we have resolved to a button configuration, or an
+			// array of button configurations (which will be iterated
+			// separately)
+			while ( ! $.isPlainObject(base) && ! Array.isArray(base) ) {
+				if ( base === undefined ) {
+					return;
+				}
+
+				if ( typeof base === 'function' ) {
+					base = base.call( that, dt, conf );
+
+					if ( ! base ) {
+						return false;
+					}
+				}
+				else if ( typeof base === 'string' ) {
+					if ( ! _dtButtons[ base ] ) {
+						return {html: base}
+					}
+
+					base = _dtButtons[ base ];
+				}
+
+				loop++;
+				if ( loop > 30 ) {
+					// Protect against misconfiguration killing the browser
+					throw 'Buttons: Too many iterations';
+				}
+			}
+
+			return Array.isArray( base ) ?
+				base :
+				$.extend( {}, base );
+		};
+
+		conf = toConfObject( conf );
+
+		while ( conf && conf.extend ) {
+			// Use `toConfObject` in case the button definition being extended
+			// is itself a string or a function
+			if ( ! _dtButtons[ conf.extend ] ) {
+				throw 'Cannot extend unknown button type: '+conf.extend;
+			}
+
+			var objArray = toConfObject( _dtButtons[ conf.extend ] );
+			if ( Array.isArray( objArray ) ) {
+				return objArray;
+			}
+			else if ( ! objArray ) {
+				// This is a little brutal as it might be possible to have a
+				// valid button without the extend, but if there is no extend
+				// then the host button would be acting in an undefined state
+				return false;
+			}
+
+			// Stash the current class name
+			var originalClassName = objArray.className;
+
+			if (conf.config !== undefined && objArray.config !== undefined) {
+				conf.config = $.extend({}, objArray.config, conf.config)
+			}
+
+			conf = $.extend( {}, objArray, conf );
+
+			// The extend will have overwritten the original class name if the
+			// `conf` object also assigned a class, but we want to concatenate
+			// them so they are list that is combined from all extended buttons
+			if ( originalClassName && conf.className !== originalClassName ) {
+				conf.className = originalClassName+' '+conf.className;
+			}
+
+			// Buttons to be added to a collection  -gives the ability to define
+			// if buttons should be added to the start or end of a collection
+			var postfixButtons = conf.postfixButtons;
+			if ( postfixButtons ) {
+				if ( ! conf.buttons ) {
+					conf.buttons = [];
+				}
+
+				for ( i=0, ien=postfixButtons.length ; i<ien ; i++ ) {
+					conf.buttons.push( postfixButtons[i] );
+				}
+
+				conf.postfixButtons = null;
+			}
+
+			var prefixButtons = conf.prefixButtons;
+			if ( prefixButtons ) {
+				if ( ! conf.buttons ) {
+					conf.buttons = [];
+				}
+
+				for ( i=0, ien=prefixButtons.length ; i<ien ; i++ ) {
+					conf.buttons.splice( i, 0, prefixButtons[i] );
+				}
+
+				conf.prefixButtons = null;
+			}
+
+			// Although we want the `conf` object to overwrite almost all of
+			// the properties of the object being extended, the `extend`
+			// property should come from the object being extended
+			conf.extend = objArray.extend;
+		}
+
+		return conf;
+	},
+
+	/**
+	 * Display (and replace if there is an existing one) a popover attached to a button
+	 * @param {string|node} content Content to show
+	 * @param {DataTable.Api} hostButton DT API instance of the button
+	 * @param {object} inOpts Options (see object below for all options)
+	 */
+	_popover: function ( content, hostButton, inOpts, e ) {
+		var dt = hostButton;
+		var buttonsSettings = this.c;
+		var closed = false;
+		var options = $.extend( {
+			align: 'button-left', // button-right, dt-container, split-left, split-right
+			autoClose: false,
+			background: true,
+			backgroundClassName: 'dt-button-background',
+			closeButton: true,
+			contentClassName: buttonsSettings.dom.collection.className,
+			collectionLayout: '',
+			collectionTitle: '',
+			dropup: false,
+			fade: 400,
+			popoverTitle: '',
+			rightAlignClassName: 'dt-button-right',
+			tag: buttonsSettings.dom.collection.tag
+		}, inOpts );
+
+		var hostNode = hostButton.node();
+
+		var close = function () {
+			closed = true;
+
+			_fadeOut(
+				$('.dt-button-collection'),
+				options.fade,
+				function () {
+					$(this).detach();
+				}
+			);
+
+			$(dt.buttons( '[aria-haspopup="true"][aria-expanded="true"]' ).nodes())
+				.attr('aria-expanded', 'false');
+
+			$('div.dt-button-background').off( 'click.dtb-collection' );
+			Buttons.background( false, options.backgroundClassName, options.fade, hostNode );
+
+			$(window).off('resize.resize.dtb-collection');
+			$('body').off( '.dtb-collection' );
+			dt.off( 'buttons-action.b-internal' );
+			dt.off( 'destroy' );
+		};
+
+		if (content === false) {
+			close();
+			return;
+		}
+
+		var existingExpanded = $(dt.buttons( '[aria-haspopup="true"][aria-expanded="true"]' ).nodes());
+		if ( existingExpanded.length ) {
+			// Reuse the current position if the button that was triggered is inside an existing collection
+			if (hostNode.closest('div.dt-button-collection').length) {
+				hostNode = existingExpanded.eq(0);
+			}
+
+			close();
+		}
+
+		// Try to be smart about the layout
+		var cnt = $('.dt-button', content).length;
+		var mod = '';
+
+		if (cnt === 3) {
+			mod = 'dtb-b3';
+		}
+		else if (cnt === 2) {
+			mod = 'dtb-b2';
+		}
+		else if (cnt === 1) {
+			mod = 'dtb-b1';
+		}
+
+		var display = $('<div/>')
+			.addClass('dt-button-collection')
+			.addClass(options.collectionLayout)
+			.addClass(options.splitAlignClass)
+			.addClass(mod)
+			.css('display', 'none');
+
+		content = $(content)
+			.addClass(options.contentClassName)
+			.attr('role', 'menu')
+			.appendTo(display);
+
+		hostNode.attr( 'aria-expanded', 'true' );
+
+		if ( hostNode.parents('body')[0] !== document.body ) {
+			hostNode = document.body.lastChild;
+		}
+
+		if ( options.popoverTitle ) {
+			display.prepend('<div class="dt-button-collection-title">'+options.popoverTitle+'</div>');
+		}
+		else if ( options.collectionTitle ) {
+			display.prepend('<div class="dt-button-collection-title">'+options.collectionTitle+'</div>');
+		}
+
+		if (options.closeButton) {
+			display.prepend('<div class="dtb-popover-close">x</div>').addClass('dtb-collection-closeable')
+		}
+
+		_fadeIn( display.insertAfter( hostNode ), options.fade );
+
+		var tableContainer = $( hostButton.table().container() );
+		var position = display.css( 'position' );
+
+		if ( options.span === 'container' || options.align === 'dt-container' ) {
+			hostNode = hostNode.parent();
+			display.css('width', tableContainer.width());
+		}
+
+		// Align the popover relative to the DataTables container
+		// Useful for wide popovers such as SearchPanes
+		if (position === 'absolute') {
+			// Align relative to the host button
+			var offsetParent = $(hostNode[0].offsetParent);
+			var buttonPosition = hostNode.position();
+			var buttonOffset = hostNode.offset();
+			var tableSizes = offsetParent.offset();
+			var containerPosition = offsetParent.position();
+			var computed = window.getComputedStyle(offsetParent[0]);
+
+			tableSizes.height = offsetParent.outerHeight();
+			tableSizes.width = offsetParent.width() + parseFloat(computed.paddingLeft);
+			tableSizes.right = tableSizes.left + tableSizes.width;
+			tableSizes.bottom = tableSizes.top + tableSizes.height;
+
+			// Set the initial position so we can read height / width
+			var top = buttonPosition.top + hostNode.outerHeight();
+			var left = buttonPosition.left;
+
+			display.css( {
+				top: top,
+				left: left
+			} );
+
+			// Get the popover position
+			computed = window.getComputedStyle(display[0]);
+			var popoverSizes = display.offset();
+
+			popoverSizes.height = display.outerHeight();
+			popoverSizes.width = display.outerWidth();
+			popoverSizes.right = popoverSizes.left + popoverSizes.width;
+			popoverSizes.bottom = popoverSizes.top + popoverSizes.height;
+			popoverSizes.marginTop = parseFloat(computed.marginTop);
+			popoverSizes.marginBottom = parseFloat(computed.marginBottom);
+
+			// First position per the class requirements - pop up and right align
+			if (options.dropup) {
+				top = buttonPosition.top - popoverSizes.height - popoverSizes.marginTop - popoverSizes.marginBottom;
+			}
+
+			if (options.align === 'button-right' || display.hasClass( options.rightAlignClassName )) {
+				left = buttonPosition.left - popoverSizes.width + hostNode.outerWidth(); 
+			}
+
+			// Container alignment - make sure it doesn't overflow the table container
+			if (options.align === 'dt-container' || options.align === 'container') {
+				if (left < buttonPosition.left) {
+					left = -buttonPosition.left;
+				}
+
+				if (left + popoverSizes.width > tableSizes.width) {
+					left = tableSizes.width - popoverSizes.width;
+				}
+			}
+
+			// Window adjustment
+			if (containerPosition.left + left + popoverSizes.width > $(window).width()) {
+				// Overflowing the document to the right
+				left = $(window).width() - popoverSizes.width - containerPosition.left;
+			}
+
+			if (buttonOffset.left + left < 0) {
+				// Off to the left of the document
+				left = -buttonOffset.left;
+			}
+
+			if (containerPosition.top + top + popoverSizes.height > $(window).height() + $(window).scrollTop()) {
+				// Pop up if otherwise we'd need the user to scroll down
+				top = buttonPosition.top - popoverSizes.height - popoverSizes.marginTop - popoverSizes.marginBottom;
+			}
+
+			if (containerPosition.top + top < $(window).scrollTop()) {
+				// Correction for when the top is beyond the top of the page
+				top = buttonPosition.top + hostNode.outerHeight();
+			}
+
+			// Calculations all done - now set it
+			display.css( {
+				top: top,
+				left: left
+			} );
+		}
+		else {
+			// Fix position - centre on screen
+			var position = function () {
+				var half = $(window).height() / 2;
+
+				var top = display.height() / 2;
+				if ( top > half ) {
+					top = half;
+				}
+
+				display.css( 'marginTop', top*-1 );
+			};
+
+			position();
+
+			$(window).on('resize.dtb-collection', function () {
+				position();
+			});
+		}
+
+		if ( options.background ) {
+			Buttons.background(
+				true,
+				options.backgroundClassName,
+				options.fade,
+				options.backgroundHost || hostNode
+			);
+		}
+
+		// This is bonkers, but if we don't have a click listener on the
+		// background element, iOS Safari will ignore the body click
+		// listener below. An empty function here is all that is
+		// required to make it work...
+		$('div.dt-button-background').on( 'click.dtb-collection', function () {} );
+
+		if ( options.autoClose ) {
+			setTimeout( function () {
+				dt.on( 'buttons-action.b-internal', function (e, btn, dt, node) {
+					if ( node[0] === hostNode[0] ) {
+						return;
+					}
+					close();
+				} );
+			}, 0);
+		}
+		
+		$(display).trigger('buttons-popover.dt');
+
+
+		dt.on('destroy', close);
+
+		setTimeout(function() {
+			closed = false;
+			$('body')
+				.on( 'click.dtb-collection', function (e) {
+					if (closed) {
+						return;
+					}
+
+					// andSelf is deprecated in jQ1.8, but we want 1.7 compat
+					var back = $.fn.addBack ? 'addBack' : 'andSelf';
+					var parent = $(e.target).parent()[0];
+	
+					if (( ! $(e.target).parents()[back]().filter( content ).length  && !$(parent).hasClass('dt-buttons')) || $(e.target).hasClass('dt-button-background')) {
+						close();
+					}
+				} )
+				.on( 'keyup.dtb-collection', function (e) {
+					if ( e.keyCode === 27 ) {
+						close();
+					}
+				} );
+		}, 0);
+	}
+} );
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Statics
+ */
+
+/**
+ * Show / hide a background layer behind a collection
+ * @param  {boolean} Flag to indicate if the background should be shown or
+ *   hidden 
+ * @param  {string} Class to assign to the background
+ * @static
+ */
+Buttons.background = function ( show, className, fade, insertPoint ) {
+	if ( fade === undefined ) {
+		fade = 400;
+	}
+	if ( ! insertPoint ) {
+		insertPoint = document.body;
+	}
+
+	if ( show ) {
+		_fadeIn(
+			$('<div/>')
+				.addClass( className )
+				.css( 'display', 'none' )
+				.insertAfter( insertPoint ),
+			fade
+		);
+	}
+	else {
+		_fadeOut(
+			$('div.'+className),
+			fade,
+			function () {
+				$(this)
+					.removeClass( className )
+					.remove();
+			}
+		);
+	}
+};
+
+/**
+ * Instance selector - select Buttons instances based on an instance selector
+ * value from the buttons assigned to a DataTable. This is only useful if
+ * multiple instances are attached to a DataTable.
+ * @param  {string|int|array} Instance selector - see `instance-selector`
+ *   documentation on the DataTables site
+ * @param  {array} Button instance array that was attached to the DataTables
+ *   settings object
+ * @return {array} Buttons instances
+ * @static
+ */
+Buttons.instanceSelector = function ( group, buttons )
+{
+	if ( group === undefined || group === null ) {
+		return $.map( buttons, function ( v ) {
+			return v.inst;
+		} );
+	}
+
+	var ret = [];
+	var names = $.map( buttons, function ( v ) {
+		return v.name;
+	} );
+
+	// Flatten the group selector into an array of single options
+	var process = function ( input ) {
+		if ( Array.isArray( input ) ) {
+			for ( var i=0, ien=input.length ; i<ien ; i++ ) {
+				process( input[i] );
+			}
+			return;
+		}
+
+		if ( typeof input === 'string' ) {
+			if ( input.indexOf( ',' ) !== -1 ) {
+				// String selector, list of names
+				process( input.split(',') );
+			}
+			else {
+				// String selector individual name
+				var idx = $.inArray( input.trim(), names );
+
+				if ( idx !== -1 ) {
+					ret.push( buttons[ idx ].inst );
+				}
+			}
+		}
+		else if ( typeof input === 'number' ) {
+			// Index selector
+			ret.push( buttons[ input ].inst );
+		}
+		else if ( typeof input === 'object' ) {
+			// Actual instance selector
+			ret.push( input );
+		}
+	};
+	
+	process( group );
+
+	return ret;
+};
+
+/**
+ * Button selector - select one or more buttons from a selector input so some
+ * operation can be performed on them.
+ * @param  {array} Button instances array that the selector should operate on
+ * @param  {string|int|node|jQuery|array} Button selector - see
+ *   `button-selector` documentation on the DataTables site
+ * @return {array} Array of objects containing `inst` and `idx` properties of
+ *   the selected buttons so you know which instance each button belongs to.
+ * @static
+ */
+Buttons.buttonSelector = function ( insts, selector )
+{
+	var ret = [];
+	var nodeBuilder = function ( a, buttons, baseIdx ) {
+		var button;
+		var idx;
+
+		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
+			button = buttons[i];
+
+			if ( button ) {
+				idx = baseIdx !== undefined ?
+					baseIdx+i :
+					i+'';
+
+				a.push( {
+					node: button.node,
+					name: button.conf.name,
+					idx:  idx
+				} );
+
+				if ( button.buttons ) {
+					nodeBuilder( a, button.buttons, idx+'-' );
+				}
+			}
+		}
+	};
+
+	var run = function ( selector, inst ) {
+		var i, ien;
+		var buttons = [];
+		nodeBuilder( buttons, inst.s.buttons );
+
+		var nodes = $.map( buttons, function (v) {
+			return v.node;
+		} );
+
+		if ( Array.isArray( selector ) || selector instanceof $ ) {
+			for ( i=0, ien=selector.length ; i<ien ; i++ ) {
+				run( selector[i], inst );
+			}
+			return;
+		}
+
+		if ( selector === null || selector === undefined || selector === '*' ) {
+			// Select all
+			for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
+				ret.push( {
+					inst: inst,
+					node: buttons[i].node
+				} );
+			}
+		}
+		else if ( typeof selector === 'number' ) {
+			// Main button index selector
+			if (inst.s.buttons[ selector ]) {
+				ret.push( {
+					inst: inst,
+					node: inst.s.buttons[ selector ].node
+				} );
+			}
+		}
+		else if ( typeof selector === 'string' ) {
+			if ( selector.indexOf( ',' ) !== -1 ) {
+				// Split
+				var a = selector.split(',');
+
+				for ( i=0, ien=a.length ; i<ien ; i++ ) {
+					run( a[i].trim(), inst );
+				}
+			}
+			else if ( selector.match( /^\d+(\-\d+)*$/ ) ) {
+				// Sub-button index selector
+				var indexes = $.map( buttons, function (v) {
+					return v.idx;
+				} );
+
+				ret.push( {
+					inst: inst,
+					node: buttons[ $.inArray( selector, indexes ) ].node
+				} );
+			}
+			else if ( selector.indexOf( ':name' ) !== -1 ) {
+				// Button name selector
+				var name = selector.replace( ':name', '' );
+
+				for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
+					if ( buttons[i].name === name ) {
+						ret.push( {
+							inst: inst,
+							node: buttons[i].node
+						} );
+					}
+				}
+			}
+			else {
+				// jQuery selector on the nodes
+				$( nodes ).filter( selector ).each( function () {
+					ret.push( {
+						inst: inst,
+						node: this
+					} );
+				} );
+			}
+		}
+		else if ( typeof selector === 'object' && selector.nodeName ) {
+			// Node selector
+			var idx = $.inArray( selector, nodes );
+
+			if ( idx !== -1 ) {
+				ret.push( {
+					inst: inst,
+					node: nodes[ idx ]
+				} );
+			}
+		}
+	};
+
+
+	for ( var i=0, ien=insts.length ; i<ien ; i++ ) {
+		var inst = insts[i];
+
+		run( selector, inst );
+	}
+
+	return ret;
+};
+
+/**
+ * Default function used for formatting output data.
+ * @param {*} str Data to strip
+ */
+Buttons.stripData = function ( str, config ) {
+	if ( typeof str !== 'string' ) {
+		return str;
+	}
+
+	// Always remove script tags
+	str = str.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '' );
+
+	// Always remove comments
+	str = str.replace( /<!\-\-.*?\-\->/g, '' );
+
+	if ( ! config || config.stripHtml ) {
+		str = str.replace( /<[^>]*>/g, '' );
+	}
+
+	if ( ! config || config.trim ) {
+		str = str.replace( /^\s+|\s+$/g, '' );
+	}
+
+	if ( ! config || config.stripNewlines ) {
+		str = str.replace( /\n/g, ' ' );
+	}
+
+	if ( ! config || config.decodeEntities ) {
+		_exportTextarea.innerHTML = str;
+		str = _exportTextarea.value;
+	}
+
+	return str;
+};
+
+
+/**
+ * Buttons defaults. For full documentation, please refer to the docs/option
+ * directory or the DataTables site.
+ * @type {Object}
+ * @static
+ */
+Buttons.defaults = {
+	buttons: [ 'copy', 'excel', 'csv', 'pdf', 'print' ],
+	name: 'main',
+	tabIndex: 0,
+	dom: {
+		container: {
+			tag: 'div',
+			className: 'dt-buttons'
+		},
+		collection: {
+			tag: 'div',
+			className: ''
+		},
+		button: {
+			tag: 'button',
+			className: 'dt-button',
+			active: 'active',
+			disabled: 'disabled',
+			spacerClass: ''
+		},
+		buttonLiner: {
+			tag: 'span',
+			className: ''
+		},
+		split: {
+			tag: 'div',
+			className: 'dt-button-split',
+		},
+		splitWrapper: {
+			tag: 'div',
+			className: 'dt-btn-split-wrapper',
+		},
+		splitDropdown: {
+			tag: 'button',
+			text: '&#x25BC;',
+			className: 'dt-btn-split-drop',
+			align: 'split-right',
+			splitAlignClass: 'dt-button-split-left'
+		},
+		splitDropdownButton: {
+			tag: 'button',
+			className: 'dt-btn-split-drop-button dt-button',
+		},
+		splitCollection: {
+			tag: 'div',
+			className: 'dt-button-split-collection',
+		}
+	}
+};
+
+/**
+ * Version information
+ * @type {string}
+ * @static
+ */
+Buttons.version = '2.2.2';
+
+
+$.extend( _dtButtons, {
+	collection: {
+		text: function ( dt ) {
+			return dt.i18n( 'buttons.collection', 'Collection' );
+		},
+		className: 'buttons-collection',
+		closeButton: false,
+		init: function ( dt, button, config ) {
+			button.attr( 'aria-expanded', false );
+		},
+		action: function ( e, dt, button, config ) {
+			if ( config._collection.parents('body').length ) {
+				this.popover(false, config);
+			}
+			else {
+				this.popover(config._collection, config);
+			}
+		},
+		attr: {
+			'aria-haspopup': true
+		}
+		// Also the popover options, defined in Buttons.popover
+	},
+	split: {
+		text: function ( dt ) {
+			return dt.i18n( 'buttons.split', 'Split' );
+		},
+		className: 'buttons-split',
+		closeButton: false,
+		init: function ( dt, button, config ) {
+			return button.attr( 'aria-expanded', false );
+		},
+		action: function ( e, dt, button, config ) {
+			this.popover(config._collection, config);
+		},
+		attr: {
+			'aria-haspopup': true
+		}
+		// Also the popover options, defined in Buttons.popover
+	},
+	copy: function ( dt, conf ) {
+		if ( _dtButtons.copyHtml5 ) {
+			return 'copyHtml5';
+		}
+	},
+	csv: function ( dt, conf ) {
+		if ( _dtButtons.csvHtml5 && _dtButtons.csvHtml5.available( dt, conf ) ) {
+			return 'csvHtml5';
+		}
+	},
+	excel: function ( dt, conf ) {
+		if ( _dtButtons.excelHtml5 && _dtButtons.excelHtml5.available( dt, conf ) ) {
+			return 'excelHtml5';
+		}
+	},
+	pdf: function ( dt, conf ) {
+		if ( _dtButtons.pdfHtml5 && _dtButtons.pdfHtml5.available( dt, conf ) ) {
+			return 'pdfHtml5';
+		}
+	},
+	pageLength: function ( dt ) {
+		var lengthMenu = dt.settings()[0].aLengthMenu;
+		var vals = [];
+		var lang = [];
+		var text = function ( dt ) {
+			return dt.i18n( 'buttons.pageLength', {
+				"-1": 'Show all rows',
+				_:    'Show %d rows'
+			}, dt.page.len() );
+		};
+
+		// Support for DataTables 1.x 2D array
+		if (Array.isArray( lengthMenu[0] )) {
+			vals = lengthMenu[0];
+			lang = lengthMenu[1];
+		}
+		else {
+			for (var i=0 ; i<lengthMenu.length ; i++) {
+				var option = lengthMenu[i];
+
+				// Support for DataTables 2 object in the array
+				if ($.isPlainObject(option)) {
+					vals.push(option.value);
+					lang.push(option.label);
+				}
+				else {
+					vals.push(option);
+					lang.push(option);
+				}
+			}
+		}
+
+		return {
+			extend: 'collection',
+			text: text,
+			className: 'buttons-page-length',
+			autoClose: true,
+			buttons: $.map( vals, function ( val, i ) {
+				return {
+					text: lang[i],
+					className: 'button-page-length',
+					action: function ( e, dt ) {
+						dt.page.len( val ).draw();
+					},
+					init: function ( dt, node, conf ) {
+						var that = this;
+						var fn = function () {
+							that.active( dt.page.len() === val );
+						};
+
+						dt.on( 'length.dt'+conf.namespace, fn );
+						fn();
+					},
+					destroy: function ( dt, node, conf ) {
+						dt.off( 'length.dt'+conf.namespace );
+					}
+				};
+			} ),
+			init: function ( dt, node, conf ) {
+				var that = this;
+				dt.on( 'length.dt'+conf.namespace, function () {
+					that.text( conf.text );
+				} );
+			},
+			destroy: function ( dt, node, conf ) {
+				dt.off( 'length.dt'+conf.namespace );
+			}
+		};
+	},
+	spacer: {
+		style: 'empty',
+		spacer: true,
+		text: function ( dt ) {
+			return dt.i18n( 'buttons.spacer', '' );
+		}
+	}
+} );
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables API
+ *
+ * For complete documentation, please refer to the docs/api directory or the
+ * DataTables site
+ */
+
+// Buttons group and individual button selector
+DataTable.Api.register( 'buttons()', function ( group, selector ) {
+	// Argument shifting
+	if ( selector === undefined ) {
+		selector = group;
+		group = undefined;
+	}
+
+	this.selector.buttonGroup = group;
+
+	var res = this.iterator( true, 'table', function ( ctx ) {
+		if ( ctx._buttons ) {
+			return Buttons.buttonSelector(
+				Buttons.instanceSelector( group, ctx._buttons ),
+				selector
+			);
+		}
+	}, true );
+
+	res._groupSelector = group;
+	return res;
+} );
+
+// Individual button selector
+DataTable.Api.register( 'button()', function ( group, selector ) {
+	// just run buttons() and truncate
+	var buttons = this.buttons( group, selector );
+
+	if ( buttons.length > 1 ) {
+		buttons.splice( 1, buttons.length );
+	}
+
+	return buttons;
+} );
+
+// Active buttons
+DataTable.Api.registerPlural( 'buttons().active()', 'button().active()', function ( flag ) {
+	if ( flag === undefined ) {
+		return this.map( function ( set ) {
+			return set.inst.active( set.node );
+		} );
+	}
+
+	return this.each( function ( set ) {
+		set.inst.active( set.node, flag );
+	} );
+} );
+
+// Get / set button action
+DataTable.Api.registerPlural( 'buttons().action()', 'button().action()', function ( action ) {
+	if ( action === undefined ) {
+		return this.map( function ( set ) {
+			return set.inst.action( set.node );
+		} );
+	}
+
+	return this.each( function ( set ) {
+		set.inst.action( set.node, action );
+	} );
+} );
+
+// Collection control
+DataTable.Api.registerPlural( 'buttons().collectionRebuild()', 'button().collectionRebuild()', function ( buttons ) {
+	return this.each( function ( set ) {
+		for(var i = 0; i < buttons.length; i++) {
+			if(typeof buttons[i] === 'object') {
+				buttons[i].parentConf = set;
+			}
+		}
+		set.inst.collectionRebuild( set.node, buttons );
+	} );
+} );
+
+// Enable / disable buttons
+DataTable.Api.register( ['buttons().enable()', 'button().enable()'], function ( flag ) {
+	return this.each( function ( set ) {
+		set.inst.enable( set.node, flag );
+	} );
+} );
+
+// Disable buttons
+DataTable.Api.register( ['buttons().disable()', 'button().disable()'], function () {
+	return this.each( function ( set ) {
+		set.inst.disable( set.node );
+	} );
+} );
+
+// Button index
+DataTable.Api.register( 'button().index()', function () {
+	var idx = null;
+
+	this.each( function ( set ) {
+		var res = set.inst.index( set.node );
+
+		if (res !== null) {
+			idx = res;
+		}
+	} );
+
+	return idx;
+} );
+
+// Get button nodes
+DataTable.Api.registerPlural( 'buttons().nodes()', 'button().node()', function () {
+	var jq = $();
+
+	// jQuery will automatically reduce duplicates to a single entry
+	$( this.each( function ( set ) {
+		jq = jq.add( set.inst.node( set.node ) );
+	} ) );
+
+	return jq;
+} );
+
+// Get / set button processing state
+DataTable.Api.registerPlural( 'buttons().processing()', 'button().processing()', function ( flag ) {
+	if ( flag === undefined ) {
+		return this.map( function ( set ) {
+			return set.inst.processing( set.node );
+		} );
+	}
+
+	return this.each( function ( set ) {
+		set.inst.processing( set.node, flag );
+	} );
+} );
+
+// Get / set button text (i.e. the button labels)
+DataTable.Api.registerPlural( 'buttons().text()', 'button().text()', function ( label ) {
+	if ( label === undefined ) {
+		return this.map( function ( set ) {
+			return set.inst.text( set.node );
+		} );
+	}
+
+	return this.each( function ( set ) {
+		set.inst.text( set.node, label );
+	} );
+} );
+
+// Trigger a button's action
+DataTable.Api.registerPlural( 'buttons().trigger()', 'button().trigger()', function () {
+	return this.each( function ( set ) {
+		set.inst.node( set.node ).trigger( 'click' );
+	} );
+} );
+
+// Button resolver to the popover
+DataTable.Api.register( 'button().popover()', function (content, options) {
+	return this.map( function ( set ) {
+		return set.inst._popover( content, this.button(this[0].node), options );
+	} );
+} );
+
+// Get the container elements
+DataTable.Api.register( 'buttons().containers()', function () {
+	var jq = $();
+	var groupSelector = this._groupSelector;
+
+	// We need to use the group selector directly, since if there are no buttons
+	// the result set will be empty
+	this.iterator( true, 'table', function ( ctx ) {
+		if ( ctx._buttons ) {
+			var insts = Buttons.instanceSelector( groupSelector, ctx._buttons );
+
+			for ( var i=0, ien=insts.length ; i<ien ; i++ ) {
+				jq = jq.add( insts[i].container() );
+			}
+		}
+	} );
+
+	return jq;
+} );
+
+DataTable.Api.register( 'buttons().container()', function () {
+	// API level of nesting is `buttons()` so we can zip into the containers method
+	return this.containers().eq(0);
+} );
+
+// Add a new button
+DataTable.Api.register( 'button().add()', function ( idx, conf, draw ) {
+	var ctx = this.context;
+
+	// Don't use `this` as it could be empty - select the instances directly
+	if ( ctx.length ) {
+		var inst = Buttons.instanceSelector( this._groupSelector, ctx[0]._buttons );
+
+		if ( inst.length ) {
+			inst[0].add( conf, idx , draw);
+		}
+	}
+
+	return this.button( this._groupSelector, idx );
+} );
+
+// Destroy the button sets selected
+DataTable.Api.register( 'buttons().destroy()', function () {
+	this.pluck( 'inst' ).unique().each( function ( inst ) {
+		inst.destroy();
+	} );
+
+	return this;
+} );
+
+// Remove a button
+DataTable.Api.registerPlural( 'buttons().remove()', 'buttons().remove()', function () {
+	this.each( function ( set ) {
+		set.inst.remove( set.node );
+	} );
+
+	return this;
+} );
+
+// Information box that can be used by buttons
+var _infoTimer;
+DataTable.Api.register( 'buttons.info()', function ( title, message, time ) {
+	var that = this;
+
+	if ( title === false ) {
+		this.off('destroy.btn-info');
+		_fadeOut(
+			$('#datatables_buttons_info'),
+			400,
+			function () {
+				$(this).remove();
+			}
+		);
+		clearTimeout( _infoTimer );
+		_infoTimer = null;
+
+		return this;
+	}
+
+	if ( _infoTimer ) {
+		clearTimeout( _infoTimer );
+	}
+
+	if ( $('#datatables_buttons_info').length ) {
+		$('#datatables_buttons_info').remove();
+	}
+
+	title = title ? '<h2>'+title+'</h2>' : '';
+
+	_fadeIn(
+		$('<div id="datatables_buttons_info" class="dt-button-info"/>')
+			.html( title )
+			.append( $('<div/>')[ typeof message === 'string' ? 'html' : 'append' ]( message ) )
+			.css( 'display', 'none' )
+			.appendTo( 'body' )
+	);
+
+	if ( time !== undefined && time !== 0 ) {
+		_infoTimer = setTimeout( function () {
+			that.buttons.info( false );
+		}, time );
+	}
+
+	this.on('destroy.btn-info', function () {
+		that.buttons.info(false);
+	});
+
+	return this;
+} );
+
+// Get data from the table for export - this is common to a number of plug-in
+// buttons so it is included in the Buttons core library
+DataTable.Api.register( 'buttons.exportData()', function ( options ) {
+	if ( this.context.length ) {
+		return _exportData( new DataTable.Api( this.context[0] ), options );
+	}
+} );
+
+// Get information about the export that is common to many of the export data
+// types (DRY)
+DataTable.Api.register( 'buttons.exportInfo()', function ( conf ) {
+	if ( ! conf ) {
+		conf = {};
+	}
+
+	return {
+		filename: _filename( conf ),
+		title: _title( conf ),
+		messageTop: _message(this, conf.message || conf.messageTop, 'top'),
+		messageBottom: _message(this, conf.messageBottom, 'bottom')
+	};
+} );
+
+
+
+/**
+ * Get the file name for an exported file.
+ *
+ * @param {object}	config Button configuration
+ * @param {boolean} incExtension Include the file name extension
+ */
+var _filename = function ( config )
+{
+	// Backwards compatibility
+	var filename = config.filename === '*' && config.title !== '*' && config.title !== undefined && config.title !== null && config.title !== '' ?
+		config.title :
+		config.filename;
+
+	if ( typeof filename === 'function' ) {
+		filename = filename();
+	}
+
+	if ( filename === undefined || filename === null ) {
+		return null;
+	}
+
+	if ( filename.indexOf( '*' ) !== -1 ) {
+		filename = filename.replace( '*', $('head > title').text() ).trim();
+	}
+
+	// Strip characters which the OS will object to
+	filename = filename.replace(/[^a-zA-Z0-9_\u00A1-\uFFFF\.,\-_ !\(\)]/g, "");
+
+	var extension = _stringOrFunction( config.extension );
+	if ( ! extension ) {
+		extension = '';
+	}
+
+	return filename + extension;
+};
+
+/**
+ * Simply utility method to allow parameters to be given as a function
+ *
+ * @param {undefined|string|function} option Option
+ * @return {null|string} Resolved value
+ */
+var _stringOrFunction = function ( option )
+{
+	if ( option === null || option === undefined ) {
+		return null;
+	}
+	else if ( typeof option === 'function' ) {
+		return option();
+	}
+	return option;
+};
+
+/**
+ * Get the title for an exported file.
+ *
+ * @param {object} config	Button configuration
+ */
+var _title = function ( config )
+{
+	var title = _stringOrFunction( config.title );
+
+	return title === null ?
+		null : title.indexOf( '*' ) !== -1 ?
+			title.replace( '*', $('head > title').text() || 'Exported data' ) :
+			title;
+};
+
+var _message = function ( dt, option, position )
+{
+	var message = _stringOrFunction( option );
+	if ( message === null ) {
+		return null;
+	}
+
+	var caption = $('caption', dt.table().container()).eq(0);
+	if ( message === '*' ) {
+		var side = caption.css( 'caption-side' );
+		if ( side !== position ) {
+			return null;
+		}
+
+		return caption.length ?
+			caption.text() :
+			'';
+	}
+
+	return message;
+};
+
+
+
+
+var _exportTextarea = $('<textarea/>')[0];
+var _exportData = function ( dt, inOpts )
+{
+	var config = $.extend( true, {}, {
+		rows:           null,
+		columns:        '',
+		modifier:       {
+			search: 'applied',
+			order:  'applied'
+		},
+		orthogonal:     'display',
+		stripHtml:      true,
+		stripNewlines:  true,
+		decodeEntities: true,
+		trim:           true,
+		format:         {
+			header: function ( d ) {
+				return Buttons.stripData( d, config );
+			},
+			footer: function ( d ) {
+				return Buttons.stripData( d, config );
+			},
+			body: function ( d ) {
+				return Buttons.stripData( d, config );
+			}
+		},
+		customizeData: null
+	}, inOpts );
+
+	var header = dt.columns( config.columns ).indexes().map( function (idx) {
+		var el = dt.column( idx ).header();
+		return config.format.header( el.innerHTML, idx, el );
+	} ).toArray();
+
+	var footer = dt.table().footer() ?
+		dt.columns( config.columns ).indexes().map( function (idx) {
+			var el = dt.column( idx ).footer();
+			return config.format.footer( el ? el.innerHTML : '', idx, el );
+		} ).toArray() :
+		null;
+	
+	// If Select is available on this table, and any rows are selected, limit the export
+	// to the selected rows. If no rows are selected, all rows will be exported. Specify
+	// a `selected` modifier to control directly.
+	var modifier = $.extend( {}, config.modifier );
+	if ( dt.select && typeof dt.select.info === 'function' && modifier.selected === undefined ) {
+		if ( dt.rows( config.rows, $.extend( { selected: true }, modifier ) ).any() ) {
+			$.extend( modifier, { selected: true } )
+		}
+	}
+
+	var rowIndexes = dt.rows( config.rows, modifier ).indexes().toArray();
+	var selectedCells = dt.cells( rowIndexes, config.columns );
+	var cells = selectedCells
+		.render( config.orthogonal )
+		.toArray();
+	var cellNodes = selectedCells
+		.nodes()
+		.toArray();
+
+	var columns = header.length;
+	var rows = columns > 0 ? cells.length / columns : 0;
+	var body = [];
+	var cellCounter = 0;
+
+	for ( var i=0, ien=rows ; i<ien ; i++ ) {
+		var row = [ columns ];
+
+		for ( var j=0 ; j<columns ; j++ ) {
+			row[j] = config.format.body( cells[ cellCounter ], i, j, cellNodes[ cellCounter ] );
+			cellCounter++;
+		}
+
+		body[i] = row;
+	}
+
+	var data = {
+		header: header,
+		footer: footer,
+		body:   body
+	};
+
+	if ( config.customizeData ) {
+		config.customizeData( data );
+	}
+
+	return data;
+};
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables interface
+ */
+
+// Attach to DataTables objects for global access
+$.fn.dataTable.Buttons = Buttons;
+$.fn.DataTable.Buttons = Buttons;
+
+
+
+// DataTables creation - check if the buttons have been defined for this table,
+// they will have been if the `B` option was used in `dom`, otherwise we should
+// create the buttons instance here so they can be inserted into the document
+// using the API. Listen for `init` for compatibility with pre 1.10.10, but to
+// be removed in future.
+$(document).on( 'init.dt plugin-init.dt', function (e, settings) {
+	if ( e.namespace !== 'dt' ) {
+		return;
+	}
+
+	var opts = settings.oInit.buttons || DataTable.defaults.buttons;
+
+	if ( opts && ! settings._buttons ) {
+		new Buttons( settings, opts ).container();
+	}
+} );
+
+function _init ( settings, options ) {
+	var api = new DataTable.Api( settings );
+	var opts = options
+		? options
+		: api.init().buttons || DataTable.defaults.buttons;
+
+	return new Buttons( api, opts ).container();
+}
+
+// DataTables `dom` feature option
+DataTable.ext.feature.push( {
+	fnInit: _init,
+	cFeature: "B"
+} );
+
+// DataTables 2 layout feature
+if ( DataTable.ext.features ) {
+	DataTable.ext.features.register( 'buttons', _init );
+}
+
+
+return Buttons;
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-buttons/js/dataTables.buttons.min.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/datatables.net-buttons/js/dataTables.buttons.min.js ***!
+  \**************************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ Buttons for DataTables 2.2.2
+ ©2016-2022 SpryMedia Ltd - datatables.net/license
+*/
+(function(d){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(z){return d(z,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})(function(d,z,B,p){function I(a,b,c){d.fn.animate?a.stop().fadeIn(b,c):(a.css("display","block"),c&&c.call(a))}function J(a,b,c){d.fn.animate?a.stop().fadeOut(b,c):(a.css("display","none"),c&&c.call(a))}
+function L(a,b){a=new u.Api(a);b=b?b:a.init().buttons||u.defaults.buttons;return(new x(a,b)).container()}var u=d.fn.dataTable,O=0,P=0,C=u.ext.buttons,x=function(a,b){if(!(this instanceof x))return function(c){return(new x(c,a)).container()};"undefined"===typeof b&&(b={});!0===b&&(b={});Array.isArray(b)&&(b={buttons:b});this.c=d.extend(!0,{},x.defaults,b);b.buttons&&(this.c.buttons=b.buttons);this.s={dt:new u.Api(a),buttons:[],listenKeys:"",namespace:"dtb"+O++};this.dom={container:d("<"+this.c.dom.container.tag+
+"/>").addClass(this.c.dom.container.className)};this._constructor()};d.extend(x.prototype,{action:function(a,b){a=this._nodeToButton(a);if(b===p)return a.conf.action;a.conf.action=b;return this},active:function(a,b){var c=this._nodeToButton(a);a=this.c.dom.button.active;c=d(c.node);if(b===p)return c.hasClass(a);c.toggleClass(a,b===p?!0:b);return this},add:function(a,b,c){var e=this.s.buttons;if("string"===typeof b){b=b.split("-");var h=this.s;e=0;for(var f=b.length-1;e<f;e++)h=h.buttons[1*b[e]];e=
+h.buttons;b=1*b[b.length-1]}this._expandButton(e,a,a!==p?a.split:p,(a===p||a.split===p||0===a.split.length)&&h!==p,!1,b);c!==p&&!0!==c||this._draw();return this},collectionRebuild:function(a,b){a=this._nodeToButton(a);if(b!==p){var c;for(c=a.buttons.length-1;0<=c;c--)this.remove(a.buttons[c].node);for(c=0;c<b.length;c++){var e=b[c];this._expandButton(a.buttons,e,e!==p&&e.config!==p&&e.config.split!==p,!0,e.parentConf!==p&&e.parentConf.split!==p,c,e.parentConf)}}this._draw(a.collection,a.buttons)},
+container:function(){return this.dom.container},disable:function(a){a=this._nodeToButton(a);d(a.node).addClass(this.c.dom.button.disabled).attr("disabled",!0);return this},destroy:function(){d("body").off("keyup."+this.s.namespace);var a=this.s.buttons.slice(),b;var c=0;for(b=a.length;c<b;c++)this.remove(a[c].node);this.dom.container.remove();a=this.s.dt.settings()[0];c=0;for(b=a.length;c<b;c++)if(a.inst===this){a.splice(c,1);break}return this},enable:function(a,b){if(!1===b)return this.disable(a);
+a=this._nodeToButton(a);d(a.node).removeClass(this.c.dom.button.disabled).removeAttr("disabled");return this},index:function(a,b,c){b||(b="",c=this.s.buttons);for(var e=0,h=c.length;e<h;e++){var f=c[e].buttons;if(c[e].node===a)return b+e;if(f&&f.length&&(f=this.index(a,e+"-",f),null!==f))return f}return null},name:function(){return this.c.name},node:function(a){if(!a)return this.dom.container;a=this._nodeToButton(a);return d(a.node)},processing:function(a,b){var c=this.s.dt,e=this._nodeToButton(a);
+if(b===p)return d(e.node).hasClass("processing");d(e.node).toggleClass("processing",b);d(c.table().node()).triggerHandler("buttons-processing.dt",[b,c.button(a),c,d(a),e.conf]);return this},remove:function(a){var b=this._nodeToButton(a),c=this._nodeToHost(a),e=this.s.dt;if(b.buttons.length)for(var h=b.buttons.length-1;0<=h;h--)this.remove(b.buttons[h].node);b.conf.destroying=!0;b.conf.destroy&&b.conf.destroy.call(e.button(a),e,d(a),b.conf);this._removeKey(b.conf);d(b.node).remove();a=d.inArray(b,
+c);c.splice(a,1);return this},text:function(a,b){var c=this._nodeToButton(a);a=this.c.dom.collection.buttonLiner;a=c.inCollection&&a&&a.tag?a.tag:this.c.dom.buttonLiner.tag;var e=this.s.dt,h=d(c.node),f=function(g){return"function"===typeof g?g(e,h,c.conf):g};if(b===p)return f(c.conf.text);c.conf.text=b;a?h.children(a).eq(0).filter(":not(.dt-down-arrow)").html(f(b)):h.html(f(b));return this},_constructor:function(){var a=this,b=this.s.dt,c=b.settings()[0],e=this.c.buttons;c._buttons||(c._buttons=
+[]);c._buttons.push({inst:this,name:this.c.name});for(var h=0,f=e.length;h<f;h++)this.add(e[h]);b.on("destroy",function(g,l){l===c&&a.destroy()});d("body").on("keyup."+this.s.namespace,function(g){if(!B.activeElement||B.activeElement===B.body){var l=String.fromCharCode(g.keyCode).toLowerCase();-1!==a.s.listenKeys.toLowerCase().indexOf(l)&&a._keypress(l,g)}})},_addKey:function(a){a.key&&(this.s.listenKeys+=d.isPlainObject(a.key)?a.key.key:a.key)},_draw:function(a,b){a||(a=this.dom.container,b=this.s.buttons);
+a.children().detach();for(var c=0,e=b.length;c<e;c++)a.append(b[c].inserter),a.append(" "),b[c].buttons&&b[c].buttons.length&&this._draw(b[c].collection,b[c].buttons)},_expandButton:function(a,b,c,e,h,f,g){var l=this.s.dt,m=0,r=Array.isArray(b)?b:[b];b===p&&(r=Array.isArray(c)?c:[c]);c=0;for(var q=r.length;c<q;c++){var n=this._resolveExtends(r[c]);if(n)if(b=n.config!==p&&n.config.split?!0:!1,Array.isArray(n))this._expandButton(a,n,k!==p&&k.conf!==p?k.conf.split:p,e,g!==p&&g.split!==p,f,g);else{var k=
+this._buildButton(n,e,n.split!==p||n.config!==p&&n.config.split!==p,h);if(k){f!==p&&null!==f?(a.splice(f,0,k),f++):a.push(k);if(k.conf.buttons||k.conf.split){k.collection=d("<"+(b?this.c.dom.splitCollection.tag:this.c.dom.collection.tag)+"/>");k.conf._collection=k.collection;if(k.conf.split)for(var t=0;t<k.conf.split.length;t++)"object"===typeof k.conf.split[t]&&(k.conf.split[t].parent=g,k.conf.split[t].collectionLayout===p&&(k.conf.split[t].collectionLayout=k.conf.collectionLayout),k.conf.split[t].dropup===
+p&&(k.conf.split[t].dropup=k.conf.dropup),k.conf.split[t].fade===p&&(k.conf.split[t].fade=k.conf.fade));else d(k.node).append(d('<span class="dt-down-arrow">'+this.c.dom.splitDropdown.text+"</span>"));this._expandButton(k.buttons,k.conf.buttons,k.conf.split,!b,b,f,k.conf)}k.conf.parent=g;n.init&&n.init.call(l.button(k.node),l,d(k.node),n);m++}}}},_buildButton:function(a,b,c,e){var h=this.c.dom.button,f=this.c.dom.buttonLiner,g=this.c.dom.collection,l=this.c.dom.splitCollection,m=this.c.dom.splitDropdownButton,
+r=this.s.dt,q=function(w){return"function"===typeof w?w(r,k,a):w};if(a.spacer){var n=d("<span></span>").addClass("dt-button-spacer "+a.style+" "+h.spacerClass).html(q(a.text));return{conf:a,node:n,inserter:n,buttons:[],inCollection:b,isSplit:c,inSplit:e,collection:null}}!c&&e&&l?h=m:!c&&b&&g.button&&(h=g.button);!c&&e&&l.buttonLiner?f=l.buttonLiner:!c&&b&&g.buttonLiner&&(f=g.buttonLiner);if(a.available&&!a.available(r,a)&&!a.hasOwnProperty("html"))return!1;if(a.hasOwnProperty("html"))var k=d(a.html);
+else{var t=function(w,D,F,G){G.action.call(D.button(F),w,D,F,G);d(D.table().node()).triggerHandler("buttons-action.dt",[D.button(F),D,F,G])};g=a.tag||h.tag;var y=a.clickBlurs===p?!0:a.clickBlurs;k=d("<"+g+"/>").addClass(h.className).addClass(e?this.c.dom.splitDropdownButton.className:"").attr("tabindex",this.s.dt.settings()[0].iTabIndex).attr("aria-controls",this.s.dt.table().node().id).on("click.dtb",function(w){w.preventDefault();!k.hasClass(h.disabled)&&a.action&&t(w,r,k,a);y&&k.trigger("blur")}).on("keypress.dtb",
+function(w){13===w.keyCode&&(w.preventDefault(),!k.hasClass(h.disabled)&&a.action&&t(w,r,k,a))});"a"===g.toLowerCase()&&k.attr("href","#");"button"===g.toLowerCase()&&k.attr("type","button");f.tag?(g=d("<"+f.tag+"/>").html(q(a.text)).addClass(f.className),"a"===f.tag.toLowerCase()&&g.attr("href","#"),k.append(g)):k.html(q(a.text));!1===a.enabled&&k.addClass(h.disabled);a.className&&k.addClass(a.className);a.titleAttr&&k.attr("title",q(a.titleAttr));a.attr&&k.attr(a.attr);a.namespace||(a.namespace=
+".dt-button-"+P++);a.config!==p&&a.config.split&&(a.split=a.config.split)}f=(f=this.c.dom.buttonContainer)&&f.tag?d("<"+f.tag+"/>").addClass(f.className).append(k):k;this._addKey(a);this.c.buttonCreated&&(f=this.c.buttonCreated(a,f));if(c){n=d("<div/>").addClass(this.c.dom.splitWrapper.className);n.append(k);var v=d.extend(a,{text:this.c.dom.splitDropdown.text,className:this.c.dom.splitDropdown.className,closeButton:!1,attr:{"aria-haspopup":!0,"aria-expanded":!1},align:this.c.dom.splitDropdown.align,
+splitAlignClass:this.c.dom.splitDropdown.splitAlignClass});this._addKey(v);var E=function(w,D,F,G){C.split.action.call(D.button(d("div.dt-btn-split-wrapper")[0]),w,D,F,G);d(D.table().node()).triggerHandler("buttons-action.dt",[D.button(F),D,F,G]);F.attr("aria-expanded",!0)},A=d('<button class="'+this.c.dom.splitDropdown.className+' dt-button"><span class="dt-btn-split-drop-arrow">'+this.c.dom.splitDropdown.text+"</span></button>").on("click.dtb",function(w){w.preventDefault();w.stopPropagation();
+A.hasClass(h.disabled)||E(w,r,A,v);y&&A.trigger("blur")}).on("keypress.dtb",function(w){13===w.keyCode&&(w.preventDefault(),A.hasClass(h.disabled)||E(w,r,A,v))});0===a.split.length&&A.addClass("dtb-hide-drop");n.append(A).attr(v.attr)}return{conf:a,node:c?n.get(0):k.get(0),inserter:c?n:f,buttons:[],inCollection:b,isSplit:c,inSplit:e,collection:null}},_nodeToButton:function(a,b){b||(b=this.s.buttons);for(var c=0,e=b.length;c<e;c++){if(b[c].node===a)return b[c];if(b[c].buttons.length){var h=this._nodeToButton(a,
+b[c].buttons);if(h)return h}}},_nodeToHost:function(a,b){b||(b=this.s.buttons);for(var c=0,e=b.length;c<e;c++){if(b[c].node===a)return b;if(b[c].buttons.length){var h=this._nodeToHost(a,b[c].buttons);if(h)return h}}},_keypress:function(a,b){if(!b._buttonsHandled){var c=function(e){for(var h=0,f=e.length;h<f;h++){var g=e[h].conf,l=e[h].node;g.key&&(g.key===a?(b._buttonsHandled=!0,d(l).click()):!d.isPlainObject(g.key)||g.key.key!==a||g.key.shiftKey&&!b.shiftKey||g.key.altKey&&!b.altKey||g.key.ctrlKey&&
+!b.ctrlKey||g.key.metaKey&&!b.metaKey||(b._buttonsHandled=!0,d(l).click()));e[h].buttons.length&&c(e[h].buttons)}};c(this.s.buttons)}},_removeKey:function(a){if(a.key){var b=d.isPlainObject(a.key)?a.key.key:a.key;a=this.s.listenKeys.split("");b=d.inArray(b,a);a.splice(b,1);this.s.listenKeys=a.join("")}},_resolveExtends:function(a){var b=this,c=this.s.dt,e,h=function(m){for(var r=0;!d.isPlainObject(m)&&!Array.isArray(m);){if(m===p)return;if("function"===typeof m){if(m=m.call(b,c,a),!m)return!1}else if("string"===
+typeof m){if(!C[m])return{html:m};m=C[m]}r++;if(30<r)throw"Buttons: Too many iterations";}return Array.isArray(m)?m:d.extend({},m)};for(a=h(a);a&&a.extend;){if(!C[a.extend])throw"Cannot extend unknown button type: "+a.extend;var f=h(C[a.extend]);if(Array.isArray(f))return f;if(!f)return!1;var g=f.className;a.config!==p&&f.config!==p&&(a.config=d.extend({},f.config,a.config));a=d.extend({},f,a);g&&a.className!==g&&(a.className=g+" "+a.className);var l=a.postfixButtons;if(l){a.buttons||(a.buttons=[]);
+g=0;for(e=l.length;g<e;g++)a.buttons.push(l[g]);a.postfixButtons=null}if(l=a.prefixButtons){a.buttons||(a.buttons=[]);g=0;for(e=l.length;g<e;g++)a.buttons.splice(g,0,l[g]);a.prefixButtons=null}a.extend=f.extend}return a},_popover:function(a,b,c,e){e=this.c;var h=!1,f=d.extend({align:"button-left",autoClose:!1,background:!0,backgroundClassName:"dt-button-background",closeButton:!0,contentClassName:e.dom.collection.className,collectionLayout:"",collectionTitle:"",dropup:!1,fade:400,popoverTitle:"",
+rightAlignClassName:"dt-button-right",tag:e.dom.collection.tag},c),g=b.node(),l=function(){h=!0;J(d(".dt-button-collection"),f.fade,function(){d(this).detach()});d(b.buttons('[aria-haspopup="true"][aria-expanded="true"]').nodes()).attr("aria-expanded","false");d("div.dt-button-background").off("click.dtb-collection");x.background(!1,f.backgroundClassName,f.fade,g);d(z).off("resize.resize.dtb-collection");d("body").off(".dtb-collection");b.off("buttons-action.b-internal");b.off("destroy")};if(!1===
+a)l();else{c=d(b.buttons('[aria-haspopup="true"][aria-expanded="true"]').nodes());c.length&&(g.closest("div.dt-button-collection").length&&(g=c.eq(0)),l());c=d(".dt-button",a).length;e="";3===c?e="dtb-b3":2===c?e="dtb-b2":1===c&&(e="dtb-b1");var m=d("<div/>").addClass("dt-button-collection").addClass(f.collectionLayout).addClass(f.splitAlignClass).addClass(e).css("display","none");a=d(a).addClass(f.contentClassName).attr("role","menu").appendTo(m);g.attr("aria-expanded","true");g.parents("body")[0]!==
+B.body&&(g=B.body.lastChild);f.popoverTitle?m.prepend('<div class="dt-button-collection-title">'+f.popoverTitle+"</div>"):f.collectionTitle&&m.prepend('<div class="dt-button-collection-title">'+f.collectionTitle+"</div>");f.closeButton&&m.prepend('<div class="dtb-popover-close">x</div>').addClass("dtb-collection-closeable");I(m.insertAfter(g),f.fade);c=d(b.table().container());var r=m.css("position");if("container"===f.span||"dt-container"===f.align)g=g.parent(),m.css("width",c.width());if("absolute"===
+r){var q=d(g[0].offsetParent);c=g.position();e=g.offset();var n=q.offset(),k=q.position(),t=z.getComputedStyle(q[0]);n.height=q.outerHeight();n.width=q.width()+parseFloat(t.paddingLeft);n.right=n.left+n.width;n.bottom=n.top+n.height;q=c.top+g.outerHeight();var y=c.left;m.css({top:q,left:y});t=z.getComputedStyle(m[0]);var v=m.offset();v.height=m.outerHeight();v.width=m.outerWidth();v.right=v.left+v.width;v.bottom=v.top+v.height;v.marginTop=parseFloat(t.marginTop);v.marginBottom=parseFloat(t.marginBottom);
+f.dropup&&(q=c.top-v.height-v.marginTop-v.marginBottom);if("button-right"===f.align||m.hasClass(f.rightAlignClassName))y=c.left-v.width+g.outerWidth();if("dt-container"===f.align||"container"===f.align)y<c.left&&(y=-c.left),y+v.width>n.width&&(y=n.width-v.width);k.left+y+v.width>d(z).width()&&(y=d(z).width()-v.width-k.left);0>e.left+y&&(y=-e.left);k.top+q+v.height>d(z).height()+d(z).scrollTop()&&(q=c.top-v.height-v.marginTop-v.marginBottom);k.top+q<d(z).scrollTop()&&(q=c.top+g.outerHeight());m.css({top:q,
+left:y})}else r=function(){var E=d(z).height()/2,A=m.height()/2;A>E&&(A=E);m.css("marginTop",-1*A)},r(),d(z).on("resize.dtb-collection",function(){r()});f.background&&x.background(!0,f.backgroundClassName,f.fade,f.backgroundHost||g);d("div.dt-button-background").on("click.dtb-collection",function(){});f.autoClose&&setTimeout(function(){b.on("buttons-action.b-internal",function(E,A,w,D){D[0]!==g[0]&&l()})},0);d(m).trigger("buttons-popover.dt");b.on("destroy",l);setTimeout(function(){h=!1;d("body").on("click.dtb-collection",
+function(E){if(!h){var A=d.fn.addBack?"addBack":"andSelf",w=d(E.target).parent()[0];(!d(E.target).parents()[A]().filter(a).length&&!d(w).hasClass("dt-buttons")||d(E.target).hasClass("dt-button-background"))&&l()}}).on("keyup.dtb-collection",function(E){27===E.keyCode&&l()})},0)}}});x.background=function(a,b,c,e){c===p&&(c=400);e||(e=B.body);a?I(d("<div/>").addClass(b).css("display","none").insertAfter(e),c):J(d("div."+b),c,function(){d(this).removeClass(b).remove()})};x.instanceSelector=function(a,
+b){if(a===p||null===a)return d.map(b,function(f){return f.inst});var c=[],e=d.map(b,function(f){return f.name}),h=function(f){if(Array.isArray(f))for(var g=0,l=f.length;g<l;g++)h(f[g]);else"string"===typeof f?-1!==f.indexOf(",")?h(f.split(",")):(f=d.inArray(f.trim(),e),-1!==f&&c.push(b[f].inst)):"number"===typeof f?c.push(b[f].inst):"object"===typeof f&&c.push(f)};h(a);return c};x.buttonSelector=function(a,b){for(var c=[],e=function(l,m,r){for(var q,n,k=0,t=m.length;k<t;k++)if(q=m[k])n=r!==p?r+k:
+k+"",l.push({node:q.node,name:q.conf.name,idx:n}),q.buttons&&e(l,q.buttons,n+"-")},h=function(l,m){var r,q=[];e(q,m.s.buttons);var n=d.map(q,function(k){return k.node});if(Array.isArray(l)||l instanceof d)for(n=0,r=l.length;n<r;n++)h(l[n],m);else if(null===l||l===p||"*"===l)for(n=0,r=q.length;n<r;n++)c.push({inst:m,node:q[n].node});else if("number"===typeof l)m.s.buttons[l]&&c.push({inst:m,node:m.s.buttons[l].node});else if("string"===typeof l)if(-1!==l.indexOf(","))for(q=l.split(","),n=0,r=q.length;n<
+r;n++)h(q[n].trim(),m);else if(l.match(/^\d+(\-\d+)*$/))n=d.map(q,function(k){return k.idx}),c.push({inst:m,node:q[d.inArray(l,n)].node});else if(-1!==l.indexOf(":name"))for(l=l.replace(":name",""),n=0,r=q.length;n<r;n++)q[n].name===l&&c.push({inst:m,node:q[n].node});else d(n).filter(l).each(function(){c.push({inst:m,node:this})});else"object"===typeof l&&l.nodeName&&(q=d.inArray(l,n),-1!==q&&c.push({inst:m,node:n[q]}))},f=0,g=a.length;f<g;f++)h(b,a[f]);return c};x.stripData=function(a,b){if("string"!==
+typeof a)return a;a=a.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,"");a=a.replace(/<!\-\-.*?\-\->/g,"");if(!b||b.stripHtml)a=a.replace(/<[^>]*>/g,"");if(!b||b.trim)a=a.replace(/^\s+|\s+$/g,"");if(!b||b.stripNewlines)a=a.replace(/\n/g," ");if(!b||b.decodeEntities)M.innerHTML=a,a=M.value;return a};x.defaults={buttons:["copy","excel","csv","pdf","print"],name:"main",tabIndex:0,dom:{container:{tag:"div",className:"dt-buttons"},collection:{tag:"div",className:""},button:{tag:"button",
+className:"dt-button",active:"active",disabled:"disabled",spacerClass:""},buttonLiner:{tag:"span",className:""},split:{tag:"div",className:"dt-button-split"},splitWrapper:{tag:"div",className:"dt-btn-split-wrapper"},splitDropdown:{tag:"button",text:"&#x25BC;",className:"dt-btn-split-drop",align:"split-right",splitAlignClass:"dt-button-split-left"},splitDropdownButton:{tag:"button",className:"dt-btn-split-drop-button dt-button"},splitCollection:{tag:"div",className:"dt-button-split-collection"}}};
+x.version="2.2.2";d.extend(C,{collection:{text:function(a){return a.i18n("buttons.collection","Collection")},className:"buttons-collection",closeButton:!1,init:function(a,b,c){b.attr("aria-expanded",!1)},action:function(a,b,c,e){e._collection.parents("body").length?this.popover(!1,e):this.popover(e._collection,e)},attr:{"aria-haspopup":!0}},split:{text:function(a){return a.i18n("buttons.split","Split")},className:"buttons-split",closeButton:!1,init:function(a,b,c){return b.attr("aria-expanded",!1)},
+action:function(a,b,c,e){this.popover(e._collection,e)},attr:{"aria-haspopup":!0}},copy:function(a,b){if(C.copyHtml5)return"copyHtml5"},csv:function(a,b){if(C.csvHtml5&&C.csvHtml5.available(a,b))return"csvHtml5"},excel:function(a,b){if(C.excelHtml5&&C.excelHtml5.available(a,b))return"excelHtml5"},pdf:function(a,b){if(C.pdfHtml5&&C.pdfHtml5.available(a,b))return"pdfHtml5"},pageLength:function(a){a=a.settings()[0].aLengthMenu;var b=[],c=[];if(Array.isArray(a[0]))b=a[0],c=a[1];else for(var e=0;e<a.length;e++){var h=
+a[e];d.isPlainObject(h)?(b.push(h.value),c.push(h.label)):(b.push(h),c.push(h))}return{extend:"collection",text:function(f){return f.i18n("buttons.pageLength",{"-1":"Show all rows",_:"Show %d rows"},f.page.len())},className:"buttons-page-length",autoClose:!0,buttons:d.map(b,function(f,g){return{text:c[g],className:"button-page-length",action:function(l,m){m.page.len(f).draw()},init:function(l,m,r){var q=this;m=function(){q.active(l.page.len()===f)};l.on("length.dt"+r.namespace,m);m()},destroy:function(l,
+m,r){l.off("length.dt"+r.namespace)}}}),init:function(f,g,l){var m=this;f.on("length.dt"+l.namespace,function(){m.text(l.text)})},destroy:function(f,g,l){f.off("length.dt"+l.namespace)}}},spacer:{style:"empty",spacer:!0,text:function(a){return a.i18n("buttons.spacer","")}}});u.Api.register("buttons()",function(a,b){b===p&&(b=a,a=p);this.selector.buttonGroup=a;var c=this.iterator(!0,"table",function(e){if(e._buttons)return x.buttonSelector(x.instanceSelector(a,e._buttons),b)},!0);c._groupSelector=
+a;return c});u.Api.register("button()",function(a,b){a=this.buttons(a,b);1<a.length&&a.splice(1,a.length);return a});u.Api.registerPlural("buttons().active()","button().active()",function(a){return a===p?this.map(function(b){return b.inst.active(b.node)}):this.each(function(b){b.inst.active(b.node,a)})});u.Api.registerPlural("buttons().action()","button().action()",function(a){return a===p?this.map(function(b){return b.inst.action(b.node)}):this.each(function(b){b.inst.action(b.node,a)})});u.Api.registerPlural("buttons().collectionRebuild()",
+"button().collectionRebuild()",function(a){return this.each(function(b){for(var c=0;c<a.length;c++)"object"===typeof a[c]&&(a[c].parentConf=b);b.inst.collectionRebuild(b.node,a)})});u.Api.register(["buttons().enable()","button().enable()"],function(a){return this.each(function(b){b.inst.enable(b.node,a)})});u.Api.register(["buttons().disable()","button().disable()"],function(){return this.each(function(a){a.inst.disable(a.node)})});u.Api.register("button().index()",function(){var a=null;this.each(function(b){b=
+b.inst.index(b.node);null!==b&&(a=b)});return a});u.Api.registerPlural("buttons().nodes()","button().node()",function(){var a=d();d(this.each(function(b){a=a.add(b.inst.node(b.node))}));return a});u.Api.registerPlural("buttons().processing()","button().processing()",function(a){return a===p?this.map(function(b){return b.inst.processing(b.node)}):this.each(function(b){b.inst.processing(b.node,a)})});u.Api.registerPlural("buttons().text()","button().text()",function(a){return a===p?this.map(function(b){return b.inst.text(b.node)}):
+this.each(function(b){b.inst.text(b.node,a)})});u.Api.registerPlural("buttons().trigger()","button().trigger()",function(){return this.each(function(a){a.inst.node(a.node).trigger("click")})});u.Api.register("button().popover()",function(a,b){return this.map(function(c){return c.inst._popover(a,this.button(this[0].node),b)})});u.Api.register("buttons().containers()",function(){var a=d(),b=this._groupSelector;this.iterator(!0,"table",function(c){if(c._buttons){c=x.instanceSelector(b,c._buttons);for(var e=
+0,h=c.length;e<h;e++)a=a.add(c[e].container())}});return a});u.Api.register("buttons().container()",function(){return this.containers().eq(0)});u.Api.register("button().add()",function(a,b,c){var e=this.context;e.length&&(e=x.instanceSelector(this._groupSelector,e[0]._buttons),e.length&&e[0].add(b,a,c));return this.button(this._groupSelector,a)});u.Api.register("buttons().destroy()",function(){this.pluck("inst").unique().each(function(a){a.destroy()});return this});u.Api.registerPlural("buttons().remove()",
+"buttons().remove()",function(){this.each(function(a){a.inst.remove(a.node)});return this});var H;u.Api.register("buttons.info()",function(a,b,c){var e=this;if(!1===a)return this.off("destroy.btn-info"),J(d("#datatables_buttons_info"),400,function(){d(this).remove()}),clearTimeout(H),H=null,this;H&&clearTimeout(H);d("#datatables_buttons_info").length&&d("#datatables_buttons_info").remove();a=a?"<h2>"+a+"</h2>":"";I(d('<div id="datatables_buttons_info" class="dt-button-info"/>').html(a).append(d("<div/>")["string"===
+typeof b?"html":"append"](b)).css("display","none").appendTo("body"));c!==p&&0!==c&&(H=setTimeout(function(){e.buttons.info(!1)},c));this.on("destroy.btn-info",function(){e.buttons.info(!1)});return this});u.Api.register("buttons.exportData()",function(a){if(this.context.length)return Q(new u.Api(this.context[0]),a)});u.Api.register("buttons.exportInfo()",function(a){a||(a={});var b=a;var c="*"===b.filename&&"*"!==b.title&&b.title!==p&&null!==b.title&&""!==b.title?b.title:b.filename;"function"===
+typeof c&&(c=c());c===p||null===c?c=null:(-1!==c.indexOf("*")&&(c=c.replace("*",d("head > title").text()).trim()),c=c.replace(/[^a-zA-Z0-9_\u00A1-\uFFFF\.,\-_ !\(\)]/g,""),(b=K(b.extension))||(b=""),c+=b);b=K(a.title);b=null===b?null:-1!==b.indexOf("*")?b.replace("*",d("head > title").text()||"Exported data"):b;return{filename:c,title:b,messageTop:N(this,a.message||a.messageTop,"top"),messageBottom:N(this,a.messageBottom,"bottom")}});var K=function(a){return null===a||a===p?null:"function"===typeof a?
+a():a},N=function(a,b,c){b=K(b);if(null===b)return null;a=d("caption",a.table().container()).eq(0);return"*"===b?a.css("caption-side")!==c?null:a.length?a.text():"":b},M=d("<textarea/>")[0],Q=function(a,b){var c=d.extend(!0,{},{rows:null,columns:"",modifier:{search:"applied",order:"applied"},orthogonal:"display",stripHtml:!0,stripNewlines:!0,decodeEntities:!0,trim:!0,format:{header:function(t){return x.stripData(t,c)},footer:function(t){return x.stripData(t,c)},body:function(t){return x.stripData(t,
+c)}},customizeData:null},b);b=a.columns(c.columns).indexes().map(function(t){var y=a.column(t).header();return c.format.header(y.innerHTML,t,y)}).toArray();var e=a.table().footer()?a.columns(c.columns).indexes().map(function(t){var y=a.column(t).footer();return c.format.footer(y?y.innerHTML:"",t,y)}).toArray():null,h=d.extend({},c.modifier);a.select&&"function"===typeof a.select.info&&h.selected===p&&a.rows(c.rows,d.extend({selected:!0},h)).any()&&d.extend(h,{selected:!0});h=a.rows(c.rows,h).indexes().toArray();
+var f=a.cells(h,c.columns);h=f.render(c.orthogonal).toArray();f=f.nodes().toArray();for(var g=b.length,l=[],m=0,r=0,q=0<g?h.length/g:0;r<q;r++){for(var n=[g],k=0;k<g;k++)n[k]=c.format.body(h[m],r,k,f[m]),m++;l[r]=n}b={header:b,footer:e,body:l};c.customizeData&&c.customizeData(b);return b};d.fn.dataTable.Buttons=x;d.fn.DataTable.Buttons=x;d(B).on("init.dt plugin-init.dt",function(a,b){"dt"===a.namespace&&(a=b.oInit.buttons||u.defaults.buttons)&&!b._buttons&&(new x(b,a)).container()});u.ext.feature.push({fnInit:L,
+cFeature:"B"});u.ext.features&&u.ext.features.register("buttons",L);return x});
+
 
 /***/ }),
 
@@ -51946,6 +54544,36 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_buttons_dataTables_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./buttons.dataTables.min.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_buttons_dataTables_min_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_buttons_dataTables_min_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/datatables.net-dt/css/jquery.dataTables.css":
 /*!******************************************************************!*\
   !*** ./node_modules/datatables.net-dt/css/jquery.dataTables.css ***!
@@ -55837,6 +58465,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var datatables_net_responsive_dt_css_responsive_dataTables_min_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! datatables.net-responsive-dt/css/responsive.dataTables.min.css */ "./node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css");
 /* harmony import */ var datatables_net_responsive_dt_js_responsive_dataTables_min_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! datatables.net-responsive-dt/js/responsive.dataTables.min.js */ "./node_modules/datatables.net-responsive-dt/js/responsive.dataTables.min.js");
 /* harmony import */ var datatables_net_responsive_dt_js_responsive_dataTables_min_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(datatables_net_responsive_dt_js_responsive_dataTables_min_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var datatables_net_buttons_js_buttons_colVis_min_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! datatables.net-buttons/js/buttons.colVis.min.js */ "./node_modules/datatables.net-buttons/js/buttons.colVis.min.js");
+/* harmony import */ var datatables_net_buttons_js_buttons_colVis_min_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(datatables_net_buttons_js_buttons_colVis_min_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var datatables_net_buttons_js_dataTables_buttons_min_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! datatables.net-buttons/js/dataTables.buttons.min.js */ "./node_modules/datatables.net-buttons/js/dataTables.buttons.min.js");
+/* harmony import */ var datatables_net_buttons_js_dataTables_buttons_min_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(datatables_net_buttons_js_dataTables_buttons_min_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var datatables_net_buttons_dt_css_buttons_dataTables_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! datatables.net-buttons-dt/css/buttons.dataTables.min.css */ "./node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css");
+/* harmony import */ var datatables_net_buttons_dt_js_buttons_dataTables_min_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! datatables.net-buttons-dt/js/buttons.dataTables.min.js */ "./node_modules/datatables.net-buttons-dt/js/buttons.dataTables.min.js");
+/* harmony import */ var datatables_net_buttons_dt_js_buttons_dataTables_min_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(datatables_net_buttons_dt_js_buttons_dataTables_min_js__WEBPACK_IMPORTED_MODULE_13__);
+
+
+
+
 
 
 
@@ -55849,13 +58488,87 @@ __webpack_require__.r(__webpack_exports__);
 
 var $noDataTemplate = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n<div class=\"text-center\">\n<img src=\"/images/no-data.svg\" class=\"h-[100px] inline-block\" alt=\"no data\">\n<div class=\"mt-5 text-3xl text-semibold text-gray-400\">No data available</div>\n</div>\n");
 fetchNewest();
-fetchMostDownloaded();
-var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
-  responsive: true // processing: true,
-  // serverSide: true,
-  // ajax: '/files',
+fetchMostDownloaded(); // axios.get('/files')
+// .then(function(res) {
+//   console.log(res.data)
+// })
 
+var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
+  dom: 'Bfrtip',
+  buttons: ['colvis'],
+  responsive: true,
+  processing: true,
+  serverSide: true,
+  ajax: '/files',
+  deferRender: true,
+  search: {
+    "return": false
+  },
+  columnDefs: [{
+    orderable: false,
+    targets: 5
+  }, {
+    visible: false,
+    targets: [4, 5, 6]
+  }, {
+    "class": 'col-2',
+    targets: 2
+  }],
+  "columns": [{
+    "data": "title"
+  }, {
+    "data": "division"
+  }, {
+    "data": "updated_at",
+    "render": function render(data, type, row) {
+      if (type === 'sort') {
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(data);
+      }
+
+      return moment__WEBPACK_IMPORTED_MODULE_3___default()(data).calendar();
+    }
+  }, {
+    "data": "path",
+    "render": function render(data, type, row) {
+      return "<a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/".concat(row.path, "\" download=\"").concat(row.title, "\">Download</a>");
+    }
+  }, {
+    "data": "description"
+  }, {
+    "data": "duration",
+    "render": function render(data, type, row) {
+      if (type === 'display') {
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from).format('ll') + ' ~ ' + moment__WEBPACK_IMPORTED_MODULE_3___default()(row.to).format('ll');
+      } else if (type === 'filter') {
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from).format('ll') + ' ' + moment__WEBPACK_IMPORTED_MODULE_3___default()(row.to).format('ll');
+      } else if (type === 'sort') {
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from);
+      }
+
+      return data;
+    }
+  }, {
+    "data": "download"
+  }],
+  "language": {
+    "info": "_START_ - _END_ of _TOTAL_"
+  },
+  "pagingType": "simple",
+  drawCallback: function drawCallback() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').empty();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').addClass('inline-flex justify-center items-center');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').append("\n      <span id=\"customPrevious\" class=\"p-3 mr-5 ml-5\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path fill=\"#5F6368\" d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"/></svg>\n      </span>\n      <span id=\"customNext\" class=\"p-3\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path fill=\"#5F6368\" d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"/></svg>\n      </span>\n    ");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#customNext').on('click', function () {
+      $filesTable.page('next').draw('page');
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#customPrevious').on('click', function () {
+      $filesTable.page('previous').draw('page');
+    });
+  }
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').after('<div class="files-table-footer flex justify-end items-center mt-5 mb-5 mr-5"></div>');
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.files-table-footer').append(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_info'));
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.files-table-footer').append(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate'));
 
 function fetchNewest() {
   axios__WEBPACK_IMPORTED_MODULE_2___default().get('/newest').then(function (res) {
@@ -55898,7 +58611,7 @@ function fetchMostDownloaded() {
           title += '...';
         }
 
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').append("\n          <div class=\"w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card\">\n            <div class=\"hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center\" style=\"background-color: rgba(0,0,0,.5);\">\n              <a class=\"text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5\" href=\"/uploads/".concat(file.path, "\" download\"").concat(file.title, "\" target=\"_blank\">Download</a>\n            </div>\n            <div class=\"h-2/3 text-center py-2 border-b bg-gray-500\">\n              <img src=\"/images/file-icon.svg\" class=\"h-full inline-block\">\n            </div>\n            <div class=\"h-1/3 p-2 pt-0 text-grey-dark\">\n                <span class=\"inline-block w-full h-4 font-medium\">").concat(title, "</span>\n                <span class=\"inline-block w-full h-4 text-sm\">").concat(file.download, "</span>\n            </div>\n          </div>\n        "));
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').append("\n          <div class=\"w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card\">\n            <div class=\"hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center\" style=\"background-color: rgba(0,0,0,.5);\">\n              <a class=\"text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5\" href=\"/uploads/".concat(file.path, "\" download\"").concat(file.title, "\" target=\"_blank\">Download</a>\n            </div>\n            <div class=\"h-2/3 text-center py-2 border-b bg-gray-500\">\n              <img src=\"/images/file-icon.svg\" class=\"h-full inline-block\">\n            </div>\n            <div class=\"h-1/3 p-2 pt-0 text-grey-dark\">\n                <span class=\"inline-block w-full h-4 font-medium\">").concat(title, "</span>\n                <span class=\"text-sm flex justify-between items-center w-full\">\n                  <span class=\"h-4 text-sm\">Downloaded</span>\n                  <span class=\"h-4 text-sm\">").concat(file.download, "</span>\n                </span>\n            </div>\n          </div>\n        "));
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.file-card').on('mouseover', function () {
           jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children().first().css('display', 'flex');
         });
@@ -55911,14 +58624,23 @@ function fetchMostDownloaded() {
     console.log(error);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').empty().append($noDataTemplate.clone());
   });
-}
-
-(function () {
-  files.forEach(function (file) {
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(file.title, "</td>\n      <td>").concat(file.description, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.from).format('ll'), " ~ ").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.to).format('ll'), "</td>\n      <td>").concat(file.division, "</td>\n      <td>").concat(moment__WEBPACK_IMPORTED_MODULE_3___default()(file.updated_at).calendar(), "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/").concat(file.path, "\" download=\"").concat(file.title, "\">Download</a>\n      </td>\n      </tr>\n    "));
-    $filesTable.row.add($node).draw();
-  });
-})();
+} // (() => {
+//   files.forEach(file => {
+//     let $node = $(`
+//       <tr>
+//       <td>${file.title}</td>
+//       <td>${file.description}</td>
+//       <td>${moment(file.from).format('ll')} ~ ${moment(file.to).format('ll')}</td>
+//       <td>${file.division}</td>
+//       <td>${moment(file.updated_at).calendar()}</td>
+//       <td>
+//         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>
+//       </td>
+//       </tr>
+//     `);
+//     $filesTable.row.add($node).draw();
+//   })
+// })();
 })();
 
 /******/ })()

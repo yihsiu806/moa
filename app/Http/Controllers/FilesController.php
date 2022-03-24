@@ -93,8 +93,79 @@ class FilesController extends Controller
      */
     public function show(Request $request)
     {
-        $this->write_log('show test');
-        $this->write_log($request->input('start'));
+        $query = Files::select(
+            'files.id as DT_RowId',
+            'files.title',
+            'files.description',
+            'files.from',
+            'files.to',
+            DB::raw("CONCAT(files.from, ' ~ ', files.to) as duration"),
+            'files.download',
+            'files.path',
+            'files.updated_at',
+            'users.username as owner',
+            DB::raw('divisions.name as division'),
+            'divisions.name as division',
+        )
+            ->leftJoin('users', 'users.id', '=', 'files.owner')
+            ->leftJoin('divisions', 'divisions.id', '=', 'files.division');
+
+        // search
+        $columns = $request->input('columns');
+        if ($request->has('search') && $request->input('search')['value'] != '') {
+            $str = $request->input('search')['value'];
+            $where = '';
+
+            for ($i = 0, $ien = count($columns); $i < $ien; $i++) {
+                $name = $columns[$i]['data'];
+
+                if ($columns[$i]['searchable'] == 'true') {
+                    if ($where == '') {
+                        $where = $name . ' like "%' . $str . '%"';
+                    } else if ($i == 5) {
+                        $where = $where . ' or "from" like "%' . $str . '%"';
+                        $where = $where . ' or "to" like "%' . $str . '%"';
+                    } else if ($i == 1) {
+                        $where = $where . ' or "divisions.name" like "%' . $str . '%"';
+                    } else if ($i == 2) {
+                        $where = $where . ' or "files.updated_at" like "%' . $str . '%"';
+                    } else {
+                        $where = $where . ' or ' . $name . ' like "%' . $str . '%"';
+                    }
+                }
+            }
+
+            $query = $query->whereRaw($where);
+        }
+
+        // order
+        $colname = ['title', 'description', 'from', 'divisions.name', 'download', 'path', 'files.updated_at'];
+        if ($request->has('order') && count($request->input('order'))) {
+            $order = $request->input('order');
+            for ($i = 0, $ien = count($order); $i < $ien; $i++) {
+                $query = $query->orderBy($colname[$order[$i]['column']], $order[$i]['dir']);
+            }
+        }
+
+        // limit
+        if ($request->has('start') && $request->has('length')) {
+            $start = intval($request->input('start'));
+            $length = intval($request->input('length'));
+            if ($length != -1) {
+                $query = $query->offset($start)->limit($length);
+            }
+        }
+
+        $query = $query->get();
+
+        $result = [
+            'draw' => $request->has('draw') ? intval($request->input('draw')) : 10,
+            'recordsTotal' => Files::count(),
+            'recordsFiltered' => Files::count(),
+            'data' => $query,
+        ];
+
+        return response($result, Response::HTTP_OK);
     }
 
     public function newest(Request $request)
