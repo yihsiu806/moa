@@ -1,4 +1,4 @@
-@if (request()->is('division') || request()->is('divisions/*'))
+@if (request()->is('division') || request()->is('divisions/*') || request()->is('admin') || request()->is('viewer'))
 
     <aside class="shrink-0 hidden md:block md:w-[240px] md:bg-[#eee] md:relative md:h-full">
 
