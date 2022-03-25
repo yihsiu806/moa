@@ -46,6 +46,13 @@
                             {{ Auth::user()->username }}
                         </button>
                     </a>
+                @elseif (Auth::user()->role === 'viewer')
+                    <a href="{{ route('viewerDashboard') }}">
+                        <button
+                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                            {{ Auth::user()->username }}
+                        </button>
+                    </a>
                 @else
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

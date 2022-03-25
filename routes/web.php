@@ -8,6 +8,8 @@ use App\Http\Livewire\FileUpload;
 use App\Http\Livewire\AddUser;
 use App\Http\Livewire\EditUser;
 use App\Http\Livewire\FileViewer;
+use App\Http\Livewire\ViewerDashboard;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,9 @@ Route::get('/divisions/{slug}', FileViewer::class)->middleware(['auth']);
 
 // admin dashboard
 Route::get('/admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin'])->name('adminDashboard');
+
+// viewer dashboard
+Route::get('/viewer/dashboard', ViewerDashboard::class)->middleware(['auth', 'role:viewer'])->name('viewerDashboard');
 
 // division dashboard
 Route::get('/myupload', Myupload::class)->name('myupload')->middleware(['auth', 'role:division']);

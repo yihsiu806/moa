@@ -12,5 +12,6 @@ if (isFinite(previousPosition)) {
 document.getElementById('sidebar').addEventListener('scroll', function () {
   sessionStorage.setItem('sidebarScrollOffset', this.scrollTop.toFixed());
 });
+sessionStorage.setItem('currentSidebarPath', location.pathname);
 /******/ })()
 ;

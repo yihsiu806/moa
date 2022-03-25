@@ -6,7 +6,7 @@
             class="md:pt-10 md:pb-[120px] md:absolute md:top-0 md:right-0 md:bottom-0 md:left-0 md:overflow-y-auto">
 
             <x-sidebar-link class="hidden md:flex" href="/division"
-                :active="request()->is('division') || request()->is('admin')">
+                :active="request()->is('division') || request()->is('admin') || request()->is('viewer')">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path

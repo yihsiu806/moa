@@ -2,6 +2,8 @@
     <div class="py-8">
         @if (request()->is('viewer'))
             <livewire:welcome />
+        @elseif (request()->is('viewer/dashboard'))
+            <livewire:viewer-dashboard />
         @else
             <livewire:files />
         @endif
