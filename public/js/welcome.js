@@ -58513,6 +58513,21 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
   }, {
     "class": 'col-2',
     targets: 2
+  }, {
+    "width": "40%",
+    "targets": 0
+  }, {
+    "width": "20%",
+    "targets": 1
+  }, {
+    "width": "20%",
+    "targets": 2
+  }, {
+    "width": "20%",
+    "targets": 3
+  }, {
+    className: "dt-head-left",
+    targets: [0, 1, 2, 3]
   }],
   "columns": [{
     "data": "title"

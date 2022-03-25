@@ -16733,7 +16733,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', fu
     role: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#roleSelect').val(),
     division: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').val()
   };
-  console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').val());
   axios__WEBPACK_IMPORTED_MODULE_2___default().post('/user/add', data).then(function () {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Success',

@@ -95,9 +95,7 @@ class DownloadFilesController extends Controller
     {
         try {
             $target = Files::where('path', '=', $file)->first();
-            $this->write_log($target->download);
             $target->download = $target->download + 1;
-            $this->write_log($target->download);
             $target->save();
         } catch (Exception $e) {
         }

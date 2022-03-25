@@ -54,6 +54,8 @@ Route::post('/user/add', [App\Http\Controllers\Auth\RegisteredUserController::cl
 // admin dashboard edit user
 Route::get('/user/edit/{id}', EditUser::class)->middleware(['auth', 'role:admin'])->name('editUser');
 Route::patch('/user/edit', [App\Http\Controllers\Auth\RegisteredUserController::class, 'update']);
+Route::patch('/user/delete', [App\Http\Controllers\Auth\RegisteredUserController::class, 'delete']);
+Route::patch('/user/reset', [App\Http\Controllers\Auth\RegisteredUserController::class, 'reset']);
 
 // files
 Route::get('/files', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);

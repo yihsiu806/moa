@@ -80,8 +80,6 @@ $('#addNewUserForm').on('submit', function(event) {
     division: $('#divisionSelect').val(),
   }
 
-  console.log($('#divisionSelect').val());
-
   axios.post('/user/add', data)
   .then(function() {
     Swal.fire({

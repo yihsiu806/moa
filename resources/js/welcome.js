@@ -45,6 +45,11 @@ let $filesTable = $('#filesTable').DataTable({
     { orderable: false, targets: 5 },
     { visible: false, targets: [4,5,6] },
     { class: 'col-2', targets: 2 },
+    { "width": "40%", "targets": 0 },
+    { "width": "20%", "targets": 1 },
+    { "width": "20%", "targets": 2 },
+    { "width": "20%", "targets": 3 },
+    { className: "dt-head-left", targets: [ 0,1,2,3 ] },
   ],
   "columns": [
     { "data": "title" },

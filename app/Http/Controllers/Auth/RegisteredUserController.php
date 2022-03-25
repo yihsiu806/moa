@@ -48,8 +48,6 @@ class RegisteredUserController extends Controller
             'password' => ['required', Rules\Password::min(6)],
         ]);
 
-        $this->write_log($request->input('division'));
-
         $user = User::create([
             'username' => $request->input('username'),
             'password' => Hash::make($request->input('password')),
@@ -62,6 +60,38 @@ class RegisteredUserController extends Controller
 
     public function update(Request $request)
     {
+        $query = User::where('username', '=', $request->input('username'))
+            ->where('id', '!=', $request->input('id'))
+            ->first();
+        if ($query) {
+            return response(['message' => 'Username already taken.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $request->validate([
+            'username' => ['required', 'string', 'max:255'],
+        ]);
+
+        $user = User::find($request->input('id'))->update([
+            'username' => $request->input('username'),
+            'role' => $request->input('role'),
+            'division' => $request->input('division'),
+        ]);
+    }
+
+    public function delete(Request $request)
+    {
+        $user = User::find($request->input('id'))->delete();
+    }
+
+    public function reset(Request $request)
+    {
+        $request->validate([
+            'password' => ['required', Rules\Password::min(6)],
+        ]);
+
+        $user = User::find($request->input('id'))->update([
+            'password' => Hash::make($request->input('password')),
+        ]);
     }
 
     function write_log($log_msg)
