@@ -18,7 +18,6 @@ class DivisionController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role:division');
     }
 
     public function index()
@@ -30,14 +29,6 @@ class DivisionController extends Controller
             'divisions' => $divisions,
         ];
         return view('division', $data);
-    }
-
-    public function getFiles($slug)
-    {
-    }
-
-    public function myupload()
-    {
     }
 
     public function saveEditDivision(Request $request)
@@ -62,11 +53,13 @@ class DivisionController extends Controller
         }
 
         $division = Division::find($user->division);
+        if (!$division) {
+            $division = new Division;
+        }
         $division->name = $request->input('divisionName');
         $division->slug = $request->input('divisionSlug');
         $division->icon = $request->input('icon');
         $division->picture = $imageName;
-
         $division->save();
 
         $officer = new Officer;
@@ -86,8 +79,10 @@ class DivisionController extends Controller
 
         if (Officer::where('division', $user->division)->exists()) {
             $officer = Officer::where('division', $user->division)->first();
-        } else {
+        } else if ($user->division) {
             $officer->division = $user->division;
+        } else {
+            $officer->division = $division->id;
         }
         $officer->name = $request->input('officerName');
         $officer->position = $request->input('officerPosition');

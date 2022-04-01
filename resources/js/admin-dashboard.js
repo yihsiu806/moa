@@ -51,7 +51,7 @@ let $divisionsTable = $('#divisionsTable').DataTable({
       <td>${division.officer ? division.officer : ''}</td>
       <td>${updated}</td>
       <td>
-        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="#">Edit</a>
+        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/division/edit/${division.id}">Edit</a>
       </td>
       </tr>
     `);

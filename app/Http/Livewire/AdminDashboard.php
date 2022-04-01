@@ -25,6 +25,7 @@ class AdminDashboard extends Component
             ->get();
 
         $this->divisions = Division::select(
+            'divisions.id',
             'divisions.name',
             'divisions.icon',
             'divisions.updated_at',

@@ -10,11 +10,11 @@ import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
 $('#helloDivision').text(division.name);
-if (division.picture != 'default') {
+if (division.picture && division.picture != 'default') {
   $('#divisionPicture').attr('src', '/storage/' + division.picture);
 }
-if (officer.picture != 'default') {
-  $('#divisionPicture').attr('src', '/storage/' + division.picture);
+if (officer && officer.picture && officer.picture != 'default') {
+  $('#officerPicture').attr('src', '/storage/' + division.picture);
 }
 $('#officerName').text(officer.name);
 $('#officerPosition').text(officer.position);
@@ -30,7 +30,7 @@ $('#officerEmail').text(officer.email);
       <td>${file.title}</td>
       <td>${updated}</td>
       <td>
-        <button type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800">Modify</button>
+        <button type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800">Edit</button>
       </td>
       <td>
         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>

@@ -34416,7 +34416,7 @@ var $divisionsTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsT
 (function () {
   divisions.forEach(function (division) {
     var updated = new Date(division.updated_at).toLocaleDateString();
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td class=\"flex justify-center items-center\">\n        <span class=\"w-6 h-6 fill-grey inline-flex justify-center items-center\">\n          ".concat(division.icon, "\n        </span>\n      </td>\n      <td>").concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"#\">Edit</a>\n      </td>\n      </tr>\n    "));
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td class=\"flex justify-center items-center\">\n        <span class=\"w-6 h-6 fill-grey inline-flex justify-center items-center\">\n          ".concat(division.icon, "\n        </span>\n      </td>\n      <td>").concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
     $divisionsTable.row.add($node).draw();
   });
 })();

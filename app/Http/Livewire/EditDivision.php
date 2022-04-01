@@ -11,13 +11,25 @@ class EditDivision extends Component
 {
     public $division;
     public $officer;
+    public $divisionId;
+
+    public function mount($id = null)
+    {
+        $this->divisionId = $id;
+    }
 
     public function render()
     {
         $user = Auth::user();
 
-        $this->division = Division::find($user->division);
-        $this->officer = Officer::where('division', $user->division)->first();
+        $id = $this->divisionId;
+
+        if (!$id) {
+            $id = $user->division;
+        }
+
+        $this->division = Division::find($id);
+        $this->officer = Officer::where('division', $id)->first();
 
         return view('livewire.edit-division');
     }

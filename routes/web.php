@@ -9,6 +9,7 @@ use App\Http\Livewire\AddUser;
 use App\Http\Livewire\EditUser;
 use App\Http\Livewire\FileViewer;
 use App\Http\Livewire\ViewerDashboard;
+use App\Http\Livewire\FileEdit;
 
 
 /*
@@ -41,8 +42,8 @@ Route::get('/viewer/dashboard', ViewerDashboard::class)->middleware(['auth', 'ro
 Route::get('/myupload', Myupload::class)->name('myupload')->middleware(['auth', 'role:division']);
 Route::get('/file-upload', FileUpload::class)->name('fileUpload')->middleware(['auth', 'role:division']);
 Route::post('/file-upload', 'App\Http\Controllers\FilesController@store')->name('newFile')->middleware(['auth', 'role:division']);
-Route::get('/division/edit', EditDivision::class)->middleware(['auth', 'role:division'])->name('goToEditDivision');
-Route::patch('/division/edit', 'App\Http\Controllers\DivisionController@saveEditDivision')->middleware(['auth', 'role:division'])->name('patchDivision');
+Route::get('/file/edit/{id}', FileEdit::class)->middleware(['auth', 'role:division'])->name('editFile');
+Route::patch('/file/edit', 'App\Http\Controllers\FilesController@update')->middleware(['auth', 'role:division'])->name('patchFile');
 
 // download file from myDisk with permission
 Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFilesController@licenceFileShow');
@@ -51,11 +52,18 @@ Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFilesController@
 Route::get('/user/add', AddUser::class)->middleware(['auth', 'role:admin'])->name('addUser');
 Route::post('/user/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('addNewUser');
 
+
 // admin dashboard edit user
 Route::get('/user/edit/{id}', EditUser::class)->middleware(['auth', 'role:admin'])->name('editUser');
 Route::patch('/user/edit', [App\Http\Controllers\Auth\RegisteredUserController::class, 'update']);
 Route::patch('/user/delete', [App\Http\Controllers\Auth\RegisteredUserController::class, 'delete']);
 Route::patch('/user/reset', [App\Http\Controllers\Auth\RegisteredUserController::class, 'reset']);
+
+// edit division, used by admin, division
+Route::get('/division/edit', EditDivision::class)->middleware(['auth', 'role:division'])->name('goToEditDivision');
+Route::get('/division/add/', EditDivision::class)->middleware(['auth', 'role:admin'])->name('adminAddDivision');
+Route::get('/division/edit/{id}', EditDivision::class)->middleware(['auth', 'role:admin'])->name('adminEditDivision');
+Route::patch('/division/edit', 'App\Http\Controllers\DivisionController@saveEditDivision')->middleware(['auth', 'role:division,admin'])->name('patchDivision');
 
 // files
 Route::get('/files', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);

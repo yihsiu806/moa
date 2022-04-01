@@ -5,7 +5,7 @@
         @elseif (request()->is('viewer/dashboard'))
             <livewire:viewer-dashboard />
         @else
-            <livewire:files />
+            <livewire:file-viewer />
         @endif
     </div>
 </x-app-layout>
