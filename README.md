@@ -2,7 +2,7 @@
 
 A platform for the ministry of agriculture to share data internally.
 
-![](screenshot.png)
+![](https://github.com/yihsiu806/moa/blob/c12f6bbe5251c3b26482722f9c4901de078ce19e/screenshot.jpg)
 
 ## Prerequisite
 
@@ -15,7 +15,11 @@ Your system must have following softwares installed.
 * `nginx`
 * `phpmyadmin`
 
-I use `Ubuntu 20` as my devdlopment/deploy machine.
+Here we use `Ubuntu 20` as the devdlopment/deploy machine.
+
+If you are using Windows, please refer to [Laravel](https://laravel.com/) for more information about how to develop Lavavel project on Windows.
+
+You can also use `WSL + Ubuntu`. (Google it!)
 
 ### Install `php` on Ubuntu
 
