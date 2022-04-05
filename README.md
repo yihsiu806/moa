@@ -115,11 +115,11 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 ```
 
 Press `Tab` to choose `Ok`
-![](phpmyadmin-1.png)
+![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-1.jpg)
 
 Press `Tab` to choose `No`
 
-![](phpmyadmin-2.png)
+![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-2.jpg)
 
 
 Create a symlink to web directory:
@@ -167,7 +167,7 @@ Visit `phpmyadmin` in your browser, use `your_username` and `your_password` to l
 
 http://127.0.0.1/phpmyadmin/
 
-[](!phpmyadmin.png)
+[](!https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-3.jpg)
 
 
 If encounter any problem, please make sure all required services is started. 
