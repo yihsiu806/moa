@@ -4,7 +4,7 @@ A platform for the ministry of agriculture to share data internally.
 
 ![](https://github.com/yihsiu806/moa/blob/c12f6bbe5251c3b26482722f9c4901de078ce19e/screenshot.jpg)
 
-## Prerequisite
+## Development Prerequisite
 
 Your system must have following softwares installed.
 
@@ -21,11 +21,16 @@ If you are using Windows, please refer to [Laravel](https://laravel.com/) for mo
 
 You can also use `WSL + Ubuntu`. (Google it!)
 
+### Update System
+
+```sh
+sudo apt update
+```
+
 ### Install `php` on Ubuntu
 
 ```
-sudo apt update
-sduo apt install php-cli
+sudo apt install php-cli php7.4-fpm
 ```
 
 Check `php` version
@@ -68,10 +73,8 @@ sudo tar -xJvf node-v16.14.2-linux-x64.tar.xz -C /usr/local/lib/nodejs
 ```
 
 ```sh
-sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/bin/n
-ode /usr/local/bin/
-sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/n
-ode_modules/npm/bin/npm-cli.js /usr/local/bin/npm
+sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/bin/node /usr/local/bin/
+sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 ```
 
@@ -92,8 +95,10 @@ Use your own `your_username` and `your_password`.
 You will need them later.
 
 ```sh
-sudo myadmin -u root
+sudo mysql -u root
+```
 
+```sh
 create database moa;
 create user 'your_username'@'localhost' identified by 'your_password';
 grant all privileges on moa.* to 'your_username'@'your_password';
@@ -117,25 +122,60 @@ Press `Tab` to choose `No`
 ![](phpmyadmin-2.png)
 
 
-Create a symlink to web directory
+Create a symlink to web directory:
 ```sh
-sudo ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin
+sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 ```
 
-Edit nginx config
+Edit nginx config file:
 ```sh
+sudo vi /etc/nginx/sites-enabled/default
+```
 
+Paste following config:
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+
+    index index.php index.html;
+
+    root /var/www/html;
+
+    location / {
+        try_files $uri $uri/ /index.php?q=$uri&$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+    }
+}
 
 ```
 
-Make all required services is started. 
+Reload nginx:
+
+```sh
+sudo systemctl reload nginx
+```
+
+
+Visit `phpmyadmin` in your browser, use `your_username` and `your_password` to log in.
+
+http://127.0.0.1/phpmyadmin/
+
+[](!phpmyadmin.png)
+
+
+If encounter any problem, please make sure all required services is started. 
 ```sh
 sudo systemctl start nginx
 sudo systemctl start php7.4-fpm
 sudo systemctl start mysql
 ```
-
-Visit `phpmyadmin` in your browser, use `your_username` and `your_password` to log in.
 
 ## Project Installation
 
