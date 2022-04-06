@@ -19,7 +19,7 @@ Here we use `Ubuntu 20` as the devdlopment/deploy machine.
 
 If you are using Windows, please refer to [Laravel](https://laravel.com/) for more information about how to develop Lavavel project on Windows.
 
-You can also use `WSL + Ubuntu`. (Google it!)
+You can also use `WSL + Ubuntu`. (Google it.)
 
 ### Update System
 
@@ -33,7 +33,7 @@ sudo apt update
 sudo apt install php-cli php7.4-fpm
 ```
 
-Check `php` version
+Check `php` version:
 
 ```sh
 php --version
@@ -52,7 +52,7 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-Check `composer` version
+Check `composer` version:
 
 ```sh
 composer --version
@@ -78,7 +78,7 @@ sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/node_modules/npm/bi
 sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 ```
 
-Check nodejs version
+Check nodejs version:
 ```sh
 node -v
 npm -v
@@ -90,9 +90,9 @@ npm -v
 sudo apt install mariadb-server
 ```
 
-Create database and a user for the project.
+Create a database and add a new user for the project.
 Use your own `your_username` and `your_password`.
-You will need them later.
+You will use them later.
 
 ```sh
 sudo mysql -u root
@@ -114,10 +114,10 @@ sudo apt install nginx
 sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 ```
 
-Press `Tab` to choose `Ok`
+Press `Tab` to choose `Ok`:
 ![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-1.jpg)
 
-Press `Tab` to choose `No`
+Press `Tab` to choose `No`:
 
 ![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-2.jpg)
 
@@ -167,10 +167,10 @@ Visit `phpmyadmin` in your browser, use `your_username` and `your_password` to l
 
 http://127.0.0.1/phpmyadmin/
 
-[](!https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-3.jpg)
+![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-3.jpg)
 
 
-If encounter any problem, please make sure all required services is started. 
+If encounter any problem, please make sure all required services is running: 
 ```sh
 sudo systemctl start nginx
 sudo systemctl start php7.4-fpm
@@ -250,26 +250,10 @@ You're ready to go! Visit Ping CRM in your browser, and login with:
 - **Username:** johndoe@example.com
 - **Password:** secret
 
-Please refer to the (wiki)[https://github.com/yihsiu806/moa/wiki] for more information about the code structure.
+Please refer to the [Documentation](https://www.notion.so/MOA-Data-Sharing-Platform-Documentation-381e07afd3d84254b611681b8ded2fec) for more information about the code structure.
 
-## Deploy the website with `nginx`
+## Deploy the Website
 
-After install the project, you can deploy the website by nginx.
+[Deploy with Nginx]()
 
-Modify nginx config:
-
-```sh
-
-```
-
-Create symlink:
-```sh
-
-```
-
-Change privilege:
-```sh
-
-```
-
-## Deploy the website with `apache`
+[Deploy with Apache]()
