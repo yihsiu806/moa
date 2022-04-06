@@ -4,6 +4,12 @@ A platform for the ministry of agriculture to share data internally.
 
 ![](https://github.com/yihsiu806/moa/blob/c12f6bbe5251c3b26482722f9c4901de078ce19e/screenshot.jpg)
 
+## Deploy the Website
+
+[Deploy with Nginx](https://www.notion.so/Deploy-with-Nginx-6ae9270ed68149df9dfef6af0b235eab)
+
+[Deploy with Apache](https://www.notion.so/Deploy-with-Apache-7fe9f2f280614c66b113576d28b666eb)
+
 ## Development Prerequisite
 
 Your system must have following softwares installed.
@@ -30,7 +36,7 @@ sudo apt update
 ### Install `php` on Ubuntu
 
 ```
-sudo apt install php-cli php7.4-fpm
+sudo apt install php php-cli php7.4-fpm
 ```
 
 Check `php` version:
@@ -177,12 +183,20 @@ sudo systemctl start php7.4-fpm
 sudo systemctl start mysql
 ```
 
+Make sure that firewall allow port 80:
+```sh
+sudo ufw allow 80
+```
+
 ## Project Installation
 
 Clone the repo locally:
 
 ```sh
-https://github.com/yihsiu806/moa.git
+git clone https://github.com/yihsiu806/moa.git
+```
+
+```sh
 cd moa
 ```
 
