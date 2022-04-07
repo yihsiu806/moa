@@ -25,12 +25,28 @@ function initDivisionField() {
   }
   $('#divisionName').val(division.name);
 
+  $('#divisionPicture').empty();
   if (division.picture) {
-    $('#divisionPicture').attr('src', filePath + division.picture);
+    $('#divisionPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white"
+    src="${filePath + division.picture}" alt="division picture">    
+    `);
+  } else {
+    $('#divisionPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white"
+    src="/images/division-default-picture.png" alt="division picture">    
+    `);
   }
 
+  $('#divisionIcon').empty();
   if (division.icon) {
-    $('#divisionIcon').attr('src', filePath + division.icon);
+    $('#divisionIcon').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white" src="${filePath + division.icon}" alt="division picture">
+    `);
+  } else {
+    $('#divisionIcon').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white" src="/images/division-default-icon.svg" alt="division picture">
+    `);
   }
 }
 
@@ -49,8 +65,16 @@ function initOfficerField() {
   $('#officerTelephone').val(officer.telephone);
   $('#officerEmail').val(officer.email);
 
+  $('#officerPicture').empty();
   if (officer.picture) {
-    $('#officerPicture').attr('src', filePath + officer.picture);
+    $('#officerPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white " src="${filePath + officer.picture}" alt="officer picture">
+    `)
+  } else {
+    $('#officerPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white " src="/images/officer-default-picture.png" alt="officer picture">
+    `)
+
   }
 }
 
@@ -156,7 +180,8 @@ function initPictureCallback() {
       $('#divisionIcon').get(0).result = result
     });
 
-    fr.readAsText(targetPhoto);
+    // fr.readAsText(targetPhoto);
+    fr.readAsDataURL(targetPhoto);
   });
 
   $('#resetDivisionPicture').on('click', function() {

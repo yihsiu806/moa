@@ -21,10 +21,8 @@
             </h3>
             <div class="w-full md:w-auto">
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-auto md:mr-10">
-                        <img id="divisionPicture"
-                            class="inline-block overflow-hidden w-[100px] h-[100px] rounded-[3px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-                            src="/images/division-default-picture.png" alt="division picture">
+                    <div id="divisionPicture" class="w-full md:w-auto md:mr-10">
+                        <div class="avatar-icon"></div>
                     </div>
                     <div class="w-full md:w-auto  md:self-center ">
                         <label for="editDivisionPicture"
@@ -49,10 +47,8 @@
             </h3>
             <div class="w-full md:w-auto">
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-auto  md:mr-10">
-                        <img id="divisionIcon"
-                            class="inline-block overflow-hidden w-[100px] h-[100px] rounded-[3px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-                            src="/images/division-default-icon.svg" alt="division picture">
+                    <div id="divisionIcon" class="w-full md:w-auto  md:mr-10">
+                        <div class="avatar-icon"></div>
                     </div>
                     <div class="w-full md:w-auto md:self-center">
                         <label for="editDivisionIcon"
@@ -92,10 +88,8 @@
 
             <div class="w-full md:w-auto">
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-auto md:mr-10">
-                        <img id="officerPicture"
-                            class="inline-block overflow-hidden w-[100px] h-[100px] rounded-[3px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-                            src="/images/officer-default-picture.png" alt="officer picture">
+                    <div id="officerPicture" class="w-full md:w-auto md:mr-10">
+                        <div class="avatar-icon"></div>
                     </div>
                     <div class="w-full md:w-auto  md:self-center ">
                         <label for="editOfficerPicture"
