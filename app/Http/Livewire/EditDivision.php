@@ -15,6 +15,7 @@ class EditDivision extends Component
 
     public function mount($id = null)
     {
+        // Admin dashboard will have division id
         $this->divisionId = $id;
     }
 
@@ -22,8 +23,10 @@ class EditDivision extends Component
     {
         $user = Auth::user();
 
+        // Admin dashboard -> edit division
         $id = $this->divisionId;
 
+        // Division dashboard -> edit division
         if (!$id) {
             $id = $user->division;
         }

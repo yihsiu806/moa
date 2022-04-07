@@ -2054,6 +2054,25 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/utils.js":
+/*!*******************************!*\
+  !*** ./resources/js/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "filePath": () => (/* binding */ filePath),
+/* harmony export */   "validateEmail": () => (/* binding */ validateEmail)
+/* harmony export */ });
+var filePath = '/storage/';
+var validateEmail = function validateEmail(email) {
+  return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+};
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -16656,18 +16675,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./resources/js/utils.js");
 
 
- // parameter
+
+ // parameter:
 // division
 // officer
 
-initDivisionField();
-initOfficerField();
-
 if (!division && !officer) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editTitle').text('Add New Division');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTitle').text('Officer');
 }
+
+initDivisionField();
+initOfficerField();
+initPictureCallback();
+initInputLengthCheck();
+initFormValidation();
+initSubmitCallback();
 
 function initDivisionField() {
   if (!division) {
@@ -16675,19 +16701,22 @@ function initDivisionField() {
   }
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val(division.name);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val(division.slug);
 
-  if (division.picture && division.picture != 'default') {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = division.picture;
+  if (division.picture) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + division.picture);
   }
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', 'data:image/svg+xml;base64,' + btoa(division.icon));
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = division.icon;
+  if (division.icon) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + division.icon);
+  }
 }
 
 function initOfficerField() {
   if (!officer) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val('TBD');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val('TBD');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val('TBD');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val('TBD');
     return;
   }
 
@@ -16696,25 +16725,26 @@ function initOfficerField() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val(officer.telephone);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val(officer.email);
 
-  if (officer.picture && officer.picture != 'default') {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/storage/' + officer.picture);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = officer.picture;
+  if (officer.picture) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + officer.picture);
   }
 }
 
-(function () {
+function initPictureCallback() {
+  var maxPictureSize = 3; // 3 MiB
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionPicture').on('change', function (event) {
     if (event.target.files.length <= 0) {
       return;
     }
 
     var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
+    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
 
-    if (filesize > 5) {
+    if (filesize > maxPictureSize) {
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 5MiB."),
+        text: "File is too big (".concat(filesize, "MiB). Max filesize: ").concat(maxPictureSize, " MiB."),
         icon: 'warning',
         confirmButtonColor: '#00a0e9'
       });
@@ -16738,12 +16768,12 @@ function initOfficerField() {
     }
 
     var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
+    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
 
-    if (filesize > 5) {
+    if (filesize > maxPictureSize) {
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 5MiB."),
+        text: "File is too big (".concat(filesize, "MiB). Max filesize: ").concat(maxPictureSize, " MiB."),
         icon: 'warning',
         confirmButtonColor: '#00a0e9'
       });
@@ -16767,12 +16797,12 @@ function initOfficerField() {
     }
 
     var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); //MiB
+    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
 
-    if (filesize > 1) {
+    if (filesize > maxPictureSize) {
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: 1MiB."),
+        text: "File is too big (".concat(filesize, "MiB). Max filesize: ").concat(maxPictureSize, " MiB."),
         icon: 'warning',
         confirmButtonColor: '#00a0e9'
       });
@@ -16805,36 +16835,10 @@ function initOfficerField() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/images/officer-default-picture.png');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = null;
   });
-})();
+}
 
-(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').on('input', function () {
-    var limit = 255;
-
-    if (this.value.length > limit) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'Text length limit',
-        text: "".concat(limit, " characters max."),
-        icon: 'warning',
-        confirmButtonColor: '#058344'
-      });
-      this.value = this.value.slice(0, limit);
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').on('input', function () {
-    var limit = 10;
-
-    if (this.value.length > limit) {
-      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-        title: 'Text length limit',
-        text: "".concat(limit, " characters max."),
-        icon: 'warning',
-        confirmButtonColor: '#058344'
-      });
-      this.value = this.value.slice(0, limit);
-    }
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName, #officerPosition, #officerTelephone, #officerEmail').on('input', function () {
+function initInputLengthCheck() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName, #officerName, #officerPosition, #officerTelephone, #officerEmail').on('input', function () {
     var limit = 100;
 
     if (this.value.length > limit) {
@@ -16847,99 +16851,96 @@ function initOfficerField() {
       this.value = this.value.slice(0, limit);
     }
   });
-})();
+}
 
-(function () {
+function initFormValidation() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('input[type="text"]').on('input', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').hide();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').removeClass('is-invalid border-red-700');
   });
-})();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
+    event.preventDefault();
+    var validate = true;
 
-var validateEmail = function validateEmail(email) {
-  return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-};
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val()) {
+      validate = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').addClass('is-invalid');
+    }
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
-  event.preventDefault();
-  var validate = true;
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val()) {
+      validate = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').addClass('is-invalid');
+    }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').addClass('is-invalid');
-  }
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val()) {
+      validate = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').addClass('is-invalid');
+    }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').addClass('is-invalid');
-  }
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val()) {
+      validate = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').addClass('is-invalid');
+    }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').addClass('is-invalid');
-  }
+    if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val()) {
+      validate = false;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email can not be empty.');
+    }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').addClass('is-invalid');
-  }
+    if (!(0,_utils__WEBPACK_IMPORTED_MODULE_3__.validateEmail)(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val())) {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val().trim() != 'TBD') {
+        validate = false;
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email address is invalid.');
+      }
+    }
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').addClass('is-invalid');
-  }
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').addClass('border-red-700');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').show();
 
-  if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val()) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email can not be empty.');
-  }
+    if (!validate) {
+      event.stopImmediatePropagation();
+    }
+  });
+}
 
-  if (!validateEmail(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val())) {
-    validate = false;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').addClass('is-invalid');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail + div').text('Email address is invalid.');
-  }
-
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').addClass('border-red-700');
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').show();
-
-  if (!validate) {
-    event.stopImmediatePropagation();
-  }
-});
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
-  event.preventDefault();
-  var data = {
-    picture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result,
-    icon: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result,
-    divisionName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val(),
-    divisionSlug: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSlug').val(),
-    officerName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val(),
-    officerPosition: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val(),
-    officerTelephone: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val(),
-    officerEmail: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val(),
-    officerPicture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result
-  };
-  axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/division/edit', data).then(function () {
-    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-      title: 'Success',
-      icon: 'success',
-      text: 'Update division successfully',
-      confirmButtonColor: '#056839'
-    });
-  })["catch"](function (error) {
-    console.log(error);
-    var message = error.response.data.message || 'Something went wrong. Sorry.';
-    ;
-    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-      title: 'Error',
-      icon: 'error',
-      text: message,
-      confirmButtonColor: '#056839'
+function initSubmitCallback() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#modifyDivisionForm').on('submit', function (event) {
+    event.preventDefault();
+    var data = {
+      picture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result,
+      icon: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result,
+      divisionName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val().trim(),
+      officerName: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').val().trim(),
+      officerPosition: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val().trim(),
+      officerTelephone: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val().trim(),
+      officerEmail: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val().trim(),
+      officerPicture: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result,
+      division: division ? division.id : null
+    };
+    axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/division/edit', data).then(function () {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+        title: 'Success',
+        icon: 'success',
+        text: 'Update division successfully',
+        confirmButtonColor: '#056839'
+      }).then(function () {
+        document.getElementById('backBtn').click();
+      });
+    })["catch"](function (error) {
+      console.log(error);
+      var message = error.response.data.message || 'Something went wrong. Sorry.';
+      ;
+      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+        title: 'Error',
+        icon: 'error',
+        text: message,
+        confirmButtonColor: '#056839'
+      });
     });
   });
-});
+}
 })();
 
 /******/ })()

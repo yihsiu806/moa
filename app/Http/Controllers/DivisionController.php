@@ -22,13 +22,7 @@ class DivisionController extends Controller
 
     public function index()
     {
-        $divisions = Division::select('name')
-            ->orderBy('id', 'desc')
-            ->get();
-        $data = [
-            'divisions' => $divisions,
-        ];
-        return view('division', $data);
+        return view('division');
     }
 
     public function saveEditDivision(Request $request)
@@ -52,15 +46,40 @@ class DivisionController extends Controller
             $imageName = $request->input('picture');
         }
 
-        $division = Division::find($user->division);
+        if (str_contains($request->input('icon'), 'data:image')) {
+            $image_64 = $request->input('picture'); //your base64 encoded data
+            $extension = explode('/', explode(':', substr($image_64, 0, strpos($image_64, ';')))[1])[1];   // .jpg .png .pdf
+            $replace = substr($image_64, 0, strpos($image_64, ',') + 1);
+            // find substring fro replace here eg: data:image/png;base64,
+            $image = str_replace($replace, '', $image_64);
+            $image = str_replace(' ', '+', $image);
+            $iconName = Str::random(10) . '.' . $extension;
+            Storage::disk('public')->put($iconName, base64_decode($image));
+        } else {
+            $iconName = $request->input('icon');
+        }
+
+        $division = null;
+        if ($request->input('division')) {
+            $division = Division::find($request->input('division'));
+        }
         if (!$division) {
             $division = new Division;
+            $slug = $request->input('divisionName');
+            $slug = substr($slug, 0, 5);
+            $count = 1;
+            while (Division::where('slug', '=', $slug)->exists()) {
+                $slug = $slug . '-' . $count;
+                $count++;
+            }
+            $division->slug = $slug;
         }
         $division->name = $request->input('divisionName');
-        $division->slug = $request->input('divisionSlug');
-        $division->icon = $request->input('icon');
+        $division->icon = $iconName;
         $division->picture = $imageName;
         $division->save();
+
+
 
         $officer = new Officer;
 
@@ -77,13 +96,20 @@ class DivisionController extends Controller
             $imageName = $request->input('officerPicture');
         }
 
-        if (Officer::where('division', $user->division)->exists()) {
-            $officer = Officer::where('division', $user->division)->first();
-        } else if ($user->division) {
-            $officer->division = $user->division;
+        if ($request->input('division')) {
+            $divisionId = $request->input('division');
         } else {
-            $officer->division = $division->id;
+            $divisionId = $division->id;
         }
+
+        if (Officer::where('division', $divisionId)->exists()) {
+            $officer = Officer::where('division', $divisionId)->first();
+        } else {
+            $officer->division = $divisionId;
+        }
+
+        $this->write_log($imageName);
+
         $officer->name = $request->input('officerName');
         $officer->position = $request->input('officerPosition');
         $officer->telephone = $request->input('officerTelephone');
