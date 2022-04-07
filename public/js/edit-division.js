@@ -16701,13 +16701,22 @@ function initDivisionField() {
   }
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').val(division.name);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').empty();
 
   if (division.picture) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + division.picture);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\"\n    src=\"".concat(_utils__WEBPACK_IMPORTED_MODULE_3__.filePath + division.picture, "\" alt=\"division picture\">    \n    "));
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\"\n    src=\"/images/division-default-picture.png\" alt=\"division picture\">    \n    ");
   }
 
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').empty();
+
   if (division.icon) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + division.icon);
+    var svg64 = btoa(division.icon);
+    var image64 = 'data:image/svg+xml;base64,' + svg64;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\" src=\"".concat(image64, "\" alt=\"division picture\">\n    "));
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\" src=\"/images/division-default-icon.svg\" alt=\"division picture\">\n    ");
   }
 }
 
@@ -16724,9 +16733,12 @@ function initOfficerField() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val(officer.position);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val(officer.telephone);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val(officer.email);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').empty();
 
   if (officer.picture) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', _utils__WEBPACK_IMPORTED_MODULE_3__.filePath + officer.picture);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white \" src=\"".concat(_utils__WEBPACK_IMPORTED_MODULE_3__.filePath + officer.picture, "\" alt=\"officer picture\">\n    "));
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white \" src=\"/images/officer-default-picture.png\" alt=\"officer picture\">\n    ");
   }
 }
 
@@ -16738,6 +16750,7 @@ function initPictureCallback() {
       return;
     }
 
+    var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture');
     var targetPhoto = event.target.files[0];
     var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
 
@@ -16749,16 +16762,16 @@ function initPictureCallback() {
         confirmButtonColor: '#00a0e9'
       });
       this.value = '';
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = null;
+      $target.get(0).result = null;
       return;
     }
 
     var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', src);
+    $target.find('img').attr('src', src);
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = result;
+      $target.get(0).result = result;
     });
     fr.readAsDataURL(targetPhoto);
   });
@@ -16767,6 +16780,7 @@ function initPictureCallback() {
       return;
     }
 
+    var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture');
     var targetPhoto = event.target.files[0];
     var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
 
@@ -16778,16 +16792,16 @@ function initPictureCallback() {
         confirmButtonColor: '#00a0e9'
       });
       this.value = '';
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = null;
+      $target.get(0).result = null;
       return;
     }
 
     var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', src);
+    $target.find('img').attr('src', src);
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = result;
+      $target.get(0).result = result;
     });
     fr.readAsDataURL(targetPhoto);
   });
@@ -16796,44 +16810,45 @@ function initPictureCallback() {
       return;
     }
 
+    var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon');
     var targetPhoto = event.target.files[0];
-    var filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
+    var filesize = (targetPhoto.size / 1024).toFixed(2); // KiB
 
-    if (filesize > maxPictureSize) {
+    if (filesize > 60) {
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: 'File size limit',
-        text: "File is too big (".concat(filesize, "MiB). Max filesize: ").concat(maxPictureSize, " MiB."),
+        text: "File is too big (".concat(filesize, "KiB). Max filesize: 60 KiB."),
         icon: 'warning',
         confirmButtonColor: '#00a0e9'
       });
       this.value = '';
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = null;
+      $target.get(0).result = null;
       return;
     }
 
     var src = URL.createObjectURL(targetPhoto);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', src);
+    $target.find('img').attr('src', src);
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       var result = e.target.result;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = result;
+      $target.get(0).result = result;
     });
-    fr.readAsText(targetPhoto);
+    fr.readAsText(targetPhoto); // fr.readAsDataURL(targetPhoto);
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionPicture').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionPicture').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/images/division-default-picture.png');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').find('img').attr('src', '/images/division-default-picture.png');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = null;
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionIcon').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionIcon').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').attr('src', '/images/division-default-icon.svg');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = null;
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetOfficerPicture').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editOfficerPicture').val('');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/images/officer-default-picture.png');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').find('img').attr('src', '/images/officer-default-picture.png');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = null;
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionIcon').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionIcon').val('');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').find('img').attr('src', '/images/division-default-icon.svg');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = null;
   });
 }
 

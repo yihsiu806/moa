@@ -43,20 +43,37 @@ class DivisionController extends Controller
             $imageName = Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($imageName, base64_decode($image));
         } else {
-            $imageName = $request->input('picture');
+            $imageName = null;
         }
 
-        if (str_contains($request->input('icon'), 'data:image')) {
-            $image_64 = $request->input('picture'); //your base64 encoded data
-            $extension = explode('/', explode(':', substr($image_64, 0, strpos($image_64, ';')))[1])[1];   // .jpg .png .pdf
-            $replace = substr($image_64, 0, strpos($image_64, ',') + 1);
-            // find substring fro replace here eg: data:image/png;base64,
-            $image = str_replace($replace, '', $image_64);
-            $image = str_replace(' ', '+', $image);
-            $iconName = Str::random(10) . '.' . $extension;
-            Storage::disk('public')->put($iconName, base64_decode($image));
-        } else {
+        // if (str_contains($request->input('icon'), 'data:image/svg')) {
+        //     $image_64 = $request->input('icon'); //your base64 encoded data
+        //     $extension = explode('/', explode(':', substr($image_64, 0, strpos($image_64, ';')))[1])[1];   // .jpg .png .pdf
+        //     $replace = substr($image_64, 0, strpos($image_64, ',') + 1);
+        //     // find substring fro replace here eg: data:image/png;base64,
+        //     $image = str_replace($replace, '', $image_64);
+        //     $image = str_replace(' ', '+', $image);
+        //     $iconName = Str::random(10) . '.' . 'svg';
+        //     Storage::disk('public')->put($iconName, base64_decode($image));
+        // } else {
+        //     $iconName = null;
+        // }
+
+        if ($request->input('icon')) {
             $iconName = $request->input('icon');
+            $pattern = '/width\s*=\s*".*?"/m';
+            $replacement = 'width="24"';
+            $iconName = preg_replace($pattern, $replacement, $iconName);
+
+            $pattern = '/height\s*=\s*".*?"/m';
+            $replacement = 'height="24"';
+            $iconName = preg_replace($pattern, $replacement, $iconName);
+
+            $pattern = '/fill\s*=\s*".*?"/m';
+            $replacement = ' ';
+            $iconName = preg_replace($pattern, $replacement, $iconName);
+        } else {
+            $iconName = null;
         }
 
         $division = null;
@@ -93,7 +110,7 @@ class DivisionController extends Controller
             $imageName = Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($imageName, base64_decode($image));
         } else {
-            $imageName = $request->input('officerPicture');
+            $imageName = null;
         }
 
         if ($request->input('division')) {
@@ -107,8 +124,6 @@ class DivisionController extends Controller
         } else {
             $officer->division = $divisionId;
         }
-
-        $this->write_log($imageName);
 
         $officer->name = $request->input('officerName');
         $officer->position = $request->input('officerPosition');

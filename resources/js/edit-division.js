@@ -40,8 +40,10 @@ function initDivisionField() {
 
   $('#divisionIcon').empty();
   if (division.icon) {
+    let svg64 = btoa(division.icon);
+    let image64 = 'data:image/svg+xml;base64,' + svg64;
     $('#divisionIcon').append(`
-    <img class="avatar-icon inline-block overflow-hidden bg-white" src="${filePath + division.icon}" alt="division picture">
+    <img class="avatar-icon inline-block overflow-hidden bg-white" src="${image64}" alt="division picture">
     `);
   } else {
     $('#divisionIcon').append(`
@@ -74,7 +76,6 @@ function initOfficerField() {
     $('#officerPicture').append(`
     <img class="avatar-icon inline-block overflow-hidden bg-white " src="/images/officer-default-picture.png" alt="officer picture">
     `)
-
   }
 }
 
@@ -86,6 +87,8 @@ function initPictureCallback() {
       return;
     }
 
+    let $target = $('#divisionPicture');
+
     let targetPhoto = event.target.files[0];
   
     let filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
@@ -98,18 +101,18 @@ function initPictureCallback() {
         confirmButtonColor: '#00a0e9',
       });
       this.value = '';
-      $('#divisionPicture').get(0).result = null;
+      $target.get(0).result = null;
       return;
     }
   
     let src = URL.createObjectURL(targetPhoto);
   
-    $('#divisionPicture').attr('src', src);
+    $target.find('img').attr('src', src);
   
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       let result = e.target.result;
-      $('#divisionPicture').get(0).result = result;
+      $target.get(0).result = result;
     });
   
     fr.readAsDataURL(targetPhoto);
@@ -120,6 +123,8 @@ function initPictureCallback() {
       return;
     }
 
+    let $target = $('#officerPicture');
+
     let targetPhoto = event.target.files[0];
   
     let filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
@@ -132,18 +137,18 @@ function initPictureCallback() {
         confirmButtonColor: '#00a0e9',
       });
       this.value = '';
-      $('#officerPicture').get(0).result = null;
+      $target.get(0).result = null;
       return;
     }
   
     let src = URL.createObjectURL(targetPhoto);
   
-    $('#officerPicture').attr('src', src);
+    $target.find('img').attr('src', src);
   
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       let result = e.target.result;
-      $('#officerPicture').get(0).result = result;
+      $target.get(0).result = result;
     });
   
     fr.readAsDataURL(targetPhoto);
@@ -154,52 +159,54 @@ function initPictureCallback() {
       return;
     }
 
+    let $target = $('#divisionIcon')
+
     let targetPhoto = event.target.files[0];
 
-    let filesize = (targetPhoto.size / 1024 / 1024).toFixed(2); // MiB
+    let filesize = (targetPhoto.size / 1024).toFixed(2); // KiB
 
-    if (filesize > maxPictureSize) {
+    if (filesize > 60) {
       Swal.fire({
         title: 'File size limit',
-        text: `File is too big (${filesize}MiB). Max filesize: ${maxPictureSize} MiB.`,
+        text: `File is too big (${filesize}KiB). Max filesize: 60 KiB.`,
         icon: 'warning',
         confirmButtonColor: '#00a0e9',
       });
       this.value = '';
-      $('#divisionIcon').get(0).result = null
+      $target.get(0).result = null
       return;
     }
 
     let src = URL.createObjectURL(targetPhoto);
 
-    $('#divisionIcon').attr('src', src);
+    $target.find('img').attr('src', src);
 
     var fr = new FileReader();
     fr.addEventListener('load', function (e) {
       let result = e.target.result;
-      $('#divisionIcon').get(0).result = result
+      $target.get(0).result = result
     });
 
-    // fr.readAsText(targetPhoto);
-    fr.readAsDataURL(targetPhoto);
+    fr.readAsText(targetPhoto);
+    // fr.readAsDataURL(targetPhoto);
   });
 
   $('#resetDivisionPicture').on('click', function() {
     $('#editDivisionPicture').val('');
-    $('#divisionPicture').attr('src', '/images/division-default-picture.png');
+    $('#divisionPicture').find('img').attr('src', '/images/division-default-picture.png');
     $('#divisionPicture').get(0).result = null;
-  })
-  
-  $('#resetDivisionIcon').on('click', function() {
-    $('#editDivisionIcon').val('');
-    $('#divisionIcon').attr('src', '/images/division-default-icon.svg');
-    $('#divisionIcon').get(0).result = null;
   })
 
   $('#resetOfficerPicture').on('click', function() {
     $('#editOfficerPicture').val('');
-    $('#officerPicture').attr('src', '/images/officer-default-picture.png');
+    $('#officerPicture').find('img').attr('src', '/images/officer-default-picture.png');
     $('#officerPicture').get(0).result = null;
+  })
+  
+  $('#resetDivisionIcon').on('click', function() {
+    $('#editDivisionIcon').val('');
+    $('#divisionIcon').find('img').attr('src', '/images/division-default-icon.svg');
+    $('#divisionIcon').get(0).result = null;
   })
 }
 
