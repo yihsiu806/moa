@@ -16,7 +16,8 @@
 
         {{-- division picture --}}
         <div class="flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Division Picture
+            <h3 class="w-full mb-5 md:mb-0 md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">
+                Division Picture
             </h3>
             <div class="w-full md:w-auto">
                 <div class="flex flex-wrap">
@@ -41,7 +42,9 @@
 
         {{-- division icon --}}
         <div class="mt-10 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold md:mt-0">Division
+            <h3
+                class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold md:mt-0">
+                Division
                 Icon
             </h3>
             <div class="w-full md:w-auto">
@@ -69,10 +72,11 @@
 
         {{-- division name --}}
         <div class="mt-10 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 text-grey-dark text-xl font-semibold">Division Name</h3>
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 text-grey-dark text-xl font-semibold">Division Name
+            </h3>
             <div class="w-full md:w-1/2">
                 <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                    class="bg-white appearance-none border-2 border-gray-200 rounded w-[90%] md:w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="divisionName" type="text">
                 <div class="hidden text-sm text-red-500">Division name can not be empty.</div>
             </div>
@@ -82,7 +86,8 @@
 
         {{-- officer picture --}}
         <div class="mb-5 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Officer Picture
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">
+                Officer Picture
             </h3>
 
             <div class="w-full md:w-auto">
@@ -108,10 +113,11 @@
 
         {{-- officer name --}}
         <div class="mt-10 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Name</h3>
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Name
+            </h3>
             <div class="w-full md:w-1/2">
                 <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                    class="bg-white appearance-none border-2 border-gray-200 rounded w-[90%] md:w-full  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="officerName" type="text">
                 <div class="hidden text-sm text-red-500">Officer name can not be empty.</div>
             </div>
@@ -120,10 +126,11 @@
 
         {{-- officer position --}}
         <div class="mt-10 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Position</h3>
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">
+                Position</h3>
             <div class="w-full md:w-1/2">
                 <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                    class="bg-white appearance-none border-2 border-gray-200 rounded w-[90%] md:w-full  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="officerPosition" type="text">
                 <div class="hidden text-sm text-red-500">Position can not be empty.</div>
             </div>
@@ -131,10 +138,11 @@
 
         {{-- officer telephone --}}
         <div class="mt-10 flex flex-wrap">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Telephone</h3>
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">
+                Telephone</h3>
             <div class="w-full md:w-1/2">
                 <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                    class="bg-white appearance-none border-2 border-gray-200 rounded w-[90%] md:w-full  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="officerTelephone" type="text">
                 <div class="hidden text-sm text-red-500">Telephone can not be empty.</div>
             </div>
@@ -142,10 +150,11 @@
 
         {{-- officer email --}}
         <div class="mt-10 flex flex-wrap mb-4">
-            <h3 class="w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Email</h3>
+            <h3 class="mb-5 md:mb-0 w-full md:w-[160px] md:mr-10 self-center text-grey-dark text-xl font-semibold">Email
+            </h3>
             <div class="w-full md:w-1/2">
                 <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                    class="bg-white appearance-none border-2 border-gray-200 rounded w-[90%] md:w-full  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="officerEmail" type="text">
                 <div class="hidden text-sm text-red-500">Email can not be empty.</div>
             </div>

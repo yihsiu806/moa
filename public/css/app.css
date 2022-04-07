@@ -2035,6 +2035,14 @@ select {
 .w-6 {
   width: 1.5rem;
 }
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-\[90\%\] {
+  width: 90%;
+}
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -3237,6 +3245,10 @@ body {
 
   .md\:w-\[240px\] {
     width: 240px;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:grid-cols-\[1fr_minmax\(350px\2c _2fr\)\] {
