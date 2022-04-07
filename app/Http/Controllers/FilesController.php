@@ -19,32 +19,6 @@ class FilesController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         if (!$request->expectsJson()) {
@@ -85,12 +59,6 @@ class FilesController extends Controller
         return response($result, Response::HTTP_CREATED);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Files  $files
-     * @return \Illuminate\Http\Response
-     */
     public function show(Request $request)
     {
         $query = Files::select(
@@ -181,24 +149,6 @@ class FilesController extends Controller
         return response($result, Response::HTTP_OK);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Files  $files
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Files $files)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Files  $files
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Files $files)
     {
         //

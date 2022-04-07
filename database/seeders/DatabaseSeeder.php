@@ -18,8 +18,53 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->division();
         $this->users();
         // $this->files();
+    }
+
+    public function division()
+    {
+        User::insert([
+            'name' => 'Statics Unit',
+            'icon' => null,
+            'picture' =>  null,
+            'slug' => 'stati',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        User::insert([
+            'name' => 'Statics Unit',
+            'icon' => null,
+            'picture' =>  null,
+            'slug' => 'stati',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        User::insert([
+            'name' => 'Statics Unit',
+            'icon' => null,
+            'picture' =>  null,
+            'slug' => 'stati',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        User::insert([
+            'name' => 'Statics Unit',
+            'icon' => null,
+            'picture' =>  null,
+            'slug' => 'stati',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        User::insert([
+            'name' => 'Statics Unit',
+            'icon' => null,
+            'picture' =>  null,
+            'slug' => 'stati',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
     }
 
     public function users()
@@ -53,6 +98,8 @@ class DatabaseSeeder extends Seeder
             'updated_at' => Carbon::now(),
         ]);
     }
+
+
 
     public function files()
     {

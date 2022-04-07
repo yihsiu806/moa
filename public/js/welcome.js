@@ -58486,38 +58486,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var $noDataTemplate = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n<div class=\"text-center\">\n<img src=\"/images/no-data.svg\" class=\"h-[100px] inline-block\" alt=\"no data\">\n<div class=\"mt-5 text-3xl text-semibold text-gray-400\">No data available</div>\n</div>\n");
-fetchNewest();
-fetchMostDownloaded(); // axios.get('/files')
-// .then(function(res) {
-//   console.log(res.data)
-// })
+initPagination(); // fetchNewest();
+// fetchMostDownloaded();
 
-var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
-  dom: 'Bfrtip',
-  buttons: ['colvis'],
+var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').DataTable({
+  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,
-  ajax: '/files',
   deferRender: true,
   search: {
     "return": false
   },
+  language: {
+    info: "_START_ - _END_ of _TOTAL_",
+    search: "_INPUT_",
+    searchPlaceholder: "Search..."
+  },
+  ajax: '/files',
   columnDefs: [{
-    orderable: false,
-    targets: 5
-  }, {
-    visible: false,
-    targets: [4, 5, 6]
-  }, {
-    "class": 'col-2',
-    targets: 2
-  }, {
-    "width": "40%",
+    "width": "325%",
     "targets": 0
   }, {
-    "width": "20%",
+    "width": "35%",
     "targets": 1
   }, {
     "width": "20%",
@@ -58525,6 +58516,9 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
   }, {
     "width": "20%",
     "targets": 3
+  }, {
+    "class": 'col-2',
+    targets: 2
   }, {
     className: "dt-head-left",
     targets: [0, 1, 2, 3]
@@ -58565,25 +58559,9 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
   }, {
     "data": "download"
   }],
-  "language": {
-    "info": "_START_ - _END_ of _TOTAL_"
-  },
-  "pagingType": "simple",
-  drawCallback: function drawCallback() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').empty();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').addClass('inline-flex justify-center items-center');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate').append("\n      <span id=\"customPrevious\" class=\"p-3 mr-5 ml-5\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path fill=\"#5F6368\" d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"/></svg>\n      </span>\n      <span id=\"customNext\" class=\"p-3\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path fill=\"#5F6368\" d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"/></svg>\n      </span>\n    ");
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#customNext').on('click', function () {
-      $filesTable.page('next').draw('page');
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#customPrevious').on('click', function () {
-      $filesTable.page('previous').draw('page');
-    });
-  }
+  pagingType: 'arrows'
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').after('<div class="files-table-footer flex justify-end items-center mt-5 mb-5 mr-5"></div>');
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.files-table-footer').append(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_info'));
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.files-table-footer').append(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable_paginate'));
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 
 function fetchNewest() {
   axios__WEBPACK_IMPORTED_MODULE_2___default().get('/newest').then(function (res) {
@@ -58639,23 +58617,74 @@ function fetchMostDownloaded() {
     console.log(error);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#mostDownloadedWrapper').empty().append($noDataTemplate.clone());
   });
-} // (() => {
-//   files.forEach(file => {
-//     let $node = $(`
-//       <tr>
-//       <td>${file.title}</td>
-//       <td>${file.description}</td>
-//       <td>${moment(file.from).format('ll')} ~ ${moment(file.to).format('ll')}</td>
-//       <td>${file.division}</td>
-//       <td>${moment(file.updated_at).calendar()}</td>
-//       <td>
-//         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>
-//       </td>
-//       </tr>
-//     `);
-//     $filesTable.row.add($node).draw();
-//   })
-// })();
+}
+
+var $noDataTemplate = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n<div class=\"text-center\">\n<img src=\"/images/no-data.svg\" class=\"h-[100px] inline-block\" alt=\"no data\">\n<div class=\"mt-5 text-3xl text-semibold text-gray-400\">No data available</div>\n</div>\n");
+
+function initPagination() {
+  function calcCurrentPage(oSettings) {
+    return Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
+  }
+
+  function calcPages(oSettings) {
+    return Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength);
+  }
+
+  (jquery__WEBPACK_IMPORTED_MODULE_0___default().fn.DataTable.ext.pager.arrows) = {
+    "fnInit": function fnInit(oSettings, nPaging, fnCallbackDraw) {
+      var $nPaging = jquery__WEBPACK_IMPORTED_MODULE_0___default()(nPaging);
+      var $nPrevious = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span class=\"rounded-full\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"/></svg>\n        </span>\n      ");
+      var $nNext = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span>\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"/></svg>\n        </span>\n      ");
+      $nPrevious.addClass('paginate-arrow prev disabled');
+      $nNext.addClass('paginate-arrow next');
+      $nPaging.addClass('inline-flex justify-center items-center');
+      $nPaging.append($nPrevious);
+      $nPaging.append("<span class=\"px-2\"></span>");
+      $nPaging.append($nNext);
+      $nPrevious.on('click', function () {
+        var iCurrentPage = calcCurrentPage(oSettings);
+
+        if (iCurrentPage !== 1) {
+          oSettings.oApi._fnPageChange(oSettings, 'previous');
+
+          fnCallbackDraw(oSettings);
+        }
+      });
+      $nNext.on('click', function () {
+        var iCurrentPage = calcCurrentPage(oSettings);
+
+        if (iCurrentPage !== calcPages(oSettings)) {
+          oSettings.oApi._fnPageChange(oSettings, 'next');
+
+          fnCallbackDraw(oSettings);
+        }
+      });
+    },
+    "fnUpdate": function fnUpdate(oSettings, fnCallbackDraw) {
+      if (!oSettings.aanFeatures.p) {
+        return;
+      }
+
+      var an = oSettings.aanFeatures.p;
+      var iPages = calcPages(oSettings);
+      var iCurrentPage = calcCurrentPage(oSettings);
+      var $prev = jquery__WEBPACK_IMPORTED_MODULE_0___default()(an).find('.paginate-arrow.prev');
+      var $next = jquery__WEBPACK_IMPORTED_MODULE_0___default()(an).find('.paginate-arrow.next');
+
+      if (iCurrentPage == 1) {
+        $prev.addClass('disabled');
+      } else {
+        $prev.removeClass('disabled');
+      }
+
+      if (iCurrentPage == iPages) {
+        $next.addClass('disabled');
+      } else {
+        $next.removeClass('disabled');
+      }
+    }
+  };
+}
 })();
 
 /******/ })()

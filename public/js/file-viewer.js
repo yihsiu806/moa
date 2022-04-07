@@ -55847,33 +55847,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log(files);
+initInfoSection();
 
-if (division && division.name) {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').text(division.name);
-}
-
-if (division && division.picture) {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
-} else {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/images/division-default-picture.png');
-}
-
-if (officer) {
-  if (officer.name) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
+function initInfoSection() {
+  if (division && division.name) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionName').text(division.name);
   }
 
-  if (officer.position) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
+  if (division && division.picture) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/storage/' + division.picture);
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').attr('src', '/images/division-default-picture.png');
   }
 
-  if (officer.telephone) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
-  }
+  if (officer) {
+    if (officer.name) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
+    }
 
-  if (officer.email) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
+    if (officer.position) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
+    }
+
+    if (officer.telephone) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
+    }
+
+    if (officer.email) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
+    }
   }
 }
 

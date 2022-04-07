@@ -9,32 +9,36 @@ import 'datatables.net-responsive/js/dataTables.responsive.min.js';
 import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
-console.log(files);
+initInfoSection();
 
-if (division && division.name) {
-  $('#divisionName').text(division.name);
+function initInfoSection() {
+  if (division && division.name) {
+    $('#divisionName').text(division.name);
+  }
+  
+  if (division && division.picture) {
+    $('#divisionPicture').attr('src', '/storage/' + division.picture);
+  } else {
+    $('#divisionPicture').attr('src', '/images/division-default-picture.png');
+  }
+  
+  if (officer) {
+    if (officer.name) {
+      $('#officerName').text(officer.name);
+    }
+    if (officer.position) {
+      $('#officerPosition').text(officer.position);
+    }
+    if (officer.telephone) {
+      $('#officerTelephone').text(officer.telephone);
+    }
+    if (officer.email) {
+      $('#officerEmail').text(officer.email);
+    }
+  }
 }
 
-if (division && division.picture) {
-  $('#divisionPicture').attr('src', '/storage/' + division.picture);
-} else {
-  $('#divisionPicture').attr('src', '/images/division-default-picture.png');
-}
 
-if (officer) {
-  if (officer.name) {
-    $('#officerName').text(officer.name);
-  }
-  if (officer.position) {
-    $('#officerPosition').text(officer.position);
-  }
-  if (officer.telephone) {
-    $('#officerTelephone').text(officer.telephone);
-  }
-  if (officer.email) {
-    $('#officerEmail').text(officer.email);
-  }
-}
 
 let $filesTable = $('#filesTable').DataTable({
   responsive: true,

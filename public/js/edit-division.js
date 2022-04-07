@@ -2064,12 +2064,16 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "filePath": () => (/* binding */ filePath),
+/* harmony export */   "listTable": () => (/* binding */ listTable),
 /* harmony export */   "validateEmail": () => (/* binding */ validateEmail)
 /* harmony export */ });
 var filePath = '/storage/';
 var validateEmail = function validateEmail(email) {
   return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 };
+function listTable($ele, config) {// let $listTable = ;
+  // return $listTable;
+}
 
 /***/ }),
 

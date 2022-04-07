@@ -13,42 +13,32 @@ import 'datatables.net-buttons/js/dataTables.buttons.min.js';
 import 'datatables.net-buttons-dt/css/buttons.dataTables.min.css';
 import 'datatables.net-buttons-dt/js/buttons.dataTables.min.js';
 
-let $noDataTemplate = $(`
-<div class="text-center">
-<img src="/images/no-data.svg" class="h-[100px] inline-block" alt="no data">
-<div class="mt-5 text-3xl text-semibold text-gray-400">No data available</div>
-</div>
-`);
+initPagination();
 
-fetchNewest();
-fetchMostDownloaded();
+// fetchNewest();
+// fetchMostDownloaded();
 
-// axios.get('/files')
-// .then(function(res) {
-//   console.log(res.data)
-// })
-
-let $filesTable = $('#filesTable').DataTable({
-  dom: 'Bfrtip',
-  buttons: [
-    'colvis'
-  ],
+let $filesTable = $('#listTable').DataTable({
+  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,
-  ajax: '/files',
   deferRender: true,
   search: {
     return: false
   },
+  language: {
+    info: "_START_ - _END_ of _TOTAL_",
+    search: "_INPUT_",
+    searchPlaceholder: "Search...",
+  },
+  ajax: '/files',
   columnDefs: [
-    { orderable: false, targets: 5 },
-    { visible: false, targets: [4,5,6] },
-    { class: 'col-2', targets: 2 },
-    { "width": "40%", "targets": 0 },
-    { "width": "20%", "targets": 1 },
+    { "width": "325%", "targets": 0 },
+    { "width": "35%", "targets": 1 },
     { "width": "20%", "targets": 2 },
     { "width": "20%", "targets": 3 },
+    { class: 'col-2', targets: 2 },
     { className: "dt-head-left", targets: [ 0,1,2,3 ] },
   ],
   "columns": [
@@ -84,40 +74,13 @@ let $filesTable = $('#filesTable').DataTable({
       }
     },
     { "data": "download" },
-    
-    
   ],
-  "language": {
-    "info": "_START_ - _END_ of _TOTAL_",
-  },
-  "pagingType": "simple",
-  drawCallback: function() {
-    $('#filesTable_paginate').empty();
-    $('#filesTable_paginate').addClass('inline-flex justify-center items-center')
-    $('#filesTable_paginate').append(`
-      <span id="customPrevious" class="p-3 mr-5 ml-5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#5F6368" d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
-      </span>
-      <span id="customNext" class="p-3">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#5F6368" d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
-      </span>
-    `);
-    $('#customNext').on( 'click', function () {
-      $filesTable.page( 'next' ).draw( 'page' );
-    } );
-
-    $('#customPrevious').on( 'click', function () {
-      $filesTable.page( 'previous' ).draw( 'page' );
-    } );
-  },
+  pagingType: 'arrows',
+  
+  
 });
 
-$('#filesTable').after('<div class="files-table-footer flex justify-end items-center mt-5 mb-5 mr-5"></div>');
-$('.files-table-footer').append($('#filesTable_info'))
-$('.files-table-footer').append($('#filesTable_paginate'))
-
-
-
+$('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 
 function fetchNewest() {
   axios.get('/newest')
@@ -204,21 +167,81 @@ function fetchMostDownloaded() {
   });
 }
 
-// (() => {
-//   files.forEach(file => {
-//     let $node = $(`
-//       <tr>
-//       <td>${file.title}</td>
-//       <td>${file.description}</td>
-//       <td>${moment(file.from).format('ll')} ~ ${moment(file.to).format('ll')}</td>
-//       <td>${file.division}</td>
-//       <td>${moment(file.updated_at).calendar()}</td>
-//       <td>
-//         <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${file.path}" download="${file.title}">Download</a>
-//       </td>
-//       </tr>
-//     `);
+const $noDataTemplate = $(`
+<div class="text-center">
+<img src="/images/no-data.svg" class="h-[100px] inline-block" alt="no data">
+<div class="mt-5 text-3xl text-semibold text-gray-400">No data available</div>
+</div>
+`);
 
-//     $filesTable.row.add($node).draw();
-//   })
-// })();
+function initPagination() {
+  function calcCurrentPage(oSettings) {
+    return Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
+  }
+
+  function calcPages(oSettings) {
+    return Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength);
+  }
+  $.fn.DataTable.ext.pager.arrows = {
+    "fnInit": function ( oSettings, nPaging, fnCallbackDraw ) {
+      let $nPaging = $(nPaging);
+      let $nPrevious = $(`
+        <span class="rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+        </span>
+      `);
+      let $nNext = $(`
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
+        </span>
+      `);
+      $nPrevious.addClass('paginate-arrow prev disabled');
+      $nNext.addClass('paginate-arrow next');
+      $nPaging.addClass('inline-flex justify-center items-center')
+      $nPaging.append($nPrevious);
+      $nPaging.append(`<span class="px-2"></span>`)
+      $nPaging.append($nNext);
+
+      $nPrevious.on('click', function() {
+        var iCurrentPage = calcCurrentPage(oSettings);
+        if (iCurrentPage !== 1) {
+            oSettings.oApi._fnPageChange(oSettings, 'previous');
+            fnCallbackDraw(oSettings);
+        }
+      });
+
+      $nNext.on('click', function() {
+          var iCurrentPage = calcCurrentPage(oSettings);
+          if (iCurrentPage !== calcPages(oSettings)) {
+              oSettings.oApi._fnPageChange(oSettings, 'next');
+              fnCallbackDraw(oSettings);
+          }
+      });
+    },
+    "fnUpdate": function (oSettings, fnCallbackDraw) {
+      if (!oSettings.aanFeatures.p) {
+        return;
+      }
+
+      let an = oSettings.aanFeatures.p;
+
+      var iPages = calcPages(oSettings);
+      var iCurrentPage = calcCurrentPage(oSettings);
+
+      let $prev = $(an).find('.paginate-arrow.prev');
+      let $next = $(an).find('.paginate-arrow.next');
+
+      if (iCurrentPage == 1) {
+        $prev.addClass('disabled')
+      } else {
+        $prev.removeClass('disabled')
+      }
+
+      if (iCurrentPage == iPages) {
+        $next.addClass('disabled')
+      } else {
+        $next.removeClass('disabled')
+      }
+    },
+  };
+}
