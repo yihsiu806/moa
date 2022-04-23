@@ -16,6 +16,9 @@ class CreateDivisionsTable extends Migration
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->binary('icon')->nullable()->default(null);
+            $table->string('picture')->nullable()->default(null);
+            $table->string('slug');
             $table->timestamps();
         });
     }
