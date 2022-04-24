@@ -25,8 +25,6 @@ Here we use `Ubuntu 20` as the devdlopment/deploy machine.
 
 If you are using Windows, please refer to [Laravel](https://laravel.com/) for more information about how to develop Lavavel project on Windows.
 
-You can also use `WSL + Ubuntu`. (Google it.)
-
 ### Update System
 
 ```sh
@@ -85,6 +83,7 @@ sudo ln -s /usr/local/lib/nodejs/node-v16.14.2-linux-x64/lib/node_modules/npm/bi
 ```
 
 Check nodejs version:
+
 ```sh
 node -v
 npm -v
@@ -121,24 +120,27 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 ```
 
 Press `Tab` to choose `Ok`:
+
 ![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-1.jpg)
 
 Press `Tab` to choose `No`:
 
 ![](https://github.com/yihsiu806/moa/blob/6f11100b8fb2fe0e633126e1c83f9d365a9a265d/phpmyadmin-2.jpg)
 
-
 Create a symlink to web directory:
+
 ```sh
 sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 ```
 
 Edit nginx config file:
+
 ```sh
 sudo vi /etc/nginx/sites-enabled/default
 ```
 
 Paste following config:
+
 ```
 server {
     listen 80 default_server;
@@ -159,7 +161,6 @@ server {
         fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
     }
 }
-
 ```
 
 Reload nginx:
@@ -177,6 +178,7 @@ http://127.0.0.1/phpmyadmin/
 
 
 If encounter any problem, please make sure all required services is running: 
+
 ```sh
 sudo systemctl start nginx
 sudo systemctl start php7.4-fpm
@@ -184,6 +186,7 @@ sudo systemctl start mysql
 ```
 
 Make sure that firewall allow port 80:
+
 ```sh
 sudo ufw allow 80
 ```
@@ -230,7 +233,7 @@ Generate application key:
 php artisan key:generate
 ```
 
-Set `.env`
+Setup `.env`:
 
 ```sh
 DB_CONNECTION=mysql
@@ -261,13 +264,10 @@ php artisan serve
 
 You're ready to go! Visit Ping CRM in your browser, and login with:
 
-- **Username:** johndoe@example.com
-- **Password:** secret
+| Username | Password      |
+| -------- | ------------- |
+| admin    | admin_2022    |
+| division | division_2022 |
+| viewer   | viewer_2022   |
 
-Please refer to the [Documentation](https://www.notion.so/MOA-Data-Sharing-Platform-Documentation-381e07afd3d84254b611681b8ded2fec) for more information about the code structure.
-
-## Deploy the Website
-
-[Deploy with Nginx]()
-
-[Deploy with Apache]()
+Please refer to the [Development Documentation](https://www.notion.so/MOA-Data-Sharing-Platform-Documentation-381e07afd3d84254b611681b8ded2fec) for more information about the code structure.
