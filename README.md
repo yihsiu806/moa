@@ -239,19 +239,19 @@ Build assets:
 npm run dev
 ```
 
-Setup configuration:
-
-```sh
-cp .env.example .env
-```
-
 Generate application key:
 
 ```sh
 php artisan key:generate
 ```
 
-Setup `.env`:
+Setup configuration:
+
+```sh
+cp .env.example .env
+```
+
+Modify `.env`:
 
 ```sh
 DB_CONNECTION=mysql
