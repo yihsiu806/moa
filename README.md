@@ -103,10 +103,22 @@ You will use them later.
 sudo mysql -u root
 ```
 
+Create database:
+
 ```sh
 create database moa;
+```
+
+Create new user with `your_username` and `your_password`:
+
+```sh
 create user 'your_username'@'localhost' identified by 'your_password';
-grant all privileges on moa.* to 'your_username'@'your_password';
+```
+
+Grant privileges to the user:
+
+```sh
+grant all privileges on moa.* to 'your_username'@'localhost';
 ```
 
 ### Install `nginx` and `phpmyadmin` on Ubuntu
