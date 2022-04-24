@@ -121,6 +121,12 @@ Grant privileges to the user:
 grant all privileges on moa.* to 'your_username'@'localhost';
 ```
 
+Exit mysql command line:
+
+```sh
+quit
+```
+
 ### Install `nginx` and `phpmyadmin` on Ubuntu
 
 ```sh
