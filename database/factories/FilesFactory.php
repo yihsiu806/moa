@@ -20,7 +20,7 @@ class FilesFactory extends Factory
             'to' => $this->faker->date(),
             'download' => 0,
             'path' => $this->faker->text(10),
-            'owner' => $this->faker->randomElement([3, 4, 5, 11, 12, 13, 14]),
+            'owner' => $this->faker->randomElement([2]),
             'division' => $this->faker->numberBetween(1, 8),
             'created_at' => $this->faker->date(),
             'updated_at' => $this->faker->date(),
