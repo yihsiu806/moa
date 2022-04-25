@@ -288,4 +288,4 @@ You're ready to go! Visit Ping CRM in your browser, and login with:
 | division | division_2022 |
 | viewer   | viewer_2022   |
 
-Please refer to the [Development Documentation](https://www.notion.so/MOA-Data-Sharing-Platform-Documentation-381e07afd3d84254b611681b8ded2fec) for more information about the code structure.
+Please refer to the [Development Documentation](https://crimson-octave-778.notion.site/MOA-Data-Sharing-Platform-Development-Documentation-381e07afd3d84254b611681b8ded2fec) for more information about the code structure.
