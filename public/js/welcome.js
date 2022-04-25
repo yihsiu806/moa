@@ -58486,9 +58486,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-initPagination(); // fetchNewest();
-// fetchMostDownloaded();
-
+initPagination();
+fetchNewest();
+fetchMostDownloaded();
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').DataTable({
   dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
@@ -58504,8 +58504,9 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
     searchPlaceholder: "Search..."
   },
   ajax: '/files',
+  "order": [[2, "desc"]],
   columnDefs: [{
-    "width": "325%",
+    "width": "25%",
     "targets": 0
   }, {
     "width": "35%",
@@ -58517,48 +58518,61 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
     "width": "20%",
     "targets": 3
   }, {
-    "class": 'col-2',
-    targets: 2
-  }, {
     className: "dt-head-left",
     targets: [0, 1, 2, 3]
+  }, {
+    'targets': [3],
+
+    /* column index */
+    'orderable': false
+    /* true or false */
+
   }],
   "columns": [{
     "data": "title"
   }, {
-    "data": "division"
+    "data": "division",
+    "render": function render(data, type, row) {
+      if (type == 'display') {
+        return data;
+      } else if (type == 'sort') {
+        return data;
+      } else {
+        return data;
+      }
+    }
   }, {
     "data": "updated_at",
     "render": function render(data, type, row) {
       if (type === 'sort') {
-        return moment__WEBPACK_IMPORTED_MODULE_3___default()(data);
+        // console.log(data)
+        // console.log(moment(data).unix())
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(data).unix();
+      } else {
+        return moment__WEBPACK_IMPORTED_MODULE_3___default()(data).calendar();
       }
-
-      return moment__WEBPACK_IMPORTED_MODULE_3___default()(data).calendar();
     }
   }, {
     "data": "path",
     "render": function render(data, type, row) {
       return "<a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/".concat(row.path, "\" download=\"").concat(row.title, "\">Download</a>");
     }
-  }, {
-    "data": "description"
-  }, {
-    "data": "duration",
-    "render": function render(data, type, row) {
-      if (type === 'display') {
-        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from).format('ll') + ' ~ ' + moment__WEBPACK_IMPORTED_MODULE_3___default()(row.to).format('ll');
-      } else if (type === 'filter') {
-        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from).format('ll') + ' ' + moment__WEBPACK_IMPORTED_MODULE_3___default()(row.to).format('ll');
-      } else if (type === 'sort') {
-        return moment__WEBPACK_IMPORTED_MODULE_3___default()(row.from);
-      }
-
-      return data;
-    }
-  }, {
-    "data": "download"
-  }],
+  } // { "data": "description" },
+  // { 
+  //   "data": "duration",
+  //   "render": function(data, type, row) {
+  //     if (type === 'display') {
+  //       return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
+  //     } else if (type === 'filter') {
+  //       return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
+  //     } else if (type === 'sort') {
+  //       return moment(row.from);
+  //     }
+  //     return data;
+  //   }
+  // },
+  // { "data": "download" },
+  ],
   pagingType: 'arrows'
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');

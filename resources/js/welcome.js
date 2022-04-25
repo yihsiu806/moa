@@ -15,8 +15,8 @@ import 'datatables.net-buttons-dt/js/buttons.dataTables.min.js';
 
 initPagination();
 
-// fetchNewest();
-// fetchMostDownloaded();
+fetchNewest();
+fetchMostDownloaded();
 
 let $filesTable = $('#listTable').DataTable({
   dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
@@ -33,24 +33,41 @@ let $filesTable = $('#listTable').DataTable({
     searchPlaceholder: "Search...",
   },
   ajax: '/files',
+  "order": [[ 2, "desc" ]],
   columnDefs: [
-    { "width": "325%", "targets": 0 },
+    { "width": "25%", "targets": 0 },
     { "width": "35%", "targets": 1 },
     { "width": "20%", "targets": 2 },
     { "width": "20%", "targets": 3 },
-    { class: 'col-2', targets: 2 },
     { className: "dt-head-left", targets: [ 0,1,2,3 ] },
+    {
+      'targets': [3], /* column index */
+      'orderable': false, /* true or false */
+    }
   ],
   "columns": [
     { "data": "title" },
-    { "data": "division" },
+    { "data": "division",
+      "render": function(data, type, row) {
+        if (type == 'display') {
+          return data;
+        } else if (type == 'sort') {
+          return data;
+        } else {
+          return data;
+        }
+      }
+    },
     {
       "data": "updated_at",
       "render": function(data, type, row) {
         if (type === 'sort') {
-          return moment(data);
+          // console.log(data)
+          // console.log(moment(data).unix())
+          return moment(data).unix();
+        } else {
+          return moment(data).calendar();
         }
-        return moment(data).calendar()
       }
     },
     { 
@@ -59,25 +76,23 @@ let $filesTable = $('#listTable').DataTable({
         return `<a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${row.path}" download="${row.title}">Download</a>`
       }
     },
-    { "data": "description" },
-    { 
-      "data": "duration",
-      "render": function(data, type, row) {
-        if (type === 'display') {
-          return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
-        } else if (type === 'filter') {
-          return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
-        } else if (type === 'sort') {
-          return moment(row.from);
-        }
-        return data;
-      }
-    },
-    { "data": "download" },
+    // { "data": "description" },
+    // { 
+    //   "data": "duration",
+    //   "render": function(data, type, row) {
+    //     if (type === 'display') {
+    //       return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
+    //     } else if (type === 'filter') {
+    //       return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
+    //     } else if (type === 'sort') {
+    //       return moment(row.from);
+    //     }
+    //     return data;
+    //   }
+    // },
+    // { "data": "download" },
   ],
   pagingType: 'arrows',
-  
-  
 });
 
 $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');

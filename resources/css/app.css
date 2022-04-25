@@ -111,6 +111,7 @@ a.sidebar-link:hover svg path {
 .list-table {
   box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
   color: #404040;
+  padding-bottom: 12px;
 }
 
 .list-table table.dataTable thead th {
@@ -118,6 +119,10 @@ a.sidebar-link:hover svg path {
   border-top: 1px solid #e5e7eb;
   background-color: #058344;
   color: #fff;
+}
+
+.list-table table.dataTable tr td {
+  padding: 18px 10px; 
 }
 
 .list-table table.dataTable.no-footer {
@@ -185,6 +190,19 @@ div.dataTables_wrapper {
 .paginate-arrow:not(.disabled) svg:hover path {
   fill: green;
 }
+
+.list-table table.dataTable thead .sorting {
+  background-image: url("/images/datatable-icon/sort_both.png") !important;
+}
+
+.list-table table.dataTable thead .sorting_asc {
+  background-image: url("/images/datatable-icon/sort_asc.png") !important;
+}
+
+.list-table table.dataTable thead .sorting_desc {
+  background-image: url("/images/datatable-icon/sort_desc.png") !important;
+}
+
 
 
 

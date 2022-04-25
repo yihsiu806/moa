@@ -72,7 +72,6 @@ class FilesController extends Controller
             'files.path',
             'files.updated_at',
             'users.username as owner',
-            DB::raw('divisions.name as division'),
             'divisions.name as division',
         )
             ->leftJoin('users', 'users.id', '=', 'files.owner')
@@ -84,6 +83,8 @@ class FilesController extends Controller
             $str = $request->input('search')['value'];
             $where = '';
 
+            $this->write_log($str);
+
             for ($i = 0, $ien = count($columns); $i < $ien; $i++) {
                 $name = $columns[$i]['data'];
 
@@ -91,25 +92,31 @@ class FilesController extends Controller
                     if ($where == '') {
                         $where = $name . ' like "%' . $str . '%"';
                     } else if ($i == 5) {
-                        $where = $where . ' or "from" like "%' . $str . '%"';
-                        $where = $where . ' or "to" like "%' . $str . '%"';
+                        // $where = $where . ' or "from" like "%' . $str . '%"';
+                        // $where = $where . ' or "to" like "%' . $str . '%"';
                     } else if ($i == 1) {
                         $where = $where . ' or "divisions.name" like "%' . $str . '%"';
                     } else if ($i == 2) {
                         $where = $where . ' or "files.updated_at" like "%' . $str . '%"';
                     } else {
-                        $where = $where . ' or ' . $name . ' like "%' . $str . '%"';
+                        // $where = $where . ' or ' . $name . ' like "%' . $str . '%"';
                     }
                 }
             }
 
+            $where = '"divisions.name" like "%' . $str . '%"';
+
+            $this->write_log($where);
+
             $query = $query->whereRaw($where);
+            $this->write_log($query->get()->count());
         }
 
         // order
-        $colname = ['title', 'description', 'from', 'divisions.name', 'download', 'path', 'files.updated_at'];
+        $colname = ['title', 'divisions.name', 'files.updated_at', 'description', 'download', 'path', 'from'];
         if ($request->has('order') && count($request->input('order'))) {
             $order = $request->input('order');
+
             for ($i = 0, $ien = count($order); $i < $ien; $i++) {
                 $query = $query->orderBy($colname[$order[$i]['column']], $order[$i]['dir']);
             }
