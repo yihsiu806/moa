@@ -239,12 +239,6 @@ Build assets:
 npm run dev
 ```
 
-Generate application key:
-
-```sh
-php artisan key:generate
-```
-
 Setup configuration:
 
 ```sh
@@ -260,6 +254,12 @@ DB_PORT=3306
 DB_DATABASE=moa
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
+```
+
+Generate application key:
+
+```sh
+php artisan key:generate
 ```
 
 Run database migrations:
