@@ -13,10 +13,10 @@ import 'datatables.net-buttons/js/dataTables.buttons.min.js';
 import 'datatables.net-buttons-dt/css/buttons.dataTables.min.css';
 import 'datatables.net-buttons-dt/js/buttons.dataTables.min.js';
 
-initPagination();
-
 fetchNewest();
 fetchMostDownloaded();
+
+initPagination();
 
 let $filesTable = $('#listTable').DataTable({
   dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
@@ -24,15 +24,15 @@ let $filesTable = $('#listTable').DataTable({
   processing: true,
   serverSide: true,
   deferRender: true,
-  search: {
-    return: false
-  },
+  // search: {
+  //   return: true
+  // },
   language: {
     info: "_START_ - _END_ of _TOTAL_",
     search: "_INPUT_",
     searchPlaceholder: "Search...",
   },
-  ajax: '/files',
+  ajax: '/files/all',
   "order": [[ 2, "desc" ]],
   columnDefs: [
     { "width": "25%", "targets": 0 },

@@ -58486,24 +58486,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-initPagination();
 fetchNewest();
 fetchMostDownloaded();
+initPagination();
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').DataTable({
   dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,
   deferRender: true,
-  search: {
-    "return": false
-  },
+  // search: {
+  //   return: true
+  // },
   language: {
     info: "_START_ - _END_ of _TOTAL_",
     search: "_INPUT_",
     searchPlaceholder: "Search..."
   },
-  ajax: '/files',
+  ajax: '/files/all',
   "order": [[2, "desc"]],
   columnDefs: [{
     "width": "25%",

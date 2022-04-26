@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Files;
+use App\Models\Division;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -59,7 +60,7 @@ class FilesController extends Controller
         return response($result, Response::HTTP_CREATED);
     }
 
-    public function show(Request $request)
+    public function show(Request $request, $id)
     {
         $query = Files::select(
             'files.id as DT_RowId',
@@ -74,42 +75,35 @@ class FilesController extends Controller
             'users.username as owner',
             'divisions.name as division',
         )
-            ->leftJoin('users', 'users.id', '=', 'files.owner')
-            ->leftJoin('divisions', 'divisions.id', '=', 'files.division');
+            ->leftJoin('users', 'users.id', '=', 'files.owner');
+        // ->leftJoin('divisions', 'divisions.id', '=', 'files.division');
+        // ->where('divisions.id', '=', 'files.division');
+
+        $targetDivision = null;
+
+        $allDivisionId = Division::select('id')->get();
+        foreach ($allDivisionId as $divisionId) {
+            if ($id == $divisionId->id) {
+                $targetDivision = $id;
+                break;
+            }
+        }
+        if ($targetDivision) {
+            $query = $query->join('divisions', function ($join) use ($id) {
+                $join->on('files.division', '=', 'divisions.id')
+                    ->where('divisions.id', '=', $id);
+            });
+        } else {
+            $query = $query->leftJoin('divisions', 'divisions.id', '=', 'files.division');
+        }
 
         // search
-        $columns = $request->input('columns');
         if ($request->has('search') && $request->input('search')['value'] != '') {
             $str = $request->input('search')['value'];
-            $where = '';
 
-            $this->write_log($str);
-
-            for ($i = 0, $ien = count($columns); $i < $ien; $i++) {
-                $name = $columns[$i]['data'];
-
-                if ($columns[$i]['searchable'] == 'true') {
-                    if ($where == '') {
-                        $where = $name . ' like "%' . $str . '%"';
-                    } else if ($i == 5) {
-                        // $where = $where . ' or "from" like "%' . $str . '%"';
-                        // $where = $where . ' or "to" like "%' . $str . '%"';
-                    } else if ($i == 1) {
-                        $where = $where . ' or "divisions.name" like "%' . $str . '%"';
-                    } else if ($i == 2) {
-                        $where = $where . ' or "files.updated_at" like "%' . $str . '%"';
-                    } else {
-                        // $where = $where . ' or ' . $name . ' like "%' . $str . '%"';
-                    }
-                }
-            }
-
-            $where = '"divisions.name" like "%' . $str . '%"';
-
-            $this->write_log($where);
-
-            $query = $query->whereRaw($where);
-            $this->write_log($query->get()->count());
+            $query = $query->where('files.updated_at', 'like', '%' . $str . '%');
+            $query = $query->orWhere('files.title', 'like', '%' . $str . '%');
+            $query = $query->orWhere('divisions.name', 'like', '%' . $str . '%');
         }
 
         // order
@@ -121,6 +115,9 @@ class FilesController extends Controller
                 $query = $query->orderBy($colname[$order[$i]['column']], $order[$i]['dir']);
             }
         }
+
+        $recordsTotal = $query->get()->count();
+        $recordsFiltered = $query->get()->count();
 
         // limit
         if ($request->has('start') && $request->has('length')) {
@@ -135,8 +132,10 @@ class FilesController extends Controller
 
         $result = [
             'draw' => $request->has('draw') ? intval($request->input('draw')) : 10,
-            'recordsTotal' => Files::count(),
-            'recordsFiltered' => Files::count(),
+            // 'recordsTotal' => Files::count(),
+            // 'recordsFiltered' => Files::count(),
+            'recordsTotal' => $recordsTotal,
+            'recordsFiltered' => $recordsFiltered,
             'data' => $query,
         ];
 

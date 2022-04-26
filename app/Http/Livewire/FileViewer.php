@@ -23,6 +23,7 @@ class FileViewer extends Component
     public function render()
     {
         $this->division = Division::select(
+            'divisions.id',
             'divisions.name',
             'divisions.picture',
         )

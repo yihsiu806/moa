@@ -66,7 +66,7 @@ Route::get('/division/edit/{id}', EditDivision::class)->middleware(['auth', 'rol
 Route::patch('/division/edit', 'App\Http\Controllers\DivisionController@saveEditDivision')->middleware(['auth', 'role:division,admin'])->name('patchDivision');
 
 // files
-Route::get('/files', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);
+Route::get('/files/{id}', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);
 Route::get('/newest', 'App\Http\Controllers\FilesController@newest')->middleware(['auth']);
 Route::get('/most-downloaded', 'App\Http\Controllers\FilesController@mostDownloaded')->middleware(['auth']);
 

@@ -21,24 +21,25 @@
         </div>
     </div>
     <h1 class="mt-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
-    <div>
-        <table id="filesTable" class="display" style="width:100%">
+
+    <div class="list-table bg-white rounded">
+        <table id="listTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
-                    <th>File</th>
-                    <th>Desctiption</th>
-                    <th>Duration</th>
-                    <th>Last modified</th>
-                    <th>Download</th>
+                    <th> Filename </th>
+                    <th> Division </th>
+                    <th> Updated </th>
+                    <th> Download </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody></tbody>
         </table>
     </div>
+
 </div>
 <script>
     let division = @js($division);
     let officer = @js($officer);
-    let files = @js($files);
+    // let files = @js($files);
 </script>
 <script src="{{ asset('js/file-viewer.js') }}" defer></script>
