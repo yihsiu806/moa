@@ -2740,7 +2740,7 @@ a.sidebar-link:hover svg path {
 .list-table {
   box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 2px 4px;
   color: #404040;
-  padding-bottom: 12px;
+  padding-bottom: 36px;
 }
 .list-table table.dataTable thead th {
   border-bottom: none;
@@ -2750,6 +2750,9 @@ a.sidebar-link:hover svg path {
 }
 .list-table table.dataTable tr td {
   padding: 18px 10px; 
+}
+.list-table table.dataTable tr:last-child td {
+  border-bottom: 1px solid #058344;
 }
 .list-table table.dataTable.no-footer {
   border-bottom: 1px solid #e5e7eb;
