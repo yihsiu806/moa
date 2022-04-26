@@ -8,7 +8,7 @@
                 <span class="mr-5 bg-white border-solid border-4 border-yellow rounded-full">
                     <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                 </span>
-                <span class="font-bold leading-tight text-3xl text-white">Data Sharing</span>
+                <span class="mr-2 font-bold leading-tight text-3xl text-white">Data Share</span>
             </a>
 
             <!-- Search Box -->
