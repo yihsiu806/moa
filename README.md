@@ -8,7 +8,7 @@ A platform for the ministry of agriculture to share data internally.
 
 ## Deploy the Website
 
-[Deploy with Apache or Nginx](https://crimson-octave-778.notion.site/MOA-Data-Sharing-Platform-Deployment-Documentation-6ae9270ed68149df9dfef6af0b235eab)
+[Deploy MOA Data Share Platform with FTP](https://crimson-octave-778.notion.site/Deploy-MOA-Data-Share-Platform-with-FTP-81f3e0d7695f43968e015d8489ebab35)
 
 ## Development Prerequisite
 
