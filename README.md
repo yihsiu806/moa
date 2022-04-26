@@ -280,7 +280,7 @@ Run the dev server (the output will give the address):
 php artisan serve
 ```
 
-You're ready to go! Visit Ping CRM in your browser, and login with:
+You're ready to go! Visit MOA Data Share in your browser, and login with:
 
 | Username | Password      |
 | -------- | ------------- |
