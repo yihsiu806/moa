@@ -37,3 +37,5 @@
         </div>
     </form>
 </div>
+
+<script src="{{ asset('js/viewer-dashboard.js') }}" defer></script>

@@ -2589,6 +2589,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
 }
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -2895,6 +2899,7 @@ body.inactive {
   display: inline-block;
   overflow: hidden;
   background: #f1f2f3;
+  /* background: rgba(255, 255, 255, 0); */
 }
 .ldio-wozev4aceb {
   width: 100%;
@@ -2976,6 +2981,10 @@ body.inactive {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
+.hover\:bg-green:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 104 57 / var(--tw-bg-opacity));
+}
 .hover\:fill-yellow:hover {
   fill: #fdb515;
 }
@@ -3002,6 +3011,10 @@ body.inactive {
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -3208,6 +3221,11 @@ body.inactive {
   .dark\:hover\:text-gray-900:hover {
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity));
+  }
+
+  .dark\:hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .dark\:focus\:border-yellow:focus {

@@ -265,6 +265,7 @@ body.inactive {
   display: inline-block;
   overflow: hidden;
   background: #f1f2f3;
+  /* background: rgba(255, 255, 255, 0); */
 }
 .ldio-wozev4aceb {
   width: 100%;
