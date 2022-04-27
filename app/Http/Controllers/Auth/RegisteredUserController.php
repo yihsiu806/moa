@@ -94,6 +94,30 @@ class RegisteredUserController extends Controller
         ]);
     }
 
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'currentPassword' => ['required', Rules\Password::min(6)],
+            'newPassword' => ['required', Rules\Password::min(6)],
+            'confirmNewPassword' => ['required', Rules\Password::min(6)],
+        ]);
+
+        $check = Hash::check($request->input('currentPassword'), Auth::user()->password);
+        if (!$check) {
+            return response(['message' => 'Current password is not matching'], Response::HTTP_BAD_REQUEST);
+        }
+
+        if ($request->input('newPassword') != $request->input('confirmNewPassword')) {
+            return response(['message' => 'New password is not match with confirm'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $user = User::find(Auth::user()->id)->update([
+            'password' => Hash::make($request->input('newPassword')),
+        ]);
+
+        Auth::logout();
+    }
+
     function write_log($log_msg)
     {
         $log_filename = "/home/yihsiu/logs";

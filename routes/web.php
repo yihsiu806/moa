@@ -59,6 +59,9 @@ Route::patch('/user/edit', [App\Http\Controllers\Auth\RegisteredUserController::
 Route::patch('/user/delete', [App\Http\Controllers\Auth\RegisteredUserController::class, 'delete']);
 Route::patch('/user/reset', [App\Http\Controllers\Auth\RegisteredUserController::class, 'reset']);
 
+// viewer dashboard change password
+Route::patch('/viewer/changePassword', [App\Http\Controllers\Auth\RegisteredUserController::class, 'changePassword']);
+
 // edit division, used by admin, division
 Route::get('/division/edit', EditDivision::class)->middleware(['auth', 'role:division'])->name('goToEditDivision');
 Route::get('/division/add/', EditDivision::class)->middleware(['auth', 'role:admin'])->name('adminAddDivision');
