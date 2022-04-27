@@ -12,6 +12,10 @@ import 'datatables.net-buttons/js/buttons.colVis.min.js';
 import 'datatables.net-buttons/js/dataTables.buttons.min.js';
 import 'datatables.net-buttons-dt/css/buttons.dataTables.min.css';
 import 'datatables.net-buttons-dt/js/buttons.dataTables.min.js';
+import tippy, {roundArrow, followCursor} from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+import 'tippy.js/animations/scale.css';
+import 'tippy.js/dist/svg-arrow.css';
 
 fetchNewest();
 fetchMostDownloaded();
@@ -98,6 +102,30 @@ let $filesTable = $('#listTable').DataTable({
     $('#ltLoader').fadeOut();
     $('#ltPlaceholder').hide();
     $('#ltWrapper').fadeIn();
+  },
+  "rowCallback": function( row, data ) {
+    tippy(row, {
+      content: `
+        <div class="tippy-desc">
+          <div class="tippy-title">Description</div>
+          <div>${data.description}</div>
+        </div>
+        <div class="tippy-footer">
+          <span>Duration</span>
+          <span>${data.duration}</span>
+        </div>
+      `,
+      placement: 'top-start',
+      theme: 'material',
+      // arrow: false,
+      arrow: roundArrow,
+      allowHTML: true,
+      followCursor: true,
+      plugins: [followCursor],
+      theme: 'tomato',
+      // hideOnClick: false,
+      // trigger: 'click',
+    });
   },
 });
 
