@@ -120,26 +120,17 @@ let $filesTable = $('#listTable').DataTable({
         return `<a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${row.path}" download="${row.title}">Download</a>`
       }
     },
-    // { "data": "description" },
-    // { 
-    //   "data": "duration",
-    //   "render": function(data, type, row) {
-    //     if (type === 'display') {
-    //       return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
-    //     } else if (type === 'filter') {
-    //       return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
-    //     } else if (type === 'sort') {
-    //       return moment(row.from);
-    //     }
-    //     return data;
-    //   }
-    // },
-    // { "data": "download" },
   ],
   pagingType: 'arrows',
+  "drawCallback": function( settings ) {
+    $('body').removeClass('inactive');
+    $('#ltLoader').hide();
+    $('#ltWrapper').fadeIn();
+  },
 });
 
 $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
+
 
 
 function initPagination() {

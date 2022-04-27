@@ -55967,23 +55967,13 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
     "render": function render(data, type, row) {
       return "<a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/".concat(row.path, "\" download=\"").concat(row.title, "\">Download</a>");
     }
-  } // { "data": "description" },
-  // { 
-  //   "data": "duration",
-  //   "render": function(data, type, row) {
-  //     if (type === 'display') {
-  //       return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
-  //     } else if (type === 'filter') {
-  //       return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
-  //     } else if (type === 'sort') {
-  //       return moment(row.from);
-  //     }
-  //     return data;
-  //   }
-  // },
-  // { "data": "download" },
-  ],
-  pagingType: 'arrows'
+  }],
+  pagingType: 'arrows',
+  "drawCallback": function drawCallback(settings) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').hide();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltWrapper').fadeIn();
+  }
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 

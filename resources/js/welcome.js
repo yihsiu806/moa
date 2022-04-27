@@ -93,6 +93,11 @@ let $filesTable = $('#listTable').DataTable({
     // { "data": "download" },
   ],
   pagingType: 'arrows',
+  "drawCallback": function( settings ) {
+    $('body').removeClass('inactive');
+    $('#ltLoader').fadeOut();
+    $('#ltWrapper').fadeIn();
+  },
 });
 
 $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');

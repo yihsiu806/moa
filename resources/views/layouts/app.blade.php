@@ -20,9 +20,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased md:h-screen md:overflow-y-hidden">
+<body class="font-sans antialiased md:h-screen md:overflow-y-hidden inactive">
+
     <div class="min-h-screen bg-gray-100 md:h-full">
 
+        @include('layouts.loading')
         @include('layouts.navigation')
 
         <div class="flex flex-wrap md:flex-nowrap md:h-full">
@@ -39,6 +41,8 @@
 
         </div>
     </div>
+
+
 </body>
 
 </html>

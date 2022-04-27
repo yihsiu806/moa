@@ -58573,7 +58573,12 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
   // },
   // { "data": "download" },
   ],
-  pagingType: 'arrows'
+  pagingType: 'arrows',
+  "drawCallback": function drawCallback(settings) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltWrapper').fadeIn();
+  }
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 

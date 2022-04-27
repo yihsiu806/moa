@@ -22,7 +22,9 @@
     </div>
     <h1 class="mt-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
-    <div class="list-table bg-white rounded">
+
+
+    <div id="ltWrapper" class="hidden list-table bg-white rounded">
         <table id="listTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
@@ -37,6 +39,7 @@
     </div>
 
 </div>
+
 <script>
     let division = @js($division);
     let officer = @js($officer);

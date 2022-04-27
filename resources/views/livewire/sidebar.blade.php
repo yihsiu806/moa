@@ -3,9 +3,9 @@
     <aside class="shrink-0 hidden md:block md:w-[240px] md:bg-[#eee] md:relative md:h-full">
 
         <div id="sidebar"
-            class="md:pt-6 md:pb-[120px] md:absolute md:top-0 md:right-0 md:bottom-0 md:left-0 md:overflow-y-auto">
+            class="md:pt-2 md:pb-[120px] md:absolute md:top-0 md:right-0 md:bottom-0 md:left-0 md:overflow-y-auto">
 
-            <div class="h-[26px] mb-[12px] px-1 flex justify-center items-center">
+            <div class="h-[26px] mt-2 mb-6 px-1 flex justify-center items-center">
 
                 {{-- saint lucia flag --}}
                 <svg width="100%" height="100%" viewBox="0 0 484 350" version="1.1" xmlns="http://www.w3.org/2000/svg"
