@@ -54,6 +54,8 @@
 
     <h1 class="mt-10 mb-5 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
+    <div id="ltPlaceholder" class="rounded"> </div>
+
     <div class="list-table bg-white rounded">
         <table id="listTable" class="hover row-border" style="width:100%">
             <thead>

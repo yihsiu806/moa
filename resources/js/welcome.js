@@ -96,6 +96,7 @@ let $filesTable = $('#listTable').DataTable({
   "drawCallback": function( settings ) {
     $('body').removeClass('inactive');
     $('#ltLoader').fadeOut();
+    $('#ltPlaceholder').hide();
     $('#ltWrapper').fadeIn();
   },
 });

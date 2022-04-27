@@ -124,7 +124,8 @@ let $filesTable = $('#listTable').DataTable({
   pagingType: 'arrows',
   "drawCallback": function( settings ) {
     $('body').removeClass('inactive');
-    $('#ltLoader').hide();
+    $('#ltLoader').fadeOut();
+    $('#ltPlaceholder').hide();
     $('#ltWrapper').fadeIn();
   },
 });

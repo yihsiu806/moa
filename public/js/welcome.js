@@ -58577,6 +58577,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
   "drawCallback": function drawCallback(settings) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltPlaceholder').hide();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltWrapper').fadeIn();
   }
 });
