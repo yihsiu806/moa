@@ -34398,12 +34398,78 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+hideLoading();
+initPagination();
 var $usersTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#usersTable').DataTable({
-  responsive: true
+  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  responsive: true,
+  language: {
+    info: "_START_ - _END_ of _TOTAL_",
+    search: "_INPUT_",
+    searchPlaceholder: "Search..."
+  },
+  columnDefs: [{
+    "width": "15%",
+    "targets": 0
+  }, {
+    "width": "15%",
+    "targets": 1
+  }, {
+    "width": "25%",
+    "targets": 2
+  }, {
+    "width": "25%",
+    "targets": 3
+  }, {
+    "width": "20%",
+    "targets": 4
+  }, {
+    className: "dt-head-left",
+    targets: [0, 1, 2, 3, 4]
+  }, {
+    'targets': [4],
+
+    /* column index */
+    'orderable': false
+    /* true or false */
+
+  }],
+  pagingType: 'arrows'
 });
 var $divisionsTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsTable').DataTable({
-  responsive: true
+  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  responsive: true,
+  language: {
+    info: "_START_ - _END_ of _TOTAL_",
+    search: "_INPUT_",
+    searchPlaceholder: "Search..."
+  },
+  columnDefs: [{
+    "width": "25%",
+    "targets": 0
+  }, {
+    "width": "25%",
+    "targets": 1
+  }, {
+    "width": "25%",
+    "targets": 2
+  }, {
+    "width": "25%",
+    "targets": 3
+  }, {
+    className: "dt-head-left",
+    targets: [0, 1, 2, 3]
+  }, {
+    'targets': [3],
+
+    /* column index */
+    'orderable': false
+    /* true or false */
+
+  }],
+  pagingType: 'arrows'
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 
 (function () {
   users.forEach(function (user) {
@@ -34416,10 +34482,80 @@ var $divisionsTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsT
 (function () {
   divisions.forEach(function (division) {
     var updated = new Date(division.updated_at).toLocaleDateString();
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td class=\"flex justify-center items-center\">\n        <span class=\"w-6 h-6 fill-grey inline-flex justify-center items-center\">\n          ".concat(division.icon, "\n        </span>\n      </td>\n      <td>").concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
     $divisionsTable.row.add($node).draw();
   });
 })();
+
+function hideLoading() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+}
+
+function initPagination() {
+  function calcCurrentPage(oSettings) {
+    return Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
+  }
+
+  function calcPages(oSettings) {
+    return Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength);
+  }
+
+  (jquery__WEBPACK_IMPORTED_MODULE_0___default().fn.DataTable.ext.pager.arrows) = {
+    "fnInit": function fnInit(oSettings, nPaging, fnCallbackDraw) {
+      var $nPaging = jquery__WEBPACK_IMPORTED_MODULE_0___default()(nPaging);
+      var $nPrevious = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span class=\"rounded-full\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"/></svg>\n        </span>\n      ");
+      var $nNext = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span>\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"/></svg>\n        </span>\n      ");
+      $nPrevious.addClass('paginate-arrow prev disabled');
+      $nNext.addClass('paginate-arrow next');
+      $nPaging.addClass('inline-flex justify-center items-center');
+      $nPaging.append($nPrevious);
+      $nPaging.append("<span class=\"px-2\"></span>");
+      $nPaging.append($nNext);
+      $nPrevious.on('click', function () {
+        var iCurrentPage = calcCurrentPage(oSettings);
+
+        if (iCurrentPage !== 1) {
+          oSettings.oApi._fnPageChange(oSettings, 'previous');
+
+          fnCallbackDraw(oSettings);
+        }
+      });
+      $nNext.on('click', function () {
+        var iCurrentPage = calcCurrentPage(oSettings);
+
+        if (iCurrentPage !== calcPages(oSettings)) {
+          oSettings.oApi._fnPageChange(oSettings, 'next');
+
+          fnCallbackDraw(oSettings);
+        }
+      });
+    },
+    "fnUpdate": function fnUpdate(oSettings, fnCallbackDraw) {
+      if (!oSettings.aanFeatures.p) {
+        return;
+      }
+
+      var an = oSettings.aanFeatures.p;
+      var iPages = calcPages(oSettings);
+      var iCurrentPage = calcCurrentPage(oSettings);
+      var $prev = jquery__WEBPACK_IMPORTED_MODULE_0___default()(an).find('.paginate-arrow.prev');
+      var $next = jquery__WEBPACK_IMPORTED_MODULE_0___default()(an).find('.paginate-arrow.next');
+
+      if (iCurrentPage == 1) {
+        $prev.addClass('disabled');
+      } else {
+        $prev.removeClass('disabled');
+      }
+
+      if (iCurrentPage == iPages) {
+        $next.addClass('disabled');
+      } else {
+        $next.removeClass('disabled');
+      }
+    }
+  };
+}
 })();
 
 /******/ })()

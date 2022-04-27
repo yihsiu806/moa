@@ -43,6 +43,10 @@ class RegisteredUserController extends Controller
             return response(['message' => 'Username already taken.'], Response::HTTP_BAD_REQUEST);
         }
 
+        if (!preg_match("/^[a-zA-Z0-9_]+$/", $request->input('username'))) {
+            return response(['message' => 'Username should only contain a-z A-Z 0-9 and underscore'], Response::HTTP_BAD_REQUEST);
+        }
+
         $request->validate([
             'username' => ['required', 'string', 'max:255'],
             'password' => ['required', Rules\Password::min(6)],
@@ -70,6 +74,10 @@ class RegisteredUserController extends Controller
         $request->validate([
             'username' => ['required', 'string', 'max:255'],
         ]);
+
+        if (!preg_match("/^[a-zA-Z0-9_]+$/", $request->input('username'))) {
+            return response(['message' => 'Username should only contain a-z A-Z 0-9 and underscore'], Response::HTTP_BAD_REQUEST);
+        }
 
         $user = User::find($request->input('id'))->update([
             'username' => $request->input('username'),

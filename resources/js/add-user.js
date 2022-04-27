@@ -2,6 +2,8 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
+hideLoading();
+
 (() => {
   if (divisions) {
     divisions.forEach(division => {
@@ -50,6 +52,11 @@ $('#addNewUserForm').on('submit', function(event) {
   let validate = true;
 
   if (!$('#username').val()) {
+    validate = false;
+    $('#username').addClass('is-invalid');
+  }
+
+  if (!/^[a-zA-Z0-9_]+$/.test($('#username').val())) {
     validate = false;
     $('#username').addClass('is-invalid');
   }
@@ -103,3 +110,8 @@ $('#addNewUserForm').on('submit', function(event) {
     })
   });
 });
+
+function hideLoading() {
+  $('body').removeClass('inactive');
+  $('#ltLoader').fadeOut();
+}

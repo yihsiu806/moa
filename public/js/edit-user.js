@@ -2054,6 +2054,40 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/utils.js":
+/*!*******************************!*\
+  !*** ./resources/js/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "filePath": () => (/* binding */ filePath),
+/* harmony export */   "hideLoading": () => (/* binding */ hideLoading),
+/* harmony export */   "listTable": () => (/* binding */ listTable),
+/* harmony export */   "validateEmail": () => (/* binding */ validateEmail)
+/* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+var filePath = '/storage/';
+var validateEmail = function validateEmail(email) {
+  return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+};
+function listTable($ele, config) {// let $listTable = ;
+  // return $listTable;
+}
+function hideLoading() {
+  console.log('aaa'); // document.querySelector('body').classList.remove('inactive');
+  // document.querySelector('#ltLoader').style.display = 'none';
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+}
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -16656,9 +16690,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./resources/js/utils.js");
 
 
 
+
+(0,_utils__WEBPACK_IMPORTED_MODULE_3__.hideLoading)();
+console.log(user);
+console.log(divisions);
 
 if (user && user.username) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val(user.username);
@@ -16672,6 +16711,11 @@ if (divisions) {
   divisions.forEach(function (division) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').append("\n      <option value=\"".concat(division.id, "\">").concat(division.name, "</option>\n    "));
   });
+}
+
+if (user.division) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.division-select').show();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionSelect').val(user.division);
 }
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#roleSelect').on('change', function () {
@@ -16703,6 +16747,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editUserForm').on('submit', func
   var validate = true;
 
   if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val()) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').addClass('is-invalid');
+  }
+
+  if (!/^[a-zA-Z0-9_]+$/.test(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val())) {
     validate = false;
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').addClass('is-invalid');
   }

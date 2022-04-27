@@ -9,6 +9,8 @@ import 'datatables.net-responsive/js/dataTables.responsive.min.js';
 import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
+hideLoading();
+
 $('#helloDivision').text(division.name);
 if (division.picture && division.picture != 'default') {
   $('#divisionPicture').attr('src', '/storage/' + division.picture);
@@ -42,4 +44,9 @@ $('#officerEmail').text(officer.email);
     responsive: true,
   });
 })();
+
+function hideLoading() {
+  $('body').removeClass('inactive');
+  $('#ltLoader').fadeOut();
+}
 

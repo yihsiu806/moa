@@ -17,18 +17,20 @@
     </div>
 
     <div class="mt-12">
-        <table id="usersTable" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>Username</th>
-                    <th>Division</th>
-                    <th>Last modified</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-        </table>
+        <div class="list-table bg-white rounded">
+            <table id="usersTable" class="hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Username</th>
+                        <th>Division</th>
+                        <th>Last modified</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
 
     <h1 class="mt-10 text-grey-dark text-3xl font-bold">
@@ -47,18 +49,20 @@
     </div>
 
     <div class="mt-12 mb-10">
-        <table id="divisionsTable" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Icon</th>
-                    <th>Division</th>
-                    <th>Officer</th>
-                    <th>Last modified</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-        </table>
+        <div class="list-table bg-white rounded">
+            <table id="divisionsTable" class="hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Division</th>
+                        <th>Officer</th>
+                        <th>Last modified</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
     </div>
 
     <div class="flex items-center">

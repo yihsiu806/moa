@@ -16659,6 +16659,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+hideLoading();
 
 (function () {
   if (divisions) {
@@ -16710,6 +16711,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', fu
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').addClass('is-invalid');
   }
 
+  if (!/^[a-zA-Z0-9_]+$/.test(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').val())) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#username').addClass('is-invalid');
+  }
+
   if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').val()) {
     validate = false;
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password').addClass('is-invalid');
@@ -16753,6 +16759,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#addNewUserForm').on('submit', fu
     });
   });
 });
+
+function hideLoading() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+}
 })();
 
 /******/ })()

@@ -23,7 +23,10 @@
                 <input
                     class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
                     id="username" type="text">
-                <div class="mb-3 hidden text-sm text-red-500">Username can not be empty.</div>
+                <div class="mb-3 hidden text-sm text-red-500">
+                    <div>Username can not be empty.</div>
+                    <div>You can only use a-z A-Z 0-9 and underscore.</div>
+                </div>
             </div>
 
             {{-- Role --}}

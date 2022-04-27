@@ -2064,15 +2064,26 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "filePath": () => (/* binding */ filePath),
+/* harmony export */   "hideLoading": () => (/* binding */ hideLoading),
 /* harmony export */   "listTable": () => (/* binding */ listTable),
 /* harmony export */   "validateEmail": () => (/* binding */ validateEmail)
 /* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
 var filePath = '/storage/';
 var validateEmail = function validateEmail(email) {
   return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 };
 function listTable($ele, config) {// let $listTable = ;
   // return $listTable;
+}
+function hideLoading() {
+  console.log('aaa'); // document.querySelector('body').classList.remove('inactive');
+  // document.querySelector('#ltLoader').style.display = 'none';
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
 }
 
 /***/ }),

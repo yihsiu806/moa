@@ -34398,6 +34398,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+hideLoading();
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#helloDivision').text(division.name);
 
 if (division.picture && division.picture != 'default') {
@@ -34423,6 +34424,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.emai
     responsive: true
   });
 })();
+
+function hideLoading() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+}
 })();
 
 /******/ })()

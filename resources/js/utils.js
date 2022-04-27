@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const filePath = '/storage/';
 
 export const validateEmail = (email) => {
@@ -12,4 +14,12 @@ export function listTable($ele, config) {
   // let $listTable = ;
 
   // return $listTable;
+}
+
+export function hideLoading() {
+  console.log('aaa');
+  // document.querySelector('body').classList.remove('inactive');
+  // document.querySelector('#ltLoader').style.display = 'none';
+  $('body').removeClass('inactive');
+  $('#ltLoader').fadeOut();
 }
