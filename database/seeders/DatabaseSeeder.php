@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Veterinary & Livestock Services',
             'icon' => null,
             'picture' =>  null,
-            'slug' => 'engineer',
+            'slug' => 'livestock',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
