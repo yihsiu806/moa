@@ -104,13 +104,17 @@ class FilesController extends Controller
 
             $query = $query->where('files.updated_at', 'like', '%' . $str . '%');
             $query = $query->orWhere('files.title', 'like', '%' . $str . '%');
+            $query = $query->orWhere('files.description', 'like', '%' . $str . '%');
+            $query = $query->orWhere('files.from', 'like', '%' . $str . '%');
+            $query = $query->orWhere('files.to', 'like', '%' . $str . '%');
             $query = $query->orWhere('divisions.name', 'like', '%' . $str . '%');
         }
 
         // order
-        $colname = ['title', 'divisions.name', 'files.updated_at', 'description', 'download', 'path', 'from'];
+        $colname = ['title', 'divisions.name', 'files.from', 'files.updated_at', 'description', 'download', 'path', 'from'];
         if ($request->has('order') && count($request->input('order'))) {
             $order = $request->input('order');
+
 
             for ($i = 0, $ien = count($order); $i < $ien; $i++) {
                 $query = $query->orderBy($colname[$order[$i]['column']], $order[$i]['dir']);

@@ -56,6 +56,8 @@
             <thead>
                 <tr>
                     <th>File</th>
+                    <th>Division</th>
+                    <th>Duration</th>
                     <th>Last modified</th>
                     <th>Edit</th>
                     <th>Download</th>

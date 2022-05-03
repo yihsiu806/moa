@@ -9,6 +9,11 @@ import 'datatables.net-responsive/js/dataTables.responsive.min.js';
 import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-responsive-dt/js/responsive.dataTables.min.js';
 
+import tippy, {roundArrow, followCursor} from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+import 'tippy.js/animations/scale.css';
+import 'tippy.js/dist/svg-arrow.css';
+
 hideLoading();
 
 $('#helloDivision').text(division.name);
@@ -62,20 +67,28 @@ let $filesTable = $('#filesTable').DataTable({
     searchPlaceholder: "Search...",
   },
   ajax: '/files/all',
-  "order": [[ 1, "desc" ]],
+  "order": [[ 2, "desc" ]],
   columnDefs: [
     { "width": "30%", "targets": 0 },
-    { "width": "20%", "targets": 1 },
-    { "width": "20%", "targets": 2 },
+    { "width": "0%", "targets": 1 },
+    { "width": "25%", "targets": 2 },
     { "width": "20%", "targets": 3 },
-    { className: "dt-head-left", targets: [ 0,1,2,3 ] },
+    { "width": "10%", "targets": 4 },
+    { "width": "15%", "targets": 5 },
+    { className: "dt-head-left", targets: [ 0,1,2,3,4,5 ] },
     {
-      'targets': [2,3], /* column index */
+      'targets': [4,5], /* column index */
       'orderable': false, /* true or false */
-    }
+    },
+    {
+      "targets": [ 1 ],
+      "visible": false
+  }
   ],
   "columns": [
     { "data": "title" },
+    {"data": "division"},
+    { "data": "duration"},
     {
       "data": "updated_at",
       "render": function(data, type, row) {
@@ -108,6 +121,30 @@ let $filesTable = $('#filesTable').DataTable({
     $('#ltLoader').fadeOut();
     $('#ltPlaceholder').hide();
     $('#ltWrapper').fadeIn();
+  },
+  "rowCallback": function( row, data ) {
+    tippy(row.firstChild, {
+      content: `
+        <div class="tippy-desc">
+          <div class="tippy-title">Description</div>
+          <div>${data.description}</div>
+        </div>
+        <div class="tippy-footer">
+          <span>Division</span>
+          <span>${data.division}</span>
+        </div>
+      `,
+      placement: 'top-start',
+      theme: 'material',
+      // arrow: false,
+      arrow: roundArrow,
+      allowHTML: true,
+      followCursor: true,
+      plugins: [followCursor],
+      theme: 'tomato',
+      // hideOnClick: false,
+      // trigger: 'click',
+    });
   },
 });
 
