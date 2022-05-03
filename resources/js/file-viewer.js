@@ -40,6 +40,12 @@ function initInfoSection() {
       $('#officerEmail').text(officer.email);
     }
   }
+
+  if (officer && officer.picture) {
+    $('#officerPicture').attr('src', '/storage/' + officer.picture);
+  } else {
+    $('#officerPicture').attr('src', '/images/officer-default-picture.png');
+  }
 }
 
 // let $filesTable = $('#filesTable').DataTable({
@@ -133,7 +139,7 @@ let $filesTable = $('#listTable').DataTable({
     $('#ltWrapper').fadeIn();
   },
   "rowCallback": function( row, data ) {
-    tippy(row, {
+    tippy(row.firstChild, {
       content: `
         <div class="tippy-desc">
           <div class="tippy-title">Description</div>

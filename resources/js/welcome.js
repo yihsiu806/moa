@@ -104,7 +104,7 @@ let $filesTable = $('#listTable').DataTable({
     $('#ltWrapper').fadeIn();
   },
   "rowCallback": function( row, data ) {
-    tippy(row, {
+    tippy(row.firstChild, {
       content: `
         <div class="tippy-desc">
           <div class="tippy-title">Description</div>
