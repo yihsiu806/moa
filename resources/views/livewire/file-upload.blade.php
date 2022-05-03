@@ -62,11 +62,16 @@
             <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-2" for="fileTitle">
                 Title
             </label>
-            <div>
-                <input
-                    class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
-                    id="fileTitle" type="text">
-                <div class="mb-3 hidden text-sm text-red-500">Title can not be empty.</div>
+            <div class="">
+                <div class="">
+                    <input
+                        class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-yellow focus:ring-yellow/50"
+                        id="fileTitle" type="text">
+                    <div class="mb-3 hidden text-sm text-red-500">Title can not be empty.</div>
+                </div>
+                <div class="font-bold text-gray-400 text-right">
+                    <span id="fileExtension"></span>
+                </div>
             </div>
 
             {{-- description --}}

@@ -23,7 +23,6 @@ $('#selectFileArea').on('change', function(event) {
   
   let target = event.target.files[0];
   let filesize = (target.size / 1024 / 1024).toFixed(2); //MiB
-  console.log(target)
 
   if (filesize > 1024) {
     Swal.fire({
@@ -38,22 +37,28 @@ $('#selectFileArea').on('change', function(event) {
     return;
   }
 
+  let fileName = target.name.split('.').shift();
+  let fileExtension = '.' + target.name.split('.').pop();
+
   $('#selectFileModeOn').hide();
   $('#selectFileModeOff').show();
   $('#selectFileModeOffFileName').text(target.name);
-
-  $('#fileTitle').val(target.name);
+  $('#fileTitle').val(fileName);
+  $('#fileExtension').text(fileExtension);
 
   let _this = this;
   var fr = new FileReader();
   fr.addEventListener('load', function (e) {
+    $('#progressBarWrapper').hide();
     let result = e.target.result;
     _this.result = result;
+    _this.fileExtension = fileExtension;
   });
   fr.addEventListener('progress', event => {
     let currentNum = Math.trunc(event.loaded/event.total*100) + '%';
     $('#progressNumber').text( currentNum )
     $('#progressRect').css('width', currentNum);
+
     // console.log((event.loaded/event.total).toFixed(2))
   });
   
@@ -64,9 +69,11 @@ $('#selectFileArea').on('change', function(event) {
 $('#selectFileModeOffRemoveBtn').on('click', function(event) {
   $('#selectFileArea').val('');
   $('#selectFileArea').get(0).result = '';
+  $('#selectFileArea').get(0).fileExtension = '';
   $('#selectFileModeOff').hide();
   $('#selectFileModeOn').show();
   $('#fileTitle').val('');
+  $('#fileExtension').text('');
 })
 
 $('#uploadFileForm').on('submit', function(event) {
@@ -140,6 +147,7 @@ $('#uploadFileForm').on('submit', function(event) {
 
   let newFile = {
     title: $('#fileTitle').val(),
+    extension: $('#selectFileArea').get(0).fileExtension,
     description: $('#fileDescription').val(),
     file: $('#selectFileArea').get(0).result,
     from: $('#durationFrom').val(),

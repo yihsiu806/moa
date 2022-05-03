@@ -34,7 +34,8 @@ class FilesController extends Controller
         // find substring fro replace here eg: data:image/png;base64,
         $image = str_replace($replace, '', $file_64);
         $image = str_replace(' ', '+', $image);
-        $imageName = Str::random(10) . '.' . $extension;
+        // $imageName = Str::random(10) . '.' . $extension;
+        $imageName = Str::random(10) . $request->input('extension');
         // Storage::disk('public')->put($imageName, base64_decode($image));
         Storage::disk('myDisk')->put($imageName, base64_decode($image));
 
@@ -45,7 +46,7 @@ class FilesController extends Controller
         }
 
         $file = [
-            'title' => $request->input('title'),
+            'title' => $request->input('title') . $request->input('extension'),
             'description' => $description,
             'path' => $imageName,
             'from' => $request->input('from'),

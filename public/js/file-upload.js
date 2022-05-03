@@ -35899,8 +35899,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
   var target = event.target.files[0];
   var filesize = (target.size / 1024 / 1024).toFixed(2); //MiB
 
-  console.log(target);
-
   if (filesize > 1024) {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'File size limit',
@@ -35914,17 +35912,22 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
     return;
   }
 
+  var fileName = target.name.split('.').shift();
+  var fileExtension = '.' + target.name.split('.').pop();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOn').hide();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOff').show();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOffFileName').text(target.name);
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileTitle').val(target.name);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileTitle').val(fileName);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileExtension').text(fileExtension);
 
   var _this = this;
 
   var fr = new FileReader();
   fr.addEventListener('load', function (e) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#progressBarWrapper').hide();
     var result = e.target.result;
     _this.result = result;
+    _this.fileExtension = fileExtension;
   });
   fr.addEventListener('progress', function (event) {
     var currentNum = Math.trunc(event.loaded / event.total * 100) + '%';
@@ -35937,9 +35940,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOffRemoveBtn').on('click', function (event) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').val('');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').get(0).result = '';
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').get(0).fileExtension = '';
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOff').hide();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOn').show();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileTitle').val('');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileExtension').text('');
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', function (event) {
   event.preventDefault();
@@ -36012,6 +36017,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
   event.preventDefault();
   var newFile = {
     title: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileTitle').val(),
+    extension: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').get(0).fileExtension,
     description: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#fileDescription').val(),
     file: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').get(0).result,
     from: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#durationFrom').val(),
