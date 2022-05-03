@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="container mx-auto mb-10">
 
     <div class="mb-10">
         <a id="goBack" href="{{ route('myupload') }}"
@@ -17,6 +17,20 @@
             <div class="md:col-span-2 mb-2">
                 <div id="selectFileAreaWrapper"
                     class="relative py-8 bg-white rounded-[7px] border-4 border-[#eee] text-center hover:border-yellow">
+
+                    {{-- progress bar --}}
+                    <div id="progressBarWrapper"
+                        class="hidden pt-20 px-5 absolute top-0 right-0 bottom-0 left-0 bg-white">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-base font-medium text-green ">Processing</span>
+                            <span id="progressNumber" class="text-sm font-medium text-green dark:text-white">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                            <div id="progressRect" class="bg-green h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+
                     <div id="selectFileModeOn">
                         <input name="file" id="selectFileArea" type="file"
                             class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0">

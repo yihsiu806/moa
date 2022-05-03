@@ -1,6 +1,37 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/js/utils.js":
+/*!*******************************!*\
+  !*** ./resources/js/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "filePath": () => (/* binding */ filePath),
+/* harmony export */   "hideLoading": () => (/* binding */ hideLoading),
+/* harmony export */   "listTable": () => (/* binding */ listTable),
+/* harmony export */   "validateEmail": () => (/* binding */ validateEmail)
+/* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+var filePath = '/storage/';
+var validateEmail = function validateEmail(email) {
+  return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+};
+function listTable($ele, config) {// let $listTable = ;
+  // return $listTable;
+}
+function hideLoading() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
+}
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -35844,9 +35875,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./resources/js/utils.js");
 
 
 
+
+(0,_utils__WEBPACK_IMPORTED_MODULE_3__.hideLoading)();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('dragover', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-color', '#facc15');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-style', 'dashed');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-width', '6px');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('dragleave dragend drop', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-color', '#eee');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-style', 'solid');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileAreaWrapper').css('border-width', '4px');
+});
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', function (event) {
   if (event.target.files.length <= 0) {
     return;
@@ -35854,6 +35898,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
 
   var target = event.target.files[0];
   var filesize = (target.size / 1024 / 1024).toFixed(2); //MiB
+
+  console.log(target);
 
   if (filesize > 1024) {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
@@ -35880,6 +35926,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileArea').on('change', fu
     var result = e.target.result;
     _this.result = result;
   });
+  fr.addEventListener('progress', function (event) {
+    var currentNum = Math.trunc(event.loaded / event.total * 100) + '%';
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#progressNumber').text(currentNum);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#progressRect').css('width', currentNum); // console.log((event.loaded/event.total).toFixed(2))
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#progressBarWrapper').show();
   fr.readAsDataURL(target);
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#selectFileModeOffRemoveBtn').on('click', function (event) {
@@ -35965,6 +36017,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
     from: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#durationFrom').val(),
     to: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#durationTo').val()
   };
+  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+    title: 'Uploading...',
+    didOpen: function didOpen() {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().showLoading();
+    },
+    allowOutsideClick: false
+  });
   axios.post('/file-upload', newFile).then(function () {
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Success',

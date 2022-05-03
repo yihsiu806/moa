@@ -1,6 +1,20 @@
 import $ from 'jquery';
 import Swal from 'sweetalert2';
 import moment from 'moment';
+import {hideLoading} from './utils';
+
+hideLoading();
+
+$('#selectFileArea').on('dragover', function() {
+  $('#selectFileAreaWrapper').css('border-color', '#facc15');
+  $('#selectFileAreaWrapper').css('border-style', 'dashed');
+  $('#selectFileAreaWrapper').css('border-width', '6px');
+});
+$('#selectFileArea').on('dragleave dragend drop', function() {
+  $('#selectFileAreaWrapper').css('border-color', '#eee');
+  $('#selectFileAreaWrapper').css('border-style', 'solid');
+  $('#selectFileAreaWrapper').css('border-width', '4px');
+});
 
 $('#selectFileArea').on('change', function(event) {
   if (event.target.files.length <= 0) {
@@ -9,6 +23,7 @@ $('#selectFileArea').on('change', function(event) {
   
   let target = event.target.files[0];
   let filesize = (target.size / 1024 / 1024).toFixed(2); //MiB
+  console.log(target)
 
   if (filesize > 1024) {
     Swal.fire({
@@ -35,6 +50,14 @@ $('#selectFileArea').on('change', function(event) {
     let result = e.target.result;
     _this.result = result;
   });
+  fr.addEventListener('progress', event => {
+    let currentNum = Math.trunc(event.loaded/event.total*100) + '%';
+    $('#progressNumber').text( currentNum )
+    $('#progressRect').css('width', currentNum);
+    // console.log((event.loaded/event.total).toFixed(2))
+  });
+  
+  $('#progressBarWrapper').show();
   fr.readAsDataURL(target);
 });
 
@@ -122,6 +145,14 @@ $('#uploadFileForm').on('submit', function(event) {
     from: $('#durationFrom').val(),
     to: $('#durationTo').val(),
   }
+
+  Swal.fire({
+    title: 'Uploading...',
+    didOpen: () => {
+      Swal.showLoading()
+    },
+    allowOutsideClick: false,
+  })
 
   axios.post('/file-upload', newFile)
   .then(function() {

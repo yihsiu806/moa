@@ -11,20 +11,19 @@
     </div>
 
     <div class="flex items-center">
-        <img id="divisionPicture"
-            class="mr-5 inline-block overflow-hidden w-[100px] h-[100px] rounded-[50%] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-            src="/images/division-default-picture.png" alt="division picture">
+
+        <img id="divisionPicture" class="mr-5 avatar-icon" src="/images/division-default-picture.png"
+            alt="division picture">
         <span id="helloDivision" class="text-gray-600 text-2xl font-semibold "></span>
     </div>
 
     <h2 class="mt-8 mb-5 text-grey-dark text-2xl font-bold">Officer</h2>
     <div class="flex flex-wrap">
         <div class="mr-5">
-            <img id="officerPicture"
-                class="inline-block overflow-hidden w-[100px] h-[100px] rounded-[35px] bg-white shadow-[0_0_0_1px_rgba(27,31,36,0.15)]"
-                src="/images/officer-default-picture.png" alt="officer picture">
+            <img id="officerPicture" class="avatar-icon" src="/images/officer-default-picture.png"
+                alt="officer picture">
         </div>
-        <div class="grid grid-cols-2 gap-y-1 gap-x-0 font-medium">
+        <div class="grid grid-cols-2 gap-y-1 gap-x-2 font-medium">
             <span class="text-gray-500">Name</span>
             <span id="officerName" class="text-gray-600 font-semibold"></span>
             <span class="text-gray-500">Position</span>
@@ -52,8 +51,8 @@
         </div>
     </div>
 
-    <div>
-        <table id="filesTable" class="display" style="width:100%">
+    <div class="list-table bg-white rounded">
+        <table id="filesTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
                     <th>File</th>
@@ -62,9 +61,10 @@
                     <th>Download</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody></tbody>
         </table>
     </div>
+
 </div>
 <script>
     let files = @js($files);
