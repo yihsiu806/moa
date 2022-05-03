@@ -34451,14 +34451,17 @@ var $divisionsTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsT
     "width": "25%",
     "targets": 1
   }, {
-    "width": "25%",
+    "width": "20%",
     "targets": 2
   }, {
-    "width": "25%",
+    "width": "15%",
     "targets": 3
   }, {
+    "width": "15%",
+    "targets": 4
+  }, {
     className: "dt-head-left",
-    targets: [0, 1, 2, 3]
+    targets: [0, 1, 2, 3, 4]
   }, {
     'targets': [3],
 
@@ -34474,18 +34477,85 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addCla
 (function () {
   users.forEach(function (user) {
     var updated = new Date(user.updated_at).toLocaleDateString();
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(user.role, "</td>\n      <td>").concat(user.username, "</td>\n      <td>").concat(user.division ? user.division : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/user/edit/").concat(user.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
+    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(user.role, "</td>\n      <td>").concat(user.username, "</td>\n      <td>").concat(user.division ? user.division : '', "</td>\n      <td>").concat(updated, "</td>\n      <td id=\"user-").concat(user.id, "\">\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/user/edit/").concat(user.id, "\" onclick=\"(() => {sessionStorage.setItem('previousLocation', 'user-").concat(user.id, "')})();\">Edit</a>\n      </td>\n      </tr>\n    "));
     $usersTable.row.add($node).draw();
   });
 })();
 
+function deleteDivision(event) {
+  var id = this.getAttribute('data-id');
+  var promise;
+  promise = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+    title: "Are you sure delete \"".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('tr').children().first().text(), "\"?"),
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#056839',
+    confirmButtonText: 'Yes, delete it!'
+  });
+  promise = promise.then(function (result) {
+    if (result.isConfirmed) {
+      return axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/division/delete', {
+        id: id
+      });
+    } else {
+      return Promise.reject('cancel');
+    }
+  });
+
+  var _this = this;
+
+  promise.then(function () {
+    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: 'Deleted!',
+      icon: 'success',
+      text: "Division \"".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this).closest('tr').children().first().text(), "\" has been deleted."),
+      confirmButtonColor: '#056839'
+    }).then(function () {
+      location.reload();
+    });
+  })["catch"](function (error) {
+    if (error == 'cancel') {
+      return;
+    }
+
+    console.log(error);
+    var message = error.response.data.message || 'Something went wrong. Sorry.';
+    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: 'Error',
+      icon: 'error',
+      text: message,
+      confirmButtonColor: '#056839'
+    });
+  }).then(function () {
+    sessionStorage.removeItem('previousLocation');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionsTable').get(0).scrollIntoView({
+      block: "center"
+    });
+  });
+}
+
 (function () {
   divisions.forEach(function (division) {
     var updated = new Date(division.updated_at).toLocaleDateString();
-    var $node = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n      <tr>\n      <td>".concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td>\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\">Edit</a>\n      </td>\n      </tr>\n    "));
-    $divisionsTable.row.add($node).draw();
+    var $tr = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<tr>');
+    $tr.append("\n      <td>".concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td id=\"division-").concat(division.id, "\">\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\" onclick=\"(() => {sessionStorage.setItem('previousLocation', 'division-").concat(division.id, "')})();\">Edit</a>\n      </td>\n    "));
+    var $td = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<td>');
+    var $btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n    <button data-id=\"".concat(division.id, "\" type=\"button\" class=\"py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\">Delete</button>\n    "));
+    $btn.on('click', deleteDivision);
+    $td.append($btn);
+    $tr.append($td); // console.log($tr);
+
+    $divisionsTable.row.add($tr).draw();
   });
 })();
+
+if (sessionStorage.getItem('previousLocation')) {
+  var id = sessionStorage.getItem('previousLocation');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("#".concat(id)).get(0).scrollIntoView({
+    block: "center"
+  });
+}
 
 function hideLoading() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');

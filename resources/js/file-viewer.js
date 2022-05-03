@@ -13,6 +13,8 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/animations/scale.css';
 import 'tippy.js/dist/svg-arrow.css';
 
+sessionStorage.removeItem('previousLocation');
+
 initInfoSection();
 
 function initInfoSection() {

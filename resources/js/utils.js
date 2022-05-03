@@ -17,9 +17,6 @@ export function listTable($ele, config) {
 }
 
 export function hideLoading() {
-  console.log('aaa');
-  // document.querySelector('body').classList.remove('inactive');
-  // document.querySelector('#ltLoader').style.display = 'none';
   $('body').removeClass('inactive');
   $('#ltLoader').fadeOut();
 }

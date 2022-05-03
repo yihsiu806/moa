@@ -67,6 +67,7 @@ Route::get('/division/edit', EditDivision::class)->middleware(['auth', 'role:div
 Route::get('/division/add/', EditDivision::class)->middleware(['auth', 'role:admin'])->name('adminAddDivision');
 Route::get('/division/edit/{id}', EditDivision::class)->middleware(['auth', 'role:admin'])->name('adminEditDivision');
 Route::patch('/division/edit', 'App\Http\Controllers\DivisionController@saveEditDivision')->middleware(['auth', 'role:division,admin'])->name('patchDivision');
+Route::patch('/division/delete', 'App\Http\Controllers\DivisionController@deleteDivision')->middleware(['auth', 'role:admin']);
 
 // files
 Route::get('/files/{id}', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);

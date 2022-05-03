@@ -25,6 +25,12 @@ class DivisionController extends Controller
         return view('division');
     }
 
+    public function deleteDivision(Request $request)
+    {
+        $this->write_log($request->input('id'));
+        $deleted = DB::table('divisions')->where('id', '=', $request->input('id'))->delete();
+    }
+
     public function saveEditDivision(Request $request)
     {
         if (!$request->expectsJson()) {
@@ -42,6 +48,8 @@ class DivisionController extends Controller
             $image = str_replace(' ', '+', $image);
             $imageName = Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($imageName, base64_decode($image));
+        } else if ($request->input('picture') == 'reset') {
+            $imageName = 'reset';
         } else {
             $imageName = null;
         }
@@ -72,6 +80,8 @@ class DivisionController extends Controller
             $pattern = '/fill\s*=\s*".*?"/m';
             $replacement = ' ';
             $iconName = preg_replace($pattern, $replacement, $iconName);
+        } else if ($request->input('icon') == 'reset') {
+            $iconName = 'reset';
         } else {
             $iconName = null;
         }
@@ -85,18 +95,24 @@ class DivisionController extends Controller
             $slug = $request->input('divisionName');
             $slug = substr($slug, 0, 5);
             $count = 1;
-            while (Division::where('slug', '=', $slug)->exists()) {
-                $slug = $slug . '-' . $count;
+            while (Division::where('slug', '=', $slug . '-' . $count)->exists()) {
                 $count++;
             }
+            $slug = $slug . '-' . $count;
             $division->slug = $slug;
         }
         $division->name = $request->input('divisionName');
-        $division->icon = $iconName;
-        $division->picture = $imageName;
+        if ($iconName == 'reset') {
+            $division->icon = null;
+        } else if ($iconName) {
+            $division->icon = $iconName;
+        }
+        if ($imageName == 'reset') {
+            $division->picture = null;
+        } else if ($imageName) {
+            $division->picture = $imageName;
+        }
         $division->save();
-
-
 
         $officer = new Officer;
 
@@ -109,6 +125,8 @@ class DivisionController extends Controller
             $image = str_replace(' ', '+', $image);
             $imageName = Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($imageName, base64_decode($image));
+        } else if ($request->input('officerPicture') == 'reset') {
+            $imageName = 'reset';
         } else {
             $imageName = null;
         }
@@ -129,7 +147,11 @@ class DivisionController extends Controller
         $officer->position = $request->input('officerPosition');
         $officer->telephone = $request->input('officerTelephone');
         $officer->email = $request->input('officerEmail');
-        $officer->picture = $imageName;
+        if ($imageName == 'reset') {
+            $officer->picture = null;
+        } else if ($imageName) {
+            $officer->picture = $imageName;
+        }
         $officer->save();
     }
 

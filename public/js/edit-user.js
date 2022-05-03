@@ -2079,9 +2079,6 @@ function listTable($ele, config) {// let $listTable = ;
   // return $listTable;
 }
 function hideLoading() {
-  console.log('aaa'); // document.querySelector('body').classList.remove('inactive');
-  // document.querySelector('#ltLoader').style.display = 'none';
-
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
 }

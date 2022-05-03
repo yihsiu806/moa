@@ -2,10 +2,13 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import {filePath, validateEmail} from './utils';
+import { hideLoading } from './utils';
 
 // parameter:
 // division
 // officer
+
+hideLoading();
 
 if (!division && !officer) {
   $('#editTitle').text('Add New Division');
@@ -21,6 +24,15 @@ initSubmitCallback();
 
 function initDivisionField() {
   if (!division) {
+    $('#divisionPicture').empty();
+    $('#divisionPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white"
+    src="/images/division-default-picture.png" alt="division picture">    
+    `);
+    $('#divisionIcon').empty();
+    $('#divisionIcon').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white" src="/images/division-default-icon.svg" alt="division picture">
+    `);
     return;
   }
   $('#divisionName').val(division.name);
@@ -58,6 +70,11 @@ function initOfficerField() {
     $('#officerPosition').val('TBD');
     $('#officerTelephone').val('TBD');
     $('#officerEmail').val('TBD');
+
+    $('#officerPicture').empty();
+    $('#officerPicture').append(`
+    <img class="avatar-icon inline-block overflow-hidden bg-white " src="/images/officer-default-picture.png" alt="officer picture">
+    `);
 
     return;
   }
@@ -194,19 +211,19 @@ function initPictureCallback() {
   $('#resetDivisionPicture').on('click', function() {
     $('#editDivisionPicture').val('');
     $('#divisionPicture').find('img').attr('src', '/images/division-default-picture.png');
-    $('#divisionPicture').get(0).result = null;
+    $('#divisionPicture').get(0).result = 'reset';
   })
 
   $('#resetOfficerPicture').on('click', function() {
     $('#editOfficerPicture').val('');
     $('#officerPicture').find('img').attr('src', '/images/officer-default-picture.png');
-    $('#officerPicture').get(0).result = null;
+    $('#officerPicture').get(0).result = 'reset';
   })
   
   $('#resetDivisionIcon').on('click', function() {
     $('#editDivisionIcon').val('');
     $('#divisionIcon').find('img').attr('src', '/images/division-default-icon.svg');
-    $('#divisionIcon').get(0).result = null;
+    $('#divisionIcon').get(0).result = 'reset';
   })
 }
 

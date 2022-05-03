@@ -2079,9 +2079,6 @@ function listTable($ele, config) {// let $listTable = ;
   // return $listTable;
 }
 function hideLoading() {
-  console.log('aaa'); // document.querySelector('body').classList.remove('inactive');
-  // document.querySelector('#ltLoader').style.display = 'none';
-
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('inactive');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltLoader').fadeOut();
 }
@@ -16694,9 +16691,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  // parameter:
 // division
 // officer
+
+(0,_utils__WEBPACK_IMPORTED_MODULE_3__.hideLoading)();
 
 if (!division && !officer) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editTitle').text('Add New Division');
@@ -16712,6 +16712,10 @@ initSubmitCallback();
 
 function initDivisionField() {
   if (!division) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').empty();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\"\n    src=\"/images/division-default-picture.png\" alt=\"division picture\">    \n    ");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').empty();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white\" src=\"/images/division-default-icon.svg\" alt=\"division picture\">\n    ");
     return;
   }
 
@@ -16741,6 +16745,8 @@ function initOfficerField() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').val('TBD');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').val('TBD');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').val('TBD');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').empty();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').append("\n    <img class=\"avatar-icon inline-block overflow-hidden bg-white \" src=\"/images/officer-default-picture.png\" alt=\"officer picture\">\n    ");
     return;
   }
 
@@ -16853,17 +16859,17 @@ function initPictureCallback() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionPicture').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionPicture').val('');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').find('img').attr('src', '/images/division-default-picture.png');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = null;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionPicture').get(0).result = 'reset';
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetOfficerPicture').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editOfficerPicture').val('');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').find('img').attr('src', '/images/officer-default-picture.png');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = null;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').get(0).result = 'reset';
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#resetDivisionIcon').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#editDivisionIcon').val('');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').find('img').attr('src', '/images/division-default-icon.svg');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = null;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#divisionIcon').get(0).result = 'reset';
   });
 }
 

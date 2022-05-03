@@ -64306,6 +64306,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+sessionStorage.removeItem('previousLocation');
 fetchNewest();
 fetchMostDownloaded();
 initPagination();
@@ -64401,7 +64402,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltWrapper').fadeIn();
   },
   "rowCallback": function rowCallback(row, data) {
-    (0,tippy_js__WEBPACK_IMPORTED_MODULE_17__["default"])(row, _defineProperty({
+    (0,tippy_js__WEBPACK_IMPORTED_MODULE_17__["default"])(row.firstChild, _defineProperty({
       content: "\n        <div class=\"tippy-desc\">\n          <div class=\"tippy-title\">Description</div>\n          <div>".concat(data.description, "</div>\n        </div>\n        <div class=\"tippy-footer\">\n          <span>Duration</span>\n          <span>").concat(data.duration, "</span>\n        </div>\n      "),
       placement: 'top-start',
       theme: 'material',

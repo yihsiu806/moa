@@ -46,9 +46,10 @@ let $divisionsTable = $('#divisionsTable').DataTable({
   columnDefs: [
     { "width": "25%", "targets": 0 },
     { "width": "25%", "targets": 1 },
-    { "width": "25%", "targets": 2 },
-    { "width": "25%", "targets": 3 },
-    { className: "dt-head-left", targets: [ 0,1,2,3 ] },
+    { "width": "20%", "targets": 2 },
+    { "width": "15%", "targets": 3 },
+    { "width": "15%", "targets": 4 },
+    { className: "dt-head-left", targets: [ 0,1,2,3,4 ] },
     {
       'targets': [3], /* column index */
       'orderable': false, /* true or false */
@@ -69,8 +70,8 @@ $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ri
       <td>${user.username}</td>
       <td>${user.division ? user.division : ''}</td>
       <td>${updated}</td>
-      <td>
-        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/user/edit/${user.id}">Edit</a>
+      <td id="user-${user.id}">
+        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/user/edit/${user.id}" onclick="(() => {sessionStorage.setItem('previousLocation', 'user-${user.id}')})();">Edit</a>
       </td>
       </tr>
     `);
@@ -79,24 +80,97 @@ $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ri
   })
 })();
 
+function deleteDivision(event) {
+  let id = this.getAttribute('data-id');
+
+  let promise;
+  promise = Swal.fire({
+    title: `Are you sure delete "${$(this).closest('tr').children().first().text()}"?`,
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#056839',
+    confirmButtonText: 'Yes, delete it!'
+  })
+  
+  promise = promise.then((result) => {
+    if (result.isConfirmed) {
+      return axios.patch('/division/delete', {id: id})
+    } else {
+      return Promise.reject('cancel');
+    }
+  });
+
+  let _this = this;
+
+  promise
+  .then(function() {
+    Swal.fire({
+      title: 'Deleted!',
+      icon: 'success',
+      text: `Division "${$(_this).closest('tr').children().first().text()}" has been deleted.`,
+      confirmButtonColor: '#056839',
+    })
+    .then(function() {
+      location.reload();
+    })
+  })
+  .catch(function(error) {
+    if (error == 'cancel') {
+      return;
+    }
+    console.log(error);
+    let message = error.response.data.message || 'Something went wrong. Sorry.';
+    Swal.fire({
+      title: 'Error',
+      icon: 'error',
+      text: message,
+      confirmButtonColor: '#056839',
+    })
+  })
+  .then(function() {
+    sessionStorage.removeItem('previousLocation');
+    $('#divisionsTable').get(0).scrollIntoView({block: "center"});
+  })
+}
+
 (() => {
   divisions.forEach(division => {
     let updated = new Date(division.updated_at).toLocaleDateString();
 
-    let $node = $(`
-      <tr>
+    let $tr = $('<tr>');
+
+    $tr.append(`
       <td>${division.name}</td>
       <td>${division.officer ? division.officer : ''}</td>
       <td>${updated}</td>
-      <td>
-        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/division/edit/${division.id}">Edit</a>
+      <td id="division-${division.id}">
+        <a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/division/edit/${division.id}" onclick="(() => {sessionStorage.setItem('previousLocation', 'division-${division.id}')})();">Edit</a>
       </td>
-      </tr>
     `);
 
-    $divisionsTable.row.add($node).draw();
+    let $td = $('<td>');
+
+    let $btn = $(`
+    <button data-id="${division.id}" type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
+    `);
+
+    $btn.on('click', deleteDivision);
+
+    $td.append($btn);
+    $tr.append($td);
+
+    // console.log($tr);
+
+    $divisionsTable.row.add($tr).draw();
   })
 })();
+
+if (sessionStorage.getItem('previousLocation')) {
+  let id = sessionStorage.getItem('previousLocation');
+  $(`#${id}`).get(0).scrollIntoView({block: "center"});
+}
+
 
 
 function hideLoading() {

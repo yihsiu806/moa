@@ -57,6 +57,7 @@
                         <th>Officer</th>
                         <th>Last modified</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

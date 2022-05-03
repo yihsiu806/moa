@@ -61667,6 +61667,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+sessionStorage.removeItem('previousLocation');
 initInfoSection();
 
 function initInfoSection() {
@@ -61696,6 +61697,12 @@ function initInfoSection() {
     if (officer.email) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
     }
+  }
+
+  if (officer && officer.picture) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/storage/' + officer.picture);
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/images/officer-default-picture.png');
   }
 } // let $filesTable = $('#filesTable').DataTable({
 //   responsive: true,
@@ -61796,7 +61803,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ltWrapper').fadeIn();
   },
   "rowCallback": function rowCallback(row, data) {
-    (0,tippy_js__WEBPACK_IMPORTED_MODULE_13__["default"])(row, _defineProperty({
+    (0,tippy_js__WEBPACK_IMPORTED_MODULE_13__["default"])(row.firstChild, _defineProperty({
       content: "\n        <div class=\"tippy-desc\">\n          <div class=\"tippy-title\">Description</div>\n          <div>".concat(data.description, "</div>\n        </div>\n        <div class=\"tippy-footer\">\n          <span>Duration</span>\n          <span>").concat(data.duration, "</span>\n        </div>\n      "),
       placement: 'top-start',
       theme: 'material',

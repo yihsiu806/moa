@@ -19,7 +19,7 @@ class CreateOfficersTable extends Migration
             $table->string('position', 255);
             $table->string('telephone', 255);
             $table->string('email', 255);
-            $table->string('picture', 255)->nullable();
+            $table->string('picture', 255)->nullable()->default(null);
             $table->unsignedBigInteger('division');
             $table->foreign('division')->references('id')->on('divisions');
             $table->timestamps();
