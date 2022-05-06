@@ -13,7 +13,7 @@ class FileViewer extends Component
     public $slug;
     public $division;
     public $officer;
-    public $files;
+    // public $files;
 
     public function mount($slug)
     {
@@ -44,17 +44,17 @@ class FileViewer extends Component
             ->where('division', '=', $currentDivision->id)
             ->first();
 
-        $this->files = DB::table('files')->select(
-            'title',
-            'description',
-            'from',
-            'to',
-            'download',
-            'path',
-            'owner'
-        )
-            ->where('files.division', '=', $currentDivision->id)
-            ->get();
+        // $this->files = DB::table('files')->select(
+        //     'title',
+        //     'description',
+        //     'from',
+        //     'to',
+        //     'download',
+        //     'path',
+        //     'owner'
+        // )
+        //     ->where('files.division', '=', $currentDivision->id)
+        //     ->get();
 
         return view('livewire.file-viewer');
     }

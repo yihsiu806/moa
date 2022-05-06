@@ -70,5 +70,8 @@
         </table>
     </div>
 </div>
-
-<script src="{{ asset('js/welcome.js') }}" defer></script>
+@if (Auth::check())
+    <script src="{{ asset('js/welcome.js') }}" defer></script>
+@else
+    <script src="{{ asset('js/public-welcome.js') }}" defer></script>
+@endif

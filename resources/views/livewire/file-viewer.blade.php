@@ -43,6 +43,9 @@
 <script>
     let division = @js($division);
     let officer = @js($officer);
-    // let files = @js($files);
 </script>
-<script src="{{ asset('js/file-viewer.js') }}" defer></script>
+@if (Auth::check())
+    <script src="{{ asset('js/file-viewer.js') }}" defer></script>
+@else
+    <script src="{{ asset('js/public-file-viewer.js') }}" defer></script>
+@endif

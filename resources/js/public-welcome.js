@@ -1,3 +1,4 @@
+import {hideLoading} from './utils';
 import $ from 'jquery';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -17,7 +18,8 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/animations/scale.css';
 import 'tippy.js/dist/svg-arrow.css';
 
-sessionStorage.removeItem('previousLocation');
+// remove download column from table 
+$('#listTable').find('th').last().remove(); 
 
 fetchNewest();
 fetchMostDownloaded();
@@ -29,26 +31,18 @@ let $filesTable = $('#listTable').DataTable({
   processing: true,
   serverSide: true,
   deferRender: true,
-  // search: {
-  //   return: true
-  // },
   language: {
     info: "_START_ - _END_ of _TOTAL_",
     search: "_INPUT_",
     searchPlaceholder: "Search...",
   },
-  ajax: '/files/all',
+  ajax: '/public-files/all',
   "order": [[ 2, "desc" ]],
   columnDefs: [
-    { "width": "25%", "targets": 0 },
+    { "width": "35%", "targets": 0 },
     { "width": "35%", "targets": 1 },
-    { "width": "20%", "targets": 2 },
-    { "width": "20%", "targets": 3 },
-    { className: "dt-head-left", targets: [ 0,1,2,3 ] },
-    {
-      'targets': [3], /* column index */
-      'orderable': false, /* true or false */
-    }
+    { "width": "30%", "targets": 2 },
+    { className: "dt-head-left", targets: [ 0,1,2 ] },
   ],
   "columns": [
     { "data": "title" },
@@ -67,35 +61,12 @@ let $filesTable = $('#listTable').DataTable({
       "data": "updated_at",
       "render": function(data, type, row) {
         if (type === 'sort') {
-          // console.log(data)
-          // console.log(moment(data).unix())
           return moment(data).unix();
         } else {
           return moment(data).calendar();
         }
       }
     },
-    { 
-      "data": "path",
-      "render": function(data, type, row) {
-        return `<a class="py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="uploads/${row.path}" download="${row.title}">Download</a>`
-      }
-    },
-    // { "data": "description" },
-    // { 
-    //   "data": "duration",
-    //   "render": function(data, type, row) {
-    //     if (type === 'display') {
-    //       return moment(row.from).format('ll') + ' ~ ' + moment(row.to).format('ll');
-    //     } else if (type === 'filter') {
-    //       return moment(row.from).format('ll') + ' ' + moment(row.to).format('ll');
-    //     } else if (type === 'sort') {
-    //       return moment(row.from);
-    //     }
-    //     return data;
-    //   }
-    // },
-    // { "data": "download" },
   ],
   pagingType: 'arrows',
   "drawCallback": function( settings ) {
@@ -132,8 +103,9 @@ let $filesTable = $('#listTable').DataTable({
 
 $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 
+
 function fetchNewest() {
-  axios.get('/newest')
+  axios.get('/public-newest')
   .then(function(res) {
     if (res.data.length == 0) {
       throw 'No file found';
@@ -144,37 +116,51 @@ function fetchNewest() {
         if (file.title.length > 17) {
           title += '...'
         }
-        $('#newestWrapper').append(`
+        let $card = $(`
           <div class="w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card">
-            <div class="hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center" style="background-color: rgba(0,0,0,.5);">
-              <a class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5" href="/uploads/${file.path}" download"${file.title}" target="_blank">Download</a>
-            </div>
             <div class="h-2/3 text-center py-2 border-b bg-gray-500">
               <img src="/images/file-icon.svg" class="h-full inline-block">
             </div>
-            <div class="h-1/3 p-2 pt-0 text-grey-dark">
+            <div class="file-card-footer h-1/3 p-2 pt-0 text-grey-dark">
                 <span class="inline-block w-full h-4 font-medium">${title}</span>
                 <span class="inline-block w-full h-4 text-sm">${moment(file.updated_at).fromNow()}</span>
             </div>
           </div>
         `);
-        $('.file-card').on('mouseover', function() {
-          $(this).children().first().css('display', 'flex');
-        })
-        $('.file-card').on('mouseout', function() {
-          $(this).children().first().hide();
-        })
+
+        tippy($card.find('.file-card-footer').get(0), {
+          content: `
+            <div class="tippy-desc">
+              <div class="tippy-filename">${file.title}</div>
+              <div class="tippy-title">Description</div>
+              <div>${file.description}</div>
+            </div>
+            <div class="tippy-footer">
+              <span>Duration</span>
+              <span>${file.duration}</span>
+            </div>
+          `,
+          placement: 'top-start',
+          theme: 'material',
+          arrow: roundArrow,
+          allowHTML: true,
+          followCursor: true,
+          plugins: [followCursor],
+          theme: 'tomato',
+        });
+
+        $('#newestWrapper').append($card);
       })
     }
   })
   .catch(function(error) {
     console.log(error);
-    $('#newestWrapper').empty().append($noDataTemplate.clone());
+    // $('#newestWrapper').empty().append($noDataTemplate.clone());
   });
 }
 
 function fetchMostDownloaded() {
-  axios.get('/most-downloaded')
+  axios.get('/public-most-downloaded')
   .then(function(res) {
     if (res.data.length == 0) {
       throw 'No file found';
@@ -185,15 +171,12 @@ function fetchMostDownloaded() {
         if (file.title.length > 17) {
           title += '...'
         }
-        $('#mostDownloadedWrapper').append(`
+        let $card = $(`
           <div class="w-[180px] h-[200px] mt-2 mr-5 rounded border border-gray-300 bg-white overflow-hidden relative file-card">
-            <div class="hidden absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center" style="background-color: rgba(0,0,0,.5);">
-              <a class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5" href="/uploads/${file.path}" download"${file.title}" target="_blank">Download</a>
-            </div>
             <div class="h-2/3 text-center py-2 border-b bg-gray-500">
               <img src="/images/file-icon.svg" class="h-full inline-block">
             </div>
-            <div class="h-1/3 p-2 pt-0 text-grey-dark">
+            <div class="file-card-footer h-1/3 p-2 pt-0 text-grey-dark">
                 <span class="inline-block w-full h-4 font-medium">${title}</span>
                 <span class="text-sm flex justify-between items-center w-full">
                   <span class="h-4 text-sm">Downloaded</span>
@@ -202,12 +185,29 @@ function fetchMostDownloaded() {
             </div>
           </div>
         `);
-        $('.file-card').on('mouseover', function() {
-          $(this).children().first().css('display', 'flex');
-        })
-        $('.file-card').on('mouseout', function() {
-          $(this).children().first().hide();
-        })
+        
+        tippy($card.find('.file-card-footer').get(0), {
+          content: `
+            <div class="tippy-desc">
+              <div class="tippy-filename">${file.title}</div>
+              <div class="tippy-title">Description</div>
+              <div>${file.description}</div>
+            </div>
+            <div class="tippy-footer">
+              <span>Duration</span>
+              <span>${file.duration}</span>
+            </div>
+          `,
+          placement: 'top-start',
+          theme: 'material',
+          arrow: roundArrow,
+          allowHTML: true,
+          followCursor: true,
+          plugins: [followCursor],
+          theme: 'tomato',
+        });
+        
+        $('#mostDownloadedWrapper').append($card);
       })
     }
   })

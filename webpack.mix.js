@@ -25,6 +25,8 @@ mix
 .js('resources/js/sidebar.js', 'public/js')
 .js('resources/js/viewer-dashboard.js', 'public/js')
 .js('resources/js/file-edit.js', 'public/js')
+.js('resources/js/public-welcome.js', 'public/js')
+.js('resources/js/public-file-viewer.js', 'public/js')
 .postCss('resources/css/app.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),

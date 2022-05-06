@@ -18,7 +18,8 @@ class Role
     public function handle(Request $request, Closure $next, ...$roles)
     {
         if (!Auth::check()) // This isnt necessary, it should be part of your 'auth' middleware
-            return redirect('/');
+            return $next($request);
+        // return redirect('/');
 
         $user = Auth::user();
 
@@ -28,6 +29,5 @@ class Role
         }
 
         return redirect('/');
-        // return $next($request);
     }
 }

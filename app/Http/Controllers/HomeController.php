@@ -9,11 +9,15 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function index()
     {
+        if (!Auth::check()) {
+            return view('home');
+        }
+
         $role = Auth::user()->role;
         if ($role == 'admin') {
             return redirect('admin');
@@ -23,7 +27,7 @@ class HomeController extends Controller
             return redirect('viewer');
         } else {
             Auth::logout();
-            return redirect('/');
+            return view('home');
         }
     }
 }

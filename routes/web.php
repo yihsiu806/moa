@@ -23,7 +23,7 @@ use App\Http\Livewire\FileEdit;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('home');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 Route::get('/division', 'App\Http\Controllers\DivisionController@index')->name('division');
@@ -73,5 +73,10 @@ Route::patch('/division/delete', 'App\Http\Controllers\DivisionController@delete
 Route::get('/files/{id}', 'App\Http\Controllers\FilesController@show')->middleware(['auth']);
 Route::get('/newest', 'App\Http\Controllers\FilesController@newest')->middleware(['auth']);
 Route::get('/most-downloaded', 'App\Http\Controllers\FilesController@mostDownloaded')->middleware(['auth']);
+
+// public
+Route::get('/public-files/{id}', 'App\Http\Controllers\PublicFileController@show');
+Route::get('/public-newest', 'App\Http\Controllers\PublicFileController@newest');
+Route::get('/public-most-downloaded', 'App\Http\Controllers\PublicFileController@mostDownloaded');
 
 require __DIR__ . '/auth.php';

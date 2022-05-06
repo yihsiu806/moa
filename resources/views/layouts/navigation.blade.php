@@ -32,33 +32,43 @@
 
             <!-- Settings Dropdown -->
             <div class="flex-none hidden md:flex md:items-center md:ml-6">
-                @if (Auth::user()->role === 'admin')
-                    <a href="{{ route('adminDashboard') }}">
-                        <button
-                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                            {{ Auth::user()->username }}
-                        </button>
-                    </a>
-                @elseif (Auth::user()->role === 'division')
-                    <a href="{{ route('myupload') }}">
-                        <button
-                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                            {{ Auth::user()->username }}
-                        </button>
-                    </a>
-                @elseif (Auth::user()->role === 'viewer')
-                    <a href="{{ route('viewerDashboard') }}">
-                        <button
-                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                            {{ Auth::user()->username }}
-                        </button>
-                    </a>
+                @if (Auth::check())
+                    @if (Auth::user()->role === 'admin')
+                        <a href="{{ route('adminDashboard') }}">
+                            <button
+                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                {{ Auth::user()->username }}
+                            </button>
+                        </a>
+                    @elseif (Auth::user()->role === 'division')
+                        <a href="{{ route('myupload') }}">
+                            <button
+                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                {{ Auth::user()->username }}
+                            </button>
+                        </a>
+                    @elseif (Auth::user()->role === 'viewer')
+                        <a href="{{ route('viewerDashboard') }}">
+                            <button
+                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                {{ Auth::user()->username }}
+                            </button>
+                        </a>
+                    @else
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button
+                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                Log Out
+                            </button>
+                        </form>
+                    @endif
                 @else
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button
                             class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                            Log Out
+                            Login
                         </button>
                     </form>
                 @endif
@@ -69,10 +79,10 @@
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
+                        <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -81,7 +91,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden md:hidden">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden md:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <!-- Search Box -->
             <div class="px-4 text-yellow-light">
@@ -101,20 +111,33 @@
 
         <div class="border-t border-b border-gray-200">
 
-            @if (Auth::user()->role === 'admin')
-                <a href="{{ route('adminDashboard') }}"
-                    class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('admin/dashboard') ? 'bg-yellow' : '' }}">
-                    <span
-                        class="block md:hidden {{ request()->is('admin/dashboard') ? 'text-green' : 'text-yellow' }}">Dashboard</span>
-                    {{ Auth::user()->username }}
-                </a>
+            @if (Auth::check())
+                @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('adminDashboard') }}"
+                        class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('admin/dashboard') ? 'bg-yellow' : '' }}">
+                        <span
+                            class="block md:hidden {{ request()->is('admin/dashboard') ? 'text-green' : 'text-yellow' }}">Dashboard</span>
+                        {{ Auth::user()->username }}
+                    </a>
+                @elseif (Auth::user()->role === 'division')
+                    <a href="{{ route('myupload') }}"
+                        class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('myupload') ? 'bg-yellow' : '' }}">
+                        <span
+                            class="block md:hidden {{ request()->is('myupload') ? 'text-green' : 'text-yellow' }}">My
+                            Upload</span>
+                        {{ Auth::user()->username }}
+                    </a>
+                @elseif (Auth::user()->role === 'viewer')
+                    <a href="{{ route('viewerDashboard') }}"
+                        class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('viewerDashboard') ? 'bg-yellow' : '' }}">
+                        <span
+                            class="block md:hidden {{ request()->is('viewerDashboard') ? 'text-green' : 'text-yellow' }}">My
+                            Upload</span>
+                        {{ Auth::user()->username }}
+                    </a>
+                @else
+                @endif
             @else
-                <a href="{{ route('myupload') }}"
-                    class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('myupload') ? 'bg-yellow' : '' }}">
-                    <span class="block md:hidden {{ request()->is('myupload') ? 'text-green' : 'text-yellow' }}">My
-                        Upload</span>
-                    {{ Auth::user()->username }}
-                </a>
             @endif
 
         </div>

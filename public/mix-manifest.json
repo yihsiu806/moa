@@ -11,6 +11,8 @@
     "/js/sidebar.js": "/js/sidebar.js",
     "/js/viewer-dashboard.js": "/js/viewer-dashboard.js",
     "/js/file-edit.js": "/js/file-edit.js",
+    "/js/public-welcome.js": "/js/public-welcome.js",
+    "/js/public-file-viewer.js": "/js/public-file-viewer.js",
     "/css/login.css": "/css/login.css",
     "/css/app.css": "/css/app.css"
 }

@@ -306,6 +306,13 @@ body.inactive {
   fill: #056839;
 }
 
+.tippy-box[data-theme~='tomato'] .tippy-filename {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fdb515;
+}
+
 .tippy-box[data-theme~='tomato'] .tippy-title {
   font-size: 15px;
   font-weight: bold;
