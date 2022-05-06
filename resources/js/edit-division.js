@@ -327,7 +327,7 @@ function initSubmitCallback() {
     })
     .catch(function(error) {
       console.log(error);
-      let message = error.response.data.message || 'Something went wrong. Sorry.';;
+      let message = error.response.data.message || 'Something went wrong. Sorry.';
       Swal.fire({
         title: 'Error',
         icon: 'error',

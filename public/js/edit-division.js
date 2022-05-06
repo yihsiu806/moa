@@ -16967,7 +16967,6 @@ function initSubmitCallback() {
     })["catch"](function (error) {
       console.log(error);
       var message = error.response.data.message || 'Something went wrong. Sorry.';
-      ;
       sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
         title: 'Error',
         icon: 'error',

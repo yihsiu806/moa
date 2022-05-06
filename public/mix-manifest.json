@@ -10,6 +10,7 @@
     "/js/edit-user.js": "/js/edit-user.js",
     "/js/sidebar.js": "/js/sidebar.js",
     "/js/viewer-dashboard.js": "/js/viewer-dashboard.js",
+    "/js/file-edit.js": "/js/file-edit.js",
     "/css/login.css": "/css/login.css",
     "/css/app.css": "/css/app.css"
 }

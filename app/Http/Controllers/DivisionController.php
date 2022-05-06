@@ -27,7 +27,6 @@ class DivisionController extends Controller
 
     public function deleteDivision(Request $request)
     {
-        $this->write_log($request->input('id'));
         $deleted = DB::table('divisions')->where('id', '=', $request->input('id'))->delete();
     }
 

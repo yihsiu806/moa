@@ -8,7 +8,7 @@
             <livewire:edit-division />
         @elseif (request()->is('file-upload'))
             <livewire:file-upload />
-        @elseif (request()->is('file-edit'))
+        @elseif (request()->is('file-edit/*'))
             <livewire:file-edit />
         @else
             <livewire:file-viewer />

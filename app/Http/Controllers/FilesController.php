@@ -160,9 +160,59 @@ class FilesController extends Controller
         return response($result, Response::HTTP_OK);
     }
 
-    public function update(Request $request, Files $files)
+    public function update(Request $request, Files $files, $id)
     {
-        //
+        if (!$request->expectsJson()) {
+            return response(null, Response::HTTP_BAD_REQUEST);
+        }
+
+        $user = Auth::user();
+
+
+        $target = Files::where('id', '=', $id);
+
+
+        if ($request->input('file')) {
+            $this->write_log($target->first()->path);
+            Storage::disk('myDisk')->delete($target->first()->path);
+            $this->write_log('ddd');
+
+            $file_64 = $request->input('file'); //your base64 encoded data
+            $extension = explode('/', explode(':', substr($file_64, 0, strpos($file_64, ';')))[1])[1];   // .jpg .png .pdf
+            $replace = substr($file_64, 0, strpos($file_64, ',') + 1);
+            // find substring fro replace here eg: data:image/png;base64,
+            $image = str_replace($replace, '', $file_64);
+            $image = str_replace(' ', '+', $image);
+            // $imageName = Str::random(10) . '.' . $extension;
+            $imageName = Str::random(10) . $request->input('extension');
+            // Storage::disk('public')->put($imageName, base64_decode($image));
+            Storage::disk('myDisk')->put($imageName, base64_decode($image));
+        } else {
+            $imageName = null;
+        }
+
+        if (!$request->input('description')) {
+            $description = '';
+        } else {
+            $description = $request->input('description');
+        }
+
+
+        $file = [
+            'title' => $request->input('title') . $request->input('extension'),
+            'description' => $description,
+            'from' => $request->input('from'),
+            'to' => $request->input('to'),
+            'owner' => $user->id,
+            'division' => $user->division,
+        ];
+
+        $target->update($file);
+        if ($imageName) {
+            $target->update(['path' => $imageName]);
+        }
+
+        // return response($target, Response::HTTP_CREATED);
     }
 
     /**

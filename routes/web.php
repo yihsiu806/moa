@@ -43,7 +43,7 @@ Route::get('/myupload', Myupload::class)->name('myupload')->middleware(['auth', 
 Route::get('/file-upload', FileUpload::class)->name('fileUpload')->middleware(['auth', 'role:division']);
 Route::post('/file-upload', 'App\Http\Controllers\FilesController@store')->name('newFile')->middleware(['auth', 'role:division']);
 Route::get('/file/edit/{id}', FileEdit::class)->middleware(['auth', 'role:division'])->name('editFile');
-Route::patch('/file/edit', 'App\Http\Controllers\FilesController@update')->middleware(['auth', 'role:division'])->name('patchFile');
+Route::patch('/file/edit/{id}', 'App\Http\Controllers\FilesController@update')->middleware(['auth', 'role:division'])->name('patchFile');
 
 // download file from myDisk with permission
 Route::get('/uploads/{filename}', 'App\Http\Controllers\DownloadFilesController@licenceFileShow');
