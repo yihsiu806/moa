@@ -30,7 +30,7 @@ Route::get('/division', 'App\Http\Controllers\DivisionController@index')->name('
 Route::get('/viewer', 'App\Http\Controllers\ViewerController@index')->name('viewer');
 
 // sidebar
-Route::get('/divisions/{slug}', FileViewer::class)->middleware(['auth']);
+Route::get('/divisions/{slug}', FileViewer::class);
 
 // admin dashboard
 Route::get('/admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin'])->name('adminDashboard');

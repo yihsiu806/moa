@@ -64,13 +64,10 @@
                         </form>
                     @endif
                 @else
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button
-                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
-                            Login
-                        </button>
-                    </form>
+                    <a href="/login"
+                        class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                        Login
+                    </a>
                 @endif
             </div>
 

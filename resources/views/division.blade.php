@@ -1,6 +1,6 @@
 <x-app-layout>
     <div>
-        @if (request()->is('division'))
+        @if (request()->is('/') || request()->is('division'))
             <livewire:welcome />
         @elseif (request()->is('myupload'))
             <livewire:myupload />

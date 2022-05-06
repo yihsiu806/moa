@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="py-8">
-        @if (request()->is('viewer'))
+        @if (request()->is('/') || request()->is('viewer'))
             <livewire:welcome />
         @elseif (request()->is('viewer/dashboard'))
             <livewire:viewer-dashboard />

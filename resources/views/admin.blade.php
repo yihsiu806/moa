@@ -1,6 +1,6 @@
 <x-app-layout>
     <div>
-        @if (request()->is('admin'))
+        @if (request()->is('/') || request()->is('admin'))
             <livewire:welcome />
         @elseif (request()->is('admin/dashboard'))
             <livewire:admin-dashboard />
