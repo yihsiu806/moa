@@ -66,7 +66,7 @@
 
     </div>
 
-    <div class="flex items-center">
+    {{-- <div class="flex items-center">
         <h1 class="mr-5 text-grey-dark text-3xl font-bold">
             <span
                 style="background-image: linear-gradient( 180deg ,transparent 60%,rgba(253, 180, 21, 0.35) 0);">Logs</span>
@@ -75,7 +75,7 @@
             <a href="#"
                 class="inline-block px-6 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Download</a>
         </div>
-    </div>
+    </div> --}}
 </div>
 <script>
     let users = @js($users);
