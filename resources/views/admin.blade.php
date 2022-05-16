@@ -8,6 +8,8 @@
             <livewire:add-user />
         @elseif (request()->is('user/edit'))
             <livewire:edit-user />
+        @elseif (request()->is('search-result/*'))
+            <livewire:search-result />
         @else
             <livewire:file-viewer />
         @endif

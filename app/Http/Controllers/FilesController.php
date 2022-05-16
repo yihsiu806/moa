@@ -173,10 +173,7 @@ class FilesController extends Controller
 
 
         if ($request->input('file')) {
-            $this->write_log($target->first()->path);
             Storage::disk('myDisk')->delete($target->first()->path);
-            $this->write_log('ddd');
-
             $file_64 = $request->input('file'); //your base64 encoded data
             $extension = explode('/', explode(':', substr($file_64, 0, strpos($file_64, ';')))[1])[1];   // .jpg .png .pdf
             $replace = substr($file_64, 0, strpos($file_64, ',') + 1);

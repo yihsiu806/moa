@@ -1,6 +1,6 @@
 <div class="px-5 md:px-10">
 
-    <h1 class="mb-5 text-grey-dark text-3xl font-bold">Newest</h1>
+    {{-- <h1 class="mb-5 text-grey-dark text-3xl font-bold">Newest</h1>
 
     <div id="newestWrapper" class="w-full flex flex-wrap">
         <div class="w-[180px] h-[200px] mt-2 mr-5 p-2 rounded border border-gray-300 bg-white overflow-hidden">
@@ -24,9 +24,9 @@
                 <span class="inline-block w-full h-4 skeleton-box"></span>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <h1 class="mt-10 mb-5 text-grey-dark text-3xl font-bold">Most Downloaded</h1>
+    {{-- <h1 class="mt-10 mb-5 text-grey-dark text-3xl font-bold">Most Downloaded</h1>
 
     <div id="mostDownloadedWrapper" class="w-full flex flex-wrap">
         <div class="w-[180px] h-[200px] mt-2 mr-5 p-2 rounded border border-gray-300 bg-white overflow-hidden">
@@ -50,9 +50,9 @@
                 <span class="inline-block w-full h-4 skeleton-box"></span>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <h1 class="mt-10 mb-5 text-grey-dark text-3xl font-bold mb-3">Files</h1>
+    <h1 class="mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
     <div id="ltPlaceholder" class="rounded"> </div>
 

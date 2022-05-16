@@ -4,6 +4,8 @@
             <livewire:welcome />
         @elseif (request()->is('viewer/dashboard'))
             <livewire:viewer-dashboard />
+        @elseif (request()->is('search-result/*'))
+            <livewire:search-result />
         @else
             <livewire:file-viewer />
         @endif

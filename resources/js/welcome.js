@@ -19,8 +19,8 @@ import 'tippy.js/dist/svg-arrow.css';
 
 sessionStorage.removeItem('previousLocation');
 
-fetchNewest();
-fetchMostDownloaded();
+// fetchNewest();
+// fetchMostDownloaded();
 initPagination();
 
 let $filesTable = $('#listTable').DataTable({

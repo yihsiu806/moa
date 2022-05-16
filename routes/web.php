@@ -10,6 +10,7 @@ use App\Http\Livewire\EditUser;
 use App\Http\Livewire\FileViewer;
 use App\Http\Livewire\ViewerDashboard;
 use App\Http\Livewire\FileEdit;
+use App\Http\Livewire\SearchResult;
 
 
 /*
@@ -78,5 +79,9 @@ Route::get('/most-downloaded', 'App\Http\Controllers\FilesController@mostDownloa
 Route::get('/public-files/{id}', 'App\Http\Controllers\PublicFileController@show');
 Route::get('/public-newest', 'App\Http\Controllers\PublicFileController@newest');
 Route::get('/public-most-downloaded', 'App\Http\Controllers\PublicFileController@mostDownloaded');
+
+// search
+Route::get('/search-result/{query?}', SearchResult::class);
+Route::post('/search', [SearchResult::class, 'search']);
 
 require __DIR__ . '/auth.php';
