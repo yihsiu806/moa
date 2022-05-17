@@ -89,6 +89,11 @@ class DivisionController extends Controller
         if ($request->input('division')) {
             $division = Division::find($request->input('division'));
         }
+        if ($division) {
+            if ($imageName) {
+                Storage::disk('public')->delete($division->picture);
+            }
+        }
         if (!$division) {
             $division = new Division;
             $slug = $request->input('divisionName');
@@ -138,6 +143,9 @@ class DivisionController extends Controller
 
         if (Officer::where('division', $divisionId)->exists()) {
             $officer = Officer::where('division', $divisionId)->first();
+            if ($imageName) {
+                Storage::disk('public')->delete($officer->picture);
+            }
         } else {
             $officer->division = $divisionId;
         }
