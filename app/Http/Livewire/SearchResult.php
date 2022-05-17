@@ -32,8 +32,6 @@ class SearchResult extends Component
         $result = [];
         $columns = ['title', 'description', 'from', 'to', 'download'];
 
-        $this->write_log($totalRecord);
-
         do {
             $query = Files::select(
                 'files.id as DT_RowId',
@@ -62,9 +60,7 @@ class SearchResult extends Component
             // }
 
             foreach ($files as $file) {
-                $this->write_log($file->path);
                 $content = file_get_contents(Storage::disk('myDisk')->path($file->path));
-                $this->write_log(Storage::disk('myDisk')->path($file->path));
                 // if (strpos($content, $searchQuery) !== false) {
                 //     // Bingo
                 // }
