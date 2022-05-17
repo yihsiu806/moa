@@ -61832,7 +61832,7 @@ function initPagination() {
       var $nPrevious = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span class=\"rounded-full\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z\"/></svg>\n        </span>\n      ");
       var $nNext = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n        <span>\n          <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><path d=\"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z\"/></svg>\n        </span>\n      ");
       $nPrevious.addClass('paginate-arrow prev disabled');
-      $nNext.addClass('paginate-arrow next');
+      $nNext.addClass('paginate-arrow next disabled');
       $nPaging.addClass('inline-flex justify-center items-center');
       $nPaging.append($nPrevious);
       $nPaging.append("<span class=\"px-2\"></span>");
@@ -61873,7 +61873,7 @@ function initPagination() {
         $prev.removeClass('disabled');
       }
 
-      if (iCurrentPage == iPages) {
+      if (iCurrentPage >= iPages) {
         $next.addClass('disabled');
       } else {
         $next.removeClass('disabled');

@@ -192,7 +192,7 @@ function initPagination() {
         </span>
       `);
       $nPrevious.addClass('paginate-arrow prev disabled');
-      $nNext.addClass('paginate-arrow next');
+      $nNext.addClass('paginate-arrow next disabled');
       $nPaging.addClass('inline-flex justify-center items-center')
       $nPaging.append($nPrevious);
       $nPaging.append(`<span class="px-2"></span>`)
@@ -233,7 +233,7 @@ function initPagination() {
         $prev.removeClass('disabled')
       }
 
-      if (iCurrentPage == iPages) {
+      if (iCurrentPage >= iPages) {
         $next.addClass('disabled')
       } else {
         $next.removeClass('disabled')
