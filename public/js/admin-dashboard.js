@@ -34487,7 +34487,7 @@ function deleteDivision(event) {
   var promise;
   promise = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
     title: "Are you sure delete \"".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('tr').children().first().text(), "\"?"),
-    text: "You won't be able to revert this!",
+    text: "All files belong to this division will disappear. You won't be able to revert this!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#056839',

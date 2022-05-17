@@ -16832,7 +16832,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#deleteUserBtn').on('click', func
   var promise;
   promise = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
     title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    text: "All files uploaded by this user will be deleted. You won't be able to revert this!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#056839',
