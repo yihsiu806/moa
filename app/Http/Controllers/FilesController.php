@@ -218,9 +218,9 @@ class FilesController extends Controller
      * @param  \App\Models\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Files $files)
+    public function destroy(Files $files, $id)
     {
-        //
+        Files::find($id)->delete();
     }
 
     public function write_log($log_msg)
