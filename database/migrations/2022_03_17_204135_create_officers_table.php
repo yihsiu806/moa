@@ -21,7 +21,7 @@ class CreateOfficersTable extends Migration
             $table->string('email', 255);
             $table->string('picture', 255)->nullable()->default(null);
             $table->unsignedBigInteger('division');
-            $table->foreign('division')->references('id')->on('divisions');
+            $table->foreign('division')->references('id')->on('divisions')->onDelete('cascade');
             $table->timestamps();
         });
     }

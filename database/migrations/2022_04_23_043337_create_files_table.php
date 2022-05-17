@@ -22,9 +22,9 @@ class CreateFilesTable extends Migration
             $table->integer('download')->nullable()->default(0);
             $table->string('path');
             $table->bigInteger('owner')->unsigned();
-            $table->foreign('owner')->references('id')->on('users');
+            $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('division')->unsigned();
-            $table->foreign('division')->references('id')->on('divisions');
+            $table->foreign('division')->references('id')->on('divisions')->onDelete('cascade');
             $table->timestamps();
         });
     }

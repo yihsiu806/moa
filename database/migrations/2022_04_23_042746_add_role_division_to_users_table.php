@@ -16,7 +16,7 @@ class AddRoleDivisionToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->enum('role', ['admin', 'division', 'viewer'])->default('viewer');
             $table->unsignedBigInteger('division')->nullable()->default(null);
-            $table->foreign('division')->references('id')->on('divisions');
+            $table->foreign('division')->references('id')->on('divisions')->onDelete('cascade');
         });
     }
 
@@ -28,7 +28,7 @@ class AddRoleDivisionToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropForeign('users_division_foreign');
         });
     }
 }
