@@ -7696,7 +7696,7 @@
                 </svg>
             </div>
 
-            <x-sidebar-link class="hidden md:flex" href="/" :active="request()->is('division') || request()->is('admin') || request()->is('viewer')">
+            <x-sidebar-link class="hidden md:flex" href="/" :active="request()->is('division') || request()->is('admin') || request()->is('viewer') || request()->is('/')">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path
