@@ -61678,10 +61678,12 @@ if (officer && officer.picture) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/storage/' + officer.picture);
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email); // (() => {
+if (officer) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
+} // (() => {
 //   let $target = $('#filesTable').find('tbody');
 //   files.forEach(file => {
 //     let updated = new Date(file.updated_at).toLocaleDateString();
@@ -61702,6 +61704,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.emai
 //     responsive: true,
 //   });
 // })();
+
 
 initPagination();
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({

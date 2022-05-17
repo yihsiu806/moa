@@ -23,10 +23,12 @@ if (division && division.picture) {
 if (officer && officer.picture) {
   $('#officerPicture').attr('src', '/storage/' + officer.picture);
 }
-$('#officerName').text(officer.name);
-$('#officerPosition').text(officer.position);
-$('#officerTelephone').text(officer.telephone);
-$('#officerEmail').text(officer.email);
+if (officer) {
+  $('#officerName').text(officer.name);
+  $('#officerPosition').text(officer.position);
+  $('#officerTelephone').text(officer.telephone);
+  $('#officerEmail').text(officer.email);
+}
 
 // (() => {
 //   let $target = $('#filesTable').find('tbody');
