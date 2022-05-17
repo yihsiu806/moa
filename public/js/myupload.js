@@ -61721,7 +61721,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
     search: "_INPUT_",
     searchPlaceholder: "Search..."
   },
-  ajax: '/files/all',
+  ajax: '/files/' + division.id,
   "order": [[2, "desc"]],
   columnDefs: [{
     "width": "30%",

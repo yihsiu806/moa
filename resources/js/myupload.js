@@ -68,7 +68,7 @@ let $filesTable = $('#filesTable').DataTable({
     search: "_INPUT_",
     searchPlaceholder: "Search...",
   },
-  ajax: '/files/all',
+  ajax: '/files/'+division.id,
   "order": [[ 2, "desc" ]],
   columnDefs: [
     { "width": "30%", "targets": 0 },
