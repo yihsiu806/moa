@@ -60,6 +60,7 @@
                     <th>Duration</th>
                     <th>Last modified</th>
                     <th>Edit</th>
+                    <th>Delete</th>
                     <th>Download</th>
                 </tr>
             </thead>

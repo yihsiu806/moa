@@ -23,10 +23,12 @@ if (division && division.picture) {
 if (officer && officer.picture) {
   $('#officerPicture').attr('src', '/storage/' + officer.picture);
 }
-$('#officerName').text(officer.name);
-$('#officerPosition').text(officer.position);
-$('#officerTelephone').text(officer.telephone);
-$('#officerEmail').text(officer.email);
+if (officer) {
+  $('#officerName').text(officer.name);
+  $('#officerPosition').text(officer.position);
+  $('#officerTelephone').text(officer.telephone);
+  $('#officerEmail').text(officer.email);
+}
 
 // (() => {
 //   let $target = $('#filesTable').find('tbody');
@@ -66,18 +68,19 @@ let $filesTable = $('#filesTable').DataTable({
     search: "_INPUT_",
     searchPlaceholder: "Search...",
   },
-  ajax: '/files/all',
+  ajax: '/files/'+division.id,
   "order": [[ 2, "desc" ]],
   columnDefs: [
-    { "width": "30%", "targets": 0 },
+    { "width": "25%", "targets": 0 },
     { "width": "0%", "targets": 1 },
-    { "width": "25%", "targets": 2 },
+    { "width": "20%", "targets": 2 },
     { "width": "20%", "targets": 3 },
     { "width": "10%", "targets": 4 },
-    { "width": "15%", "targets": 5 },
-    { className: "dt-head-left", targets: [ 0,1,2,3,4,5 ] },
+    { "width": "10%", "targets": 5 },
+    { "width": "15%", "targets": 6 },
+    { className: "dt-head-left", targets: [ 0,1,2,3,4,5,6 ] },
     {
-      'targets': [4,5], /* column index */
+      'targets': [4,5,6], /* column index */
       'orderable': false, /* true or false */
     },
     {
@@ -104,7 +107,13 @@ let $filesTable = $('#filesTable').DataTable({
     {
       data: "DT_RowId",
       "render": function(data, type, row) {
-        return `<a type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" href="/file/edit/${data}">Edit</a>`
+        return `<a type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" href="/file/edit/${data}">Edit</a>`
+      }
+    },
+    {
+      data: "DT_RowId",
+      "render": function(data, type, row) {
+        return `<button type="button" data-file-target="${data}" class="delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>`
       }
     },
     { 
@@ -145,6 +154,57 @@ let $filesTable = $('#filesTable').DataTable({
       // hideOnClick: false,
       // trigger: 'click',
     });
+  },
+  "drawCallback": function( settings ) {
+    $('.delete-btn').on('click', function() {
+      let id = this.getAttribute('data-file-target');
+
+      let promise;
+      promise = Swal.fire({
+        title: `Are you sure delete "${$(this).closest('tr').children().first().text()}"?`,
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#056839',
+        confirmButtonText: 'Yes, delete it!'
+      })
+  
+      promise = promise.then((result) => {
+        if (result.isConfirmed) {
+          return axios.patch('/file/delete/'+id)
+        } else {
+          return Promise.reject('cancel');
+        }
+      });
+
+      let _this = this;
+
+      promise
+      .then(function() {
+        Swal.fire({
+          title: 'Deleted!',
+          icon: 'success',
+          text: `File "${$(_this).closest('tr').children().first().text()}" has been deleted.`,
+          confirmButtonColor: '#056839',
+        })
+        .then(function() {
+          location.reload();
+        })
+      })
+      .catch(function(error) {
+        if (error == 'cancel') {
+          return;
+        }
+        console.log(error);
+        let message = error.response.data.message || 'Something went wrong. Sorry.';
+        Swal.fire({
+          title: 'Error',
+          icon: 'error',
+          text: message,
+          confirmButtonColor: '#056839',
+        })
+      })
+    })
   },
 });
 

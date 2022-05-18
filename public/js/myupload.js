@@ -61678,10 +61678,12 @@ if (officer && officer.picture) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPicture').attr('src', '/storage/' + officer.picture);
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email); // (() => {
+if (officer) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerName').text(officer.name);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerPosition').text(officer.position);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerTelephone').text(officer.telephone);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.email);
+} // (() => {
 //   let $target = $('#filesTable').find('tbody');
 //   files.forEach(file => {
 //     let updated = new Date(file.updated_at).toLocaleDateString();
@@ -61703,8 +61705,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#officerEmail').text(officer.emai
 //   });
 // })();
 
+
 initPagination();
-var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable({
+var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').DataTable(_defineProperty({
   dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
@@ -61718,16 +61721,16 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
     search: "_INPUT_",
     searchPlaceholder: "Search..."
   },
-  ajax: '/files/all',
+  ajax: '/files/' + division.id,
   "order": [[2, "desc"]],
   columnDefs: [{
-    "width": "30%",
+    "width": "25%",
     "targets": 0
   }, {
     "width": "0%",
     "targets": 1
   }, {
-    "width": "25%",
+    "width": "20%",
     "targets": 2
   }, {
     "width": "20%",
@@ -61736,13 +61739,16 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
     "width": "10%",
     "targets": 4
   }, {
-    "width": "15%",
+    "width": "10%",
     "targets": 5
   }, {
-    className: "dt-head-left",
-    targets: [0, 1, 2, 3, 4, 5]
+    "width": "15%",
+    "targets": 6
   }, {
-    'targets': [4, 5],
+    className: "dt-head-left",
+    targets: [0, 1, 2, 3, 4, 5, 6]
+  }, {
+    'targets': [4, 5, 6],
 
     /* column index */
     'orderable': false
@@ -61772,7 +61778,12 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
   }, {
     data: "DT_RowId",
     "render": function render(data, type, row) {
-      return "<a type=\"button\" class=\"py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\" href=\"/file/edit/".concat(data, "\">Edit</a>");
+      return "<a type=\"button\" class=\"py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\" href=\"/file/edit/".concat(data, "\">Edit</a>");
+    }
+  }, {
+    data: "DT_RowId",
+    "render": function render(data, type, row) {
+      return "<button type=\"button\" data-file-target=\"".concat(data, "\" class=\"delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\">Delete</button>");
     }
   }, {
     "data": "path",
@@ -61799,7 +61810,53 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
       plugins: [tippy_js__WEBPACK_IMPORTED_MODULE_13__.followCursor]
     }, "theme", 'tomato'));
   }
-});
+}, "drawCallback", function drawCallback(settings) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.delete-btn').on('click', function () {
+    var id = this.getAttribute('data-file-target');
+    var promise;
+    promise = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: "Are you sure delete \"".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('tr').children().first().text(), "\"?"),
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#056839',
+      confirmButtonText: 'Yes, delete it!'
+    });
+    promise = promise.then(function (result) {
+      if (result.isConfirmed) {
+        return axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/file/delete/' + id);
+      } else {
+        return Promise.reject('cancel');
+      }
+    });
+
+    var _this = this;
+
+    promise.then(function () {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+        title: 'Deleted!',
+        icon: 'success',
+        text: "File \"".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(_this).closest('tr').children().first().text(), "\" has been deleted."),
+        confirmButtonColor: '#056839'
+      }).then(function () {
+        location.reload();
+      });
+    })["catch"](function (error) {
+      if (error == 'cancel') {
+        return;
+      }
+
+      console.log(error);
+      var message = error.response.data.message || 'Something went wrong. Sorry.';
+      sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+        title: 'Error',
+        icon: 'error',
+        text: message,
+        confirmButtonColor: '#056839'
+      });
+    });
+  });
+}));
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 
 function hideLoading() {
