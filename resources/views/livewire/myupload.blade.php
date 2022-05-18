@@ -1,4 +1,4 @@
-<div>
+<div class="px-5">
     <x-dashboard-header></x-dashboard-header>
 
     <div class="mb-5 flex items-center">

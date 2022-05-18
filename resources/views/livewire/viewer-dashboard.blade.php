@@ -1,4 +1,4 @@
-<div>
+<div class="px-5">
     <x-dashboard-header></x-dashboard-header>
 
     <h1 class="mt-16 mb-8 text-grey-dark text-3xl font-bold">
