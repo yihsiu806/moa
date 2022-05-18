@@ -135,8 +135,19 @@
                         {{ Auth::user()->username }}
                     </a>
                 @else
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                            class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                            Log Out
+                        </button>
+                    </form>
                 @endif
             @else
+                <a href="/login"
+                    class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light">
+                    <span class="block md:hidden text-yellow">Login</span>
+                </a>
             @endif
 
         </div>
@@ -146,5 +157,3 @@
         </div>
     </div>
 </nav>
-
-<script src="{{ asset('js/search.js') }}" defer></script>
