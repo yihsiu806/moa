@@ -75,7 +75,7 @@ function initInfoSection() {
 initPagination();
 
 let $filesTable = $('#listTable').DataTable({
-  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,

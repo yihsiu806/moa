@@ -12,36 +12,35 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <div class="p-2 bg-[#056839] text-center" style="color: white;font-weight: bold; font-size: 24px;">MOA Data Sharing Platform</div>
-        <div class="px-12">
+        <div class="p-2 bg-[#056839] text-center" style="color: white;font-weight: bold; font-size: 24px;">MOA Data
+            Share</div>
+        <div class="md:px-12">
             <div class="p-5 text-center" style="color: #056839; font-weight: bold; font-size: 32px;">Sign in</div>
             <form method="POST" action="{{ route('login') }}" class="mt-3 px-5">
                 @csrf
-    
+
                 <!-- Username -->
                 <div>
-                    <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" 
-                    placeholder="Username"
-                    required autofocus />
+                    <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"
+                        placeholder="Username" required autofocus />
                 </div>
-    
+
                 <!-- Password -->
                 <div class="mt-8">
-                    <x-input id="password" class="block mt-1 w-full"
-                    placeholder="Password"
-                    type="password"
-                    name="password"
-                    required autocomplete="current-password" />
+                    <x-input id="password" class="block mt-1 w-full" placeholder="Password" type="password"
+                        name="password" required autocomplete="current-password" />
                 </div>
-    
+
                 <!-- Remember Me -->
                 <div class="block mt-4">
                     <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-yellow text-green shadow-sm focus:border-green focus:ring focus:ring-yellow focus:ring-opacity-50" name="remember">
+                        <input id="remember_me" type="checkbox"
+                            class="rounded border-yellow text-green shadow-sm focus:border-green focus:ring focus:ring-yellow focus:ring-opacity-50"
+                            name="remember">
                         <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                     </label>
                 </div>
-    
+
                 <div class="flex items-center justify-center mt-4">
                     <x-button class="block w-full">
                         {{ __('Log in') }}
@@ -64,7 +63,7 @@
             passwordInput.focus();
         }
     }
-    
+
     rememberMeBtn.addEventListener('change', function() {
         if (this.checked) {
             localStorage.setItem('rememberMe', 'check');

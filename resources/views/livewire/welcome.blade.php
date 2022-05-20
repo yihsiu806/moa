@@ -1,4 +1,4 @@
-<div class="px-5 md:px-10">
+<div class="md:px-10">
 
     {{-- <h1 class="mb-5 text-grey-dark text-3xl font-bold">Newest</h1>
 
@@ -52,7 +52,7 @@
         </div>
     </div> --}}
 
-    <h1 class="mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
+    <h1 class="mx-5 md:mx-0 mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
     <div id="ltPlaceholder" class="rounded"> </div>
 

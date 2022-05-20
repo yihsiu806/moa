@@ -64345,7 +64345,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()('#listTable').find('th').last().re
 
 initPagination();
 var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_1___default()('#listTable').DataTable({
-  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,
