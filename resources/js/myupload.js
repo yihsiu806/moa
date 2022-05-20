@@ -204,7 +204,10 @@ let $filesTable = $('#filesTable').DataTable({
           confirmButtonColor: '#056839',
         })
       })
-    })
+    });
+
+    // let api = new $.fn.dataTable.Api( settings );
+    // api.responsive.recalc();
   },
 });
 

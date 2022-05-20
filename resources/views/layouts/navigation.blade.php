@@ -130,8 +130,7 @@
                     <a href="{{ route('viewerDashboard') }}"
                         class="block pl-3 pr-4 py-3 cursor-pointer border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out font-bold text-xl text-white hover:bg-yellow-light {{ request()->is('viewerDashboard') ? 'bg-yellow' : '' }}">
                         <span
-                            class="block md:hidden {{ request()->is('viewerDashboard') ? 'text-green' : 'text-yellow' }}">My
-                            Upload</span>
+                            class="block md:hidden {{ request()->is('viewerDashboard') ? 'text-green' : 'text-yellow' }}">Setting</span>
                         {{ Auth::user()->username }}
                     </a>
                 @else

@@ -13,7 +13,7 @@ hideLoading();
 initPagination();
 
 let $usersTable = $('#usersTable').DataTable({
-  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   language: {
     info: "_START_ - _END_ of _TOTAL_",

@@ -61855,7 +61855,8 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
         confirmButtonColor: '#056839'
       });
     });
-  });
+  }); // let api = new $.fn.dataTable.Api( settings );
+  // api.responsive.recalc();
 }));
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 

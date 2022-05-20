@@ -3246,6 +3246,11 @@ body.inactive {
     padding-right: 1.5rem;
   }
 
+  .sm\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .sm\:pt-0 {
     padding-top: 0px;
   }

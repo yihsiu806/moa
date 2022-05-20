@@ -1,4 +1,4 @@
-<div class="px-5">
+<div class="sm:px-5">
     <x-dashboard-header></x-dashboard-header>
 
     <h1 class="text-grey-dark text-3xl font-bold">
@@ -50,7 +50,7 @@
 
     <div class="mt-12 mb-10">
         <div class="list-table bg-white rounded">
-            <table id="divisionsTable" class="hover row-border" style="width:100%">
+            <table id="divisionsTable" class="hover row-border" cellspacing="0" style="width:100%">
                 <thead>
                     <tr>
                         <th>Division</th>

@@ -1,6 +1,6 @@
-<div class="mb-10 flex justify-between">
+<div class="mb-10 flex flex-wrap justify-between">
     {{-- back button --}}
-    <div>
+    <div class="w-full md:w-auto">
         <a id="backBtn" href="{{ url()->previous() }}"
             class="inline-block px-4 py-2 border-2 border-green-light text-green-light font-medium text-base leading-tight uppercase rounded hover:bg-white hover:text-yellow hover:border-yellow focus:outline-none focus:ring-0 transition duration-150 ease-in-out inline-flex justify-center items-center fill-green hover:fill-yellow">
             <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -10,7 +10,7 @@
     </div>
 
     {{-- logout button --}}
-    <div>
+    <div class="mt-5 md:mt-0 w-full md:w-auto">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button
