@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
     public function division()
     {
         Division::insert([
-            'name' => 'Statics Unit',
+            'name' => 'Statistics Unit',
             'icon' => null,
             'picture' =>  null,
             'slug' => 'stati',
