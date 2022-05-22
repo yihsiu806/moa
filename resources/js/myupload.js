@@ -55,7 +55,7 @@ if (officer) {
 initPagination();
 
 let $filesTable = $('#filesTable').DataTable({
-  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   processing: true,
   serverSide: true,
@@ -113,7 +113,7 @@ let $filesTable = $('#filesTable').DataTable({
     {
       data: "DT_RowId",
       "render": function(data, type, row) {
-        return `<button type="button" data-file-target="${data}" class="delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>`
+        return `<button type="button" data-file-target="${data}" class="delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" onclick="()=>{deleteFile();}">Delete</button>`
       }
     },
     { 
@@ -156,60 +156,59 @@ let $filesTable = $('#filesTable').DataTable({
     });
   },
   "drawCallback": function( settings ) {
-    $('.delete-btn').on('click', function() {
-      let id = this.getAttribute('data-file-target');
-
-      let promise;
-      promise = Swal.fire({
-        title: `Are you sure delete "${$(this).closest('tr').children().first().text()}"?`,
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#056839',
-        confirmButtonText: 'Yes, delete it!'
-      })
-  
-      promise = promise.then((result) => {
-        if (result.isConfirmed) {
-          return axios.patch('/file/delete/'+id)
-        } else {
-          return Promise.reject('cancel');
-        }
-      });
-
-      let _this = this;
-
-      promise
-      .then(function() {
-        Swal.fire({
-          title: 'Deleted!',
-          icon: 'success',
-          text: `File "${$(_this).closest('tr').children().first().text()}" has been deleted.`,
-          confirmButtonColor: '#056839',
-        })
-        .then(function() {
-          location.reload();
-        })
-      })
-      .catch(function(error) {
-        if (error == 'cancel') {
-          return;
-        }
-        console.log(error);
-        let message = error.response.data.message || 'Something went wrong. Sorry.';
-        Swal.fire({
-          title: 'Error',
-          icon: 'error',
-          text: message,
-          confirmButtonColor: '#056839',
-        })
-      })
-    });
-
-    // let api = new $.fn.dataTable.Api( settings );
-    // api.responsive.recalc();
+    $('.delete-btn').on('click', deleteFile);
   },
 });
+
+function deleteFile() {
+  let id = this.getAttribute('data-file-target');
+
+  let promise;
+  promise = Swal.fire({
+    title: `Are you sure you wish to delete "${$(this).closest('tr').children().first().text()}"?`,
+    text: "You won't be able to reverse this action!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#056839',
+    confirmButtonText: 'Yes, delete it!'
+  })
+
+  promise = promise.then((result) => {
+    if (result.isConfirmed) {
+      return axios.patch('/file/delete/'+id)
+    } else {
+      return Promise.reject('cancel');
+    }
+  });
+
+  let _this = this;
+
+  promise
+  .then(function() {
+    Swal.fire({
+      title: 'Deleted!',
+      icon: 'success',
+      text: `File "${$(_this).closest('tr').children().first().text()}" has been deleted.`,
+      confirmButtonColor: '#056839',
+    })
+    .then(function() {
+      location.reload();
+    })
+  })
+  .catch(function(error) {
+    if (error == 'cancel') {
+      return;
+    }
+    console.log(error);
+    let message = error.response.data.message || 'Something went wrong. Sorry.';
+    Swal.fire({
+      title: 'Error',
+      icon: 'error',
+      text: message,
+      confirmButtonColor: '#056839',
+    })
+  })
+}
 
 $('.dataTables_filter input').addClass('focus:outline-none focus:ring-3 focus:ring-yellow focus:ring-opacity-60');
 

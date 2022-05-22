@@ -1,4 +1,4 @@
-<div class="container mx-auto mb-10">
+<div class="px-5 mx-auto mb-10">
 
     <div class="mb-10">
         <a id="goBack" href="{{ route('myupload') }}"

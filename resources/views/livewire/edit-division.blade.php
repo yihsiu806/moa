@@ -1,4 +1,4 @@
-<div class="container mx-5 md:mx-auto">
+<div class="container px-5 md:mx-auto">
 
     <div class="mb-10">
         <a id="backBtn" href="{{ Auth::user()->role == 'admin' ? route('adminDashboard') : route('myupload') }}"

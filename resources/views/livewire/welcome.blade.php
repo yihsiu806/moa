@@ -1,4 +1,4 @@
-<div class="md:px-10">
+<div class="px-5">
 
     {{-- <h1 class="mb-5 text-grey-dark text-3xl font-bold">Newest</h1>
 
@@ -52,7 +52,7 @@
         </div>
     </div> --}}
 
-    <h1 class="mx-5 md:mx-0 mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
+    <h1 class="mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
 
     <div id="ltPlaceholder" class="rounded"> </div>
 
@@ -60,10 +60,10 @@
         <table id="listTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
-                    <th> Filename </th>
-                    <th> Division </th>
-                    <th> Updated </th>
-                    <th> Download </th>
+                    <th class="all"> Filename </th>
+                    <th class="not-mobile"> Division </th>
+                    <th class="not-mobile"> Updated </th>
+                    <th class="desktop"> Download </th>
                 </tr>
             </thead>
             <tbody></tbody>

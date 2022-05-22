@@ -55,13 +55,13 @@
         <table id="filesTable" class="hover row-border" style="width:100%">
             <thead>
                 <tr>
-                    <th>File</th>
-                    <th>Division</th>
-                    <th>Duration</th>
-                    <th>Last modified</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Download</th>
+                    <th class="all">File</th>
+                    <th class="not-mobile">Division</th>
+                    <th class="not-mobile">Duration</th>
+                    <th class="not-mobile">Last modified</th>
+                    <th class="not-mobile">Edit</th>
+                    <th class="desktop">Delete</th>
+                    <th class="desktop">Download</th>
                 </tr>
             </thead>
             <tbody></tbody>

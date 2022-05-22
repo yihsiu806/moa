@@ -173,7 +173,7 @@ $('#uploadFileForm').on('submit', function(event) {
       confirmButtonColor: '#056839',
     })
     .then(function() {
-      // $('#goBack').get(0).click();
+      $('#goBack').get(0).click();
     })
   })
   .catch(function(error) {

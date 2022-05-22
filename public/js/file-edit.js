@@ -39005,7 +39005,8 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()('#uploadFileForm').on('submit', fu
       icon: 'success',
       text: 'Upload file successfully',
       confirmButtonColor: '#056839'
-    }).then(function () {// $('#goBack').get(0).click();
+    }).then(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()('#goBack').get(0).click();
     });
   })["catch"](function (error) {
     console.log(error);

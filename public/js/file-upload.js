@@ -36034,7 +36034,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#uploadFileForm').on('submit', fu
     sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
       title: 'Success',
       icon: 'success',
-      text: 'Upload file successfully',
+      text: 'File uploaded successfully!',
       confirmButtonColor: '#056839'
     }).then(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#goBack').get(0).click();
