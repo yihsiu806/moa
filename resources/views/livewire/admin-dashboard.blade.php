@@ -1,4 +1,4 @@
-<div class="sm:px-5">
+<div class="px-5">
     <x-dashboard-header></x-dashboard-header>
 
     <h1 class="text-grey-dark text-3xl font-bold">
@@ -21,11 +21,11 @@
             <table id="usersTable" class="hover row-border" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Role</th>
-                        <th>Username</th>
-                        <th>Division</th>
-                        <th>Last modified</th>
-                        <th>Edit</th>
+                        <th class="not-mobile">Role</th>
+                        <th class="all">Username</th>
+                        <th class="not-mobile">Division</th>
+                        <th class="desktop">Last modified</th>
+                        <th class="desktop">Edit</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -50,14 +50,14 @@
 
     <div class="mt-12 mb-10">
         <div class="list-table bg-white rounded">
-            <table id="divisionsTable" class="hover row-border" cellspacing="0" style="width:100%">
+            <table id="divisionsTable" class="hover row-border" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Division</th>
-                        <th>Officer</th>
-                        <th>Last modified</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th class="all">Division</th>
+                        <th class="not-mobile">Officer</th>
+                        <th class="not-mobile">Last modified</th>
+                        <th class="desktop">Edit</th>
+                        <th class="desktop">Delete</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

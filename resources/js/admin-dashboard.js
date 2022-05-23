@@ -36,7 +36,7 @@ let $usersTable = $('#usersTable').DataTable({
 });
 
 let $divisionsTable = $('#divisionsTable').DataTable({
-  dom: '<"flex justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
+  dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
   language: {
     info: "_START_ - _END_ of _TOTAL_",
@@ -171,13 +171,10 @@ if (sessionStorage.getItem('previousLocation')) {
   $(`#${id}`).get(0).scrollIntoView({block: "center"});
 }
 
-
-
 function hideLoading() {
   $('body').removeClass('inactive');
   $('#ltLoader').fadeOut();
 }
-
 
 function initPagination() {
   function calcCurrentPage(oSettings) {
