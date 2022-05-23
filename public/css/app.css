@@ -1932,6 +1932,9 @@ select {
 .mt-\[64px\] {
   margin-top: 64px;
 }
+.mt-\[120px\] {
+  margin-top: 120px;
+}
 .block {
   display: block;
 }
@@ -2045,6 +2048,12 @@ select {
 }
 .max-w-6xl {
   max-width: 72rem;
+}
+.max-w-\[240px\] {
+  max-width: 240px;
+}
+.max-w-\[120px\] {
+  max-width: 120px;
 }
 .flex-1 {
   flex: 1 1 0%;
