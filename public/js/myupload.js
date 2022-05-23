@@ -61783,7 +61783,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
   }, {
     data: "DT_RowId",
     "render": function render(data, type, row) {
-      return "<button type=\"button\" data-file-target=\"".concat(data, "\" class=\"delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\" onclick=\"()=>{deleteFile();}\">Delete</button>");
+      return "<button type=\"button\" data-file-target=\"".concat(data, "\" class=\"delete-btn py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\">Delete</button>");
     }
   }, {
     "data": "path",

@@ -7762,7 +7762,7 @@
     </div>
 
     <div class="md:hidden mt-10 flex justify-center items-center">
-        <img class="max-w-[120px]" src="/images/tov-icon.png">
+        <img class="max-w-[90px]" src="/images/tov-icon.png">
     </div>
 </div>
 @if (Auth::check())
