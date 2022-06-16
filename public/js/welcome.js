@@ -64530,7 +64530,7 @@ function initPagination() {
         $prev.removeClass('disabled');
       }
 
-      if (iCurrentPage == iPages) {
+      if (iCurrentPage >= iPages) {
         $next.addClass('disabled');
       } else {
         $next.removeClass('disabled');
