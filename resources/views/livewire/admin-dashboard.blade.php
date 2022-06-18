@@ -1,8 +1,8 @@
-<div class="px-5">
+<div class="px-5 pt-8 md:px-10">
     <x-dashboard-header></x-dashboard-header>
 
     <h1 class="text-grey-dark text-3xl font-bold">
-        <span style="background-image: linear-gradient( 180deg ,transparent 60%,rgba(253, 180, 21, 0.35) 0);">Manage
+        <span>Manage
             Users</span>
     </h1>
 
@@ -12,7 +12,7 @@
             <svg class="mr-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
             </svg>
-            New
+            Add New User
         </a>
     </div>
 
@@ -34,7 +34,7 @@
     </div>
 
     <h1 class="mt-10 text-grey-dark text-3xl font-bold">
-        <span style="background-image: linear-gradient( 180deg ,transparent 60%,rgba(253, 180, 21, 0.35) 0);">Manage
+        <span>Manage
             Divisions</span>
     </h1>
 
@@ -44,7 +44,7 @@
             <svg class="mr-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
             </svg>
-            New
+            Add New Division
         </a>
     </div>
 

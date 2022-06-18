@@ -88,7 +88,6 @@ class RegisteredUserController extends Controller
 
     public function delete(Request $request)
     {
-        $this->write_log($request->input('id'));
         $user = User::find($request->input('id'))->delete();
     }
 
