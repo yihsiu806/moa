@@ -1,15 +1,32 @@
-<nav x-data="{ open: false }" class="bg-green border-b border-gray-100 shadow-md">
+<nav x-data="{ open: false }" class="bg-green border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="px-4">
-        <div class="flex justify-between h-16">
+    <div class="">
+
+        <div
+            style="height: 96px; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(96px, auto);">
 
             <!-- Logo -->
-            <a class="flex flex-none items-center" href="{{ route('home') }}">
-                <span class="mr-5 bg-white border-solid border-4 border-yellow rounded-full">
-                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-                </span>
-                <span class="mr-2 font-bold leading-tight text-3xl text-white">Data Share</span>
-            </a>
+            <div class="flex ml-2" style="height: 96px; grid-column-start: 1; grid-column-end:2;">
+                <div class="w-[32px] bg-[#fcb414]"></div>
+                <div class="bg-[#f4f4f4] p-2">
+                    <a class="h-full flex flex-none items-center" href="{{ route('home') }}">
+                        <img class="w-[84px]" src="/images/moa-logo.png" alt="moa-logo">
+                    </a>
+                </div>
+            </div>
+
+            {{-- data share --}}
+            <div style="height: 96px; grid-column-start:2; grid-column-end: 4; display: flex; ">
+
+                <span class="ml-3 font-serif text-3xl uppercase tracking-wider text-yellow self-center font-bold">Data
+                    share</span>
+            </div>
+
+            {{-- data share image --}}
+            <div class="" style="grid-column-start:4; grid-column-end: 6; position:relative;">
+                <img class="" src="/images/files-logo.png" alt="files-logo"
+                    style="width: 230px; position: absolute; top: -12px; left:0; right:0; margin-left:auto; margin-right:auto;">
+            </div>
 
             <!-- Search Box -->
             {{-- <div class="hidden grow md:flex md:justify-center md:items-center">
@@ -33,26 +50,27 @@
             </div> --}}
 
             <!-- Settings Dropdown -->
-            <div class="flex-none hidden md:flex md:items-center md:ml-6">
+            <div class="flex-none hidden md:flex md:items-center md:justify-center md:m-1"
+                style="grid-column-start:6; grid-column-end: 8; ">
                 @if (Auth::check())
                     @if (Auth::user()->role === 'admin')
                         <a href="{{ route('adminDashboard') }}">
                             <button
-                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                class="bg-green hover:bg-green-light border border-white rounded text-yellow font-bold py-2 px-4 rounded">
                                 {{ Auth::user()->username }}
                             </button>
                         </a>
                     @elseif (Auth::user()->role === 'division')
                         <a href="{{ route('myupload') }}">
                             <button
-                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                class="bg-green hover:bg-green-light border border-white rounded text-yellow font-bold py-2 px-4 rounded">
                                 {{ Auth::user()->username }}
                             </button>
                         </a>
                     @elseif (Auth::user()->role === 'viewer')
                         <a href="{{ route('viewerDashboard') }}">
                             <button
-                                class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                                class="bg-green hover:bg-green-light border border-white rounded text-yellow font-bold py-2 px-4 rounded">
                                 {{ Auth::user()->username }}
                             </button>
                         </a>
@@ -67,14 +85,17 @@
                     @endif
                 @else
                     <a href="/login"
-                        class="bg-green hover:bg-green-light border border-green-light rounded text-white font-bold py-2 px-4 rounded">
+                        class="bg-green hover:bg-green-light border border-white rounded text-yellow font-bold py-2 px-8 rounded">
                         Login
                     </a>
                 @endif
+
             </div>
+            <div class="w-[18px] bg-[#fcb414] h-full"
+                style="grid-column-start:8; grid-column-end: 9; justify-self: end;"></div>
 
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center md:hidden">
+            <div class="mr-2 flex items-center md:hidden">
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -86,6 +107,8 @@
                     </svg>
                 </button>
             </div>
+
+
         </div>
     </div>
 

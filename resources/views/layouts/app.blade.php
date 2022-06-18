@@ -25,7 +25,9 @@
     <div class="min-h-screen bg-gray-100 md:h-full">
 
         @include('layouts.loading')
+        <div class="h-[16px]"></div>
         @include('layouts.navigation')
+        <div class="h-[16px]"></div>
 
         <div class="flex flex-wrap md:flex-nowrap md:h-full">
 
