@@ -61792,7 +61792,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#listTable').Da
   }, {
     "data": "path",
     "render": function render(data, type, row) {
-      return "<a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"uploads/".concat(row.path, "\" download=\"").concat(row.title, "\">Download</a>");
+      return "<a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/uploads/".concat(row.path, "\" download=\"").concat(row.title, "\">Download</a>");
     }
   }],
   pagingType: 'arrows',
