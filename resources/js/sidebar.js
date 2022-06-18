@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 let previousPosition = parseInt(sessionStorage.getItem('sidebarScrollOffset'));
 if (isFinite(previousPosition)) {
   document.getElementById('sidebar').scroll(0, previousPosition);

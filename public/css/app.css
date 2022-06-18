@@ -3062,6 +3062,9 @@ body.inactive {
 .hover\:fill-yellow:hover {
   fill: #fdb515;
 }
+.hover\:fill-white:hover {
+  fill: #ffffff;
+}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -3380,6 +3383,11 @@ body.inactive {
     margin-right: auto;
   }
 
+  .md\:my-3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -3484,8 +3492,25 @@ body.inactive {
     border-bottom-right-radius: 35px;
   }
 
+  .md\:border-4 {
+    border-width: 4px;
+  }
+
+  .md\:border-r-4 {
+    border-right-width: 4px;
+  }
+
+  .md\:border-r-8 {
+    border-right-width: 8px;
+  }
+
   .md\:border-none {
     border-style: none;
+  }
+
+  .md\:border-yellow {
+    --tw-border-opacity: 1;
+    border-color: rgb(253 181 21 / var(--tw-border-opacity));
   }
 
   .md\:bg-\[\#eee\] {
@@ -3495,6 +3520,11 @@ body.inactive {
 
   .md\:bg-\[rgba\(5\2c 131\2c 68\2c \.14\)\] {
     background-color: rgba(5,131,68,.14);
+  }
+
+  .md\:bg-green {
+    --tw-bg-opacity: 1;
+    background-color: rgb(5 104 57 / var(--tw-bg-opacity));
   }
 
   .md\:bg-opacity-70 {
@@ -3507,6 +3537,14 @@ body.inactive {
 
   .md\:fill-grey-dark {
     fill: #5F6368;
+  }
+
+  .md\:fill-yellow {
+    fill: #fdb515;
+  }
+
+  .md\:fill-white {
+    fill: #ffffff;
   }
 
   .md\:p-5 {
@@ -3528,12 +3566,49 @@ body.inactive {
     padding-bottom: 0.75rem;
   }
 
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:pt-2 {
     padding-top: 0.5rem;
   }
 
   .md\:pb-\[120px\] {
     padding-bottom: 120px;
+  }
+
+  .md\:pl-5 {
+    padding-left: 1.25rem;
+  }
+
+  .md\:pr-2 {
+    padding-right: 0.5rem;
+  }
+
+  .md\:pl-0 {
+    padding-left: 0px;
   }
 
   .md\:text-left {
@@ -3556,6 +3631,10 @@ body.inactive {
 
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
+  }
+
+  .md\:hover\:fill-white:hover {
+    fill: #ffffff;
   }
 }
 @media (min-width: 1024px) {
