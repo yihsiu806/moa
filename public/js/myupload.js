@@ -61931,6 +61931,77 @@ function initPagination() {
     }
   };
 }
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('input[type="password"]').on('input', function () {
+  var limit = 50;
+
+  if (this.value.length > limit) {
+    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: 'Text length limit',
+      text: "".concat(limit, " characters max."),
+      icon: 'warning',
+      confirmButtonColor: '#058344'
+    });
+    this.value = this.value.slice(0, limit);
+  }
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('input[type="password"]').on('input', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').hide();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').removeClass('is-invalid border-red-500');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#changePasswordForm').on('submit', function (event) {
+  event.preventDefault();
+  var validate = true;
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#currentPassword').val().length < 6) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#currentPassword').addClass('is-invalid');
+  }
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newPassword').val().length < 6) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newPassword').addClass('is-invalid');
+  }
+
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#confirmNewPassword').val().length < 6) {
+    validate = false;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#confirmNewPassword').addClass('is-invalid');
+  }
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid').addClass('border-red-500');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('input.is-invalid + div').show();
+
+  if (!validate) {
+    event.stopImmediatePropagation();
+  }
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#changePasswordForm').on('submit', function (event) {
+  event.preventDefault();
+  var data = {
+    currentPassword: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#currentPassword').val(),
+    newPassword: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#newPassword').val(),
+    confirmNewPassword: jquery__WEBPACK_IMPORTED_MODULE_0___default()('#confirmNewPassword').val()
+  };
+  axios__WEBPACK_IMPORTED_MODULE_2___default().patch('/division/changePassword', data).then(function () {
+    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: 'Success',
+      icon: 'success',
+      text: 'Password has been changed!',
+      confirmButtonColor: '#056839'
+    }).then(function () {
+      location.replace('/');
+    });
+  })["catch"](function (error) {
+    console.log(error);
+    var message = error.response.data.message || 'Something went wrong. Sorry.';
+    sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+      title: 'Error',
+      icon: 'error',
+      text: message,
+      confirmButtonColor: '#056839'
+    });
+  });
+});
 })();
 
 /******/ })()

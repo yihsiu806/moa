@@ -62,6 +62,7 @@ Route::patch('/user/delete', [App\Http\Controllers\Auth\RegisteredUserController
 Route::patch('/user/reset', [App\Http\Controllers\Auth\RegisteredUserController::class, 'reset']);
 
 // viewer dashboard change password
+Route::patch('/division/changePassword', [App\Http\Controllers\Auth\RegisteredUserController::class, 'changePassword']);
 Route::patch('/viewer/changePassword', [App\Http\Controllers\Auth\RegisteredUserController::class, 'changePassword']);
 
 // edit division, used by admin, division
