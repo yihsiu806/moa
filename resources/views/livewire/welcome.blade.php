@@ -7743,7 +7743,7 @@
         </div>
     </div> --}}
 
-    <h1 class="mb-10 text-grey-dark text-3xl font-bold mb-3">Files</h1>
+    <h1 class="text-green text-2xl font-bold font-serif py-5 pl-5" style="background-color: #d3e2dd;">Files</h1>
 
     <div id="ltPlaceholder" class="rounded"> </div>
 
