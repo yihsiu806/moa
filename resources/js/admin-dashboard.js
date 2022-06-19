@@ -35,6 +35,7 @@ let $usersTable = $('#usersTable').DataTable({
   pagingType: 'arrows',
 });
 
+
 let $divisionsTable = $('#divisionsTable').DataTable({
   dom: '<"flex flex-wrap justify-between items-center top"f<"w-auto flex justify-center items-center info-page"ip>>t',
   responsive: true,
@@ -151,8 +152,10 @@ function deleteDivision(event) {
 
     let $td = $('<td>');
 
+    
+
     let $btn = $(`
-    <button data-id="${division.id}" type="button" class="py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
+    <button data-id="${division.id}" type="button" class="delete-division-btn py-2 px-3 text-gray-800 bg-white border border-gray-500 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm">Delete</button>
     `);
 
     $btn.on('click', deleteDivision);
@@ -165,6 +168,9 @@ function deleteDivision(event) {
     $divisionsTable.row.add($tr).draw();
   })
 })();
+
+$('table tbody').on( 'click', 'li .delete-division-btn', deleteDivision);
+
 
 if (sessionStorage.getItem('previousLocation')) {
   let id = sessionStorage.getItem('previousLocation');

@@ -34541,7 +34541,7 @@ function deleteDivision(event) {
     var $tr = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<tr>');
     $tr.append("\n      <td>".concat(division.name, "</td>\n      <td>").concat(division.officer ? division.officer : '', "</td>\n      <td>").concat(updated, "</td>\n      <td id=\"division-").concat(division.id, "\">\n        <a class=\"py-2 px-3 text-white bg-green hover:bg-green-light focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800\" href=\"/division/edit/").concat(division.id, "\" onclick=\"(() => {sessionStorage.setItem('previousLocation', 'division-").concat(division.id, "')})();\">Edit</a>\n      </td>\n    "));
     var $td = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<td>');
-    var $btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n    <button data-id=\"".concat(division.id, "\" type=\"button\" class=\"py-2 px-3 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700\">Delete</button>\n    "));
+    var $btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n    <button data-id=\"".concat(division.id, "\" type=\"button\" class=\"delete-division-btn py-2 px-3 text-gray-800 bg-white border border-gray-500 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm\">Delete</button>\n    "));
     $btn.on('click', deleteDivision);
     $td.append($btn);
     $tr.append($td); // console.log($tr);
@@ -34549,6 +34549,8 @@ function deleteDivision(event) {
     $divisionsTable.row.add($tr).draw();
   });
 })();
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('table tbody').on('click', 'li .delete-division-btn', deleteDivision);
 
 if (sessionStorage.getItem('previousLocation')) {
   var id = sessionStorage.getItem('previousLocation');

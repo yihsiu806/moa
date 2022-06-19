@@ -61813,6 +61813,7 @@ var $filesTable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#filesTable').D
 }, "drawCallback", function drawCallback(settings) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.delete-btn').on('click', deleteFile);
 }));
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('table tbody').on('click', 'li .delete-btn', deleteFile);
 
 function deleteFile() {
   var id = this.getAttribute('data-file-target');

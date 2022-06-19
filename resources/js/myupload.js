@@ -160,6 +160,8 @@ let $filesTable = $('#filesTable').DataTable({
   },
 });
 
+$('table tbody').on( 'click', 'li .delete-btn', deleteFile);
+
 function deleteFile() {
   let id = this.getAttribute('data-file-target');
 
