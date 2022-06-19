@@ -2,11 +2,10 @@
     <!-- Primary Navigation Menu -->
     <div class="">
 
-        <div
-            style="height: 96px; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(96px, auto);">
+        <div class="grid grid-cols-[repeat(5, 1fr)] md:grid-cols-[repeat(8, 1fr)]" style="height: 96px;">
 
             <!-- Logo -->
-            <div class="flex ml-2" style="height: 96px; grid-column-start: 1; grid-column-end:2;">
+            <div class="flex ml-2 col-start-1 col-end-2" style="height: 96px;">
                 <div class="w-[32px] bg-[#fcb414]"></div>
                 <div class="bg-[#f4f4f4] p-2">
                     <a class="h-full flex flex-none items-center" href="{{ route('home') }}">
@@ -16,14 +15,15 @@
             </div>
 
             {{-- data share --}}
-            <div style="height: 96px; grid-column-start:2; grid-column-end: 4; display: flex; ">
+            <div class="col-start-2 col-end-5 md:col-end-4" style="height: 96px; display: flex; ">
 
-                <span class="ml-3 font-serif text-3xl uppercase tracking-wider text-yellow self-center font-bold">Data
-                    share</span>
+                <a href="{{ route('home') }}"
+                    class="ml-3 font-serif text-3xl uppercase tracking-wider text-yellow self-center font-bold">Data
+                    share</a>
             </div>
 
             {{-- data share image --}}
-            <div class="" style="grid-column-start:4; grid-column-end: 6; position:relative;">
+            <div class="hidden md:block md:col-start-4 md:col-end-6" style="position:relative;">
                 <img class="" src="/images/files-logo.png" alt="files-logo"
                     style="width: 230px; position: absolute; top: -12px; left:0; right:0; margin-left:auto; margin-right:auto;">
             </div>
@@ -50,8 +50,7 @@
             </div> --}}
 
             <!-- Settings Dropdown -->
-            <div class="flex-none hidden md:flex md:items-center md:justify-center md:m-1"
-                style="grid-column-start:6; grid-column-end: 8; ">
+            <div class="flex-none hidden md:flex md:items-center md:justify-center md:m-1 md:col-start-6 md:col-end-8">
                 @if (Auth::check())
                     @if (Auth::user()->role === 'admin')
                         <a href="{{ route('adminDashboard') }}">
@@ -91,19 +90,20 @@
                 @endif
 
             </div>
-            <div class="w-[18px] bg-[#fcb414] h-full"
-                style="grid-column-start:8; grid-column-end: 9; justify-self: end;"></div>
+
+            <div class="hidden md:block w-[18px] bg-[#fcb414] h-full md:col-start-8 md:col-end-9"
+                style="justify-self: end;"></div>
 
             <!-- Hamburger -->
-            <div class="mr-2 flex items-center md:hidden">
+            <div class="mr-2 flex items-center col-start-5 col-end-6 md:hidden">
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
