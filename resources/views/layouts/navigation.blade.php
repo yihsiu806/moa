@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="">
 
-        <div class="grid grid-cols-[repeat(5, 1fr)] md:grid-cols-[repeat(8, 1fr)]" style="height: 96px;">
+        <div class="grid grid-cols-[repeat(5,_1fr)] md:grid-cols-[repeat(8,_1fr)]" style="height: 96px;">
 
             <!-- Logo -->
             <div class="flex ml-2 col-start-1 col-end-2" style="height: 96px;">

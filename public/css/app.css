@@ -1821,14 +1821,17 @@ select {
 .z-50 {
   z-index: 50;
 }
+.col-start-1 {
+  grid-column-start: 1;
+}
 .col-start-2 {
   grid-column-start: 2;
 }
 .col-start-5 {
   grid-column-start: 5;
 }
-.col-start-1 {
-  grid-column-start: 1;
+.col-end-2 {
+  grid-column-end: 2;
 }
 .col-end-5 {
   grid-column-end: 5;
@@ -1836,8 +1839,8 @@ select {
 .col-end-6 {
   grid-column-end: 6;
 }
-.col-end-2 {
-  grid-column-end: 2;
+.col-end-4 {
+  grid-column-end: 4;
 }
 .m-0 {
   margin: 0px;
@@ -2138,6 +2141,9 @@ select {
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-\[repeat\(5\2c _1fr\)\] {
+  grid-template-columns: repeat(5, 1fr);
 }
 .flex-col {
   flex-direction: column;
@@ -3427,6 +3433,10 @@ body.inactive {
 
   .md\:grid-cols-\[1fr_minmax\(350px\2c _2fr\)\] {
     grid-template-columns: 1fr minmax(350px, 2fr);
+  }
+
+  .md\:grid-cols-\[repeat\(8\2c _1fr\)\] {
+    grid-template-columns: repeat(8, 1fr);
   }
 
   .md\:flex-nowrap {
